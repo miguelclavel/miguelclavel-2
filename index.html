@@ -1357,20 +1357,20 @@ class Component extends DCLogic {
   mapProject(empId, p, i, group) {
     const key = empId + ':' + group + i;
     return {
-      title: p.title, descriptor: p.descriptor, route: p.file || p.route, img: p.img, alt: p.alt,
+      title: p.title, descriptor: p.descriptor, route: p.route, img: p.img, alt: p.alt,
       hasImage: !!p.img,
       noImage: !p.img,
-      color: (this.state.hover === key || this.state.inline === key) ? 'var(--focus)' : (this.state.visited.indexOf(p.file || p.route) === -1 ? 'var(--ink)' : 'var(--ink-2)'),
+      color: (this.state.hover === key || this.state.inline === key) ? 'var(--focus)' : (this.state.visited.indexOf(p.route) === -1 ? 'var(--ink)' : 'var(--ink-2)'),
       linkBg: (this.state.hover === key || this.state.inline === key) ? 'color-mix(in oklab, var(--focus) 10%, var(--page))' : 'transparent',
       linkBorder: (this.state.hover === key || this.state.inline === key) ? 'color-mix(in oklab, var(--focus) 50%, var(--page))' : 'transparent',
       handleDisplay: (this.state.hover === key || this.state.inline === key) ? 'block' : 'none',
-      seenDisplay: this.state.visited.indexOf(p.file || p.route) === -1 ? 'none' : 'inline-block',
-      seenWeight: this.state.visited.indexOf(p.file || p.route) === -1 ? '500' : '450',
+      seenDisplay: this.state.visited.indexOf(p.route) === -1 ? 'none' : 'inline-block',
+      seenWeight: this.state.visited.indexOf(p.route) === -1 ? '500' : '450',
       linkOpacity: (this.state.hover && this.state.hover.split(':')[0] === empId && this.state.hover !== key) ? '.42' : '1',
       inlineDisplay: this.state.inline === key ? 'block' : 'none',
       onEnter: e => this.enter(key, e),
       onLeave: this.leave,
-      onClick: e => this.tap(key, e, p.file || p.route)
+      onClick: e => this.tap(key, e, p.route)
     };
   }
 
