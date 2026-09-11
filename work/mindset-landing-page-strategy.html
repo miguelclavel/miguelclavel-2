@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+<script src="support.js"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mindset-Based Landing Page Strategy Case Study | Miguel Clavel</title>
+<meta name="description" content="Three testable landing-page directions built around distinct audience mindsets: conversion strategy, creative variants, responsive systems, and a structured experimentation plan.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://miguelclavel-portfolio-v2.netlify.app/work/mindset-landing-page-strategy">
+<meta property="og:url" content="https://miguelclavel-portfolio-v2.netlify.app/work/mindset-landing-page-strategy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Designing for different reasons to compare">
+<meta property="og:description" content="Audience mindsets, three testable creative directions, responsive systems, and a structured experimentation plan.">
+<meta property="og:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/mindset/hero-three-directions.jpg">
+<meta property="og:image:alt" content="Three landing-page directions shown side by side as full-page compositions.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Designing for different reasons to compare">
+<meta name="twitter:description" content="Audience mindsets, three testable creative directions, responsive systems, and a structured experimentation plan.">
+<meta name="twitter:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/mindset/hero-three-directions.jpg">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#fff;color:#1D1D1F;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased}
+section{scroll-margin-top:128px}
+a{color:#0071E3;text-decoration:none}
+a:hover{color:#0077ED;text-decoration:underline}
+*:focus-visible{outline:3px solid rgba(10,132,255,.5);outline-offset:2px}
+img{max-width:100%}
+@media (max-width:700px){.shr-hide{display:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}[data-reveal]{opacity:1!important;transform:none!important}}
+</style>
+</helmet>
+<a href="#overview" style="position:absolute;left:12px;top:-60px;z-index:200;background:#0071E3;color:#fff;font-size:14px;font-weight:600;padding:12px 20px;border-radius:9999px;text-decoration:none" style-focus="top:12px">Skip to case study</a>
+
+<div style="position:fixed;top:0;left:0;right:0;z-index:130;height:52px;display:flex;align-items:center;gap:12px;padding:0 clamp(20px,5vw,48px);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)">
+  <a href="/" style="font-size:14px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F;text-decoration:none;white-space:nowrap">Miguel Clavel</a>
+  <span class="shr-hide" aria-hidden="true" style="color:rgba(0,0,0,.2)">/</span>
+  <span class="shr-hide" style="font-size:13px;color:#6E6E73;white-space:nowrap">Senior Product Designer</span>
+  <span id="shr-status" aria-live="polite" class="shr-hide" style="font-size:13px;color:#6E6E73"></span>
+  <nav aria-label="Portfolio" style="margin-left:auto;display:flex;align-items:center;gap:2px">
+    <a href="/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">&#8592; Back to work</a>
+    <a href="mailto:2miguelclavel@gmail.com?subject=Mindset%20landing%20page%20strategy" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Email</a>
+    <button type="button" onClick="{{ share }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:0;background:none;border-radius:9999px;font:inherit;font-size:13px;font-weight:600;color:#494949;cursor:pointer;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Share</button>
+  </nav>
+</div>
+
+<header role="banner" style="position:fixed;top:52px;left:0;right:0;z-index:120;height:56px;transition:background 160ms ease-out">
+  <div ref="{{ navBar }}" style="position:absolute;inset:0;background:transparent;transition:background 160ms ease-out,box-shadow 160ms ease-out;-webkit-backdrop-filter:none;backdrop-filter:none"></div>
+  <nav aria-label="Case study sections" style="position:relative;max-width:1160px;margin:0 auto;height:56px;padding-inline:clamp(16px,5vw,48px);display:flex;align-items:center;gap:20px">
+    <a href="#top" style="font-size:13px;font-weight:600;color:#1D1D1F;white-space:nowrap;text-decoration:none">Mindset Landing Pages</a>
+    <div style="display:flex;gap:2px;overflow-x:auto;margin-left:auto;scrollbar-width:none">
+      <a data-nav="overview" href="#overview" style="font-size:13px;font-weight:500;color:#494949;padding:9px 12px;border-radius:9999px;text-decoration:none;white-space:nowrap;transition:background 120ms ease-out" style-hover="background:rgba(0,0,0,.04)">Overview</a>
+      <a data-nav="challenge" href="#challenge" style="font-size:13px;font-weight:500;color:#494949;padding:9px 12px;border-radius:9999px;text-decoration:none;white-space:nowrap;transition:background 120ms ease-out" style-hover="background:rgba(0,0,0,.04)">Challenge</a>
+      <a data-nav="mindsets" href="#mindsets" style="font-size:13px;font-weight:500;color:#494949;padding:9px 12px;border-radius:9999px;text-decoration:none;white-space:nowrap;transition:background 120ms ease-out" style-hover="background:rgba(0,0,0,.04)">Mindsets</a>
+      <a data-nav="variants" href="#variants" style="font-size:13px;font-weight:500;color:#494949;padding:9px 12px;border-radius:9999px;text-decoration:none;white-space:nowrap;transition:background 120ms ease-out" style-hover="background:rgba(0,0,0,.04)">Variants</a>
+      <a data-nav="testplan" href="#testplan" style="font-size:13px;font-weight:500;color:#494949;padding:9px 12px;border-radius:9999px;text-decoration:none;white-space:nowrap;transition:background 120ms ease-out" style-hover="background:rgba(0,0,0,.04)">Test plan</a>
+      <a data-nav="reflection" href="#reflection" style="font-size:13px;font-weight:500;color:#494949;padding:9px 12px;border-radius:9999px;text-decoration:none;white-space:nowrap;transition:background 120ms ease-out" style-hover="background:rgba(0,0,0,.04)">Reflection</a>
+    </div>
+  </nav>
+  <div ref="{{ progressBar }}" style="position:absolute;left:0;bottom:0;height:2px;width:0%;background:#0A84FF"></div>
+</header>
+
+<main id="top" role="main" style="padding-top:52px">
+
+<section style="background:linear-gradient(90deg,#B1DCFB,#D6EEFD 30%,#EFF8FF 63%,#FFFDEB);padding:clamp(96px,10vw,140px) clamp(20px,5vw,48px) clamp(56px,7vw,104px)">
+  <div style="max-width:1160px;margin:0 auto;text-align:center">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 16px">01 · Landing page experimentation</p>
+    <h1 style="font-weight:700;font-size:clamp(38px,5vw,64px);line-height:1.05;letter-spacing:-.02em;margin:0 auto 22px;max-width:16ch;text-wrap:pretty">Designing for different reasons to compare</h1>
+    <p style="font-size:19px;line-height:1.55;color:#494949;max-width:720px;margin:0 auto 26px">The landing page needed to work for a broad audience, but we did not yet have a clear primary user mindset. I created multiple testable directions, each built around a different reason someone might begin comparing car insurance.</p>
+    <div style="display:flex;justify-content:center;margin:0 0 28px"><span style="display:inline-block;background:rgba(255,255,255,.6);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(0,0,0,.06);font-size:13px;font-weight:500;color:#494949;padding:7px 14px;border-radius:9999px">Audience hypotheses · Conversion strategy · Responsive design · Experiment planning</span></div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:0 0 clamp(40px,5vw,64px)">
+      <a href="#variants" style="background:#0071E3;color:#fff;font-size:16px;font-weight:600;padding:13px 28px;border-radius:9999px;text-decoration:none;transition:background 120ms ease-out,transform 120ms ease-out" style-hover="background:#0077ED;text-decoration:none" style-active="transform:scale(.97)">See the three directions</a>
+      <a href="#testplan" style="background:rgba(255,255,255,.7);color:#0071E3;border:1px solid rgba(0,0,0,.08);font-size:16px;font-weight:600;padding:13px 28px;border-radius:9999px;text-decoration:none;transition:background 120ms ease-out,transform 120ms ease-out" style-hover="background:#fff;text-decoration:none" style-active="transform:scale(.97)">Explore the test plan</a>
+    </div>
+    <figure style="margin:0;max-width:1160px">
+      <img src="/assets/mindset/hero-three-directions.jpg" width="1400" height="920" alt="Editorial composition showing three landing-page design directions side by side." style="width:100%;height:auto;display:block;object-fit:contain;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)">
+      <figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:16px 0 0">Three design directions. One shared task: help people confidently begin comparing quotes.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="overview" data-reveal="" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,56px);align-items:start">
+    <div>
+      <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">02 · At a glance</p>
+      <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">A visual redesign became an audience-strategy question</h2>
+      <p style="font-size:17px;line-height:1.6;color:#494949;max-width:720px;margin:0">The work began with a landing page and a conversion goal. The deeper challenge was deciding whose needs should shape the hierarchy. Instead of choosing one direction based on preference, I turned the uncertainty into a structured set of hypotheses the team could test.</p>
+    </div>
+    <dl style="margin:0;display:grid;gap:0;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:8px 26px;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+      <div style="display:grid;grid-template-columns:minmax(96px,140px) 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.06)"><dt style="font-size:13px;font-weight:600;color:#6E6E73;margin:0">Role</dt><dd style="font-size:15px;line-height:1.6;color:#1D1D1F;margin:0">UX/UI Designer and Experimentation Lead</dd></div>
+      <div style="display:grid;grid-template-columns:minmax(96px,140px) 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.06)"><dt style="font-size:13px;font-weight:600;color:#6E6E73;margin:0">Focus</dt><dd style="font-size:15px;line-height:1.6;color:#1D1D1F;margin:0">Audience framing, landing-page systems, responsive UX, test strategy</dd></div>
+      <div style="display:grid;grid-template-columns:minmax(96px,140px) 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.06)"><dt style="font-size:13px;font-weight:600;color:#6E6E73;margin:0">Core action</dt><dd style="font-size:15px;line-height:1.6;color:#1D1D1F;margin:0">Enter a ZIP code and begin comparing quotes</dd></div>
+      <div style="display:grid;grid-template-columns:minmax(96px,140px) 1fr;gap:16px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.06)"><dt style="font-size:13px;font-weight:600;color:#6E6E73;margin:0">Deliverables</dt><dd style="font-size:15px;line-height:1.6;color:#1D1D1F;margin:0">Three design directions, desktop and mobile layouts, reusable components, experiment plan</dd></div>
+      <div style="display:grid;grid-template-columns:minmax(96px,140px) 1fr;gap:16px;padding:18px 0"><dt style="font-size:13px;font-weight:600;color:#6E6E73;margin:0">Status</dt><dd style="font-size:15px;line-height:1.6;color:#1D1D1F;margin:0">Strategy and design documented; no winning result supplied</dd></div>
+    </dl>
+  </div>
+  <div style="max-width:1160px;margin:clamp(28px,4vw,48px) auto 0">
+    <p style="font-size:15px;line-height:1.6;color:#494949;margin:0;padding:20px 24px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><strong style="color:#1D1D1F;font-weight:600">Honest status.</strong> This case study documents the design and experimentation strategy. A validated winning variation and final conversion impact were not included in the source material, so the page does not claim either.</p>
+  </div>
+</section>
+
+<section id="challenge" data-reveal="" style="padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">03 · The challenge</p>
+    <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">A page for everyone can feel specific to no one</h2>
+    <p style="font-size:17px;line-height:1.6;color:#494949;max-width:720px;margin:0 0 clamp(32px,4vw,48px)">The landing page had to welcome people with different levels of urgency, confidence, and familiarity. Without a clearly defined primary mindset, every content decision became a compromise: how much explanation to provide, where trust belonged, how prominent the form should be, and whether affordability, speed, or guidance should lead the story.</p>
+    <p style="font-weight:700;font-size:clamp(22px,2.4vw,30px);line-height:1.25;letter-spacing:-.02em;color:#1D1D1F;max-width:900px;margin:0 0 clamp(32px,4vw,48px);text-wrap:pretty">The problem was not choosing the best-looking layout. It was deciding which user motivation the layout should prioritize.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="font-size:17px;font-weight:600;margin:0 0 10px;color:#1D1D1F">Speed versus explanation</h3><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">A faster path can reduce friction, but it may leave cautious visitors without enough context.</p></div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="font-size:17px;font-weight:600;margin:0 0 10px;color:#1D1D1F">Trust versus density</h3><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">More evidence can increase confidence, but too much content can make a simple task feel complicated.</p></div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="font-size:17px;font-weight:600;margin:0 0 10px;color:#1D1D1F">Consistency versus relevance</h3><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">A shared system improves coherence, but each hypothesis needs a meaningful difference to be worth testing.</p></div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="font-size:17px;font-weight:600;margin:0 0 10px;color:#1D1D1F">Desktop richness versus mobile focus</h3><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Large-screen storytelling must become a clear mobile sequence, not a compressed poster.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">04 · The reframe</p>
+    <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 clamp(32px,4vw,48px);text-wrap:pretty">I turned an undefined audience into testable design hypotheses</h2>
+    <ol style="list-style:none;margin:0 0 clamp(32px,4vw,48px);padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+      <li style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 12px">01 · Observe</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">The existing requirement focused on the page and its conversion goal, but it did not provide one clearly prioritized user motivation.</p></li>
+      <li style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 12px">02 · Separate the motivations</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">I identified distinct reasons someone might hesitate or continue: urgency, need for guidance, and need for reassurance.</p></li>
+      <li style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 12px">03 · Design the contrast</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">I created variants that changed message hierarchy, imagery, trust placement, process explanation, and CTA context while preserving the same core quote-comparison action.</p></li>
+    </ol>
+    <p style="font-weight:700;font-size:clamp(20px,2.2vw,28px);line-height:1.3;letter-spacing:-.02em;color:#1D1D1F;max-width:860px;margin:0;text-wrap:pretty">How might we learn which type of reassurance helps the right visitor take the next step?</p>
+  </div>
+</section>
+
+<section id="mindsets" data-reveal="" style="padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">05 · Audience hypotheses</p>
+    <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 8px;text-wrap:pretty">Three motivations shaped three directions</h2>
+    <p style="font-size:19px;line-height:1.55;color:#494949;max-width:720px;margin:0 0 clamp(28px,3.5vw,40px)">How might we make one comparison experience feel more relevant to people arriving with different motivations, without fragmenting the product into unrelated pages?</p>
+    <div role="tablist" aria-label="Audience mindset hypotheses" style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px">
+      <button role="tab" id="tab-a" aria-controls="panel-a" aria-selected="{{ selA }}" sc-camel-on-click="{{ pickA }}" style="{{ tabAStyle }}">A · The decisive comparer</button>
+      <button role="tab" id="tab-b" aria-controls="panel-b" aria-selected="{{ selB }}" sc-camel-on-click="{{ pickB }}" style="{{ tabBStyle }}">B · The guided planner</button>
+      <button role="tab" id="tab-c" aria-controls="panel-c" aria-selected="{{ selC }}" sc-camel-on-click="{{ pickC }}" style="{{ tabCStyle }}">C · The reassurance seeker</button>
+    </div>
+
+    <sc-if value="{{ isA }}" hint-placeholder-val="{{ true }}">
+    <div role="tabpanel" id="panel-a" aria-labelledby="tab-a" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,40px);align-items:start">
+      <div style="display:grid;gap:20px">
+        <div><h3 style="font-size:20px;font-weight:600;margin:0 0 8px">Hypothesis A: The decisive comparer</h3><p style="font-size:17px;line-height:1.6;color:#494949;margin:0">Likely question: “Can I compare quotes without wasting time?”</p></div>
+        <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,.04);display:grid;gap:18px">
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Primary need</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Start quickly and understand the immediate action.</p></div>
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Page emphasis</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">ZIP-code action centered in the first viewport, concise messaging, a direct CTA, reduced competing content, and recognizable provider names near the action.</p></div>
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Expected benefit</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">A more compact path to the first interaction for visitors who arrive ready to act.</p></div>
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Risk to test</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">A highly direct page may feel efficient but provide too little explanation or reassurance.</p></div>
+        </div>
+      </div>
+      <figure style="margin:0"><img src="/assets/mindset/mockup-direct-desk.jpg" width="1400" height="933" alt="Environmental presentation of the direct comparison direction on a desktop display." style="width:100%;height:auto;display:block;object-fit:contain;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.06)"><figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:12px 0 0">Direction A in context: the quote-entry module leads the first viewport.</figcaption></figure>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isB }}" hint-placeholder-val="{{ false }}">
+    <div role="tabpanel" id="panel-b" aria-labelledby="tab-b" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,40px);align-items:start">
+      <div style="display:grid;gap:20px">
+        <div><h3 style="font-size:20px;font-weight:600;margin:0 0 8px">Hypothesis B: The guided planner</h3><p style="font-size:17px;line-height:1.6;color:#494949;margin:0">Likely question: “What happens after I enter my information?”</p></div>
+        <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,.04);display:grid;gap:18px">
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Primary need</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Understand the process before beginning.</p></div>
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Page emphasis</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">The journey explained as three simple steps, a clear educational hierarchy, methodology and trust information placed where they support decisions, and CTAs repeated after explanation.</p></div>
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Expected benefit</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Structured illustration makes the process feel manageable before the first request.</p></div>
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Risk to test</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Additional explanation may increase confidence but delay the first conversion action.</p></div>
+        </div>
+      </div>
+      <figure style="margin:0"><img src="/assets/mindset/mockup-guided-desk.jpg" width="1400" height="933" alt="Environmental presentation of the guided direction on a desktop display." style="width:100%;height:auto;display:block;object-fit:contain;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.06)"><figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:12px 0 0">Direction B in context: the process explanation carries the first scroll.</figcaption></figure>
+    </div>
+    </sc-if>
+
+    <sc-if value="{{ isC }}" hint-placeholder-val="{{ false }}">
+    <div role="tabpanel" id="panel-c" aria-labelledby="tab-c" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,40px);align-items:start">
+      <div style="display:grid;gap:20px">
+        <div><h3 style="font-size:20px;font-weight:600;margin:0 0 8px">Hypothesis C: The reassurance seeker</h3><p style="font-size:17px;line-height:1.6;color:#494949;margin:0">Likely question: “Can I trust this experience, and will it help me find affordable coverage?”</p></div>
+        <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:24px;box-shadow:0 1px 3px rgba(0,0,0,.04);display:grid;gap:18px">
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Primary need</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Feel protected, confident, and comfortable with the value exchange.</p></div>
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Page emphasis</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Protection, recognizable brands, methodology, and value; imagery connected to safety and coverage; each CTA paired with reassurance or benefit language.</p></div>
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Expected benefit</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Affordability feels concrete and the source feels credible, without promising a result.</p></div>
+          <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 6px">Risk to test</p><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Too many trust messages can create visual density or unintentionally increase concern.</p></div>
+        </div>
+      </div>
+      <figure style="margin:0"><img src="/assets/mindset/mockup-protection-desk.jpg" width="1400" height="933" alt="Environmental presentation of the protection and value direction on a desktop display." style="width:100%;height:auto;display:block;object-fit:contain;border-radius:16px;box-shadow:0 1px 3px rgba(0,0,0,.04),0 0 0 1px rgba(0,0,0,.06)"><figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:12px 0 0">Direction C in context: protection imagery and value language frame the task.</figcaption></figure>
+    </div>
+    </sc-if>
+
+    <p style="font-size:15px;line-height:1.6;color:#494949;margin:28px 0 0;padding:18px 22px;background:#F5F5F7;border-radius:18px;max-width:900px">These were working hypotheses for experimentation, not demographic personas or validated audience segments.</p>
+  </div>
+</section>
+
+<section data-reveal="" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">06 · One system</p>
+    <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">The variants changed the story, not the product promise</h2>
+    <p style="font-size:17px;line-height:1.6;color:#494949;max-width:720px;margin:0 0 clamp(32px,4vw,48px)">To make the comparison useful, I kept the central task and important credibility elements recognizable across directions. The variants changed what people saw first, how the process was explained, and which reassurance supported the CTA.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+        <h3 style="font-size:17px;font-weight:600;margin:0 0 16px">Held constant</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;gap:12px">
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">ZIP-code entry as the first task.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">Quote-comparison value proposition.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">Core provider context.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">U.S. News identity and required disclosures.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">FAQ and methodology access.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949">Responsive accessibility expectations.</li>
+        </ul>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+        <h3 style="font-size:17px;font-weight:600;margin:0 0 16px">Changed intentionally</h3>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;gap:12px">
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">Hero composition.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">CTA framing.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">Amount and timing of explanation.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">Illustration and photography strategy.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">Trust placement.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)">Repetition of conversion opportunities.</li>
+          <li style="font-size:15px;line-height:1.6;color:#494949">Page density and pacing.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="variants" data-reveal="" style="padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:clamp(32px,4vw,52px);justify-items:center">
+    <div style="width:100%;max-width:840px">
+      <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">07 · Direction A</p>
+      <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">Direct comparison: make the next action unmistakable</h2>
+      <p style="font-size:17px;line-height:1.6;color:#494949;margin:0 0 24px">This direction prioritizes the visitor who arrives ready to act. The ZIP-code module becomes the visual center of the first viewport, supporting copy stays concise, and provider context sits close to the action. The design reduces interpretation before the first click.</p>
+      <h3 style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 12px">What this direction tests</h3>
+      <ul style="margin:0 0 24px;padding:0 0 0 22px;list-style:disc;display:grid;gap:10px">
+        <li style="font-size:15px;line-height:1.6;color:#494949">Whether a dominant form increases starts.</li>
+        <li style="font-size:15px;line-height:1.6;color:#494949">Whether concise content reduces hesitation.</li>
+        <li style="font-size:15px;line-height:1.6;color:#494949">Whether immediate provider context creates enough reassurance.</li>
+      </ul>
+      <p style="font-size:15px;line-height:1.6;color:#494949;margin:0;padding:18px 22px;background:#F5F5F7;border-radius:18px"><strong style="color:#1D1D1F;font-weight:600">Trade-off.</strong> The page is efficient, but visitors who need more explanation may not receive enough context before the first request.</p>
+    </div>
+    <figure style="margin:0 auto;max-width:851px;width:100%">
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)">
+        <div style="height:40px;background:rgba(246,246,246,.92);display:flex;align-items:center;gap:8px;padding:0 14px;position:relative">
+          <span style="width:12px;height:12px;border-radius:9999px;background:#FF5F56"></span><span style="width:12px;height:12px;border-radius:9999px;background:#FFBD2E"></span><span style="width:12px;height:12px;border-radius:9999px;background:#27C93F"></span>
+          <span style="position:absolute;left:0;right:0;text-align:center;font-size:12px;color:#8E8E93;pointer-events:none">direction-direct-full.png</span><span style="margin-left:auto;position:relative;font-size:12px;font-weight:500;color:#494949;white-space:nowrap">Scroll inside ↕</span>
+        </div>
+        <div style="max-height:700px;overflow-y:scroll;scrollbar-width:thin;background:#fff">
+          <img src="/assets/mindset/direction-direct-full.png" width="851" height="2048" alt="Full-page desktop screenshot of the direct comparison direction, with a centered quote-entry module, how-it-works steps, trust content, FAQ, and methodology." style="width:100%;height:auto;display:block;object-fit:contain">
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:14px 0 0">
+        <button type="button" sc-camel-on-click="{{ openA }}" style="background:rgba(255,255,255,.7);color:#0071E3;border:1px solid rgba(0,0,0,.08);font-size:15px;font-weight:600;padding:11px 22px;min-height:44px;border-radius:9999px;cursor:pointer;transition:background 120ms ease-out,transform 120ms ease-out" style-hover="background:#F5F5F7" style-active="transform:scale(.97)">Expand full page</button>
+        <figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:0">Full-page desktop direction with a centered quote-entry module. Scroll inside the window or expand to inspect.</figcaption>
+      </div>
+    </figure>
+  </div>
+  <figure style="margin:clamp(40px,5vw,72px) auto 0;max-width:1400px">
+    <img src="/assets/mindset/mockup-direct-desk.jpg" width="1400" height="933" alt="Environmental presentation of the centered-form direction shown on a desktop monitor." style="width:100%;height:auto;display:block;object-fit:contain;border-radius:18px">
+    <figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:14px auto 0;max-width:1160px">Direction A presented in an environmental mockup.</figcaption>
+  </figure>
+</section>
+
+<section data-reveal="" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:clamp(32px,4vw,52px);justify-items:center">
+    <div style="width:100%;max-width:840px">
+      <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">08 · Direction B</p>
+      <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">Guided confidence: explain the journey before asking for commitment</h2>
+      <p style="font-size:17px;line-height:1.6;color:#494949;margin:0 0 24px">This direction supports visitors who want to understand the process. A split hero introduces the task, a three-step explanation makes the journey concrete, and methodology content reinforces why the comparison source can be trusted. Repeated CTAs appear after meaningful moments of explanation.</p>
+      <h3 style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 12px">What this direction tests</h3>
+      <ul style="margin:0 0 24px;padding:0 0 0 22px;list-style:disc;display:grid;gap:10px">
+        <li style="font-size:15px;line-height:1.6;color:#494949">Whether process clarity improves form starts.</li>
+        <li style="font-size:15px;line-height:1.6;color:#494949">Whether education supports completion instead of distracting from it.</li>
+        <li style="font-size:15px;line-height:1.6;color:#494949">Whether repeated CTAs work better when they follow relevant context.</li>
+      </ul>
+      <p style="font-size:15px;line-height:1.6;color:#494949;margin:0;padding:18px 22px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px"><strong style="color:#1D1D1F;font-weight:600">Trade-off.</strong> The added explanation may build confidence, but it also increases page length and creates more opportunities to postpone action.</p>
+    </div>
+    <figure style="margin:0 auto;max-width:835px;width:100%">
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)">
+        <div style="height:40px;background:rgba(246,246,246,.92);display:flex;align-items:center;gap:8px;padding:0 14px;position:relative">
+          <span style="width:12px;height:12px;border-radius:9999px;background:#FF5F56"></span><span style="width:12px;height:12px;border-radius:9999px;background:#FFBD2E"></span><span style="width:12px;height:12px;border-radius:9999px;background:#27C93F"></span>
+          <span style="position:absolute;left:0;right:0;text-align:center;font-size:12px;color:#8E8E93;pointer-events:none">direction-guided-full.png</span><span style="margin-left:auto;position:relative;font-size:12px;font-weight:500;color:#494949;white-space:nowrap">Scroll inside ↕</span>
+        </div>
+        <div style="max-height:700px;overflow-y:scroll;scrollbar-width:thin;background:#fff">
+          <img src="/assets/mindset/direction-guided-full.png" width="835" height="2048" alt="Full-page desktop screenshot of the guided direction, with a split hero, numbered process steps, trust content, FAQ, and methodology." style="width:100%;height:auto;display:block;object-fit:contain">
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:14px 0 0">
+        <button type="button" sc-camel-on-click="{{ openB }}" style="background:rgba(255,255,255,.7);color:#0071E3;border:1px solid rgba(0,0,0,.08);font-size:15px;font-weight:600;padding:11px 22px;min-height:44px;border-radius:9999px;cursor:pointer;transition:background 120ms ease-out,transform 120ms ease-out" style-hover="background:#fff" style-active="transform:scale(.97)">Expand full page</button>
+        <figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:0">Full-page desktop direction with split hero, process steps, trust, and methodology.</figcaption>
+      </div>
+    </figure>
+  </div>
+  <figure style="margin:clamp(40px,5vw,72px) auto 0;max-width:1400px">
+    <img src="/assets/mindset/hero-responsive-devices.jpg" width="1400" height="933" alt="Responsive composition of the guided direction across laptop, tablet, and phone." style="width:100%;height:auto;display:block;object-fit:contain;border-radius:18px">
+    <figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:14px auto 0;max-width:1160px">The guided direction across laptop, tablet, and phone.</figcaption>
+  </figure>
+</section>
+
+<section data-reveal="" style="padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:clamp(32px,4vw,52px);justify-items:center">
+    <div style="width:100%;max-width:840px">
+      <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">09 · Direction C</p>
+      <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">Protection and value: connect comparison with reassurance</h2>
+      <p style="font-size:17px;line-height:1.6;color:#494949;margin:0 0 24px">This direction emphasizes the emotional and practical reason to compare: feeling protected while finding coverage that fits. Safety imagery, affordability language, brand context, and methodology content work together to make the value exchange feel more concrete.</p>
+      <h3 style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 12px">What this direction tests</h3>
+      <ul style="margin:0 0 24px;padding:0 0 0 22px;list-style:disc;display:grid;gap:10px">
+        <li style="font-size:15px;line-height:1.6;color:#494949">Whether protection-focused imagery increases confidence.</li>
+        <li style="font-size:15px;line-height:1.6;color:#494949">Whether value language makes the comparison task feel more relevant.</li>
+        <li style="font-size:15px;line-height:1.6;color:#494949">Whether trust evidence placed throughout the page supports progression.</li>
+      </ul>
+      <p style="font-size:15px;line-height:1.6;color:#494949;margin:0;padding:18px 22px;background:#F5F5F7;border-radius:18px"><strong style="color:#1D1D1F;font-weight:600">Trade-off.</strong> More reassurance can strengthen credibility, but too many trust cues may add density or make visitors wonder why so much reassurance is necessary.</p>
+    </div>
+    <figure style="margin:0 auto;max-width:782px;width:100%">
+      <div style="border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)">
+        <div style="height:40px;background:rgba(246,246,246,.92);display:flex;align-items:center;gap:8px;padding:0 14px;position:relative">
+          <span style="width:12px;height:12px;border-radius:9999px;background:#FF5F56"></span><span style="width:12px;height:12px;border-radius:9999px;background:#FFBD2E"></span><span style="width:12px;height:12px;border-radius:9999px;background:#27C93F"></span>
+          <span style="position:absolute;left:0;right:0;text-align:center;font-size:12px;color:#8E8E93;pointer-events:none">direction-protection-full.png</span><span style="margin-left:auto;position:relative;font-size:12px;font-weight:500;color:#494949;white-space:nowrap">Scroll inside ↕</span>
+        </div>
+        <div style="max-height:700px;overflow-y:scroll;scrollbar-width:thin;background:#fff">
+          <img src="/assets/mindset/direction-protection-full.png" width="782" height="2048" alt="Full-page desktop screenshot of the protection and value direction, emphasizing coverage imagery, affordability language, trust content, FAQ, and methodology." style="width:100%;height:auto;display:block;object-fit:contain">
+        </div>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin:14px 0 0">
+        <button type="button" sc-camel-on-click="{{ openC }}" style="background:rgba(255,255,255,.7);color:#0071E3;border:1px solid rgba(0,0,0,.08);font-size:15px;font-weight:600;padding:11px 22px;min-height:44px;border-radius:9999px;cursor:pointer;transition:background 120ms ease-out,transform 120ms ease-out" style-hover="background:#F5F5F7" style-active="transform:scale(.97)">Expand full page</button>
+        <figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:0">Full-page desktop direction emphasizing protection, value, and reassurance.</figcaption>
+      </div>
+    </figure>
+  </div>
+  <figure style="margin:clamp(40px,5vw,72px) auto 0;max-width:1400px">
+    <img src="/assets/mindset/mockup-protection-desk.jpg" width="1400" height="933" alt="Environmental presentation of the protection and value direction on a desktop display." style="width:100%;height:auto;display:block;object-fit:contain;border-radius:18px">
+    <figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:14px auto 0;max-width:1160px">Direction C presented in an environmental mockup.</figcaption>
+  </figure>
+</section>
+
+<section data-reveal="" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">10 · Responsive thinking</p>
+    <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">Mobile required a new reading order, not a smaller layout</h2>
+    <p style="font-size:17px;line-height:1.6;color:#494949;max-width:720px;margin:0 0 clamp(32px,4vw,48px)">On desktop, the page can use side-by-side explanation, large illustration, and visual comparison. On mobile, the sequence must protect the core task, move reassurance closer to the decision it supports, and avoid making people scroll through decoration before reaching an action.</p>
+    <figure style="margin:0 0 clamp(32px,4vw,48px)">
+      <img src="/assets/mindset/mockup-responsive-set.jpg" width="1400" height="933" alt="Large responsive-device presentation showing the landing page on laptop, tablet, and phone." style="width:100%;height:auto;display:block;object-fit:contain;border-radius:18px">
+      <figcaption style="font-size:13px;line-height:1.45;color:#6E6E73;margin:14px 0 0">The same conversion path re-sequenced for each screen size.</figcaption>
+    </figure>
+    <ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <li style="font-size:15px;line-height:1.6;color:#494949;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:18px 20px">Keep the ZIP field and primary CTA in the first meaningful viewport.</li>
+      <li style="font-size:15px;line-height:1.6;color:#494949;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:18px 20px">Stack hero content in the order needed for comprehension.</li>
+      <li style="font-size:15px;line-height:1.6;color:#494949;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:18px 20px">Reduce decorative image area without hiding essential evidence.</li>
+      <li style="font-size:15px;line-height:1.6;color:#494949;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:18px 20px">Keep buttons at least 44px high.</li>
+      <li style="font-size:15px;line-height:1.6;color:#494949;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:18px 20px">Use progressive disclosure for FAQ and methodology details.</li>
+      <li style="font-size:15px;line-height:1.6;color:#494949;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:18px 20px">Repeat CTAs only after a meaningful block of content.</li>
+      <li style="font-size:15px;line-height:1.6;color:#494949;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:18px 20px">Preserve consistent labels and action language.</li>
+      <li style="font-size:15px;line-height:1.6;color:#494949;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:18px 20px">Prevent long headings and provider marks from becoming unreadable.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="testplan" data-reveal="" style="background:#14161D;color:#F5F5F7;padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF;margin:0 0 14px">11 · Experiment plan</p>
+    <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;color:#F5F5F7;text-wrap:pretty">Design the comparison so the result teaches us something</h2>
+    <p style="font-size:17px;line-height:1.6;color:rgba(245,245,247,.6);max-width:720px;margin:0 0 clamp(32px,4vw,48px)">Testing three pages with too many unrelated changes can produce a winner without explaining why. I would sequence the work so the team first learns which message and hierarchy matter, then isolates the components responsible for the change.</p>
+    <ol style="list-style:none;margin:0 0 clamp(32px,4vw,48px);padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+      <li style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:28px"><p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF;margin:0 0 12px">Phase 1</p><h3 style="font-size:18px;font-weight:600;margin:0 0 10px;color:#F5F5F7">Message and hierarchy test</h3><p style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6);margin:0">Compare the three coherent directions to identify which motivation produces the strongest quality signal.</p></li>
+      <li style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:28px"><p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF;margin:0 0 12px">Phase 2</p><h3 style="font-size:18px;font-weight:600;margin:0 0 10px;color:#F5F5F7">Component isolation</h3><p style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6);margin:0">Test the most influential elements separately: CTA framing, process explanation, trust placement, hero imagery, or form prominence.</p></li>
+      <li style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:28px"><p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF;margin:0 0 12px">Phase 3</p><h3 style="font-size:18px;font-weight:600;margin:0 0 10px;color:#F5F5F7">Segment and context review</h3><p style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6);margin:0">Examine whether performance differs by device, acquisition source, returning versus new visitor, or other available non-sensitive context.</p></li>
+    </ol>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin:0 0 clamp(32px,4vw,48px)">
+      <div><h3 style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,245,247,.6);margin:0 0 14px">Primary metric</h3><p style="font-size:17px;line-height:1.6;color:#F5F5F7;margin:0">Qualified quote-flow starts, defined consistently across variants.</p></div>
+      <div><h3 style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,245,247,.6);margin:0 0 14px">Secondary metrics</h3><ul style="margin:0;padding:0 0 0 20px;list-style:disc;display:grid;gap:8px"><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">CTA interaction rate.</li><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">ZIP-field completion.</li><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">Progression into the quote flow.</li><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">Downstream completion where measurement is available.</li></ul></div>
+      <div><h3 style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,245,247,.6);margin:0 0 14px">Guardrails</h3><ul style="margin:0;padding:0 0 0 20px;list-style:disc;display:grid;gap:8px"><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">Error rate.</li><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">Form abandonment.</li><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">Performance and load time.</li><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">Mobile usability.</li><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">Accessibility issues.</li><li style="font-size:15px;line-height:1.6;color:rgba(245,245,247,.6)">Misleading or overly promotional interpretation.</li></ul></div>
+    </div>
+    <p style="font-size:15px;line-height:1.6;color:#F5F5F7;margin:0;padding:22px 24px;background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;max-width:900px">No winning variant or measured conversion lift was supplied for this case study. This section documents how I would structure the experiment and interpret its evidence responsibly.</p>
+  </div>
+</section>
+
+<section data-reveal="" style="padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">12 · How I would read the result</p>
+    <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 clamp(32px,4vw,48px);text-wrap:pretty">A higher click rate would not be the only signal</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="font-size:17px;font-weight:600;margin:0 0 10px">More starts, stable completion</h3><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">A promising direction worth isolating and validating.</p></div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="font-size:17px;font-weight:600;margin:0 0 10px">More starts, lower completion</h3><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">The page may be creating curiosity without setting accurate expectations.</p></div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="font-size:17px;font-weight:600;margin:0 0 10px">Fewer starts, stronger completion</h3><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">The page may be filtering for higher intent; evaluate business value and traffic context.</p></div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="font-size:17px;font-weight:600;margin:0 0 10px">No clear difference</h3><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Simplify the hypothesis, improve measurement, or test one high-impact component at a time.</p></div>
+    </div>
+  </div>
+</section>
+
+<section data-reveal="" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">13 · Craft and trade-offs</p>
+    <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 clamp(28px,3.5vw,40px);text-wrap:pretty">What I would refine before the next round</h2>
+    <ul style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px 32px;max-width:1000px">
+      <li style="font-size:16px;line-height:1.6;color:#494949;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08)">Reduce variation in CTA wording so message effects are easier to isolate.</li>
+      <li style="font-size:16px;line-height:1.6;color:#494949;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08)">Standardize repeated trust modules across directions.</li>
+      <li style="font-size:16px;line-height:1.6;color:#494949;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08)">Review whether some illustrations clarify the process or merely decorate it.</li>
+      <li style="font-size:16px;line-height:1.6;color:#494949;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08)">Audit contrast and type size inside source designs, especially on mobile.</li>
+      <li style="font-size:16px;line-height:1.6;color:#494949;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08)">Simplify long mobile pages through progressive disclosure.</li>
+      <li style="font-size:16px;line-height:1.6;color:#494949;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08)">Confirm that provider marks remain legible without dominating the task.</li>
+      <li style="font-size:16px;line-height:1.6;color:#494949;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08)">Separate personalization hypotheses from purely aesthetic differences.</li>
+      <li style="font-size:16px;line-height:1.6;color:#494949;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08)">Validate that affordability language does not imply guaranteed savings.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="reflection" data-reveal="" style="padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">14 · Reflection</p>
+    <h2 style="font-weight:700;font-size:clamp(28px,3.4vw,44px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">The strongest outcome was a clearer question to test</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:stretch;margin:0 0 clamp(28px,3.5vw,40px)">
+      <div style="background:#F5F5F7;border-radius:18px;padding:26px">
+        <p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 12px">The question before</p>
+        <p style="font-size:clamp(19px,2vw,24px);line-height:1.3;font-weight:600;color:#6E6E73;margin:0;text-wrap:pretty">“Which landing page looks best?”</p>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+        <p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 12px">The question after</p>
+        <p style="font-size:clamp(19px,2vw,24px);line-height:1.3;font-weight:600;color:#1D1D1F;margin:0;text-wrap:pretty">“Which type of reassurance helps the right visitor move forward?”</p>
+      </div>
+    </div>
+    <p style="font-size:17px;line-height:1.6;color:#494949;max-width:720px;margin:0 0 clamp(36px,4.5vw,56px)">That shift made the design work more useful. It connected visual decisions to audience motivation, made trade-offs explicit, and created a path for learning instead of relying on preference.</p>
+    <h3 style="font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 4px">What I took from it</h3>
+    <ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:0 clamp(28px,4vw,56px)">
+      <li style="display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:22px 0;border-top:1px solid rgba(0,0,0,.08)"><span style="font-weight:700;font-size:15px;color:#0071E3;font-variant-numeric:tabular-nums;padding-top:2px">01</span><div><h4 style="font-size:17px;font-weight:600;margin:0 0 6px;color:#1D1D1F">Personalization begins with a meaningful hypothesis.</h4><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">A different illustration is not personalization unless it supports a distinct user need.</p></div></li>
+      <li style="display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:22px 0;border-top:1px solid rgba(0,0,0,.08)"><span style="font-weight:700;font-size:15px;color:#0071E3;font-variant-numeric:tabular-nums;padding-top:2px">02</span><div><h4 style="font-size:17px;font-weight:600;margin:0 0 6px;color:#1D1D1F">A variant should be coherent.</h4><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Message, hierarchy, imagery, and CTA context should reinforce the same motivation.</p></div></li>
+      <li style="display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:22px 0;border-top:1px solid rgba(0,0,0,.08)"><span style="font-weight:700;font-size:15px;color:#0071E3;font-variant-numeric:tabular-nums;padding-top:2px">03</span><div><h4 style="font-size:17px;font-weight:600;margin:0 0 6px;color:#1D1D1F">Consistency makes comparison easier.</h4><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">Shared components reduce noise and make the important differences more visible.</p></div></li>
+      <li style="display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:22px 0;border-top:1px solid rgba(0,0,0,.08)"><span style="font-weight:700;font-size:15px;color:#0071E3;font-variant-numeric:tabular-nums;padding-top:2px">04</span><div><h4 style="font-size:17px;font-weight:600;margin:0 0 6px;color:#1D1D1F">Conversion quality matters.</h4><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">More clicks do not help if people enter the flow with the wrong expectation.</p></div></li>
+      <li style="display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:22px 0;border-top:1px solid rgba(0,0,0,.08)"><span style="font-weight:700;font-size:15px;color:#0071E3;font-variant-numeric:tabular-nums;padding-top:2px">05</span><div><h4 style="font-size:17px;font-weight:600;margin:0 0 6px;color:#1D1D1F">Absence of a defined audience is itself a design finding.</h4><p style="font-size:15px;line-height:1.6;color:#494949;margin:0">It should be turned into a research and experimentation plan, not hidden behind visual polish.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section data-reveal="" style="background:#F5F5F7;color:#1D1D1F;padding:clamp(56px,7vw,104px) clamp(20px,5vw,48px) clamp(64px,7vw,104px)">
+  <div style="max-width:1160px;margin:0 auto">
+    <p style="font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0071E3;margin:0 0 14px">15 · The takeaway</p>
+    <h2 style="font-weight:700;font-size:clamp(30px,3.8vw,50px);line-height:1.08;letter-spacing:-.02em;margin:0 0 22px;max-width:24ch;color:#1D1D1F;text-wrap:pretty">I designed three directions to answer one strategic question</h2>
+    <p style="font-size:19px;line-height:1.55;color:#494949;max-width:720px;margin:0 0 clamp(40px,5vw,64px)">By connecting audience motivations to message hierarchy, visual emphasis, responsive behavior, and measurement, I turned an unclear landing-page audience into a structured experiment the team could learn from.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;padding:0 0 clamp(32px,4vw,48px);border-bottom:1px solid rgba(0,0,0,.08)">
+      <div><p style="font-weight:700;font-size:clamp(40px,4.4vw,56px);line-height:1;letter-spacing:-.02em;margin:0 0 10px;color:#1D1D1F">3</p><p style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,245,247,.6);margin:0">Mindset hypotheses</p></div>
+      <div><p style="font-weight:700;font-size:clamp(40px,4.4vw,56px);line-height:1;letter-spacing:-.02em;margin:0 0 10px;color:#1D1D1F">1</p><p style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:rgba(245,245,247,.6);margin:0">Shared conversion task</p></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;padding:clamp(32px,4vw,48px) 0 0;align-items:start">
+      <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 8px">Role</p><p style="font-size:17px;line-height:1.5;color:#1D1D1F;margin:0">UX/UI Designer and Experimentation Lead</p></div>
+      <div><p style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 8px">Focus</p><p style="font-size:17px;line-height:1.5;color:#1D1D1F;margin:0">Audience hypotheses · Conversion design · Responsive systems · A/B-test planning</p></div>
+      <div style="justify-self:start"><a href="#top" style="display:inline-block;background:#0071E3;color:#fff;font-size:16px;font-weight:600;padding:13px 28px;border-radius:9999px;text-decoration:none;transition:background 120ms ease-out,transform 120ms ease-out" style-hover="background:#0077ED;text-decoration:none" style-active="transform:scale(.97)">Return to the beginning</a></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+<div role="dialog" aria-modal="true" aria-label="{{ lbLabel }}" ref="{{ lbRoot }}" sc-camel-on-key-down="{{ onLbKey }}" style="position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);overflow-y:auto;padding:76px 16px 40px">
+  <div style="position:fixed;top:16px;right:16px;z-index:2"><button type="button" ref="{{ lbClose }}" sc-camel-on-click="{{ closeLb }}" style="background:rgba(255,255,255,.9);color:#1D1D1F;border:none;font-size:15px;font-weight:600;padding:12px 22px;min-height:44px;border-radius:9999px;cursor:pointer;transition:background 120ms ease-out,transform 120ms ease-out" style-hover="background:#fff" style-active="transform:scale(.97)">Close</button></div>
+  <figure style="margin:0 auto;max-width:{{ lbWidth }}">
+    {{ lbImage }}
+    <figcaption style="font-size:13px;line-height:1.45;color:rgba(245,245,247,.8);margin:14px 0 0;text-align:center">{{ lbCaption }}</figcaption>
+  </figure>
+</div>
+</sc-if>
+
+<nav aria-label="Continue exploring" style="border-top:1px solid rgba(0,0,0,.08);padding:36px 0">
+  <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Continue exploring</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+      <a href="/work/arena-rebrand-cms" style="text-decoration:none;background:#F5F5F7;border-radius:18px;padding:22px 24px;display:block" style-hover="background:#EEF2F7">
+        <span style="display:block;font-size:13px;color:#6E6E73">Previous</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Arena Rebrand &amp; CMS</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#494949">Brand transition, content architecture, and CMS scalability</span>
+      </a>
+      <a href="/work/monthly-testing-review" style="text-decoration:none;background:#F5F5F7;border-radius:18px;padding:22px 24px;display:block" style-hover="background:#EEF2F7">
+        <span style="display:block;font-size:13px;color:#6E6E73">Next</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Monthly Testing Review</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#494949">Experiment operations, synthesis, and a reusable testing cadence</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<footer style="background:#F5F5F7;border-top:1px solid rgba(0,0,0,.08);padding:28px 0 40px">
+  <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:baseline;justify-content:space-between">
+    <div>
+      <p style="margin:0;font-size:15px;font-weight:700;color:#1D1D1F">Miguel Clavel</p>
+      <p style="margin:4px 0 0;font-size:13px;color:#6E6E73">Senior Product Designer &#183; UX strategy, design systems &amp; AI-enabled workflows</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;font-weight:600">
+      <a href="mailto:2miguelclavel@gmail.com?subject=Portfolio%20conversation">2miguelclavel@gmail.com</a>
+      <a href="/assets/Miguel-Clavel-Senior-Product-Designer-Resume-2026.pdf" download="Miguel-Clavel-Senior-Product-Designer-Resume.pdf">Résumé</a>
+      <a href="https://www.linkedin.com/in/miguelclavel/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.behance.net/miguelclavel" target="_blank" rel="noopener noreferrer">Behance</a>
+      <a href="/" style="color:#494949">&#8592; Back to work</a>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CreativeWork","name":"Designing for different reasons to compare","description":"A mindset-based landing page strategy: audience mindsets, three testable creative directions, responsive systems, and a structured experimentation plan.","genre":"Case study","inLanguage":"en","creator":{"@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","url":"https://www.linkedin.com/in/miguelclavel/"},"author":{"@type":"Person","name":"Miguel Clavel"},"keywords":"conversion strategy, audience mindsets, creative directions, responsive systems, product experimentation"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","sameAs":["https://www.linkedin.com/in/miguelclavel/","https://www.behance.net/miguelclavel"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Résumé","item":"https://miguelclavel-portfolio-v2.netlify.app/resume"},{"@type":"ListItem","position":2,"name":"Work","item":"https://miguelclavel-portfolio-v2.netlify.app/work"},{"@type":"ListItem","position":3,"name":"Mindset-Based Landing Page Strategy","item":"https://miguelclavel-portfolio-v2.netlify.app/work/mindset-landing-page-strategy"}]}
+</script>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+const TAB_BASE = "font-size:15px;font-weight:600;padding:12px 22px;min-height:44px;border-radius:9999px;cursor:pointer;transition:background 120ms ease-out,color 120ms ease-out,transform 120ms ease-out";
+
+const SHOTS = {
+  A: { src: "/assets/mindset/direction-direct-full.png", w: "851px",
+       alt: "Full-page desktop screenshot of the direct comparison direction, with a centered quote-entry module.",
+       caption: "direction-direct-full.png: full-page desktop direction with a centered quote-entry module.",
+       label: "Direction A full-page screenshot" },
+  B: { src: "/assets/mindset/direction-guided-full.png", w: "835px",
+       alt: "Full-page desktop screenshot of the guided direction, with a split hero and numbered process steps.",
+       caption: "direction-guided-full.png: full-page desktop direction with split hero, process steps, trust, and methodology.",
+       label: "Direction B full-page screenshot" },
+  C: { src: "/assets/mindset/direction-protection-full.png", w: "782px",
+       alt: "Full-page desktop screenshot of the protection and value direction.",
+       caption: "direction-protection-full.png: full-page desktop direction emphasizing protection, value, and reassurance.",
+       label: "Direction C full-page screenshot" }
+};
+
+class Component extends DCLogic {
+  state = { tab: "A", lb: null };
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const y = window.scrollY || doc.scrollTop;
+      if (this.progressBar) this.progressBar.style.width = (max > 0 ? (y / max) * 100 : 0) + "%";
+      if (this.navBar) {
+        const on = y > 12;
+        this.navBar.style.background = on ? "rgba(255,255,255,.72)" : "transparent";
+        this.navBar.style.backdropFilter = on ? "saturate(180%) blur(20px)" : "none";
+        this.navBar.style.webkitBackdropFilter = on ? "saturate(180%) blur(20px)" : "none";
+        this.navBar.style.boxShadow = on ? "0 1px 0 rgba(0,0,0,.08)" : "none";
+      }
+    };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.onScroll();
+
+    const reduced = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+    const reveals = document.querySelectorAll("[data-reveal]");
+    if (!reduced && "IntersectionObserver" in window) {
+      reveals.forEach(el => {
+        el.style.opacity = "0";
+        el.style.transform = "translateY(16px)";
+        el.style.transition = "opacity 200ms ease-out, transform 200ms ease-out";
+      });
+      this.revealObs = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = "1";
+            e.target.style.transform = "none";
+            obs.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+      reveals.forEach(el => this.revealObs.observe(el));
+    }
+
+    const links = Array.from(document.querySelectorAll("[data-nav]"));
+    const setActive = id => links.forEach(l => {
+      const on = l.getAttribute("data-nav") === id;
+      l.style.color = on ? "#0071E3" : "#494949";
+      l.style.background = on ? "rgba(0,113,227,.08)" : "transparent";
+    });
+    const targets = links.map(l => document.getElementById(l.getAttribute("data-nav"))).filter(Boolean);
+    if ("IntersectionObserver" in window && targets.length) {
+      this.navObs = new IntersectionObserver(entries => {
+        const vis = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (vis.length) setActive(vis[0].target.id);
+      }, { rootMargin: "-56px 0px -60% 0px", threshold: 0 });
+      targets.forEach(t => this.navObs.observe(t));
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.onScroll);
+    if (this.revealObs) this.revealObs.disconnect();
+    if (this.navObs) this.navObs.disconnect();
+  }
+
+  componentDidUpdate(_p, prev) {
+    if (this.state.lb && !prev.lb && this.lbClose) this.lbClose.focus();
+    if (!this.state.lb && prev.lb && this.returnFocus) { this.returnFocus.focus(); this.returnFocus = null; }
+  }
+
+  open(key, ev) {
+    this.returnFocus = ev && ev.currentTarget;
+    this.setState({ lb: key });
+  }
+
+  renderVals() {
+    const t = this.state.tab;
+    const tabStyle = k => TAB_BASE + (t === k
+      ? ";background:#0071E3;color:#fff;border:1px solid #0071E3"
+      : ";background:rgba(255,255,255,.7);color:#0071E3;border:1px solid rgba(0,0,0,.08)");
+    const shot = this.state.lb ? SHOTS[this.state.lb] : null;
+    return {
+      share: async () => {
+        const url = window.location.href;
+        const st = document.getElementById('shr-status');
+        const say = (t2) => { if (st) st.textContent = t2; };
+        try {
+          if (navigator.share) { await navigator.share({ title: 'Designing for different reasons to compare', url: url }); say('Shared.'); return; }
+          await navigator.clipboard.writeText(url);
+          say('Link copied.');
+        } catch (e) { say('Copy the address from your browser bar.'); }
+      },
+      isA: t === "A", isB: t === "B", isC: t === "C",
+      selA: t === "A", selB: t === "B", selC: t === "C",
+      tabAStyle: tabStyle("A"), tabBStyle: tabStyle("B"), tabCStyle: tabStyle("C"),
+      pickA: () => this.setState({ tab: "A" }),
+      pickB: () => this.setState({ tab: "B" }),
+      pickC: () => this.setState({ tab: "C" }),
+      openA: e => this.open("A", e),
+      openB: e => this.open("B", e),
+      openC: e => this.open("C", e),
+      closeLb: () => this.setState({ lb: null }),
+      onLbKey: e => {
+        if (e.key === "Escape") { e.stopPropagation(); this.setState({ lb: null }); }
+        if (e.key === "Tab") { e.preventDefault(); if (this.lbClose) this.lbClose.focus(); }
+      },
+      lbOpen: !!shot,
+      lbImage: shot ? React.createElement("img", { src: shot.src, alt: shot.alt, style: { width: "100%", height: "auto", display: "block", objectFit: "contain", borderRadius: 12, background: "#fff" } }) : null,
+      lbAlt: shot ? shot.alt : "",
+      lbCaption: shot ? shot.caption : "",
+      lbLabel: shot ? shot.label : "",
+      lbWidth: shot ? shot.w : "0px",
+      lbRoot: el => { this.lbRoot = el; },
+      lbClose: el => { this.lbClose = el; },
+      navBar: el => { this.navBar = el; },
+      progressBar: el => { this.progressBar = el; }
+    };
+  }
+}
+</script>
+
+
+</body></html>

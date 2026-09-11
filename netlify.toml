@@ -1,0 +1,12 @@
+# Netlify configuration. Deploy THIS folder as the site root.
+# No build step: the site is static files.
+#
+# Response headers — including the Content-Security-Policy — are defined ONLY
+# in `_headers`, so there is exactly one policy and nothing can contradict it.
+# Do not add a [[headers]] block here.
+
+[build]
+  publish = "."
+
+[build.processing]
+  skip_processing = false

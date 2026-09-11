@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Medical Training Membership Journey Case Study | Miguel Clavel</title>
+<meta name="description" content="Turning a training catalog into a clear membership journey: membership decision UX, medical-content collaboration, training materials, email marketing, and responsible conversion strategy.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://miguelclavel-portfolio-v2.netlify.app/work/medical-training-membership-journey">
+<meta property="og:url" content="https://miguelclavel-portfolio-v2.netlify.app/work/medical-training-membership-journey">
+<meta property="og:type" content="article">
+<meta property="og:title" content="From Training Catalog to Clear Membership Journey">
+<meta property="og:description" content="Membership decision UX, medical-content collaboration, email marketing, and responsible conversion strategy.">
+<meta property="og:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/empire/empire-training-website-annotated-overview.jpg">
+<meta property="og:image:alt" content="Annotated full-page view of the medical training website, marking the membership decision points.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="From Training Catalog to Clear Membership Journey">
+<meta name="twitter:description" content="Membership decision UX, medical-content collaboration, email marketing, and responsible conversion strategy.">
+<meta name="twitter:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/empire/empire-training-website-annotated-overview.jpg">
+<script src="support.js"></script>
+
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* No webfonts. The system ships zero @font-face rules by design: the brand
+   uses the host platform UI face only (San Francisco on Apple platforms,
+   Segoe/Helvetica/Arial elsewhere). No Google Fonts, no serif accents. */
+:root{--font-system:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;--font-core:var(--font-system);--font-display:var(--font-system);--font-body:var(--font-system);--font-mono:ui-monospace,SFMono-Regular,'SF Mono',Menlo,monospace}
+
+:root{
+/* base neutrals */
+--white:#FFFFFF;--wash:#F5F5F7;--ink-1:#1D1D1F;--ink-2:#494949;--ink-3:#6E6E73;
+--dark:#14161D;--dark-alt:#0E1016;
+--hairline-soft:rgba(0,0,0,.06);--hairline:rgba(0,0,0,.08);
+--on-dark:#F5F5F7;--on-dark-muted:rgba(245,245,247,.6);--hairline-on-dark:rgba(255,255,255,.1);--fill-on-dark:rgba(255,255,255,.04);
+/* accent */
+--blue-600:#0071E3;--blue-550:#0077ED;--blue-500:#0A84FF;--indigo-500:#5E5CE6;
+/* semantic hues */
+--green-500:#30D158;--amber-500:#FFBD2E;--amber-550:#FEBC2E;--red-500:#FF3B30;
+/* macOS window chrome dots */
+--dot-red:#FF5F56;--dot-amber:#FFBD2E;--dot-green:#27C93F;
+/* the one permitted gradient: soft hero wash */
+--hero-wash:linear-gradient(90deg,#B1DCFB,#D6EEFD 30%,#EFF8FF 63%,#FFFDEB);/* @kind color */
+
+/* semantic aliases */
+--text-primary:var(--ink-1);--text-secondary:var(--ink-2);--text-tertiary:var(--ink-3);
+--text-inverse:var(--on-dark);--text-inverse-muted:var(--on-dark-muted);
+--text-link:var(--blue-600);--text-link-hover:var(--blue-550);
+--surface-page:var(--white);--surface-wash:var(--wash);--surface-card:var(--white);
+--surface-dark:var(--dark);--surface-card-on-dark:var(--fill-on-dark);
+--surface-glass:rgba(255,255,255,.72);--surface-overlay:rgba(255,255,255,.85);--surface-chip:rgba(255,255,255,.6);
+--surface-secondary-btn:rgba(255,255,255,.7);--surface-hover-subtle:rgba(0,0,0,.04);
+--border-hairline:var(--hairline);--border-hairline-soft:var(--hairline-soft);
+--accent:var(--blue-600);--accent-hover:var(--blue-550);--accent-indicator:var(--blue-500);
+--selection:var(--indigo-500);
+--status-positive:var(--green-500);--status-caution:var(--amber-500);--status-negative:var(--red-500);
+--focus-ring:rgba(10,132,255,.5)}
+
+:root{
+/* size ramp @kind spacing-exempt */
+--size-display:clamp(38px,5vw,64px);/* @kind font */
+--size-section:clamp(28px,3.4vw,44px);/* @kind font */
+--size-stat:clamp(36px,4vw,56px);/* @kind font */
+--size-title:24px;/* @kind font */
+--size-lede:19px;/* @kind font */
+--size-body:17px;/* @kind font */
+--size-body-sm:15px;/* @kind font */
+--size-caption:13px;/* @kind font */
+--size-eyebrow:12px;/* @kind font */
+/* weights — only three */
+--weight-regular:400;/* @kind font */
+--weight-medium:600;/* @kind font */
+--weight-bold:700;/* @kind font */
+/* line heights */
+--lh-display:1.05;/* @kind font */
+--lh-section:1.1;/* @kind font */
+--lh-title:1.25;/* @kind font */
+--lh-lede:1.55;/* @kind font */
+--lh-body:1.6;/* @kind font */
+--lh-caption:1.45;/* @kind font */
+/* tracking */
+--track-tight:-0.02em;/* @kind font */
+--track-normal:0;/* @kind font */
+--track-eyebrow:.12em;/* @kind font */
+/* measures */
+--measure-lede:720px;/* @kind spacing */
+--measure-body:680px/* @kind spacing */}
+
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-7:28px;
+--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-26:104px;
+--gap-grid:24px;--gap-grid-tight:20px;
+--section-y:clamp(56px,7vw,104px);/* @kind spacing */
+--gutter:clamp(20px,5vw,48px);/* @kind spacing */
+--content-max:1160px;/* @kind spacing */
+--nav-height:56px;/* @kind spacing */
+--scroll-offset:128px;/* @kind spacing */
+--tap-min:44px/* @kind spacing */}
+
+:root{--radius-tile:12px;--radius-media:16px;--radius-overlay:16px;--radius-card:18px;--radius-pill:9999px}
+
+:root{
+--shadow-card:0 1px 3px rgba(0,0,0,.04);
+--shadow-overlay:0 20px 60px rgba(0,0,0,.15);
+--shadow-window:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06);
+--ring-on-dark:0 0 0 1px rgba(255,255,255,.1);
+--blur-nav:saturate(180%) blur(20px);/* @kind other */
+--blur-overlay:saturate(180%) blur(20px);/* @kind other */
+--blur-chip:blur(10px)/* @kind other */}
+
+:root{--ease:ease-out;/* @kind other */--dur-fast:120ms;/* @kind other */--dur:160ms;/* @kind other */--dur-slow:200ms;/* @kind other */
+--transition-color:color var(--dur) var(--ease),background-color var(--dur) var(--ease),border-color var(--dur) var(--ease);
+--press-scale:.97;/* @kind other */--reveal-shift:16px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;font-family:var(--font-system);font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary);background:var(--surface-page)}
+section{scroll-margin-top:var(--scroll-offset)}
+h1,h2,h3,h4{color:var(--text-primary);font-weight:var(--weight-bold);letter-spacing:var(--track-tight);margin:0}
+p{margin:0;text-wrap:pretty}
+a{color:var(--text-link);text-decoration:none;transition:var(--transition-color)}
+a:hover{color:var(--text-link-hover)}
+::selection{background:var(--selection);color:#fff}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:2px}
+
+
+@media (max-width:760px){.shr-hide{display:none!important}}
+</style>
+<script src="/assets/design-system/_ds_bundle.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FCFBF8;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.chk{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.devrow{display:grid;grid-template-columns:1.6fr 1fr .6fr;gap:20px;align-items:end}
+.rail{display:grid;grid-template-columns:278px 1fr;gap:clamp(28px,5vw,64px);align-items:start}
+.railmedia{position:sticky;top:80px}
+@media(max-width:980px){.rail{grid-template-columns:1fr}.railmedia{position:static}}
+@media(prefers-reduced-motion:reduce){.railmedia{position:static}}
+a{color:#117C7A}a:hover{color:#0D223B}
+*:focus-visible{outline:3px solid rgba(17,124,122,.5);outline-offset:2px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:start}
+@media(max-width:980px){.g3,.g4{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}.flow{grid-template-columns:repeat(3,1fr)}.chk{grid-template-columns:repeat(2,1fr)}.devrow{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.g2,.g3,.g4,.flow,.chk,.devrow{grid-template-columns:1fr}}
+.navlinks a{white-space:nowrap}
+@media(max-width:1040px){.navlinks{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+<div style="font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;color:#4E5968;background:#FCFBF8;font-size:16px;line-height:1.65">
+
+<a href="#hero" style="position:absolute;left:-9999px;top:0;z-index:1000;background:#0071E3;color:#fff;font-size:14px;font-weight:600;padding:12px 20px;border-radius:9999px;text-decoration:none" style-focus="left:12px;top:12px">Skip to case study</a>
+<div style="position:fixed;top:0;left:0;right:0;z-index:90;height:52px;display:flex;align-items:center;gap:12px;padding:0 clamp(20px,5vw,52px);background:rgba(252,251,248,.94);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(20,34,52,.10)">
+  <a href="/" style="font-size:14px;font-weight:700;letter-spacing:-.02em;color:#142234;text-decoration:none;white-space:nowrap">Miguel Clavel</a>
+  <span class="shr-hide" aria-hidden="true" style="color:rgba(20,34,52,.25)">/</span>
+  <span class="shr-hide" style="font-size:13px;color:#727B87;white-space:nowrap">Senior Product Designer</span>
+  <span id="shr-status" aria-live="polite" class="shr-hide" style="font-size:13px;color:#727B87"></span>
+  <nav aria-label="Portfolio" style="margin-left:auto;display:flex;align-items:center;gap:2px">
+    <a href="/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#4E5968;text-decoration:none;white-space:nowrap" style-hover="background:rgba(20,34,52,.05);color:#142234">&#8592; Back to work</a>
+    <a href="mailto:2miguelclavel@gmail.com?subject=Medical%20training%20membership%20journey" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#4E5968;text-decoration:none;white-space:nowrap" style-hover="background:rgba(20,34,52,.05);color:#142234">Email</a>
+    <button type="button" onClick="{{ shareProject }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:0;background:none;border-radius:9999px;font:inherit;font-size:13px;font-weight:600;color:#4E5968;cursor:pointer;white-space:nowrap" style-hover="background:rgba(20,34,52,.05);color:#142234">Share</button>
+  </nav>
+</div>
+
+<header style="position:fixed;top:52px;left:0;right:0;z-index:80;background:rgba(252,251,248,.78);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(20,34,52,.10)">
+<nav aria-label="Case study sections" style="height:56px;max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px);display:flex;align-items:center;gap:20px">
+<span style="font-size:15px;font-weight:600;letter-spacing:-.02em;color:#142234;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Membership journey case study</span>
+<div class="navlinks" style="display:flex;align-items:center;gap:2px;margin-left:auto">
+<a data-nav="problem" href="#problem" style="font-size:13px;font-weight:600;color:#4E5968;padding:10px 12px;border-radius:9999px;text-decoration:none;min-height:44px;display:flex;align-items:center">Problem</a>
+<a data-nav="membership" href="#membership" style="font-size:13px;font-weight:600;color:#4E5968;padding:10px 12px;border-radius:9999px;text-decoration:none;min-height:44px;display:flex;align-items:center">Membership</a>
+<a data-nav="evidence" href="#evidence" style="font-size:13px;font-weight:600;color:#4E5968;padding:10px 12px;border-radius:9999px;text-decoration:none;min-height:44px;display:flex;align-items:center">Walkthrough</a>
+<a data-nav="system" href="#system" style="font-size:13px;font-weight:600;color:#4E5968;padding:10px 12px;border-radius:9999px;text-decoration:none;min-height:44px;display:flex;align-items:center">Content system</a>
+<a data-nav="collaboration" href="#collaboration" style="font-size:13px;font-weight:600;color:#4E5968;padding:10px 12px;border-radius:9999px;text-decoration:none;min-height:44px;display:flex;align-items:center">Review</a>
+<a data-nav="measurement" href="#measurement" style="font-size:13px;font-weight:600;color:#4E5968;padding:10px 12px;border-radius:9999px;text-decoration:none;min-height:44px;display:flex;align-items:center">Measurement</a>
+</div>
+</nav>
+<div role="presentation" style="height:2px;background:rgba(20,34,52,.06)"><div style="height:2px;background:#117C7A;width:{{ progress }};transition:width .12s linear"></div></div>
+</header>
+
+<main style="padding-top:58px">
+
+<section id="hero" style="background:linear-gradient(180deg,#EAF5F3,#FCFBF8);padding:clamp(64px,8vw,112px) 0 clamp(48px,6vw,88px)">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div class="split">
+<div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Case study · Medical aesthetics training</div>
+<h1 style="margin:20px 0 0;font-size:clamp(42px,6vw,76px);font-weight:700;line-height:1.02;letter-spacing:-.035em;color:#142234;text-wrap:pretty">From Training Catalog to Clear Membership Journey</h1>
+<p style="margin:24px 0 0;max-width:760px;font-size:19px;line-height:1.55;color:#4E5968">I helped turn a wide medical aesthetics training offer into a clearer path from course interest to membership. The work connected landing pages, membership choices, classroom materials, email, and recorded content into one consistent experience.</p>
+<dl style="margin:36px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 28px">
+<div><dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Role</dt><dd style="margin:6px 0 0;font-size:16px;font-weight:600;color:#142234">Web and Visual Designer, UX and Conversion Design</dd></div>
+<div><dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Audience</dt><dd style="margin:6px 0 0;font-size:16px;font-weight:600;color:#142234">Licensed medical professionals</dd></div>
+<div><dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Focus</dt><dd style="margin:6px 0 0;font-size:16px;font-weight:600;color:#142234">Membership conversion, course discovery, training content</dd></div>
+<div><dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Channels</dt><dd style="margin:6px 0 0;font-size:16px;font-weight:600;color:#142234">Web, email, classroom, recorded media</dd></div>
+</dl>
+<div style="margin:32px 0 0;display:flex;flex-wrap:wrap;gap:8px">
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Adobe Photoshop</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Adobe Illustrator</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Adobe InDesign</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">PowerPoint</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Email design</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Landing page design</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">UX writing</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Conversion design</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Content systems</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Responsive design</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Stakeholder collaboration</x-import>
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,32px">Medical content review</x-import>
+</div>
+</div>
+<div data-reveal="">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:20px;box-shadow:0 1px 3px rgba(20,34,52,.04)">
+<div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:flex-start">
+<img src="/assets/empire/campaign-hero-and-trust.jpg" alt="Historical campaign page with the training series headline, an enrollment action, and a strip of company figures" loading="lazy" width="463" height="500" style="width:100%;max-width:463px;height:auto;display:block;border-radius:12px;border:1px solid rgba(20,34,52,.10)">
+<img src="/assets/empire/website-hero-and-workshops.jpg" alt="Historical website page showing the value proposition and workshop discovery" loading="lazy" width="278" height="520" style="width:100%;max-width:278px;height:auto;display:block;border-radius:12px;border:1px solid rgba(20,34,52,.10)">
+</div>
+</div>
+<p style="margin:12px 0 0;font-size:13px;line-height:1.45;color:#727B87">Historical campaign and website artifacts. Both shown at source size, 463px and 278px wide.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="snapshot" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">02 · Project snapshot</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">Four things that shaped the work</h2>
+<div class="g4" data-reveal="" style="margin-top:48px">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">The audience</h3><p style="margin:12px 0 0;font-size:16px;line-height:1.65">Licensed professionals comparing training topics, formats, schedules, and membership value.</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">The business need</h3><p style="margin:12px 0 0;font-size:16px;line-height:1.65">Increase qualified membership enrollment and make the highest value plan easier to understand.</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">The content challenge</h3><p style="margin:12px 0 0;font-size:16px;line-height:1.65">Turn expert medical material into accurate web, classroom, email, and promotional content.</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">My contribution</h3><p style="margin:12px 0 0;font-size:16px;line-height:1.65">Connect the user journey and visual system across every major touchpoint.</p></div>
+</div>
+</div>
+</section>
+
+<section id="context" style="background:#F4F0E8;padding:clamp(48px,6vw,72px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Present day public company context</div>
+<div style="margin-top:24px;display:flex;flex-wrap:wrap;gap:32px 48px">
+<div><div style="font-size:32px;font-weight:700;letter-spacing:-.02em;color:#142234">28+</div><div style="font-size:13px;line-height:1.45;color:#727B87">Years in business</div></div>
+<div><div style="font-size:32px;font-weight:700;letter-spacing:-.02em;color:#142234">200,000+</div><div style="font-size:13px;line-height:1.45;color:#727B87">Graduates since 1998</div></div>
+<div><div style="font-size:32px;font-weight:700;letter-spacing:-.02em;color:#142234">700+</div><div style="font-size:13px;line-height:1.45;color:#727B87">Workshops each year</div></div>
+<div><div style="font-size:32px;font-weight:700;letter-spacing:-.02em;color:#142234">35+</div><div style="font-size:13px;line-height:1.45;color:#727B87">Cities</div></div>
+<div><div style="font-size:32px;font-weight:700;letter-spacing:-.02em;color:#142234">63+</div><div style="font-size:13px;line-height:1.45;color:#727B87">CME courses across four specialties</div></div>
+</div>
+<p style="margin:24px 0 0;max-width:760px;font-size:13px;line-height:1.45;color:#727B87">These are current public company figures. They describe the scale of the training organization, not the measured outcome of this historical design project.</p>
+<p style="margin:12px 0 0;font-size:13px;line-height:1.45;color:#727B87">Sources: <a href="https://www.empiremedicaltraining.com/" style="color:#117C7A">Empire Medical Training homepage</a> · <a href="https://www.empiremedicaltraining.com/memberships/" style="color:#117C7A">Empire Medical Training memberships</a></p>
+</div>
+</section>
+
+<section id="problem" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">04 · Problem</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">A strong course catalog without a clear decision path</h2>
+<div class="split" style="margin-top:40px">
+<div data-reveal="">
+<p style="margin:0;max-width:760px;font-size:19px;line-height:1.55;color:#4E5968">Visitors could see many valuable courses and still leave without answering the questions that decide an enrollment.</p>
+<ul style="margin:24px 0 0;padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.65">
+<li>Which courses fit my professional goals?</li>
+<li>Which membership gives me the access I need?</li>
+<li>What is included at each level?</li>
+<li>Can I attend in person, online, or through recorded learning?</li>
+<li>What happens after I enroll?</li>
+</ul>
+</div>
+<div data-reveal="" style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)">
+<h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">The operational side</h3>
+<p style="margin:12px 0 0;font-size:16px;line-height:1.65">The website, email promotions, classroom slides, banners, and recorded content needed to speak the same language. When each channel was designed independently, the experience could feel fragmented and production took longer.</p>
+<div style="margin-top:20px;display:flex;flex-wrap:wrap;gap:8px">
+<span style="font-size:13px;padding:6px 12px;border-radius:9999px;background:#EAF5F3;color:#0D223B">Website</span>
+<span style="font-size:13px;padding:6px 12px;border-radius:9999px;background:#EAF5F3;color:#0D223B">Email</span>
+<span style="font-size:13px;padding:6px 12px;border-radius:9999px;background:#EAF5F3;color:#0D223B">Classroom slides</span>
+<span style="font-size:13px;padding:6px 12px;border-radius:9999px;background:#EAF5F3;color:#0D223B">Banners</span>
+<span style="font-size:13px;padding:6px 12px;border-radius:9999px;background:#EAF5F3;color:#0D223B">Recorded content</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="audience" style="background:#EAF5F3;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">05 · Audience and trust</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">Three professionals, three different decisions</h2>
+<div class="g3" data-reveal="" style="margin-top:48px">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Profile 01</div><h3 style="margin:10px 0 0;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#142234">Exploring a new service</h3><p style="margin:12px 0 0;font-size:16px;line-height:1.65">A licensed professional looking for an introductory course and a low commitment way to begin.</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Profile 02</div><h3 style="margin:10px 0 0;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#142234">Building confidence</h3><p style="margin:12px 0 0;font-size:16px;line-height:1.65">A returning learner comparing several courses, practice support, and continued access.</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Profile 03</div><h3 style="margin:10px 0 0;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#142234">Expanding a practice</h3><p style="margin:12px 0 0;font-size:16px;line-height:1.65">An experienced professional who sees value in broad course access, ongoing education, and premium support.</p></div>
+</div>
+<div data-reveal="" style="margin-top:32px;background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)">
+<h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">Trust checklist</h3>
+<div class="g2" style="margin-top:16px;gap:10px 24px">
+<div style="font-size:16px;line-height:1.65">Clear eligibility and professional requirements</div>
+<div style="font-size:16px;line-height:1.65">Accurate course terminology</div>
+<div style="font-size:16px;line-height:1.65">Transparent inclusions and exclusions</div>
+<div style="font-size:16px;line-height:1.65">Visible delivery format and schedule</div>
+<div style="font-size:16px;line-height:1.65">Honest membership comparison</div>
+<div style="font-size:16px;line-height:1.65">No promises of income or professional outcomes</div>
+</div>
+<p style="margin:20px 0 0;font-size:13px;line-height:1.45;color:#727B87">Eligibility and scope of practice vary by profession and location. Nothing in this program promises employment, income, licensure, business success, or permission to perform procedures.</p>
+</div>
+</div>
+</section>
+
+<section id="funnel" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">06 · Funnel diagnosis</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">Five stages, five design responses</h2>
+<p style="margin:20px 0 0;max-width:760px;font-size:19px;line-height:1.55;color:#4E5968">This came from a content and funnel review of the existing pages and campaign material. It was not a formal usability study, and no test or heatmap data was available.</p>
+<ol data-reveal="" style="margin:48px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:0">
+<li style="display:grid;grid-template-columns:64px 1fr;gap:24px;border-top:1px solid rgba(20,34,52,.10);padding:24px 0"><div style="font-size:32px;font-weight:700;color:#117C7A;letter-spacing:-.02em">01</div><div class="g2" style="gap:16px 32px"><div><h3 style="margin:0;font-size:19px;font-weight:700;color:#142234">Discover a course or topic</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.65">Friction: too many individual topics with no grouping.</p></div><div style="background:#EAF5F3;border-radius:12px;padding:16px 20px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Design response</div><p style="margin:6px 0 0;font-size:16px;line-height:1.65;color:#0D223B">Grouped course families with plain language names.</p></div></div></li>
+<li style="display:grid;grid-template-columns:64px 1fr;gap:24px;border-top:1px solid rgba(20,34,52,.10);padding:24px 0"><div style="font-size:32px;font-weight:700;color:#117C7A;letter-spacing:-.02em">02</div><div class="g2" style="gap:16px 32px"><div><h3 style="margin:0;font-size:19px;font-weight:700;color:#142234">Understand the training format and value</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.65">Friction: format, schedule, and eligibility were hard to compare.</p></div><div style="background:#EAF5F3;border-radius:12px;padding:16px 20px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Design response</div><p style="margin:6px 0 0;font-size:16px;line-height:1.65;color:#0D223B">Benefit led summaries with format and date on every card.</p></div></div></li>
+<li style="display:grid;grid-template-columns:64px 1fr;gap:24px;border-top:1px solid rgba(20,34,52,.10);padding:24px 0"><div style="font-size:32px;font-weight:700;color:#117C7A;letter-spacing:-.02em">03</div><div class="g2" style="gap:16px 32px"><div><h3 style="margin:0;font-size:19px;font-weight:700;color:#142234">Compare membership options</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.65">Friction: three tiers differed in many small ways at once.</p></div><div style="background:#EAF5F3;border-radius:12px;padding:16px 20px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Design response</div><p style="margin:6px 0 0;font-size:16px;line-height:1.65;color:#0D223B">A progressive comparison that starts with fit, then detail.</p></div></div></li>
+<li style="display:grid;grid-template-columns:64px 1fr;gap:24px;border-top:1px solid rgba(20,34,52,.10);padding:24px 0"><div style="font-size:32px;font-weight:700;color:#117C7A;letter-spacing:-.02em">04</div><div class="g2" style="gap:16px 32px"><div><h3 style="margin:0;font-size:19px;font-weight:700;color:#142234">Select a plan and enroll</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.65">Friction: trust and terms information sat far from the action.</p></div><div style="background:#EAF5F3;border-radius:12px;padding:16px 20px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Design response</div><p style="margin:6px 0 0;font-size:16px;line-height:1.65;color:#0D223B">Eligibility, renewal, and inclusions placed beside enrollment.</p></div></div></li>
+<li style="display:grid;grid-template-columns:64px 1fr;gap:24px;border-top:1px solid rgba(20,34,52,.10);border-bottom:1px solid rgba(20,34,52,.10);padding:24px 0"><div style="font-size:32px;font-weight:700;color:#117C7A;letter-spacing:-.02em">05</div><div class="g2" style="gap:16px 32px"><div><h3 style="margin:0;font-size:19px;font-weight:700;color:#142234">Continue learning through classes and recorded content</h3><p style="margin:8px 0 0;font-size:16px;line-height:1.65">Friction: disconnected materials across channels.</p></div><div style="background:#EAF5F3;border-radius:12px;padding:16px 20px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Design response</div><p style="margin:6px 0 0;font-size:16px;line-height:1.65;color:#0D223B">One content system feeding web, email, classroom, and video.</p></div></div></li>
+</ol>
+</div>
+</section>
+
+<section id="membership" style="background:#F4F0E8;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">07 · Membership decision model</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">Choose by fit, not by price alone</h2>
+<p style="margin:20px 0 0;max-width:760px;font-size:19px;line-height:1.55;color:#4E5968">The historical creative presented three named plans. The model below rebuilds the decision in neutral terms, since prices and inclusions are only legible inside the artifact.</p>
+<div class="split" data-reveal="" style="margin-top:40px;align-items:start">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px;box-shadow:0 1px 3px rgba(20,34,52,.04)">
+<img src="/assets/empire/campaign-membership-tiers.jpg" alt="Historical campaign page showing three Empire membership options side by side, with the Diamond plan marked most popular" loading="lazy" width="463" height="700" style="width:100%;max-width:463px;height:auto;display:block;border-radius:12px;margin:0 auto">
+<p style="margin:14px 0 0;font-size:13px;line-height:1.45;color:#727B87">Three plans on one screen, with the middle option carrying the emphasis. The comparison had to be readable before any price mattered.</p>
+</div>
+<div>
+<h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#142234">What the historical layout shows</h3>
+<ul style="margin:16px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.65">
+<li>Empire Platinum Membership</li>
+<li>Empire Diamond Membership</li>
+<li>Empire Dental D Membership</li>
+<li>Diamond identified as Most Popular in that layout</li>
+</ul>
+<p style="margin:20px 0 0;font-size:16px;line-height:1.65">The product decision underneath it: every plan needed a clear audience, differences a reader could see at a glance, and a confident next step. Prices, course totals, and benefit lists stay inside the artifact until they can be verified from a readable source.</p>
+<p style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#727B87">Figures printed inside the screenshot describe the campaign at that time. They are not present day facts and not project results.</p>
+</div>
+</div>
+<div class="g3" style="margin-top:48px;align-items:stretch">
+<div data-reveal="" data-stagger="0" style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04);display:flex;flex-direction:column;gap:16px">
+<div><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Tier 1</div><h3 style="margin:8px 0 0;font-size:26px;font-weight:700;letter-spacing:-.02em;color:#142234">Essential</h3></div>
+<p style="margin:0;font-size:16px;line-height:1.65">Best for professionals starting with a focused topic.</p>
+<div style="font-size:13px;color:#727B87">Price and renewal terms: [ADD VERIFIED DETAIL]</div>
+<ul style="margin:0;padding-left:20px;font-size:16px;line-height:1.65;display:flex;flex-direction:column;gap:8px"><li>One course family</li><li>Recorded material for the enrolled topic</li><li>Certificate documentation where applicable</li></ul>
+<div style="margin-top:auto"><button type="button" style="width:100%;min-height:44px;border-radius:9999px;border:1px solid #117C7A;background:#FFFFFF;color:#117C7A;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">Select Essential</button></div>
+</div>
+<div data-reveal="" data-stagger="70" style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04);display:flex;flex-direction:column;gap:16px">
+<div><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Tier 2</div><h3 style="margin:8px 0 0;font-size:26px;font-weight:700;letter-spacing:-.02em;color:#142234">Professional</h3></div>
+<p style="margin:0;font-size:16px;line-height:1.65">Best for learners planning several courses and continued development.</p>
+<div style="font-size:13px;color:#727B87">Price and renewal terms: [ADD VERIFIED DETAIL]</div>
+<ul style="margin:0;padding-left:20px;font-size:16px;line-height:1.65;display:flex;flex-direction:column;gap:8px"><li>Multiple course families</li><li>Ongoing access to recorded learning</li><li>Practice support material</li></ul>
+<div style="margin-top:auto"><button type="button" style="width:100%;min-height:44px;border-radius:9999px;border:1px solid #117C7A;background:#117C7A;color:#FFFFFF;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">Select Professional</button></div>
+</div>
+<div data-reveal="" data-stagger="140" style="background:#FFFFFF;border:1px solid #B78B3C;border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04);display:flex;flex-direction:column;gap:16px">
+<div><div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap"><span style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#B78B3C">Tier 3</span><span style="font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#0D223B;background:rgba(183,139,60,.16);padding:4px 10px;border-radius:9999px">Best for broad access</span></div><h3 style="margin:8px 0 0;font-size:26px;font-weight:700;letter-spacing:-.02em;color:#142234">Complete</h3></div>
+<p style="margin:0;font-size:16px;line-height:1.65">Best for professionals expanding a practice and needing the broadest access.</p>
+<div style="font-size:13px;color:#727B87">Price and renewal terms: [ADD VERIFIED DETAIL]</div>
+<ul style="margin:0;padding-left:20px;font-size:16px;line-height:1.65;display:flex;flex-direction:column;gap:8px"><li>Broadest course access</li><li>Continued education across topics</li><li>Premium support</li></ul>
+<div style="margin-top:auto"><button type="button" style="width:100%;min-height:44px;border-radius:9999px;border:1px solid #B78B3C;background:#FFFFFF;color:#8f6b2a;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">Select Complete</button></div>
+</div>
+</div>
+
+<div class="split" style="margin-top:48px">
+<div data-reveal="" style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)">
+<h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">Product principles</h3>
+<ul style="margin:16px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.65">
+<li>Every plan remains easy to select</li>
+<li>Differences are explained in plain language</li>
+<li>The premium plan earns attention through relevant value, not visual pressure</li>
+<li>Pricing and renewal terms remain visible</li>
+<li>Lower priced plans are never hidden or disabled</li>
+<li>A short fit guide helps users self select</li>
+</ul>
+</div>
+<div data-reveal="" style="background:#0D223B;border-radius:18px;padding:28px;color:rgba(255,255,255,.78)">
+<h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#FFFFFF">Which plan fits me?</h3>
+<p style="margin:10px 0 0;font-size:16px;line-height:1.65">Three questions, one suggestion. Every plan stays visible either way.</p>
+<div style="margin-top:20px;display:flex;flex-direction:column;gap:16px">
+<div><label for="q1" style="display:block;font-size:13px;font-weight:600;color:#FFFFFF;margin-bottom:6px">How many topics are you considering?</label><sc-raw-select id="q1" sc-camel-on-change="{{ onQ1 }}" style="width:100%;min-height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.06);color:#FFFFFF;font-size:15px;padding:0 12px;font-family:inherit"><option value="1">One focused topic</option><option value="2">Two or three topics</option><option value="3">Many topics</option></sc-raw-select></div>
+<div><label for="q2" style="display:block;font-size:13px;font-weight:600;color:#FFFFFF;margin-bottom:6px">Do you need ongoing access?</label><sc-raw-select id="q2" sc-camel-on-change="{{ onQ2 }}" style="width:100%;min-height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.06);color:#FFFFFF;font-size:15px;padding:0 12px;font-family:inherit"><option value="1">Not right now</option><option value="2">Yes, for a while</option><option value="3">Yes, continuously</option></sc-raw-select></div>
+<div><label for="q3" style="display:block;font-size:13px;font-weight:600;color:#FFFFFF;margin-bottom:6px">Are you building a longer learning plan?</label><sc-raw-select id="q3" sc-camel-on-change="{{ onQ3 }}" style="width:100%;min-height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.06);color:#FFFFFF;font-size:15px;padding:0 12px;font-family:inherit"><option value="1">No</option><option value="2">Possibly</option><option value="3">Yes</option></sc-raw-select></div>
+</div>
+<div role="status" aria-live="polite" style="margin-top:20px;padding:16px 20px;border-radius:12px;background:rgba(255,255,255,.06);box-shadow:0 0 0 1px rgba(255,255,255,.12)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)">Suggested starting point</div>
+<div style="margin-top:6px;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#FFFFFF">{{ planName }}</div>
+<div style="margin-top:6px;font-size:16px;line-height:1.6">{{ planReason }}</div>
+</div>
+<p style="margin:14px 0 0;font-size:13px;line-height:1.45;color:rgba(255,255,255,.6)">A suggestion only. All three plans remain selectable above.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="landing" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">08 · Landing page</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">One page that answers the qualifying questions in order</h2>
+<div data-reveal="" style="margin-top:48px">
+<x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.WindowFrame" url="empiremedicaltraining.com/membership" caption="Landing page hierarchy, rebuilt as live markup. Replace with ADD LANDING PAGE DESKTOP, 2400PX WIDE MINIMUM." hint-size="100%,420px">
+<div style="background:#FFFFFF;padding:36px 40px 44px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Page hierarchy</div>
+<ol style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;counter-reset:h">
+<li style="display:flex;gap:14px;align-items:baseline;border-bottom:1px solid rgba(20,34,52,.10);padding-bottom:10px"><span style="font-size:13px;font-weight:600;color:#727B87;min-width:22px">01</span><span style="font-size:17px;font-weight:600;color:#142234">Clear value proposition for licensed professionals</span></li>
+<li style="display:flex;gap:14px;align-items:baseline;border-bottom:1px solid rgba(20,34,52,.10);padding-bottom:10px"><span style="font-size:13px;font-weight:600;color:#727B87;min-width:22px">02</span><span style="font-size:17px;font-weight:600;color:#142234">Course categories and learning formats</span></li>
+<li style="display:flex;gap:14px;align-items:baseline;border-bottom:1px solid rgba(20,34,52,.10);padding-bottom:10px"><span style="font-size:13px;font-weight:600;color:#727B87;min-width:22px">03</span><span style="font-size:17px;font-weight:600;color:#142234">Reasons to trust the training</span></li>
+<li style="display:flex;gap:14px;align-items:baseline;border-bottom:1px solid rgba(20,34,52,.10);padding-bottom:10px"><span style="font-size:13px;font-weight:600;color:#727B87;min-width:22px">04</span><span style="font-size:17px;font-weight:600;color:#142234">Membership comparison</span></li>
+<li style="display:flex;gap:14px;align-items:baseline;border-bottom:1px solid rgba(20,34,52,.10);padding-bottom:10px"><span style="font-size:13px;font-weight:600;color:#727B87;min-width:22px">05</span><span style="font-size:17px;font-weight:600;color:#142234">Upcoming opportunities</span></li>
+<li style="display:flex;gap:14px;align-items:baseline;border-bottom:1px solid rgba(20,34,52,.10);padding-bottom:10px"><span style="font-size:13px;font-weight:600;color:#727B87;min-width:22px">06</span><span style="font-size:17px;font-weight:600;color:#142234">Frequently asked questions</span></li>
+<li style="display:flex;gap:14px;align-items:baseline"><span style="font-size:13px;font-weight:600;color:#727B87;min-width:22px">07</span><span style="font-size:17px;font-weight:600;color:#142234">Enrollment action</span></li>
+</ol>
+</div>
+</x-import>
+</div>
+<div class="split" style="margin-top:40px">
+<div data-reveal="">
+<h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#142234">UX decisions</h3>
+<ul style="margin:16px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.65">
+<li>Repeated calls to action use consistent language</li>
+<li>Course cards show level, format, location, and next date</li>
+<li>Membership appears after the user understands course value</li>
+<li>Trust details sit near the enrollment decision</li>
+<li>Mobile preserves the decision order and does not collapse critical terms</li>
+</ul>
+</div>
+<div data-reveal="" style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px;box-shadow:0 1px 3px rgba(20,34,52,.04)">
+<img src="/assets/empire/campaign-registration-cta.jpg" alt="Historical campaign page ending with a registration form beside the enrollment call to action" loading="lazy" width="463" height="528" style="width:100%;max-width:463px;height:auto;display:block;border-radius:12px;margin:0 auto">
+<p style="margin:14px 0 0;font-size:13px;line-height:1.45;color:#727B87">The close of the page: one form, one action, and the contact details a professional needs before committing.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="evidence" style="background:#FCFBF8;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px;border-top:1px solid rgba(20,34,52,.10)">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">09 · Annotated walkthrough</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">The full page, read from top to bottom</h2>
+<p style="margin:20px 0 0;max-width:760px;font-size:19px;line-height:1.55;color:#4E5968">The annotated export is a narrow, very tall document. It stays at source width and the reasoning moves alongside it.</p>
+<div class="rail" style="margin-top:48px">
+<div class="railmedia">
+<img src="/assets/empire/empire-training-website-annotated-overview.jpg" alt="Annotated full page export of the historical training website, marked up section by section" loading="lazy" width="278" height="2048" style="width:100%;max-width:278px;height:auto;display:block;border-radius:12px;border:1px solid rgba(20,34,52,.10)">
+<button type="button" sc-camel-on-click="{{ openLightbox }}" style="margin-top:14px;width:100%;max-width:278px;min-height:44px;border-radius:9999px;border:1px solid #117C7A;background:#FFFFFF;color:#117C7A;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">View full annotated page</button>
+<p style="margin:10px 0 0;max-width:278px;font-size:13px;line-height:1.45;color:#727B87">Annotated website export, 278px by 2048px. Opens at source size.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Chapter 01</div><h3 style="margin:10px 0 0;font-size:19px;font-weight:700;color:#142234">Homepage value proposition and workshop discovery</h3><p style="margin:10px 0 0;font-size:16px;line-height:1.65">The top of the page states who the training is for, then moves straight to upcoming workshops so a qualified visitor can see something real to attend.</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Chapter 02</div><h3 style="margin:10px 0 0;font-size:19px;font-weight:700;color:#142234">Course and CME content organization</h3><p style="margin:10px 0 0;font-size:16px;line-height:1.65">Topics are grouped into families with the calendar close by, so schedule and subject are compared together rather than on separate pages.</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Chapter 03</div><h3 style="margin:10px 0 0;font-size:19px;font-weight:700;color:#142234">Virtual learning and recorded content</h3><p style="margin:10px 0 0;font-size:16px;line-height:1.65">Formats are explained as options rather than fine print: live, virtual, and recorded learning each get their own explanation on the page.</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Chapter 04</div><h3 style="margin:10px 0 0;font-size:19px;font-weight:700;color:#142234">Membership and conversion paths</h3><p style="margin:10px 0 0;font-size:16px;line-height:1.65">Membership appears after course value is established, with the enrollment action repeated in the same language used earlier on the page.</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Chapter 05</div><h3 style="margin:10px 0 0;font-size:19px;font-weight:700;color:#142234">Campaign reuse and partner credibility</h3><p style="margin:10px 0 0;font-size:16px;line-height:1.65">The lower page carries training locations and partner marks, the same trust material the email campaign reused without redesigning it.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="courses" style="background:#EAF5F3;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">09 · Course discovery</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">A course map instead of a dense table</h2>
+<p style="margin:20px 0 0;max-width:760px;font-size:19px;line-height:1.55;color:#4E5968">The groups below are organizational examples. They are not presented as a verified historical catalog.</p>
+<div class="g4" data-reveal="" style="margin-top:48px">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#142234">Injectables and facial aesthetics</h3><p style="margin:10px 0 0;font-size:13px;line-height:1.45;color:#727B87">Family 01</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#142234">Skin and laser training</h3><p style="margin:10px 0 0;font-size:13px;line-height:1.45;color:#727B87">Family 02</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#142234">Regenerative and wellness topics</h3><p style="margin:10px 0 0;font-size:13px;line-height:1.45;color:#727B87">Family 03</p></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#142234">Practice development and advanced learning</h3><p style="margin:10px 0 0;font-size:13px;line-height:1.45;color:#727B87">Family 04</p></div>
+</div>
+<div class="g3" data-reveal="" style="margin-top:24px">
+<article style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px">
+<h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">Course title placeholder</h3>
+<dl style="margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px">
+<dt style="color:#727B87">Eligibility</dt><dd style="margin:0;color:#142234">Licensed professionals, varies by state</dd>
+<dt style="color:#727B87">Level</dt><dd style="margin:0;color:#142234">Introductory</dd>
+<dt style="color:#727B87">Format</dt><dd style="margin:0;color:#142234">Live workshop</dd>
+<dt style="color:#727B87">Location</dt><dd style="margin:0;color:#142234">City placeholder</dd>
+<dt style="color:#727B87">Date</dt><dd style="margin:0;color:#142234">Next date placeholder</dd>
+<dt style="color:#727B87">Documentation</dt><dd style="margin:0;color:#142234">Shown only when verified</dd>
+</dl>
+<button type="button" style="min-height:44px;border-radius:9999px;border:1px solid #117C7A;background:#117C7A;color:#FFFFFF;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">View course details</button>
+</article>
+<article style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:12px">
+<h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">Course title placeholder</h3>
+<dl style="margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:15px">
+<dt style="color:#727B87">Eligibility</dt><dd style="margin:0;color:#142234">Licensed professionals, varies by state</dd>
+<dt style="color:#727B87">Level</dt><dd style="margin:0;color:#142234">Intermediate</dd>
+<dt style="color:#727B87">Format</dt><dd style="margin:0;color:#142234">Online with recorded material</dd>
+<dt style="color:#727B87">Location</dt><dd style="margin:0;color:#142234">Online</dd>
+<dt style="color:#727B87">Date</dt><dd style="margin:0;color:#142234">Next date placeholder</dd>
+<dt style="color:#727B87">Documentation</dt><dd style="margin:0;color:#142234">Shown only when verified</dd>
+</dl>
+<button type="button" style="min-height:44px;border-radius:9999px;border:1px solid #117C7A;background:#117C7A;color:#FFFFFF;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">View course details</button>
+</article>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:20px">
+<img src="/assets/empire/website-learning-and-content-system.jpg" alt="Historical website section showing course and CME organization alongside virtual learning options" loading="lazy" width="278" height="720" style="width:100%;max-width:278px;height:auto;display:block;border-radius:12px;margin:0 auto">
+<p style="margin:14px 0 0;font-size:13px;line-height:1.45;color:#727B87">Topics, formats, and virtual learning grouped so a reader can find the family first and the individual course second.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="system" style="background:#0D223B;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7FD3CE">10 · Training material system</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#FFFFFF;text-wrap:pretty">One content foundation, six outputs</h2>
+<p style="margin:20px 0 0;max-width:760px;font-size:19px;line-height:1.55;color:rgba(255,255,255,.72)">The same approved material carried the classroom, the campaign, and the website. That shared foundation was as much of the work as any single page.</p>
+<p style="margin:32px 0 0;max-width:760px;font-size:13px;line-height:1.45;color:rgba(255,255,255,.6)">No classroom deck, banner, or recorded lesson export was supplied with this package. The outputs below are named as a system model, not shown as artifacts.</p>
+<div class="g3" data-reveal="" style="margin-top:24px">
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;color:rgba(255,255,255,.78);font-size:16px;line-height:1.65">Instructor PowerPoint decks</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;color:rgba(255,255,255,.78);font-size:16px;line-height:1.65">In class banners</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;color:rgba(255,255,255,.78);font-size:16px;line-height:1.65">Course handouts</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;color:rgba(255,255,255,.78);font-size:16px;line-height:1.65">Schedule and topic graphics</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;color:rgba(255,255,255,.78);font-size:16px;line-height:1.65">Recorded lesson titles and promotional clips</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;color:rgba(255,255,255,.78);font-size:16px;line-height:1.65">Email and landing page campaigns</div>
+</div>
+<h3 style="margin:56px 0 0;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#FFFFFF">The content workflow</h3>
+<ol class="flow" data-reveal="" style="margin:20px 0 0;padding:0;list-style:none">
+<li style="border-top:2px solid #7FD3CE;padding-top:14px"><div style="font-size:13px;font-weight:600;color:#7FD3CE">01</div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:#FFFFFF">Receive clinical material from the expert</div></li>
+<li style="border-top:2px solid rgba(127,211,206,.5);padding-top:14px"><div style="font-size:13px;font-weight:600;color:#7FD3CE">02</div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:#FFFFFF">Identify the learning objective and required terminology</div></li>
+<li style="border-top:2px solid rgba(127,211,206,.5);padding-top:14px"><div style="font-size:13px;font-weight:600;color:#7FD3CE">03</div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:#FFFFFF">Build the visual hierarchy</div></li>
+<li style="border-top:2px solid rgba(127,211,206,.5);padding-top:14px"><div style="font-size:13px;font-weight:600;color:#7FD3CE">04</div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:#FFFFFF">Review for clinical accuracy</div></li>
+<li style="border-top:2px solid rgba(127,211,206,.5);padding-top:14px"><div style="font-size:13px;font-weight:600;color:#7FD3CE">05</div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:#FFFFFF">Adapt for classroom, web, email, and recorded media</div></li>
+<li style="border-top:2px solid rgba(127,211,206,.5);padding-top:14px"><div style="font-size:13px;font-weight:600;color:#7FD3CE">06</div><div style="margin-top:6px;font-size:15px;line-height:1.5;color:#FFFFFF">Approve and publish</div></li>
+</ol>
+</div>
+</section>
+
+<section id="clarity" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">11 · Expert content to clear communication</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">Clarity came from structure, not from removing context</h2>
+<div class="g2" data-reveal="" style="margin-top:48px">
+<div style="background:#F4F0E8;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Before</div>
+<p style="margin:14px 0 0;font-size:15px;line-height:1.6;color:#4E5968">Course information placeholder. A dense block of technical course information with inconsistent naming and no clear next action. Terminology varies between the schedule, the deck, and the promotional email. Eligibility appears near the end, and the reader has to infer the format, the location, and what happens after enrollment.</p>
+</div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px;box-shadow:0 1px 3px rgba(20,34,52,.04)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#2E7D5B">After</div>
+<ul style="margin:14px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.65">
+<li>One clear learning goal</li>
+<li>Essential eligibility information</li>
+<li>Scannable course details</li>
+<li>A visible next step</li>
+<li>Supporting clinical terms preserved through expert review</li>
+</ul>
+</div>
+</div>
+<p style="margin:24px 0 0;max-width:760px;font-size:13px;line-height:1.45;color:#727B87">Clinical instructions were never rewritten in a way that changed their meaning. Structure and hierarchy did the work.</p>
+</div>
+</section>
+
+<section id="reuse" style="background:#EAF5F3;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">12 · Recorded content and campaign reuse</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">One lesson, five deliverables</h2>
+<div class="split" data-reveal="" style="margin-top:48px;align-items:center">
+<div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:20px">
+<img src="/assets/empire/website-membership-and-conversion.jpg" alt="Historical website section showing membership options followed by conversion paths and partner credibility" loading="lazy" width="278" height="700" style="width:100%;max-width:278px;height:auto;display:block;border-radius:12px;margin:0 auto">
+<p style="margin:14px 0 0;font-size:13px;line-height:1.45;color:#727B87">The same membership language appears on the website and in the campaign, so a reader who arrives from either recognizes the offer.</p>
+</div>
+<p style="margin:16px 0 0;font-size:16px;line-height:1.65">Reuse improved consistency and reduced the need to recreate each campaign from zero. This is a qualitative operational outcome until a verified production time metric is added.</p>
+</div>
+<ul style="margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px">
+<li style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:12px;padding:16px 20px;font-size:16px;font-weight:600;color:#142234">Short promotional clip</li>
+<li style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:12px;padding:16px 20px;font-size:16px;font-weight:600;color:#142234">Course landing page excerpt</li>
+<li style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:12px;padding:16px 20px;font-size:16px;font-weight:600;color:#142234">Email feature</li>
+<li style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:12px;padding:16px 20px;font-size:16px;font-weight:600;color:#142234">Social banner</li>
+<li style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:12px;padding:16px 20px;font-size:16px;font-weight:600;color:#142234">Classroom reminder slide</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="email" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">13 · Email and promotional system</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">Campaigns designed inside the same system</h2>
+<div class="split" style="margin-top:48px">
+<div data-reveal="" style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px;box-shadow:0 1px 3px rgba(20,34,52,.04)">
+<img src="/assets/empire/campaign-proof-and-course-breadth.jpg" alt="Historical campaign section showing learner testimonials, blog updates, and the four course academies" loading="lazy" width="463" height="650" style="width:100%;max-width:463px;height:auto;display:block;border-radius:12px;margin:0 auto">
+<p style="margin:14px 0 0;font-size:13px;line-height:1.45;color:#727B87">Proof and breadth in the same scroll: learner comments, then the four academies, so credibility and range are read together.</p>
+</div>
+<div data-reveal="">
+<h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-.02em;color:#142234">Email structure</h3>
+<ul style="margin:16px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:10px;font-size:16px;line-height:1.65">
+<li>Topic and audience are clear immediately</li>
+<li>Date, location, format, and eligibility are easy to find</li>
+<li>Instructor or expert information supports trust</li>
+<li>Membership value appears in context</li>
+<li>The primary action is consistent with the landing page</li>
+</ul>
+<p style="margin:20px 0 0;font-size:13px;line-height:1.45;color:#727B87">Email exports were not supplied with this package, so the structure is described rather than shown.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="collaboration" style="background:#F4F0E8;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">14 · Collaboration with medical professionals</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">Clinical review as part of the design workflow</h2>
+<p style="margin:20px 0 0;max-width:760px;font-size:19px;line-height:1.55;color:#4E5968">Medical content needs both clarity and accuracy. Direct review with subject matter experts helped preserve terminology, confirm claims, and catch issues before the material reached learners.</p>
+<ol class="chk" data-reveal="" style="margin:48px 0 0;padding:0;list-style:none">
+<li style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><div style="width:32px;height:32px;border-radius:9999px;background:#EAF5F3;color:#117C7A;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">01</div><h3 style="margin:14px 0 0;font-size:19px;font-weight:700;color:#142234">Content intake</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6">Material and objectives collected from the expert.</p></li>
+<li style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><div style="width:32px;height:32px;border-radius:9999px;background:#EAF5F3;color:#117C7A;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">02</div><h3 style="margin:14px 0 0;font-size:19px;font-weight:700;color:#142234">Design translation</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6">Hierarchy, structure, and visual language applied.</p></li>
+<li style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><div style="width:32px;height:32px;border-radius:9999px;background:#EAF5F3;color:#117C7A;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">03</div><h3 style="margin:14px 0 0;font-size:19px;font-weight:700;color:#142234">Clinical review</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6">Terminology and claims checked by the professional.</p></li>
+<li style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><div style="width:32px;height:32px;border-radius:9999px;background:#EAF5F3;color:#117C7A;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center">04</div><h3 style="margin:14px 0 0;font-size:19px;font-weight:700;color:#142234">Final approval</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6">Approved version released to every channel.</p></li>
+</ol>
+<div data-reveal="" style="margin-top:24px;background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px 28px">
+<h3 style="margin:0;font-size:17px;font-weight:700;color:#142234">Remote collaboration note</h3>
+<p style="margin:10px 0 0;font-size:16px;line-height:1.65">Clear annotations, file naming, version notes, and approval states reduced uncertainty when several contributors reviewed the same material.</p>
+</div>
+</div>
+</section>
+
+<section id="responsive" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">15 · Responsive and accessible</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">Designed toward accessible interaction patterns</h2>
+<div class="devrow" data-reveal="" style="margin-top:48px">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:20px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Desktop, 1440px</div><div style="margin-top:14px;display:flex;flex-direction:column;gap:8px"><div style="height:10px;border-radius:9999px;background:#142234;width:56%"></div><div style="height:8px;border-radius:9999px;background:rgba(20,34,52,.14)"></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px"><div style="height:44px;border-radius:8px;background:#EAF5F3"></div><div style="height:44px;border-radius:8px;background:#EAF5F3"></div><div style="height:44px;border-radius:8px;background:#EAF5F3"></div></div><div style="height:28px;width:40%;border-radius:9999px;background:#117C7A;margin-top:6px"></div></div></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:20px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Tablet</div><div style="margin-top:14px;display:flex;flex-direction:column;gap:8px"><div style="height:10px;border-radius:9999px;background:#142234;width:70%"></div><div style="height:8px;border-radius:9999px;background:rgba(20,34,52,.14)"></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px"><div style="height:44px;border-radius:8px;background:#EAF5F3"></div><div style="height:44px;border-radius:8px;background:#EAF5F3"></div></div><div style="height:28px;width:56%;border-radius:9999px;background:#117C7A;margin-top:6px"></div></div></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:20px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Mobile, 375px</div><div style="margin-top:14px;display:flex;flex-direction:column;gap:8px"><div style="height:10px;border-radius:9999px;background:#142234"></div><div style="height:8px;border-radius:9999px;background:rgba(20,34,52,.14)"></div><div style="height:44px;border-radius:8px;background:#EAF5F3"></div><div style="height:44px;border-radius:8px;background:#EAF5F3"></div><div style="height:28px;border-radius:9999px;background:#117C7A"></div></div></div>
+</div>
+<p style="margin:12px 0 0;font-size:13px;line-height:1.45;color:#727B87">A responsive behavior model, not a screenshot. The decision order stays the same as the column count drops, and the enrollment action stays full width on small screens.</p>
+<div class="g3" data-reveal="" style="margin-top:32px">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:16px;line-height:1.6"><li>Logical heading order</li><li>Keyboard accessible controls</li><li>Visible focus states</li></ul></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:16px;line-height:1.6"><li>Sufficient contrast</li><li>Descriptive labels</li><li>Tables become readable cards on small screens</li></ul></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:16px;line-height:1.6"><li>No critical information behind hover</li><li>Form errors explained with text</li><li>Reduced motion support</li></ul></div>
+</div>
+<p style="margin:24px 0 0;font-size:13px;line-height:1.45;color:#727B87">No formal WCAG certification is claimed.</p>
+</div>
+</section>
+
+<section id="measurement" style="background:#EAF5F3;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">16 · Measurement plan</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">What this work should be judged on</h2>
+<div class="g4" data-reveal="" style="margin-top:48px">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Primary outcome</div><ul style="margin:14px 0 0;padding-left:20px;font-size:16px;line-height:1.6"><li>Paid membership conversion rate</li></ul></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Decision quality</div><ul style="margin:14px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:16px;line-height:1.6"><li>Comparison to checkout click rate</li><li>Premium tier selection share</li><li>Plan fit tool completion</li><li>Pricing and benefits engagement</li></ul></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Learning journey</div><ul style="margin:14px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:16px;line-height:1.6"><li>Course detail engagement</li><li>Registration form completion</li><li>Returning visitor rate</li><li>Email click through to course or membership pages</li></ul></div>
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:24px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">Guardrails</div><ul style="margin:14px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:16px;line-height:1.6"><li>Refund and cancellation rate</li><li>Support questions about plan differences</li><li>Abandoned checkout rate</li><li>Accessibility issues</li></ul></div>
+</div>
+<div class="split" data-reveal="" style="margin-top:32px">
+<div style="background:#FFFFFF;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:28px">
+<h3 style="margin:0;font-size:19px;font-weight:700;color:#142234">Content operations</h3>
+<ul style="margin:14px 0 0;padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:16px;line-height:1.6"><li>Time from expert intake to approved asset</li><li>Number of revision rounds</li><li>Percentage of content reused across channels</li><li>Time to update a course or campaign</li></ul>
+</div>
+<div style="background:#FFFFFF;border:1px dashed rgba(20,34,52,.25);border-radius:18px;padding:28px">
+<h3 style="margin:0;font-size:19px;font-weight:700;color:#142234">Awaiting verified data</h3>
+<div style="margin-top:14px;display:flex;flex-direction:column;gap:10px;font-size:15px;font-weight:600;color:#727B87">
+<div>[ADD VERIFIED MEMBERSHIP CONVERSION CHANGE]</div>
+<div>[ADD VERIFIED PREMIUM TIER MIX CHANGE]</div>
+<div>[ADD VERIFIED EMAIL OR REGISTRATION CHANGE]</div>
+<div>[ADD VERIFIED CONTENT PRODUCTION TIME CHANGE]</div>
+</div>
+<p style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#727B87">Placeholders, not results. Nothing here is presented as a measured outcome.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="impact" style="padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#117C7A">17 · Impact</div>
+<h2 style="margin:16px 0 0;font-size:clamp(30px,4vw,48px);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#142234;text-wrap:pretty">One clearer journey across web, email, and the classroom</h2>
+<ul class="g2" data-reveal="" style="margin:48px 0 0;padding:0;list-style:none;gap:0 48px">
+<li style="border-top:1px solid rgba(20,34,52,.10);padding:18px 0;font-size:17px;line-height:1.6;color:#142234">Membership differences became easier to understand</li>
+<li style="border-top:1px solid rgba(20,34,52,.10);padding:18px 0;font-size:17px;line-height:1.6;color:#142234">The premium tier was positioned through relevant value and user fit</li>
+<li style="border-top:1px solid rgba(20,34,52,.10);padding:18px 0;font-size:17px;line-height:1.6;color:#142234">Course discovery became more structured and scannable</li>
+<li style="border-top:1px solid rgba(20,34,52,.10);padding:18px 0;font-size:17px;line-height:1.6;color:#142234">Expert material could be reused across more channels with a consistent message</li>
+<li style="border-top:1px solid rgba(20,34,52,.10);padding:18px 0;font-size:17px;line-height:1.6;color:#142234">Clinical review became a visible part of the design workflow</li>
+<li style="border-top:1px solid rgba(20,34,52,.10);border-bottom:1px solid rgba(20,34,52,.10);padding:18px 0;font-size:17px;line-height:1.6;color:#142234">The website and training materials felt like one connected experience</li>
+</ul>
+<p style="margin:24px 0 0;font-size:13px;line-height:1.45;color:#727B87">Qualitative outcomes. Numbers will be added only when verified data is supplied.</p>
+</div>
+</section>
+
+<section id="reflection" style="background:#0D223B;padding:clamp(64px,8vw,112px) 0;scroll-margin-top:124px">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7FD3CE">18 · Reflection</div>
+<p data-reveal="" style="margin:24px 0 0;max-width:900px;font-size:clamp(22px,2.6vw,30px);line-height:1.35;letter-spacing:-.02em;color:#FFFFFF">This project taught me that conversion work in professional education starts with trust. People need to understand what they are choosing, why it fits their goals, and what happens next. The strongest solution was not one page or one campaign. It was a shared content system that connected marketing, membership, and learning.</p>
+<div class="g3" data-reveal="" style="margin-top:48px">
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;color:#FFFFFF;font-size:17px;line-height:1.55">Clarity can support conversion without pressure</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;color:#FFFFFF;font-size:17px;line-height:1.55">Expert review is part of the user experience</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;color:#FFFFFF;font-size:17px;line-height:1.55">Reusable content systems improve both speed and consistency</div>
+</div>
+</div>
+</section>
+
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+<div role="dialog" aria-modal="true" aria-label="Annotated website export, full page" style="position:fixed;inset:0;z-index:200;background:rgba(13,34,59,.82);display:flex;flex-direction:column;align-items:center;padding:16px">
+<div style="width:100%;max-width:278px;display:flex;justify-content:flex-end">
+<button type="button" data-lightbox-close="" sc-camel-on-click="{{ closeLightbox }}" style="min-height:44px;min-width:44px;padding:0 18px;border-radius:9999px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.1);color:#FFFFFF;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit">Close</button>
+</div>
+<div style="margin-top:12px;overflow:auto;width:100%;max-width:278px;flex:1;border-radius:12px">
+<img src="/assets/empire/empire-training-website-annotated-overview.jpg" alt="Annotated full page export of the historical training website, shown at source size" width="278" height="2048" style="width:278px;max-width:100%;height:auto;display:block;border-radius:12px">
+</div>
+</div>
+</sc-if>
+</main>
+
+<footer style="border-top:1px solid rgba(20,34,52,.10);padding:40px 0">
+<div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+<span style="font-size:13px;color:#727B87">Web and Visual Designer, UX and Conversion Design</span>
+<a href="#hero" style="font-size:13px;color:#117C7A;text-decoration:none">Back to top</a>
+</div>
+</footer>
+</div>
+
+
+<nav aria-label="Continue exploring" style="background:#FCFBF8;border-top:1px solid rgba(20,34,52,.10);padding:36px 0">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#727B87">Continue exploring</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+      <a href="/work/blu-products-launch-system" style="text-decoration:none;background:#fff;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:22px 24px;display:block" style-hover="background:#F6F4EE">
+        <span style="display:block;font-size:13px;color:#727B87">Previous</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">BLU Products Launch System</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#4E5968">Launch operations, positioning, and campaign production</span>
+      </a>
+      <a href="/" style="text-decoration:none;background:#fff;border:1px solid rgba(20,34,52,.10);border-radius:18px;padding:22px 24px;display:block" style-hover="background:#F6F4EE">
+        <span style="display:block;font-size:13px;color:#727B87">Next</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#142234">All work</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#4E5968">Back to the résumé index</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<footer style="background:#fff;border-top:1px solid rgba(20,34,52,.10);padding:28px 0 40px">
+  <div style="max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,52px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:baseline;justify-content:space-between">
+    <div>
+      <p style="margin:0;font-size:15px;font-weight:700;color:#142234">Miguel Clavel</p>
+      <p style="margin:4px 0 0;font-size:13px;color:#727B87">Senior Product Designer &#183; UX strategy, design systems &amp; AI-enabled workflows</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;font-weight:600">
+      <a href="mailto:2miguelclavel@gmail.com?subject=Portfolio%20conversation" style="color:#117C7A">2miguelclavel@gmail.com</a>
+      <a href="/assets/Miguel-Clavel-Senior-Product-Designer-Resume-2026.pdf" download="Miguel-Clavel-Senior-Product-Designer-Resume.pdf" style="color:#117C7A">Résumé</a>
+      <a href="https://www.linkedin.com/in/miguelclavel/" target="_blank" rel="noopener noreferrer" style="color:#117C7A">LinkedIn</a>
+      <a href="https://www.behance.net/miguelclavel" target="_blank" rel="noopener noreferrer" style="color:#117C7A">Behance</a>
+      <a href="/" style="color:#4E5968">&#8592; Back to work</a>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CreativeWork","name":"From Training Catalog to Clear Membership Journey","description":"A membership decision experience for a medical training provider: clarified membership tiers, medical-content collaboration, training materials, email marketing, and responsible conversion strategy.","genre":"Case study","inLanguage":"en","creator":{"@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","url":"https://www.linkedin.com/in/miguelclavel/"},"author":{"@type":"Person","name":"Miguel Clavel"},"keywords":"membership UX, conversion strategy, medical content collaboration, email marketing, training materials"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","sameAs":["https://www.linkedin.com/in/miguelclavel/","https://www.behance.net/miguelclavel"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Résumé","item":"https://miguelclavel-portfolio-v2.netlify.app/resume"},{"@type":"ListItem","position":2,"name":"Work","item":"https://miguelclavel-portfolio-v2.netlify.app/work"},{"@type":"ListItem","position":3,"name":"Medical Training Membership Journey","item":"https://miguelclavel-portfolio-v2.netlify.app/work/medical-training-membership-journey"}]}
+</script>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{}">
+class Component extends DCLogic {
+  state = { progress: '0%', q1: 1, q2: 1, q3: 1, lightbox: false };
+
+  componentDidMount() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this._onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      const p = max > 0 ? Math.min(100, (h.scrollTop / max) * 100) : 0;
+      this.setState({ progress: p.toFixed(1) + '%' });
+      this._syncNav();
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (reduce) {
+      els.forEach(el => { el.style.opacity = '1'; });
+    } else {
+      els.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(8px)';
+        el.style.transition = 'opacity .32s cubic-bezier(.16,1,.3,1), transform .32s cubic-bezier(.16,1,.3,1)';
+        el.style.transitionDelay = (parseInt(el.dataset.stagger || '0', 10)) + 'ms';
+      });
+      this._io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            obs.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      els.forEach(el => this._io.observe(el));
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+  }
+
+  _syncNav() {
+    const links = Array.from(document.querySelectorAll('[data-nav]'));
+    if (!links.length) return;
+    let active = null;
+    links.forEach(l => {
+      const sec = document.getElementById(l.dataset.nav);
+      if (sec && sec.getBoundingClientRect().top <= 120) active = l.dataset.nav;
+    });
+    links.forEach(l => {
+      const on = l.dataset.nav === active;
+      l.style.color = on ? '#117C7A' : '#4E5968';
+      l.style.background = on ? '#EAF5F3' : 'transparent';
+      if (on) { l.setAttribute('aria-current', 'true'); } else { l.removeAttribute('aria-current'); }
+    });
+  }
+
+  _plan() {
+    const s = this.state.q1 + this.state.q2 + this.state.q3;
+    if (s <= 4) return ['Essential', 'A focused start on one topic, with room to upgrade later.'];
+    if (s <= 7) return ['Professional', 'Several courses and continued access without the broadest commitment.'];
+    return ['Complete', 'Broad access and ongoing education for an expanding practice.'];
+  }
+
+  _openLightbox = (e) => {
+    this._returnFocus = e && e.currentTarget;
+    this.setState({ lightbox: true }, () => {
+      const btn = document.querySelector('[data-lightbox-close]');
+      if (btn) btn.focus();
+      this._onKey = ev => { if (ev.key === 'Escape') this._closeLightbox(); };
+      document.addEventListener('keydown', this._onKey);
+    });
+  };
+
+  _closeLightbox = () => {
+    if (this._onKey) { document.removeEventListener('keydown', this._onKey); this._onKey = null; }
+    this.setState({ lightbox: false }, () => {
+      if (this._returnFocus && this._returnFocus.focus) this._returnFocus.focus();
+    });
+  };
+
+  renderVals() {
+    const shareProject = async () => {
+      const url = window.location.href;
+      const st = document.getElementById('shr-status');
+      const say = (t) => { if (st) st.textContent = t; };
+      try {
+        if (navigator.share) { await navigator.share({ title: 'From Training Catalog to Clear Membership Journey', url: url }); say('Shared.'); return; }
+        await navigator.clipboard.writeText(url);
+        say('Link copied.');
+      } catch (e) { say('Copy the address from your browser bar.'); }
+    };
+    const [planName, planReason] = this._plan();
+    const set = k => e => this.setState({ [k]: parseInt(e.target.value, 10) });
+    return {
+      shareProject: shareProject,
+      progress: this.state.progress,
+      planName, planReason,
+      lightboxOpen: this.state.lightbox,
+      openLightbox: this._openLightbox,
+      closeLightbox: this._closeLightbox,
+      onQ1: set('q1'), onQ2: set('q2'), onQ3: set('q3')
+    };
+  }
+}
+
+</script>
+
+
+</body></html>

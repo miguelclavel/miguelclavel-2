@@ -1,0 +1,4 @@
+/* No webfonts. The system ships zero @font-face rules by design: the brand
+   uses the host platform UI face only (San Francisco on Apple platforms,
+   Segoe/Helvetica/Arial elsewhere). No Google Fonts, no serif accents. */
+:root{--font-system:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;--font-core:var(--font-system);--font-display:var(--font-system);--font-body:var(--font-system);--font-mono:ui-monospace,SFMono-Regular,'SF Mono',Menlo,monospace}

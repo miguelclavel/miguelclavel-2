@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+<meta name="robots" content="noindex,nofollow">
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet"></link>
+  <style>
+    button:focus-visible, input:focus-visible, textarea:focus-visible, label:focus-within {
+      outline:2px solid oklch(0.45 0.03 60); outline-offset:2px; }
+    [data-dml-theme] {
+      --dml-surface:#ffffff;
+      --dml-surface-2:oklch(0.96 0.004 260);
+      --dml-rule:oklch(0.89 0.004 260);
+      --dml-ink:oklch(0.22 0.01 260);
+      --dml-ink-2:oklch(0.5 0.008 260);
+      --dml-overlay:oklch(1 0 0 / 0.94);
+      --dml-tint-blue:oklch(0.96 0.03 255);
+      --dml-tint-blue-rule:oklch(0.88 0.05 255);
+      --dml-tint-blue-ink:oklch(0.35 0.08 255);
+      --dml-tint-neutral:oklch(0.97 0.005 260);
+      --dml-tint-green:oklch(0.96 0.05 155);
+      --dml-tint-green-rule:oklch(0.85 0.08 155);
+      --dml-tint-green-ink:oklch(0.32 0.09 155);
+      --dml-tint-red:oklch(0.97 0.03 25);
+      --dml-tint-red-rule:oklch(0.88 0.06 25);
+      --dml-tint-red-ink:oklch(0.42 0.13 25);
+      --dml-tint-amber:oklch(0.97 0.02 75);
+      --dml-tint-amber-rule:oklch(0.88 0.06 75);
+      --dml-tint-amber-ink:oklch(0.44 0.12 75);
+    }
+    [data-dml-theme="dark"] {
+      --dml-surface:oklch(0.245 0.008 260);
+      --dml-surface-2:oklch(0.315 0.008 260);
+      --dml-rule:oklch(0.4 0.008 260);
+      --dml-ink:oklch(0.96 0.003 260);
+      --dml-ink-2:oklch(0.75 0.006 260);
+      --dml-overlay:oklch(0.28 0.008 260 / 0.94);
+      --dml-tint-blue:oklch(0.32 0.04 255);
+      --dml-tint-blue-rule:oklch(0.44 0.07 255);
+      --dml-tint-blue-ink:oklch(0.86 0.06 255);
+      --dml-tint-neutral:oklch(0.29 0.006 260);
+      --dml-tint-green:oklch(0.32 0.06 155);
+      --dml-tint-green-rule:oklch(0.45 0.09 155);
+      --dml-tint-green-ink:oklch(0.88 0.09 155);
+      --dml-tint-red:oklch(0.32 0.05 25);
+      --dml-tint-red-rule:oklch(0.46 0.1 25);
+      --dml-tint-red-ink:oklch(0.86 0.09 25);
+      --dml-tint-amber:oklch(0.32 0.03 75);
+      --dml-tint-amber-rule:oklch(0.46 0.07 75);
+      --dml-tint-amber-ink:oklch(0.88 0.08 75);
+    }
+    @keyframes dml-spin { to { transform:rotate(360deg); } }
+    @keyframes dml-write { from { clip-path:inset(-25% 100% -35% -25%); } to { clip-path:inset(-25% -25% -35% -25%); } }
+    @keyframes dml-rise { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+    @keyframes dml-draw { to { stroke-dashoffset:0; } }
+    @media (prefers-reduced-motion: reduce) { * { animation-duration:0.01ms !important; transition-duration:0.01ms !important; } }
+  </style>
+</helmet>
+
+<div data-dml-theme="{{ boardTheme }}" style="position:relative">
+
+
+  <sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
+  <div onPointerEnter="{{ onFrameEnter }}" onPointerLeave="{{ onFrameLeave }}" style="position:fixed; left:{{ winLeft }}px; top:{{ winTop }}px; width:{{ winW }}px; height:{{ winH }}px; z-index:900;">
+
+    <div style="position:absolute; inset:0; border:{{ frameWidth }}px solid {{ frameColor }}; pointer-events:none; z-index:60;"></div>
+
+    <sc-if value="{{ showHandles }}" hint-placeholder-val="{{ true }}">
+      <div onPointerDown="{{ onResizeTL }}" onPointerMove="{{ onResizeMove }}" onPointerUp="{{ onResizeUp }}" aria-hidden="true" style="position:absolute; left:0; top:0; width:11px; height:11px; background:var(--dml-surface); border:2px solid {{ frameColor }}; transform:translate(-50%,-50%); cursor:nwse-resize; touch-action:none; z-index:70;"></div>
+      <div onPointerDown="{{ onResizeTR }}" onPointerMove="{{ onResizeMove }}" onPointerUp="{{ onResizeUp }}" aria-hidden="true" style="position:absolute; right:0; top:0; width:11px; height:11px; background:var(--dml-surface); border:2px solid {{ frameColor }}; transform:translate(50%,-50%); cursor:nesw-resize; touch-action:none; z-index:70;"></div>
+      <div onPointerDown="{{ onResizeBL }}" onPointerMove="{{ onResizeMove }}" onPointerUp="{{ onResizeUp }}" aria-hidden="true" style="position:absolute; left:0; bottom:0; width:11px; height:11px; background:var(--dml-surface); border:2px solid {{ frameColor }}; transform:translate(-50%,50%); cursor:nesw-resize; touch-action:none; z-index:70;"></div>
+      <div onPointerDown="{{ onResizeBR }}" onPointerMove="{{ onResizeMove }}" onPointerUp="{{ onResizeUp }}" aria-hidden="true" style="position:absolute; right:0; bottom:0; width:11px; height:11px; background:var(--dml-surface); border:2px solid {{ frameColor }}; transform:translate(50%,50%); cursor:nwse-resize; touch-action:none; z-index:70;"></div>
+    </sc-if>
+
+    <div role="dialog" aria-label="Draw Miguel a Message" style="position:relative; z-index:1; height:100%; display:flex; flex-direction:column; overflow:hidden; background:var(--dml-surface); box-shadow:0 30px 80px -40px oklch(0.2 0.01 260 / 0.45);">
+
+      <div onPointerDown="{{ onTitleDown }}" onPointerMove="{{ onTitleMove }}" onPointerUp="{{ onTitleUp }}" style="flex:none; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:9px 10px 9px 14px; background:var(--dml-surface); border-bottom:1px solid var(--dml-surface-2); cursor:{{ titleCursor }}; touch-action:none;">
+        <div style="font-size:13px; font-weight:600; color:var(--dml-ink); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">Draw Miguel a Message</div>
+        <div style="display:flex; align-items:center; gap:2px;">
+          <sc-if value="{{ showHandles }}" hint-placeholder-val="{{ true }}">
+            <button onClick="{{ resetSize }}" onPointerEnter="{{ tipReset }}" onFocus="{{ tipReset }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="Reset board size" style="width:32px; height:32px; display:flex; align-items:center; justify-content:center; background:none; border:none; border-radius:8px; cursor:pointer; color:var(--dml-ink-2); font-family:inherit;" style-hover="background:var(--dml-surface-2)">
+              <svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><rect x="0.9" y="0.9" width="9.2" height="9.2" fill="none" stroke="currentColor" stroke-width="1.6"></rect></svg>
+            </button>
+          </sc-if>
+          <button onClick="{{ toggleMinimize }}" onPointerEnter="{{ tipMinimize }}" onFocus="{{ tipMinimize }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="{{ minimizeTitle }}" style="width:32px; height:32px; display:flex; align-items:center; justify-content:center; background:none; border:none; border-radius:8px; cursor:pointer; color:var(--dml-ink-2); font-family:inherit;" style-hover="background:var(--dml-surface-2)">
+            <svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true" dangerouslySetInnerHTML="{{ minimizeIcon }}"></svg>
+          </button>
+          <button onClick="{{ requestClose }}" onPointerEnter="{{ tipClose }}" onFocus="{{ tipClose }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="Close board" style="width:32px; height:32px; display:flex; align-items:center; justify-content:center; background:none; border:none; border-radius:8px; cursor:pointer; color:var(--dml-ink-2); font-family:inherit;" style-hover="background:var(--dml-surface-2)">
+            <svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true"><line x1="1.5" y1="1.5" x2="9.5" y2="9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></line><line x1="9.5" y1="1.5" x2="1.5" y2="9.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></line></svg>
+          </button>
+        </div>
+      </div>
+
+      <sc-if value="{{ bodyVisible }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:1; min-height:0; display:flex; flex-direction:column;">
+
+        <sc-if value="{{ drawView }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1; min-height:0; display:flex; flex-direction:column;">
+
+          <div style="position:relative; flex:1; min-height:0; display:flex; flex-direction:column;">
+            <div ref="{{ surfaceRef }}" onPointerDown="{{ onDown }}" onPointerMove="{{ onMove }}" onPointerUp="{{ onUp }}" onPointerCancel="{{ onUp }}" style="position:relative; flex:1; min-height:0; overflow:hidden; background:{{ canvasBg }}; cursor:{{ surfaceCursor }}; touch-action:none; overscroll-behavior:contain;">
+              <svg style="position:absolute; inset:0; width:100%; height:100%;">
+                <g transform="{{ panTransform }}">
+                  <sc-for list="{{ strokes }}" as="st" hint-placeholder-count="0">
+                    <path d="{{ st.d }}" fill="none" stroke="{{ st.color }}" stroke-width="{{ st.width }}" stroke-opacity="{{ st.opacity }}" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </sc-for>
+                  <sc-for list="{{ sprayItems }}" as="sy" hint-placeholder-count="0">
+                    <path d="{{ sy.d }}" fill="none" stroke="{{ sy.color }}" stroke-width="{{ sy.width }}" stroke-linecap="round"></path>
+                  </sc-for>
+                  <sc-for list="{{ shapeItems }}" as="sp" hint-placeholder-count="0">
+                    <path d="{{ sp.d }}" fill="{{ sp.fill }}" stroke="{{ sp.color }}" stroke-width="{{ sp.width }}" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </sc-for>
+                  <sc-for list="{{ imageItems }}" as="im" hint-placeholder-count="0">
+                    <image ref="{{ im.imgRef }}" x="{{ im.x }}" y="{{ im.y }}" width="{{ im.w }}" height="{{ im.h }}"></image>
+                  </sc-for>
+                  <sc-for list="{{ stickerItems }}" as="sk" hint-placeholder-count="0">
+                    <image ref="{{ sk.imgRef }}" x="{{ sk.x }}" y="{{ sk.y }}" width="{{ sk.size }}" height="{{ sk.size }}"></image>
+                  </sc-for>
+                  <sc-if value="{{ hasSelection }}" hint-placeholder-val="{{ false }}">
+                    <rect x="{{ selX }}" y="{{ selY }}" width="{{ selW }}" height="{{ selH }}" fill="none" stroke="oklch(0.55 0.2 255)" stroke-width="1.5" stroke-dasharray="5 4" rx="3"></rect>
+                  </sc-if>
+                </g>
+              </svg>
+
+              <div style="position:absolute; inset:0; transform:{{ panTranslate }};">
+                <sc-for list="{{ noteItems }}" as="nt" hint-placeholder-count="0">
+                  <div style="position:absolute; left:{{ nt.x }}px; top:{{ nt.y }}px; width:{{ nt.w }}px; height:{{ nt.h }}px; transform:{{ nt.rotate }}; pointer-events:{{ nt.pe }};">
+                    <div style="position:absolute; inset:0; background:{{ nt.color }}; box-shadow:0 1px 1px oklch(0.35 0.04 90 / 0.16), 0 10px 18px -12px oklch(0.35 0.04 90 / 0.55), inset 0 -22px 26px -26px oklch(0.4 0.05 90 / 0.5); clip-path:polygon(0 0, 100% 0, 100% 78%, 78% 100%, 0 100%);"></div>
+                    <div aria-hidden="true" style="position:absolute; right:0; bottom:0; width:22%; height:22%; background:linear-gradient(135deg, oklch(1 0 0 / 0) 46%, oklch(0.99 0.01 95 / 0.85) 47%, {{ nt.fold }} 100%); clip-path:polygon(100% 0, 100% 100%, 0 100%); box-shadow:-1px -1px 3px oklch(0.4 0.05 90 / 0.22);"></div>
+                    <div aria-hidden="true" style="position:absolute; left:22%; right:22%; top:0; height:9px; background:oklch(1 0 0 / 0.28);"></div>
+                    <textarea ref="{{ nt.ref }}" value="{{ nt.text }}" onChange="{{ nt.onChange }}" onBlur="{{ nt.onBlur }}" onPointerDown="{{ nt.stop }}" aria-label="Sticky note text" placeholder="Type here" style="position:relative; width:100%; height:100%; box-sizing:border-box; padding:16px 18px 26px; border:none; background:transparent; resize:none; font-family:Caveat, cursive; font-size:21px; line-height:1.25; color:oklch(0.32 0.03 80); outline:none;"></textarea>
+                  </div>
+                </sc-for>
+                <sc-for list="{{ textItems }}" as="tx" hint-placeholder-count="0">
+                  <div style="position:absolute; left:{{ tx.x }}px; top:{{ tx.y }}px; width:{{ tx.w }}px; pointer-events:{{ tx.pe }};">
+                    <textarea ref="{{ tx.ref }}" value="{{ tx.text }}" onChange="{{ tx.onChange }}" onBlur="{{ tx.onBlur }}" onPointerDown="{{ tx.stop }}" aria-label="Canvas text" placeholder="Type…" rows="{{ 2 }}" style="width:100%; box-sizing:border-box; padding:2px 4px; border:none; background:transparent; resize:none; overflow:hidden; font-family:inherit; font-size:{{ tx.size }}px; font-weight:600; line-height:1.3; color:{{ tx.color }}; outline:none;"></textarea>
+                  </div>
+                </sc-for>
+              </div>
+
+              <sc-if value="{{ hasTyped }}" hint-placeholder-val="{{ false }}">
+                <div style="position:absolute; left:22px; right:22px; bottom:96px; padding:14px 16px; background:var(--dml-overlay); border-left:3px solid oklch(0.52 0.19 255); box-shadow:0 12px 28px -22px oklch(0.2 0.01 260); pointer-events:none;">
+                  <div style="font-size:15px; line-height:1.5; color:var(--dml-ink); white-space:pre-wrap; overflow-wrap:anywhere; text-wrap:pretty;">{{ note }}</div>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ isBlank }}" hint-placeholder-val="{{ true }}">
+                <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:24px 30px 70px; text-align:center; pointer-events:none;">
+                  <svg width="78" height="64" viewBox="0 0 118 96" aria-hidden="true" style="position:absolute; left:18px; top:26px; color:var(--dml-ink);">
+                    <path d="M8 6 C6 34 22 48 46 52 C66 55 82 60 96 70" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"></path>
+                    <path d="M78 58 L102 73 L76 84 Z" fill="currentColor"></path>
+                  </svg>
+                  <svg width="70" height="58" viewBox="0 0 104 86" aria-hidden="true" style="position:absolute; right:18px; bottom:70px; color:var(--dml-ink);">
+                    <path d="M96 8 C92 34 74 44 50 48 C32 51 18 58 8 70" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"></path>
+                    <path d="M26 58 L4 74 L30 82 Z" fill="currentColor"></path>
+                  </svg>
+                  <sc-for list="{{ samples }}" as="sm" hint-placeholder-count="0">
+                    <div aria-hidden="true" style="position:absolute; left:{{ sm.left }}%; top:{{ sm.top }}%; width:{{ sm.size }}px; height:{{ sm.size }}px; transform:translate(-50%, -50%) rotate({{ sm.rot }}deg); opacity:{{ sm.opacity }};">
+                      <sc-if value="{{ sm.isSticker }}">
+                        <img ref="{{ sm.imgRef }}" alt="" style="width:100%; height:100%; object-fit:contain;"></img>
+                      </sc-if>
+                      <sc-if value="{{ sm.isDoodle }}">
+                        <svg viewBox="{{ sm.viewBox }}" style="width:100%; height:100%; color:{{ sm.ink }}; overflow:visible;">
+                          <sc-for list="{{ sm.dots }}" as="c" hint-placeholder-count="0">
+                            <circle cx="{{ c.cx }}" cy="{{ c.cy }}" r="{{ c.r }}" fill="currentColor"></circle>
+                          </sc-for>
+                          <sc-for list="{{ sm.paths }}" as="pp" hint-placeholder-count="0">
+                            <path d="{{ pp.d }}" fill="{{ pp.fill }}" stroke="{{ pp.stroke }}" stroke-width="{{ pp.w }}" stroke-linecap="round" stroke-linejoin="round"></path>
+                          </sc-for>
+                        </svg>
+                      </sc-if>
+                    </div>
+                  </sc-for>
+
+                  <h2 style="position:relative; z-index:1; margin:0; max-width:min(560px, 62%); font-size:clamp(26px, 4.6vw, 42px); font-weight:800; letter-spacing:-0.03em; line-height:1.05; color:var(--dml-ink); text-wrap:balance;">
+                    <span style="font-family:Caveat, cursive; font-weight:700; font-size:1.14em; letter-spacing:0; color:oklch(0.55 0.21 255); margin-right:0.16em;">Draw</span>Miguel a Message
+                  </h2>
+                  <p style="position:relative; z-index:1; margin:0; max-width:min(390px, 58%); font-size:14px; line-height:1.5; color:var(--dml-ink-2); text-wrap:pretty;">A freeform, interactive canvas where you can sketch something, write a message, or combine both.</p>
+                </div>
+              </sc-if>
+            </div>
+
+            <div style="position:absolute; left:0; right:0; bottom:14px; display:flex; flex-direction:column; align-items:center; gap:8px; padding:0 12px; pointer-events:none;">
+
+              <sc-if value="{{ trayColors }}" hint-placeholder-val="{{ false }}">
+                <div role="group" aria-label="Pen color and size" style="display:flex; align-items:center; gap:4px; max-width:100%; padding:7px 9px; background:var(--dml-surface); border:1px solid var(--dml-rule); border-radius:16px; box-shadow:0 14px 34px -20px oklch(0.2 0.01 260 / 0.6); overflow-x:auto; pointer-events:auto;">
+                  <button onClick="{{ pickColour }}" onPointerEnter="{{ tipPicker }}" onFocus="{{ tipPicker }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="Pick a colour from the canvas" aria-pressed="{{ pickerOn }}" style="width:{{ hit }}px; height:{{ hit }}px; flex:none; display:flex; align-items:center; justify-content:center; background:{{ pickerBg }}; border:none; border-radius:11px; cursor:pointer; font-family:inherit;" style-hover="background:{{ pickerHover }}">
+                    <span aria-hidden="true" style="width:22px; height:22px; background:{{ pickerInk }}; -webkit-mask:url(./icons/v4/picker.png) center/contain no-repeat; mask:url(./icons/v4/picker.png) center/contain no-repeat;"></span>
+                  </button>
+                  <div style="flex:none; width:1px; height:22px; background:var(--dml-rule);"></div>
+                  <sc-for list="{{ colors }}" as="c" hint-placeholder-count="12">
+                    <button onClick="{{ c.onClick }}" onPointerEnter="{{ c.onTip }}" onFocus="{{ c.onTip }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="{{ c.title }}" aria-pressed="{{ c.pressed }}" style="width:{{ hit }}px; height:{{ hit }}px; flex:none; display:flex; align-items:center; justify-content:center; background:{{ c.bg }}; border:none; border-radius:11px; cursor:pointer; font-family:inherit;" style-hover="background:var(--dml-surface-2)">
+                      <span aria-hidden="true" style="width:{{ c.dot }}px; height:{{ c.dot }}px; border-radius:50%; background:{{ c.value }}; box-shadow:{{ c.ring }};"></span>
+                    </button>
+                  </sc-for>
+                  <div style="flex:none; width:1px; height:22px; background:var(--dml-rule);"></div>
+                  <sc-for list="{{ sizes }}" as="z" hint-placeholder-count="3">
+                    <button onClick="{{ z.onClick }}" onPointerEnter="{{ z.onTip }}" onFocus="{{ z.onTip }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="{{ z.title }}" aria-pressed="{{ z.pressed }}" style="width:{{ hit }}px; height:{{ hit }}px; flex:none; display:flex; align-items:center; justify-content:center; background:{{ z.bg }}; border:none; border-radius:11px; cursor:pointer; font-family:inherit;" style-hover="background:var(--dml-surface-2)">
+                      <span aria-hidden="true" style="width:{{ z.dot }}px; height:{{ z.dot }}px; border-radius:50%; background:{{ z.ink }};"></span>
+                    </button>
+                  </sc-for>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ trayNotes }}" hint-placeholder-val="{{ false }}">
+                <div role="group" aria-label="Sticky note colour" style="display:flex; align-items:center; gap:4px; max-width:100%; padding:7px 9px; background:var(--dml-surface); border:1px solid var(--dml-rule); border-radius:16px; box-shadow:0 14px 34px -20px oklch(0.2 0.01 260 / 0.6); overflow-x:auto; pointer-events:auto;">
+                  <sc-for list="{{ noteColors }}" as="n" hint-placeholder-count="8">
+                    <button onClick="{{ n.onClick }}" onPointerEnter="{{ n.onTip }}" onFocus="{{ n.onTip }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="{{ n.title }}" aria-pressed="{{ n.pressed }}" style="width:{{ hit }}px; height:{{ hit }}px; flex:none; display:flex; align-items:center; justify-content:center; background:{{ n.bg }}; border:none; border-radius:11px; cursor:pointer; font-family:inherit;" style-hover="background:var(--dml-surface-2)">
+                      <span aria-hidden="true" style="width:{{ n.size }}px; height:{{ n.size }}px; border-radius:4px; background:{{ n.value }}; box-shadow:{{ n.ring }};"></span>
+                    </button>
+                  </sc-for>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ trayShapes }}" hint-placeholder-val="{{ false }}">
+                <div role="group" aria-label="Shapes" style="display:flex; align-items:center; gap:4px; max-width:100%; padding:7px 9px; background:var(--dml-surface); border:1px solid var(--dml-rule); border-radius:16px; box-shadow:0 14px 34px -20px oklch(0.2 0.01 260 / 0.6); overflow-x:auto; pointer-events:auto;">
+                  <sc-for list="{{ shapeTools }}" as="sh" hint-placeholder-count="5">
+                    <button onClick="{{ sh.onClick }}" onPointerEnter="{{ sh.onTip }}" onFocus="{{ sh.onTip }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="{{ sh.title }}" aria-pressed="{{ sh.pressed }}" style="width:{{ hit }}px; height:{{ hit }}px; flex:none; display:flex; align-items:center; justify-content:center; background:{{ sh.bg }}; border:none; border-radius:11px; cursor:pointer; font-family:inherit;" style-hover="background:var(--dml-surface-2)">
+                      <svg width="21" height="21" viewBox="0 0 28 28" aria-hidden="true"><path d="{{ sh.d }}" fill="none" stroke="{{ sh.ink }}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </sc-for>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ trayStickers }}" hint-placeholder-val="{{ false }}">
+                <div role="group" aria-label="Stickers" style="display:flex; align-items:center; gap:3px; max-width:100%; padding:7px 9px; background:var(--dml-surface); border:1px solid var(--dml-rule); border-radius:16px; box-shadow:0 14px 34px -20px oklch(0.2 0.01 260 / 0.6); overflow-x:auto; pointer-events:auto;">
+                  <sc-for list="{{ stickerTools }}" as="sk" hint-placeholder-count="0">
+                    <button onClick="{{ sk.onClick }}" onPointerEnter="{{ sk.onTip }}" onFocus="{{ sk.onTip }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="{{ sk.title }}" aria-pressed="{{ sk.pressed }}" style="width:{{ hit }}px; height:{{ hit }}px; flex:none; display:flex; align-items:center; justify-content:center; box-sizing:border-box; padding:5px; background:{{ sk.bg }}; border:none; border-radius:11px; cursor:pointer; font-family:inherit;" style-hover="background:var(--dml-surface-2)">
+                      <img ref="{{ sk.imgRef }}" alt="" style="width:100%; height:100%; object-fit:contain;"></img>
+                    </button>
+                  </sc-for>
+                </div>
+              </sc-if>
+
+              <sc-if value="{{ trayMore }}" hint-placeholder-val="{{ false }}">
+                <div role="group" aria-label="More tools" style="display:flex; align-items:center; gap:3px; max-width:100%; padding:7px; background:var(--dml-surface); border:1px solid var(--dml-rule); border-radius:16px; box-shadow:0 14px 34px -20px oklch(0.2 0.01 260 / 0.6); overflow-x:auto; pointer-events:auto;">
+                  <sc-for list="{{ overflowItems }}" as="e" hint-placeholder-count="0">
+                    <button onClick="{{ e.onClick }}" onPointerEnter="{{ e.onTip }}" onFocus="{{ e.onTip }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="{{ e.title }}" aria-pressed="{{ e.pressed }}" disabled="{{ e.disabled }}" style="width:{{ hit }}px; height:{{ hit }}px; flex:none; display:flex; align-items:center; justify-content:center; background:{{ e.bg }}; border:none; border-radius:12px; cursor:{{ e.cursor }}; opacity:{{ e.opacity }}; font-family:inherit;" style-hover="background:{{ e.hoverBg }}">
+                      <sc-if value="{{ e.isDot }}"><span aria-hidden="true" style="width:18px; height:18px; border-radius:50%; background:{{ e.dotColor }}; box-shadow:0 0 0 1.5px {{ e.ring }}, inset 0 0 0 1px oklch(0.8 0.01 260 / 0.5);"></span></sc-if>
+                      <sc-if value="{{ e.isIcon }}"><span aria-hidden="true" style="width:23px; height:23px; background:{{ e.ink }}; -webkit-mask:url({{ e.icon }}) center/contain no-repeat; mask:url({{ e.icon }}) center/contain no-repeat;"></span></sc-if>
+                    </button>
+                  </sc-for>
+                </div>
+              </sc-if>
+
+              <div role="toolbar" aria-label="Drawing tools" style="display:flex; align-items:center; gap:3px; max-width:100%; padding:7px; background:var(--dml-surface); border:1px solid var(--dml-rule); border-radius:18px; box-shadow:0 18px 40px -22px oklch(0.2 0.01 260 / 0.65); pointer-events:auto;">
+                <sc-if value="{{ toolbarOpen }}" hint-placeholder-val="{{ true }}">
+                  <sc-for list="{{ barItems }}" as="e" hint-placeholder-count="12">
+                    <button onClick="{{ e.onClick }}" onPointerEnter="{{ e.onTip }}" onFocus="{{ e.onTip }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="{{ e.title }}" aria-pressed="{{ e.pressed }}" disabled="{{ e.disabled }}" style="width:{{ hit }}px; height:{{ hit }}px; flex:none; display:flex; align-items:center; justify-content:center; background:{{ e.bg }}; border:none; border-radius:12px; cursor:{{ e.cursor }}; opacity:{{ e.opacity }}; font-family:inherit;" style-hover="background:{{ e.hoverBg }}">
+                      <sc-if value="{{ e.isDot }}"><span aria-hidden="true" style="width:18px; height:18px; border-radius:50%; background:{{ e.dotColor }}; box-shadow:0 0 0 1.5px {{ e.ring }}, inset 0 0 0 1px oklch(0.8 0.01 260 / 0.5);"></span></sc-if>
+                      <sc-if value="{{ e.isIcon }}"><span aria-hidden="true" style="width:23px; height:23px; background:{{ e.ink }}; -webkit-mask:url({{ e.icon }}) center/contain no-repeat; mask:url({{ e.icon }}) center/contain no-repeat;"></span></sc-if>
+                    </button>
+                  </sc-for>
+                </sc-if>
+                <button onClick="{{ onChevron }}" onPointerEnter="{{ tipCollapse }}" onFocus="{{ tipCollapse }}" onPointerLeave="{{ hideTip }}" onBlur="{{ hideTip }}" aria-label="{{ collapseLabel }}" aria-expanded="{{ chevronExpanded }}" style="width:{{ hit }}px; height:{{ hit }}px; flex:none; display:flex; align-items:center; justify-content:center; background:{{ chevronBg }}; border:none; border-radius:12px; cursor:pointer; color:{{ chevronInk }}; font-family:inherit;" style-hover="background:{{ chevronHover }}">
+                  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" dangerouslySetInnerHTML="{{ collapseIcon }}"></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <sc-if value="{{ draftRestored }}" hint-placeholder-val="{{ false }}">
+            <div role="status" style="flex:none; display:flex; align-items:center; gap:10px; padding:9px 14px; background:var(--dml-tint-blue); border-top:1px solid var(--dml-tint-blue-rule);">
+              <div style="flex:1; min-width:0; font-size:12.5px; color:var(--dml-tint-blue-ink);">Draft restored from your last visit.</div>
+              <button onClick="{{ discardDraft }}" style="flex:none; height:30px; padding:0 11px; background:var(--dml-surface); color:var(--dml-ink); border:1px solid var(--dml-rule); border-radius:8px; font-size:12px; font-weight:600; font-family:inherit; cursor:pointer;" style-hover="background:var(--dml-surface-2)">Start fresh</button>
+              <button onClick="{{ dismissDraftNote }}" aria-label="Dismiss" style="flex:none; width:30px; height:30px; display:flex; align-items:center; justify-content:center; background:none; border:none; border-radius:8px; cursor:pointer; color:oklch(0.4 0.05 255); font-family:inherit;" style-hover="background:oklch(0.92 0.04 255)">
+                <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></line><line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></line></svg>
+              </button>
+            </div>
+          </sc-if>
+
+          <div style="flex:none; display:flex; flex-direction:column; gap:7px; padding:12px 16px 14px; background:var(--dml-surface); border-top:1px solid var(--dml-surface-2);">
+            <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px;">
+              <label for="dml-note" style="font-size:13px; font-weight:600; color:var(--dml-ink);">Type Miguel a message</label>
+              <div style="display:flex; align-items:baseline; gap:12px; min-width:0;">
+                <div title="{{ shortcutHint }}" style="font-size:11px; color:var(--dml-ink-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">⌘Z undo · ⌘↵ review</div>
+                <div aria-live="polite" style="font-size:11.5px; font-variant-numeric:tabular-nums; color:{{ counterInk }};">{{ counter }}</div>
+              </div>
+            </div>
+            <div style="display:flex; align-items:flex-end; gap:10px;">
+              <textarea id="dml-note" ref="{{ noteInputRef }}" value="{{ note }}" onChange="{{ onNote }}" maxLength="{{ 500 }}" rows="{{ 2 }}" placeholder="Write something here…" style="flex:1; min-width:0; box-sizing:border-box; padding:11px 13px; font-size:14px; line-height:1.5; font-family:inherit; color:var(--dml-ink); background:var(--dml-surface); border:1px solid var(--dml-rule); border-radius:11px; resize:vertical;" style-focus="border-color:oklch(0.6 0.14 255)"></textarea>
+              <button onClick="{{ goReview }}" disabled="{{ reviewDisabled }}" style="flex:none; height:48px; padding:0 20px; background:{{ reviewBg }}; color:var(--dml-surface); border:none; border-radius:11px; font-size:14px; font-weight:600; font-family:inherit; cursor:{{ reviewCursor }};">Review message</button>
+            </div>
+          </div>
+        </div>
+        </sc-if>
+
+        <sc-if value="{{ reviewView }}" hint-placeholder-val="{{ false }}">
+        <div style="flex:1; min-height:0; overflow-y:auto; padding:20px 20px 22px;">
+          <div style="display:flex; flex-direction:column; gap:14px; max-width:540px; margin:0 auto;">
+            <div style="font-size:16px; font-weight:600; letter-spacing:-0.01em; color:var(--dml-ink);">Review your message</div>
+
+            <sc-if value="{{ hasDrawing }}" hint-placeholder-val="{{ false }}">
+              <img ref="{{ previewImgRef }}" alt="Preview of your drawing" style="width:100%; height:auto; display:block; border:1px solid var(--dml-rule); border-radius:8px; background:var(--dml-surface);"></img>
+            </sc-if>
+
+            <sc-if value="{{ hasTyped }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:14px 16px; background:var(--dml-surface); border-left:3px solid oklch(0.52 0.19 255); border-radius:0 8px 8px 0;">
+                <div style="font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--dml-ink-2); padding-bottom:6px;">Your message</div>
+                <div style="font-size:14.5px; line-height:1.55; color:var(--dml-ink); white-space:pre-wrap; overflow-wrap:anywhere;">{{ note }}</div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(190px, 1fr)); gap:10px;">
+                <div style="display:flex; flex-direction:column; gap:5px;">
+                  <label for="dml-name" style="font-size:12px; font-weight:600; color:var(--dml-ink-2);">Your name (optional)</label>
+                  <input id="dml-name" value="{{ senderName }}" onChange="{{ onName }}" maxLength="{{ 80 }}" style="width:100%; box-sizing:border-box; height:44px; padding:0 12px; font-size:14px; font-family:inherit; color:var(--dml-ink); border:1px solid var(--dml-rule); border-radius:11px;" style-focus="border-color:oklch(0.6 0.14 255)"></input>
+                </div>
+                <div style="display:flex; flex-direction:column; gap:5px;">
+                  <label for="dml-email" style="font-size:12px; font-weight:600; color:var(--dml-ink-2);">Reply email (optional)</label>
+                  <input id="dml-email" type="email" inputMode="email" value="{{ email }}" onChange="{{ onEmail }}" onBlur="{{ onEmailBlur }}" aria-invalid="{{ emailInvalid }}" aria-describedby="dml-email-err" style="width:100%; box-sizing:border-box; height:44px; padding:0 12px; font-size:14px; font-family:inherit; color:var(--dml-ink); border:1px solid {{ emailBorder }}; border-radius:11px;" style-focus="border-color:oklch(0.6 0.14 255)"></input>
+                </div>
+              </div>
+              <div id="dml-email-err" role="status" style="font-size:12px; color:oklch(0.52 0.18 25);">{{ emailError }}</div>
+              <input tabIndex="{{ -1 }}" autoComplete="off" aria-hidden="true" value="{{ honeypot }}" onChange="{{ onHoneypot }}" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;"></input>
+            </div>
+
+            <p style="margin:0; font-size:12px; line-height:1.55; color:var(--dml-ink-2); text-wrap:pretty;">{{ disclosure }}</p>
+            </sc-if>
+
+            <sc-if value="{{ soulful }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-direction:column; gap:0; padding-top:4px;">
+              <div aria-hidden="true" style="display:flex; flex-wrap:wrap; align-items:flex-end; gap:1px; min-height:78px; padding:6px 6px 10px; overflow:visible;">
+                <sc-for list="{{ soulLetters }}" as="l" hint-placeholder-count="0">
+                  <span style="display:inline-block; font-family:Caveat, cursive; font-weight:700; font-size:clamp(40px, 11vw, 58px); line-height:1.16; padding:0 0.03em; color:{{ soulColor }}; white-space:pre; overflow:visible; animation:dml-write 0.26s ease-out {{ l.delay }}s both;">{{ l.ch }}</span>
+                </sc-for>
+                <sc-if value="{{ soulFace }}">
+                  <svg width="56" height="44" viewBox="0 0 56 44" aria-hidden="true" style="margin:0 0 12px 12px; overflow:visible;">
+                    <circle cx="16" cy="12" r="4" fill="{{ soulColor }}" style="animation:dml-rise 0.3s ease-out {{ soulSmileDelay }}s both;"></circle>
+                    <circle cx="38" cy="12" r="4" fill="{{ soulColor }}" style="animation:dml-rise 0.3s ease-out {{ soulSmileDelay }}s both;"></circle>
+                    <path d="{{ soulMouth }}" fill="none" stroke="{{ soulColor }}" stroke-width="5" stroke-linecap="round" stroke-dasharray="70" stroke-dashoffset="70" style="animation:dml-draw 0.5s ease-out {{ soulArcDelay }}s both;"></path>
+                  </svg>
+                </sc-if>
+              </div>
+              <div style="height:1px; background:var(--dml-rule);"></div>
+              <div role="status" aria-live="polite" style="padding-top:12px; font-size:13px; line-height:1.55; color:var(--dml-ink-2); text-wrap:pretty;">{{ statusBody }}</div>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ isSent }}" hint-placeholder-val="{{ false }}">
+            <div style="display:flex; flex-wrap:wrap; gap:8px;">
+              <button onClick="{{ downloadCopy }}" style="flex:1; min-width:150px; height:48px; background:var(--dml-surface-2); color:var(--dml-ink); border:none; border-radius:12px; font-size:14.5px; font-weight:600; font-family:inherit; cursor:pointer;" style-hover="background:var(--dml-surface-2)">Keep a copy</button>
+              <button onClick="{{ closeBoard }}" style="flex:2; min-width:170px; height:48px; background:var(--dml-surface-2); color:var(--dml-ink); border:none; border-radius:12px; font-size:14.5px; font-weight:600; font-family:inherit; cursor:pointer;" style-hover="background:var(--dml-surface-2)">Thank you</button>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ showActions }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex; flex-wrap:wrap; gap:8px; align-items:center;">
+              <button onClick="{{ backToDrawing }}" style="height:44px; padding:0 16px; background:var(--dml-surface); color:var(--dml-ink); border:1px solid var(--dml-rule); border-radius:11px; font-size:14px; font-weight:600; font-family:inherit; cursor:pointer;" style-hover="background:var(--dml-surface-2)">Edit</button>
+              <button onClick="{{ downloadCopy }}" style="height:44px; padding:0 16px; background:var(--dml-surface); color:var(--dml-ink); border:1px solid var(--dml-rule); border-radius:11px; font-size:14px; font-weight:600; font-family:inherit; cursor:pointer;" style-hover="background:var(--dml-surface-2)">Download a copy</button>
+              <button onClick="{{ send }}" disabled="{{ sendDisabled }}" style="height:44px; padding:0 20px; margin-left:auto; display:inline-flex; align-items:center; gap:8px; background:{{ sendBg }}; color:var(--dml-surface); border:none; border-radius:11px; font-size:14px; font-weight:600; font-family:inherit; cursor:{{ sendCursor }};">
+                <sc-if value="{{ isSending }}"><span aria-hidden="true" style="width:13px; height:13px; border:2px solid oklch(1 0 0 / 0.4); border-top-color:var(--dml-surface); border-radius:50%; animation:dml-spin 0.7s linear infinite;"></span></sc-if>
+                {{ sendLabel }}
+              </button>
+            </div>
+            </sc-if>
+
+            <sc-if value="{{ showPlainStatus }}" hint-placeholder-val="{{ false }}">
+              <div role="status" aria-live="polite" style="display:flex; flex-direction:column; gap:8px; padding:13px 15px; background:{{ statusBg }}; border:1px solid {{ statusBorder }}; border-radius:11px;">
+                <div style="font-size:13.5px; font-weight:600; color:{{ statusInk }};">{{ statusTitle }}</div>
+                <div style="font-size:12.5px; line-height:1.55; color:var(--dml-ink-2); text-wrap:pretty;">{{ statusBody }}</div>
+                <sc-if value="{{ showRetry }}">
+                  <div style="display:flex; gap:8px; padding-top:2px;">
+                    <button onClick="{{ send }}" style="height:38px; padding:0 13px; background:var(--dml-surface); color:var(--dml-ink); border:1px solid var(--dml-rule); border-radius:9px; font-size:12.5px; font-weight:600; font-family:inherit; cursor:pointer;" style-hover="background:var(--dml-surface-2)">Retry</button>
+                    <button onClick="{{ downloadCopy }}" style="height:38px; padding:0 13px; background:var(--dml-surface); color:var(--dml-ink); border:1px solid var(--dml-rule); border-radius:9px; font-size:12.5px; font-weight:600; font-family:inherit; cursor:pointer;" style-hover="background:var(--dml-surface-2)">Download copy</button>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+        </sc-if>
+
+      </div>
+      </sc-if>
+
+      <sc-if value="{{ confirmOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute; inset:0; z-index:80; display:flex; align-items:center; justify-content:center; padding:20px; background:oklch(0.2 0.01 260 / 0.28);">
+        <div role="alertdialog" aria-label="Clear the board" style="width:100%; max-width:320px; display:flex; flex-direction:column; gap:10px; padding:18px; background:var(--dml-surface); border-radius:14px; box-shadow:0 24px 60px -30px oklch(0.2 0.01 260 / 0.6);">
+          <div style="font-size:14.5px; font-weight:600; color:var(--dml-ink);">{{ confirmTitle }}</div>
+          <div style="font-size:12.5px; line-height:1.55; color:var(--dml-ink-2);">{{ confirmBody }}</div>
+          <div style="display:flex; gap:8px; justify-content:flex-end; padding-top:4px;">
+            <button ref="{{ confirmRef }}" onClick="{{ cancelClear }}" style="height:42px; padding:0 15px; background:var(--dml-surface); color:var(--dml-ink); border:1px solid var(--dml-rule); border-radius:11px; font-size:13.5px; font-weight:600; font-family:inherit; cursor:pointer;" style-hover="background:var(--dml-surface-2)">Cancel</button>
+            <button onClick="{{ confirmClear }}" style="height:42px; padding:0 15px; background:oklch(0.52 0.19 255); color:var(--dml-surface); border:none; border-radius:11px; font-size:13.5px; font-weight:600; font-family:inherit; cursor:pointer;" style-hover="background:oklch(0.46 0.19 255)">{{ confirmAction }}</button>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+  </div>
+  </sc-if>
+
+  <input ref="{{ fileRef }}" type="file" accept="image/*" onChange="{{ onPickImage }}" aria-hidden="true" tabIndex="{{ -1 }}" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;"></input>
+
+  <sc-for list="{{ particles }}" as="p" hint-placeholder-count="0">
+    <img ref="{{ p.imgRef }}" alt="" aria-hidden="true" style="position:fixed; left:{{ p.x }}px; top:{{ p.y }}px; width:{{ p.size }}px; height:{{ p.size }}px; transform:{{ p.transform }}; opacity:{{ p.opacity }}; z-index:1200; pointer-events:none;"></img>
+  </sc-for>
+
+  <sc-if value="{{ hasTip }}" hint-placeholder-val="{{ false }}">
+    <div role="tooltip" style="position:fixed; left:{{ tipX }}px; top:{{ tipY }}px; transform:translate(-50%, -100%); z-index:1000; padding:5px 9px; background:var(--dml-ink); color:var(--dml-surface); border-radius:8px; font-size:11.5px; font-weight:500; white-space:nowrap; pointer-events:none; box-shadow:0 8px 20px -12px oklch(0.2 0.01 260 / 0.8);">{{ tipText }}</div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;deliveryConnected&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Delivery&quot;},&quot;startOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;explodeEnabled&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Exploding input&quot;},&quot;explodeAmount&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2,&quot;min&quot;:1,&quot;max&quot;:6,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exploding input&quot;},&quot;explodeGravity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.55,&quot;min&quot;:0,&quot;max&quot;:1.2,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exploding input&quot;},&quot;explodeDuration&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.6,&quot;min&quot;:0.6,&quot;max&quot;:4,&quot;step&quot;:0.2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exploding input&quot;}}">
+const BLUE = 'oklch(0.52 0.19 255)';
+const BLUE_BRIGHT = 'oklch(0.6 0.22 255)';
+const BLUE_STRONG = 'oklch(0.46 0.22 255)';
+const ACTIVE_BG = 'oklch(0.55 0.2 255)';
+const ACTIVE_HOVER = 'oklch(0.5 0.2 255)';
+const COLORS = [
+  { title: 'Ink', value: 'oklch(0.24 0.01 260)' },
+  { title: 'Grey', value: 'oklch(0.62 0.01 260)' },
+  { title: 'White', value: '#ffffff' },
+  { title: 'Blue', value: 'oklch(0.52 0.19 255)' },
+  { title: 'Teal', value: 'oklch(0.6 0.12 200)' },
+  { title: 'Green', value: 'oklch(0.52 0.13 155)' },
+  { title: 'Amber', value: 'oklch(0.72 0.15 75)' },
+  { title: 'Orange', value: 'oklch(0.65 0.18 45)' },
+  { title: 'Red', value: 'oklch(0.56 0.2 25)' },
+  { title: 'Pink', value: 'oklch(0.66 0.19 350)' },
+  { title: 'Purple', value: 'oklch(0.52 0.2 300)' },
+  { title: 'Brown', value: 'oklch(0.45 0.08 55)' }
+];
+const DARK_CANVAS = 'oklch(0.185 0.008 260)';
+const LIGHT_CANVAS = '#ffffff';
+const pageTheme = () => {
+  try {
+    const el = document.querySelector('[data-theme]');
+    if (el && el.getAttribute('data-theme')) return el.getAttribute('data-theme');
+    return localStorage.getItem('mc-theme') || 'light';
+  } catch (err) { return 'light'; }
+};
+// canvas sits opposite the page so the board reads as its own surface
+const autoBg = () => (pageTheme() === 'dark' ? DARK_CANVAS : LIGHT_CANVAS);
+const autoInk = () => (pageTheme() === 'dark' ? '#ffffff' : 'oklch(0.24 0.01 260)');
+const isAutoBg = (v) => v === LIGHT_CANVAS || v === DARK_CANVAS;
+const SIZES = [
+  { title: 'Thin', value: 2, dot: 6 },
+  { title: 'Medium', value: 4, dot: 9 },
+  { title: 'Thick', value: 9, dot: 13 }
+];
+const SHAPES = [
+  { id: 'line', title: 'Line' },
+  { id: 'rect', title: 'Rectangle' },
+  { id: 'circle', title: 'Circle' },
+  { id: 'triangle', title: 'Triangle' },
+  { id: 'heart', title: 'Heart' }
+];
+const STICKER_NAMES = ['Color circles','Easel','Pipette','Marker','Ruler','Crossed pencils','Color swatches','Paint bucket','Palette','Paint tubes','Drawing tablet','Lightbulb','Pencil and ruler','Hourglass','Scissors','Cutter knife','Paintbrush','Pen nib','Eraser','Typography','Eye','Laptop','Paint roller','Compass','Notebooks'];
+const STICKERS = STICKER_NAMES.map((name, i) => ({ src: '/stickers/s' + String(i + 2).padStart(2, '0') + '.png', name }));
+const NOTE_COLORS = [
+  { title: 'Yellow', value: 'oklch(0.93 0.09 96)' },
+  { title: 'Pink', value: 'oklch(0.9 0.07 12)' },
+  { title: 'Mint', value: 'oklch(0.91 0.07 160)' },
+  { title: 'Sky', value: 'oklch(0.9 0.06 235)' },
+  { title: 'Lilac', value: 'oklch(0.9 0.06 300)' },
+  { title: 'Grey', value: 'oklch(0.93 0.005 260)' },
+  { title: 'Peach', value: 'oklch(0.91 0.06 55)' },
+  { title: 'White', value: '#ffffff' }
+];
+const NOTE_BG = NOTE_COLORS[0].value;
+const NOTE_W = 180, NOTE_H = 140, TEXT_W = 240, MAX_NOTE = 500;
+const PARTICLES = ['s02','s03','s07','s09','s13','s17','s18','s20'].map(n => '/stickers/' + n + '.png');
+const HEART = [[.5,1],[.1,.72],[0,.45],[0,.3],[0,.1],[.2,0],[.35,0],[.45,0],[.5,.08],[.5,.15],[.5,.08],[.55,0],[.65,0],[.8,0],[1,.1],[1,.3],[1,.45],[.9,.72],[.5,1]];
+
+function shapePath(kind, x1, y1, x2, y2) {
+  const n = (v) => Math.round(v * 10) / 10;
+  if (kind === 'line') return 'M' + n(x1) + ' ' + n(y1) + ' L' + n(x2) + ' ' + n(y2);
+  if (kind === 'arrow') {
+    const a = Math.atan2(y2 - y1, x2 - x1);
+    const len = Math.max(7, Math.min(26, Math.hypot(x2 - x1, y2 - y1) * 0.28));
+    const hx = x2 - len * Math.cos(a - 0.42), hy = y2 - len * Math.sin(a - 0.42);
+    const jx = x2 - len * Math.cos(a + 0.42), jy = y2 - len * Math.sin(a + 0.42);
+    return 'M' + n(x1) + ' ' + n(y1) + ' L' + n(x2) + ' ' + n(y2) + ' M' + n(hx) + ' ' + n(hy) + ' L' + n(x2) + ' ' + n(y2) + ' L' + n(jx) + ' ' + n(jy);
+  }
+  const l = Math.min(x1, x2), r = Math.max(x1, x2), t = Math.min(y1, y2), b = Math.max(y1, y2);
+  const w = r - l, h = b - t;
+  if (kind === 'rect') return 'M' + n(l) + ' ' + n(t) + ' H' + n(r) + ' V' + n(b) + ' H' + n(l) + ' Z';
+  if (kind === 'triangle') return 'M' + n(l + w / 2) + ' ' + n(t) + ' L' + n(r) + ' ' + n(b) + ' L' + n(l) + ' ' + n(b) + ' Z';
+  if (kind === 'circle') {
+    const rx = w / 2, ry = h / 2, cx = l + rx, cy = t + ry;
+    return 'M' + n(cx - rx) + ' ' + n(cy) + ' A' + n(rx) + ' ' + n(ry) + ' 0 1 0 ' + n(cx + rx) + ' ' + n(cy) + ' A' + n(rx) + ' ' + n(ry) + ' 0 1 0 ' + n(cx - rx) + ' ' + n(cy) + ' Z';
+  }
+  const P = HEART.map(p => [n(l + p[0] * w), n(t + p[1] * h)]);
+  let d = 'M' + P[0][0] + ' ' + P[0][1];
+  for (let i = 1; i < P.length; i += 3) d += ' C' + P[i][0] + ' ' + P[i][1] + ' ' + P[i + 1][0] + ' ' + P[i + 1][1] + ' ' + P[i + 2][0] + ' ' + P[i + 2][1];
+  return d + ' Z';
+}
+const CLOSED = ['rect', 'circle', 'triangle', 'heart'];
+const DOODLES = [
+  { name: 'smile', box: 66, dots: [[19, 13, 4.6], [45, 13, 4.6]], paths: [{ d: 'M10 26 C19 41 47 41 56 26', w: 5.5 }] },
+  { name: 'heart', box: 56, dots: [], paths: [{ d: 'M28 48 C6 33 4 19 12 12 C20 6 28 14 28 19 C28 14 36 6 44 12 C52 19 50 33 28 48 Z', fill: true }] },
+  { name: 'star', box: 58, dots: [], paths: [{ d: 'M29 6 L36 22 L53 24 L40 35 L44 52 L29 43 L14 52 L18 35 L5 24 L22 22 Z', w: 4.5 }] },
+  { name: 'sparkle', box: 50, dots: [], paths: [{ d: 'M25 4 C27 18 32 23 46 25 C32 27 27 32 25 46 C23 32 18 27 4 25 C18 23 23 18 25 4 Z', fill: true }] },
+  { name: 'arrow', box: 64, dots: [], paths: [{ d: 'M6 44 C18 16 36 40 54 14', w: 5 }, { d: 'M46 10 L58 14 L52 26 Z', fill: true }] },
+  { name: 'wave', box: 62, dots: [], paths: [{ d: 'M5 20 C13 8 20 32 28 20 C36 8 43 32 51 20', w: 5 }] },
+  { name: 'check', box: 54, dots: [], paths: [{ d: 'M8 28 L21 42 L46 10', w: 6.5 }] },
+  { name: 'bolt', box: 48, dots: [], paths: [{ d: 'M27 4 L11 27 L22 27 L18 44 L36 20 L25 20 Z', fill: true }] },
+  { name: 'bubble', box: 60, dots: [], paths: [{ d: 'M8 10 H52 V36 H24 L12 48 V36 H8 Z', w: 4.6 }] },
+  { name: 'plus', box: 40, dots: [], paths: [{ d: 'M20 6 V34 M6 20 H34', w: 6 }] }
+];
+const DOODLE_INK = ['oklch(0.55 0.21 255)', 'oklch(0.56 0.2 25)', 'oklch(0.52 0.13 155)', 'oklch(0.68 0.16 70)', 'oklch(0.55 0.2 300)', 'oklch(0.6 0.13 200)'];
+const RING = [
+  { a: -90, r: 1.0 }, { a: -70, r: 1.04 }, { a: -50, r: 1.0 }, { a: -30, r: 1.06 },
+  { a: -10, r: 1.0 }, { a: 10, r: 1.06 }, { a: 30, r: 1.0 }, { a: 50, r: 1.05 },
+  { a: 70, r: 1.0 }, { a: 90, r: 1.04 }, { a: 110, r: 1.0 }, { a: 130, r: 1.05 },
+  { a: 150, r: 1.0 }, { a: 170, r: 1.06 }, { a: 190, r: 1.0 }, { a: 210, r: 1.05 },
+  { a: 230, r: 1.0 }, { a: 250, r: 1.04 },
+  { a: -80, r: 1.34 }, { a: -40, r: 1.36 }, { a: -15, r: 1.32 }, { a: 15, r: 1.36 },
+  { a: 40, r: 1.32 }, { a: 80, r: 1.34 }, { a: 105, r: 1.3 }, { a: 140, r: 1.36 },
+  { a: 165, r: 1.32 }, { a: 195, r: 1.36 }, { a: 220, r: 1.3 }, { a: 255, r: 1.34 }
+];
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const DRAFT_KEY = 'dml-draft-v1';
+const MOBILE_MAX = 760;
+const DEF_W = 780, DEF_H = 720, MIN_W = 360, MIN_H = 480;
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.surfaceRef = React.createRef();
+    this.openerRef = React.createRef();
+    this.confirmRef = React.createRef();
+    this.noteInputRef = React.createRef();
+    this.fileRef = React.createRef();
+    this._id = 0;
+    this._draw = null;
+    this.state = {
+      open: !!props.startOpen,
+      minimized: false,
+      view: 'draw',
+      items: [],
+      history: [[]],
+      hIndex: 0,
+      tool: 'pen',
+      color: autoInk(),
+      size: SIZES[1].value,
+      shape: 'rect',
+      noteColor: NOTE_COLORS[0].value,
+      bg: autoBg(),
+      pageTheme: pageTheme(),
+      sticker: STICKERS[0].src,
+      tray: null,
+      toolbarOpen: true,
+      panX: 0, panY: 0,
+      isMobile: false,
+      winX: 0, winY: 0, winW: DEF_W, winH: DEF_H,
+      hovered: false, resizing: false,
+      confirmOpen: false,
+      tip: null,
+      note: '', senderName: '', email: '', honeypot: '', emailError: '',
+      previewUrl: '',
+      particles: [],
+      selected: null,
+      confirmKind: 'clear',
+      draftRestored: false,
+      status: null
+    };
+    this._pid = 0;
+    this._samples = [];
+  }
+
+  componentDidMount() {
+    this.onExternalOpen = () => { if (!this.state.open) this.openBoard(); };
+    const themeHost = document.querySelector('[data-theme]');
+    if (themeHost && window.MutationObserver) {
+      this.themeObs = new MutationObserver(() => {
+        this.setState({ pageTheme: pageTheme() });
+        this.setState(s => (isAutoBg(s.bg) ? { bg: autoBg(), color: isAutoBg(s.bg) && (s.color === '#ffffff' || s.color === 'oklch(0.24 0.01 260)') ? autoInk() : s.color } : null));
+      });
+      this.themeObs.observe(themeHost, { attributes: true, attributeFilter: ['data-theme'] });
+    }
+    window.addEventListener('mc-open-board', this.onExternalOpen);
+    this.measure();
+    this.restoreDraft();
+    window.addEventListener('resize', this.measure);
+    document.addEventListener('keydown', this.onKeyDown);
+  }
+  measureCaret(el) {
+    const r = el.getBoundingClientRect();
+    const cs = getComputedStyle(el);
+    this._m = this._m || document.createElement('canvas').getContext('2d');
+    this._m.font = cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+    const caret = el.selectionStart == null ? el.value.length : el.selectionStart;
+    const upto = el.value.slice(0, caret);
+    const isArea = el.tagName === 'TEXTAREA';
+    const padL = parseFloat(cs.paddingLeft) || 0, padT = parseFloat(cs.paddingTop) || 0;
+    const lh = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.4;
+    const maxW = r.width - padL - (parseFloat(cs.paddingRight) || 0);
+    let line = upto, row = 0;
+    if (isArea) {
+      const paras = upto.split('\n');
+      line = paras[paras.length - 1];
+      row = paras.length - 1;
+      // account for soft wrapping of the current paragraph
+      let acc = '';
+      for (const word of line.split(' ')) {
+        const t = acc ? acc + ' ' + word : word;
+        if (this._m.measureText(t).width > maxW && acc) { row++; acc = word; } else acc = t;
+      }
+      line = acc;
+    }
+    const w = Math.min(this._m.measureText(line).width, maxW);
+    return {
+      x: r.left + padL + w,
+      y: isArea ? Math.min(r.top + padT + lh * row + lh / 2, r.bottom - 8) : r.top + r.height / 2
+    };
+  }
+  spawnBurst(el) {
+    if (this.props.explodeEnabled === false) return;
+    const p = this.measureCaret(el);
+    const srcs = PARTICLES;
+    const made = [];
+    const n = Math.max(1, Math.round(this.props.explodeAmount ?? 2));
+    for (let i = 0; i < n; i++) {
+      const a = -Math.PI / 2 + (Math.random() - 0.5) * 1.35;
+      const sp = 4.5 + Math.random() * 3.5;
+      made.push({
+        id: 'p' + (++this._pid),
+        x: p.x + (Math.random() - 0.5) * 8, y: p.y,
+        vx: Math.cos(a) * sp,
+        vy: Math.sin(a) * sp,
+        rot: (Math.random() - 0.5) * 50, vr: (Math.random() - 0.5) * 9,
+        size: 26 + Math.random() * 20,
+        src: srcs[Math.floor(Math.random() * srcs.length)],
+        life: 1
+      });
+    }
+    this.setState(s => ({ particles: [...s.particles, ...made].slice(-70) }), this.startTick);
+  }
+  startTick = () => {
+    if (this._raf) return;
+    const step = () => {
+      this._raf = null;
+      const g = this.props.explodeGravity ?? 0.55;
+      const fade = 1 / Math.max(12, (this.props.explodeDuration ?? 1.6) * 60);
+      const next = this.state.particles
+        .map(p => ({ ...p, x: p.x + p.vx, y: p.y + p.vy, vy: p.vy + g, vx: p.vx * 0.99, rot: p.rot + p.vr, life: p.life - fade }))
+        .filter(p => p.life > 0);
+      this.setState({ particles: next });
+      if (next.length) this._raf = requestAnimationFrame(step);
+    };
+    this._raf = requestAnimationFrame(step);
+  };
+  onTypeBurst = (e) => {
+    const el = e.target;
+    const prev = this._lastLen == null ? 0 : this._lastLen;
+    if (el.value.length > prev) this.spawnBurst(el);
+    this._lastLen = el.value.length;
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener('mc-open-board', this.onExternalOpen);
+    if (this.themeObs) this.themeObs.disconnect();
+    if (this._raf) cancelAnimationFrame(this._raf);
+    window.removeEventListener('resize', this.measure);
+    document.removeEventListener('keydown', this.onKeyDown);
+    document.body.style.overflow = '';
+  }
+  componentDidUpdate() {
+    const s = this.state;
+    const lock = s.open && s.isMobile && !s.minimized;
+    document.body.style.overflow = lock ? 'hidden' : '';
+    const snap = [s.items, s.bg, s.note, s.senderName, s.email];
+    const prev = this._prevSnap;
+    if (!prev || prev.some((v, i) => v !== snap[i])) {
+      this._prevSnap = snap;
+      clearTimeout(this._saveT);
+      this._saveT = setTimeout(this.saveDraft, 500);
+    }
+  }
+
+  saveDraft = () => {
+    try {
+      const s = this.state;
+      if (!s.items.length && !s.note && !s.senderName && !s.email) { localStorage.removeItem(DRAFT_KEY); return; }
+      localStorage.setItem(DRAFT_KEY, JSON.stringify({
+        items: s.items, bg: s.bg, note: s.note, senderName: s.senderName, email: s.email, at: Date.now()
+      }));
+    } catch (err) {}
+  };
+  restoreDraft = () => {
+    try {
+      const raw = localStorage.getItem(DRAFT_KEY);
+      if (!raw) return;
+      const d = JSON.parse(raw);
+      if (!d || (!d.items || !d.items.length) && !d.note) return;
+      const items = d.items || [];
+      items.forEach(it => { const n = parseInt(String(it.id).slice(1), 10); if (n > this._id) this._id = n; });
+      this.setState({
+        items, history: [[], items], hIndex: 1,
+        bg: d.bg || autoBg(), note: d.note || '', senderName: d.senderName || '', email: d.email || '',
+        draftRestored: true
+      });
+    } catch (err) {}
+  };
+  discardDraft = () => {
+    try { localStorage.removeItem(DRAFT_KEY); } catch (err) {}
+    this.setState({ items: [], history: [[]], hIndex: 0, bg: autoBg(), note: '', senderName: '', email: '', selected: null, draftRestored: false });
+  };
+  dismissDraftNote = () => this.setState({ draftRestored: false });
+
+  measure = () => {
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const isMobile = vw < MOBILE_MAX;
+    this.setState(s => {
+      const w = Math.min(Math.max(MIN_W, s.winW), Math.max(MIN_W, vw - 40));
+      const h = Math.min(Math.max(MIN_H, s.winH), Math.max(MIN_H, vh - 40));
+      const centered = !s.open;
+      return {
+        isMobile, winW: w, winH: h,
+        winX: centered ? Math.max(20, Math.round((vw - w) / 2)) : Math.max(0, Math.min(s.winX, vw - w)),
+        winY: centered ? Math.max(20, Math.round((vh - h) / 2)) : Math.max(0, Math.min(s.winY, vh - h))
+      };
+    });
+  };
+
+  onKeyDown = (e) => {
+    const s = this.state;
+    if (!s.open) return;
+    const el = e.target;
+    const typing = !!el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA');
+    const meta = e.metaKey || e.ctrlKey;
+
+    if (e.key === 'Escape') {
+      if (s.confirmOpen) { this.setState({ confirmOpen: false }); return; }
+      if (s.tray) { this.setState({ tray: null }); return; }
+      this.requestClose();
+      return;
+    }
+    if (meta && e.key.toLowerCase() === 'z') {
+      e.preventDefault();
+      if (e.shiftKey) this.redo(); else this.undo();
+      return;
+    }
+    if (meta && e.key === 'Enter') {
+      e.preventDefault();
+      if (s.view === 'review') this.send();
+      else if (s.items.length || s.note.trim()) this.goReview();
+      return;
+    }
+    if (typing || s.view !== 'draw') return;
+    if ((e.key === 'Delete' || e.key === 'Backspace') && s.selected) {
+      e.preventDefault();
+      this.deleteSelected();
+      return;
+    }
+    const keys = { v: 'select', h: 'pan', p: 'pen', b: 'highlighter', e: 'eraser', a: 'arrow', t: 'text', s: 'note', r: 'shape', f: 'fill', i: 'picker', g: 'spray' };
+    const next = keys[e.key.toLowerCase()];
+    if (next) this.setState({ tool: next, tray: null });
+  };
+  requestClose = () => {
+    if (this.state.items.length || this.state.note.trim()) {
+      this.setState({ confirmOpen: true, confirmKind: 'close', tip: null }, () => {
+        const c = this.confirmRef.current;
+        if (c) c.focus();
+      });
+    } else this.closeBoard();
+  };
+  deleteSelected = () => {
+    const id = this.state.selected;
+    if (!id) return;
+    this.setState({ selected: null });
+    this.commit(this.state.items.filter(it => it.id !== id));
+  };
+  bbox(it) {
+    if (it.kind === 'spray') {
+      const xs = it.dots.map(d => d.x), ys = it.dots.map(d => d.y);
+      if (!xs.length) return { x: 0, y: 0, w: 0, h: 0 };
+      return { x: Math.min(...xs) - 4, y: Math.min(...ys) - 4, w: Math.max(...xs) - Math.min(...xs) + 8, h: Math.max(...ys) - Math.min(...ys) + 8 };
+    }
+    if (it.kind === 'sticker') return { x: it.x, y: it.y, w: it.size, h: it.size };
+    if (it.kind === 'image' || it.kind === 'note') return { x: it.x, y: it.y, w: it.w, h: it.h };
+    if (it.kind === 'text') return { x: it.x, y: it.y, w: it.w, h: it.size * 2.6 };
+    if (it.kind === 'shape') {
+      const pad = it.width / 2;
+      return { x: Math.min(it.x1, it.x2) - pad, y: Math.min(it.y1, it.y2) - pad,
+        w: Math.abs(it.x2 - it.x1) + it.width, h: Math.abs(it.y2 - it.y1) + it.width };
+    }
+    const xs = it.pts.map(p => p.x), ys = it.pts.map(p => p.y), pad = it.width / 2 + 2;
+    return { x: Math.min(...xs) - pad, y: Math.min(...ys) - pad,
+      w: Math.max(...xs) - Math.min(...xs) + pad * 2, h: Math.max(...ys) - Math.min(...ys) + pad * 2 };
+  }
+
+  rollSamples() {
+    const ring = RING.slice().sort(() => Math.random() - 0.5);
+    const stickers = STICKERS.map(s => s.src).sort(() => Math.random() - 0.5);
+    const doodles = DOODLES.slice().sort(() => Math.random() - 0.5);
+    const want = 10 + Math.floor(Math.random() * 4);
+    const placed = [];
+    let si = 0, di = 0, i = 0;
+    for (const slot of ring) {
+      if (placed.length >= want) break;
+      const size = Math.round(28 + Math.random() * 20);
+      // ellipse around the centred text block (percent of the canvas)
+      const rad = (slot.a + (Math.random() * 14 - 7)) * Math.PI / 180;
+      const jitter = slot.r + (Math.random() * 0.06 - 0.03);
+      const left = +(50 + Math.cos(rad) * 30 * jitter).toFixed(1);
+      const top = +(50 + Math.sin(rad) * 25 * jitter).toFixed(1);
+      if (left < 4 || left > 96 || top < 5 || top > 93) continue;
+      // keep them off each other
+      const clash = placed.some(p => Math.hypot((p.left - left) * 1.5, p.top - top) < 10);
+      if (clash) continue;
+      const base = {
+        key: 'sm' + (i++) + '-' + Math.random().toString(36).slice(2, 7),
+        left, top, size,
+        rot: Math.round(Math.random() * 40 - 20),
+        opacity: +(0.5 + Math.random() * 0.32).toFixed(2)
+      };
+      if (Math.random() < 0.55) {
+        placed.push(Object.assign(base, { isSticker: true, isDoodle: false, src: stickers[si++ % stickers.length] }));
+      } else {
+        const d = doodles[di++ % doodles.length];
+        placed.push(Object.assign(base, {
+          isSticker: false, isDoodle: true, box: d.box,
+          ink: DOODLE_INK[Math.floor(Math.random() * DOODLE_INK.length)],
+          viewBox: '0 0 ' + d.box + ' ' + d.box,
+          dots: d.dots.map(c => ({ cx: c[0], cy: c[1], r: c[2] })),
+          paths: d.paths.map(p => ({ d: p.d, stroke: p.fill ? 'none' : 'currentColor', fill: p.fill ? 'currentColor' : 'none', w: p.w || 0 }))
+        }));
+      }
+    }
+    this._samples = placed;
+  }
+  openBoard = () => {
+    this.rollSamples();
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const w = Math.min(DEF_W, Math.max(MIN_W, vw - 40));
+    const h = Math.min(DEF_H, Math.max(MIN_H, vh - 40));
+    this.setState({
+      open: true, minimized: false, view: 'draw', status: null,
+      winW: w, winH: h,
+      winX: Math.max(20, Math.round((vw - w) / 2)),
+      winY: Math.max(20, Math.round((vh - h) / 2))
+    });
+  };
+  closeBoard = () => {
+    this.setState({ open: false, confirmOpen: false, tip: null, tray: null });
+    const o = this.openerRef.current;
+    if (o) o.focus();
+  };
+  toggleMinimize = () => this.setState(s => ({ minimized: !s.minimized, tip: null }));
+  resetSize = () => {
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const w = Math.min(DEF_W, Math.max(MIN_W, vw - 40));
+    const h = Math.min(DEF_H, Math.max(MIN_H, vh - 40));
+    this.setState({ winW: w, winH: h, winX: Math.max(20, Math.round((vw - w) / 2)), winY: Math.max(20, Math.round((vh - h) / 2)) });
+  };
+
+  onFrameEnter = () => this.setState({ hovered: true });
+  onFrameLeave = () => this.setState({ hovered: false, tip: null });
+
+  tip(text) {
+    return (e) => {
+      const r = e.currentTarget.getBoundingClientRect();
+      this.setState({ tip: { text, x: Math.round(r.left + r.width / 2), y: Math.round(r.top - 8) } });
+    };
+  }
+  hideTip = () => { if (this.state.tip) this.setState({ tip: null }); };
+
+  onTitleDown = (e) => {
+    if (this.state.isMobile || e.target.closest('button')) return;
+    try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+    this._win = { x: e.clientX, y: e.clientY, ox: this.state.winX, oy: this.state.winY };
+  };
+  onTitleMove = (e) => {
+    if (!this._win) return;
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const x = this._win.ox + (e.clientX - this._win.x);
+    const y = this._win.oy + (e.clientY - this._win.y);
+    this.setState(s => ({
+      winX: Math.max(0, Math.min(x, vw - s.winW)),
+      winY: Math.max(0, Math.min(y, vh - (s.minimized ? 48 : s.winH)))
+    }));
+  };
+  onTitleUp = () => { this._win = null; };
+
+  resizeDown(corner) {
+    return (e) => {
+      if (this.state.isMobile) return;
+      e.stopPropagation();
+      try { e.currentTarget.setPointerCapture(e.pointerId); } catch (err) {}
+      this._rs = { corner, x: e.clientX, y: e.clientY, ox: this.state.winX, oy: this.state.winY, ow: this.state.winW, oh: this.state.winH };
+      this.setState({ resizing: true });
+    };
+  }
+  onResizeMove = (e) => {
+    const r = this._rs;
+    if (!r) return;
+    const dx = e.clientX - r.x, dy = e.clientY - r.y;
+    let x = r.ox, y = r.oy, w = r.ow, h = r.oh;
+    if (r.corner === 'br') { w = r.ow + dx; h = r.oh + dy; }
+    if (r.corner === 'bl') { w = r.ow - dx; x = r.ox + dx; h = r.oh + dy; }
+    if (r.corner === 'tr') { w = r.ow + dx; h = r.oh - dy; y = r.oy + dy; }
+    if (r.corner === 'tl') { w = r.ow - dx; x = r.ox + dx; h = r.oh - dy; y = r.oy + dy; }
+    if (w < MIN_W) { if (r.corner === 'bl' || r.corner === 'tl') x = r.ox + (r.ow - MIN_W); w = MIN_W; }
+    if (h < MIN_H) { if (r.corner === 'tl' || r.corner === 'tr') y = r.oy + (r.oh - MIN_H); h = MIN_H; }
+    const vw = window.innerWidth, vh = window.innerHeight;
+    x = Math.max(0, Math.min(x, vw - MIN_W)); y = Math.max(0, Math.min(y, vh - MIN_H));
+    w = Math.min(w, vw - x); h = Math.min(h, vh - y);
+    this.setState({ winX: x, winY: y, winW: w, winH: h });
+  };
+  onResizeUp = () => { this._rs = null; this.setState({ resizing: false }); };
+
+  pos(e) {
+    const r = this.surfaceRef.current.getBoundingClientRect();
+    return { x: +(e.clientX - r.left - this.state.panX).toFixed(1), y: +(e.clientY - r.top - this.state.panY).toFixed(1) };
+  }
+  commit(items) {
+    this.setState(s => {
+      const history = s.history.slice(0, s.hIndex + 1);
+      history.push(items);
+      return { items, history, hIndex: history.length - 1 };
+    });
+  }
+  stickerSize() { return this.state.size <= 2 ? 56 : (this.state.size <= 4 ? 80 : 112); }
+
+  onDown = (e) => {
+    if (this.state.confirmOpen) return;
+    try { this.surfaceRef.current.setPointerCapture(e.pointerId); } catch (err) {}
+    const p = this.pos(e);
+    const t = this.state.tool;
+    if (t === 'pan') {
+      this._draw = { mode: 'pan', x: e.clientX, y: e.clientY, ox: this.state.panX, oy: this.state.panY };
+      return;
+    }
+    if (t === 'eraser') { this._draw = { mode: 'erase' }; this.erase(p); return; }
+    if (t === 'fill') {
+      this._draw = null;
+      const target = [...this.state.items].reverse().find(it => it.kind === 'shape' && CLOSED.indexOf(it.shape) >= 0 && this.inside(it, p));
+      if (target) this.commit(this.state.items.map(it => (it.id === target.id ? { ...it, fill: this.state.color } : it)));
+      else { this.setState({ bg: this.state.color }); this.commit(this.state.items.slice()); }
+      return;
+    }
+    if (t === 'picker') {
+      this._draw = null;
+      const hit = [...this.state.items].reverse().find(it => this.hitTest(it, p));
+      const picked = hit ? (hit.fill || hit.color) : this.state.bg;
+      if (picked) this.setState({ color: picked, tool: 'pen' });
+      return;
+    }
+    if (t === 'select') {
+      const hit = [...this.state.items].reverse().find(it => this.hitTest(it, p));
+      this.setState({ selected: hit ? hit.id : null });
+      this._draw = hit ? { mode: 'move', id: hit.id, start: p, orig: JSON.parse(JSON.stringify(hit)) } : null;
+      return;
+    }
+    if (t === 'note' || t === 'text') {
+      const id = 'k' + (++this._id);
+      this._draw = null;
+      this._focusItem = id;
+      const item = t === 'note'
+        ? { kind: 'note', id, x: p.x - NOTE_W / 2, y: p.y - 24, w: NOTE_W, h: NOTE_H, color: this.state.noteColor, text: '' }
+        : { kind: 'text', id, x: p.x - 8, y: p.y - 14, w: TEXT_W, size: 20, color: this.state.color, text: '' };
+      this.commit([...this.state.items, item]);
+      return;
+    }
+    if (t === 'sticker') {
+      const size = this.stickerSize();
+      this._draw = null;
+      this.commit([...this.state.items, { kind: 'sticker', id: 'k' + (++this._id), src: this.state.sticker, x: p.x - size / 2, y: p.y - size / 2, size }]);
+      return;
+    }
+    if (t === 'arrow' || t === 'shape') {
+      const kind = t === 'arrow' ? 'arrow' : this.state.shape;
+      const item = { kind: 'shape', id: 'k' + (++this._id), shape: kind, color: this.state.color, width: this.state.size, x1: p.x, y1: p.y, x2: p.x, y2: p.y };
+      this._draw = { mode: 'shape', id: item.id };
+      this.setState(s => ({ items: [...s.items, item] }));
+      return;
+    }
+    if (t === 'spray') {
+      const item = { kind: 'spray', id: 'k' + (++this._id), color: this.state.color, r: this.state.size * 5, dots: [] };
+      this._draw = { mode: 'spray', id: item.id };
+      this.setState(s => ({ items: [...s.items, item] }), () => this.sprayAt(item.id, p));
+      return;
+    }
+    const hl = t === 'highlighter';
+    const stroke = { kind: 'path', id: 'k' + (++this._id), color: this.state.color, width: hl ? this.state.size * 4 : this.state.size, opacity: hl ? 0.32 : 1, pts: [p] };
+    this._draw = { mode: 'pen', id: stroke.id };
+    this.setState(s => ({ items: [...s.items, stroke] }));
+  };
+  sprayAt(id, p) {
+    const made = [];
+    const it = this.state.items.find(k => k.id === id);
+    const rad = it ? it.r : 20;
+    for (let i = 0; i < 7; i++) {
+      const a = Math.random() * Math.PI * 2;
+      const dist = Math.sqrt(Math.random()) * rad;
+      made.push({ x: +(p.x + Math.cos(a) * dist).toFixed(1), y: +(p.y + Math.sin(a) * dist).toFixed(1), s: +(0.8 + Math.random() * 1.6).toFixed(1) });
+    }
+    this.setState(s => ({ items: s.items.map(k => (k.id === id ? { ...k, dots: [...k.dots, ...made].slice(-2600) } : k)) }));
+  }
+  onMove = (e) => {
+    const d = this._draw;
+    if (!d) return;
+    if (d.mode === 'spray') { this.sprayAt(d.id, this.pos(e)); return; }
+    if (d.mode === 'pan') {
+      this.setState({ panX: d.ox + (e.clientX - d.x), panY: d.oy + (e.clientY - d.y) });
+      return;
+    }
+    const p = this.pos(e);
+    if (d.mode === 'erase') { this.erase(p); return; }
+    if (d.mode === 'move') {
+      const dx = p.x - d.start.x, dy = p.y - d.start.y;
+      this.setState(s => ({ items: s.items.map(it => (it.id === d.id ? this.translate(d.orig, dx, dy) : it)) }));
+      return;
+    }
+    if (d.mode === 'shape') {
+      this.setState(s => ({ items: s.items.map(it => (it.id === d.id ? { ...it, x2: p.x, y2: p.y } : it)) }));
+      return;
+    }
+    this.setState(s => ({
+      items: s.items.map(st => {
+        if (st.id !== d.id) return st;
+        const last = st.pts[st.pts.length - 1];
+        if (Math.hypot(p.x - last.x, p.y - last.y) < 1.2) return st;
+        return { ...st, pts: [...st.pts, p] };
+      })
+    }));
+  };
+  onUp = () => {
+    const d = this._draw;
+    if (!d) return;
+    this._draw = null;
+    if (d.mode === 'pan') return;
+    if (d.mode === 'spray') { this.commit(this.state.items); return; }
+    if (d.mode === 'pen') {
+      this.setState(s => {
+        const st = s.items.find(k => k.id === d.id);
+        if (st && st.pts.length === 1) st.pts = [st.pts[0], { x: st.pts[0].x + 0.6, y: st.pts[0].y + 0.6 }];
+        return {};
+      }, () => this.commit(this.state.items));
+    } else if (d.mode === 'shape') {
+      const it = this.state.items.find(k => k.id === d.id);
+      if (it && Math.hypot(it.x2 - it.x1, it.y2 - it.y1) < 6) {
+        this.setState(s => ({ items: s.items.filter(k => k.id !== d.id) }));
+      } else this.commit(this.state.items);
+    } else if (d.mode === 'move') {
+      this.commit(this.state.items);
+    } else if (this._erased) {
+      this._erased = false;
+      this.commit(this.state.items);
+    }
+  };
+  translate(it, dx, dy) {
+    if (it.kind === 'spray') return { ...it, dots: it.dots.map(dt => ({ ...dt, x: +(dt.x + dx).toFixed(1), y: +(dt.y + dy).toFixed(1) })) };
+    if (it.kind === 'path') return { ...it, pts: it.pts.map(p => ({ x: +(p.x + dx).toFixed(1), y: +(p.y + dy).toFixed(1) })) };
+    if (it.kind === 'shape') return { ...it, x1: it.x1 + dx, y1: it.y1 + dy, x2: it.x2 + dx, y2: it.y2 + dy };
+    return { ...it, x: it.x + dx, y: it.y + dy };
+  }
+  inside(it, p) {
+    const l = Math.min(it.x1, it.x2), r = Math.max(it.x1, it.x2);
+    const t = Math.min(it.y1, it.y2), b = Math.max(it.y1, it.y2);
+    if (p.x < l || p.x > r || p.y < t || p.y > b) return false;
+    if (it.shape === 'circle') {
+      const rx = (r - l) / 2 || 1, ry = (b - t) / 2 || 1;
+      const dx = (p.x - (l + rx)) / rx, dy = (p.y - (t + ry)) / ry;
+      return dx * dx + dy * dy <= 1;
+    }
+    if (it.shape === 'triangle') {
+      const rel = (p.y - t) / ((b - t) || 1);
+      const halfAt = rel * ((r - l) / 2);
+      const cx = l + (r - l) / 2;
+      return Math.abs(p.x - cx) <= halfAt;
+    }
+    return true;
+  }
+  hitTest(it, p) {
+    if (it.kind === 'spray') return it.dots.some(dt => Math.hypot(dt.x - p.x, dt.y - p.y) <= 10);
+    if (it.kind === 'sticker') return p.x >= it.x && p.x <= it.x + it.size && p.y >= it.y && p.y <= it.y + it.size;
+    if (it.kind === 'image') return p.x >= it.x && p.x <= it.x + it.w && p.y >= it.y && p.y <= it.y + it.h;
+    if (it.kind === 'note') return p.x >= it.x && p.x <= it.x + it.w && p.y >= it.y && p.y <= it.y + it.h;
+    if (it.kind === 'text') return p.x >= it.x && p.x <= it.x + it.w && p.y >= it.y && p.y <= it.y + it.size * 2.6;
+    if (it.kind === 'shape') {
+      const pad = Math.max(8, it.width * 1.6);
+      return p.x >= Math.min(it.x1, it.x2) - pad && p.x <= Math.max(it.x1, it.x2) + pad &&
+             p.y >= Math.min(it.y1, it.y2) - pad && p.y <= Math.max(it.y1, it.y2) + pad;
+    }
+    const r = Math.max(9, it.width * 1.6);
+    return it.pts.some(pt => Math.hypot(pt.x - p.x, pt.y - p.y) <= r);
+  }
+  erase(p) {
+    const hit = [...this.state.items].reverse().find(it => this.hitTest(it, p));
+    if (!hit) return;
+    this._erased = true;
+    this.setState(s => ({ items: s.items.filter(it => it.id !== hit.id), selected: s.selected === hit.id ? null : s.selected }));
+  }
+  undo = () => this.setState(s => (s.hIndex > 0 ? { hIndex: s.hIndex - 1, items: s.history[s.hIndex - 1] } : {}));
+  redo = () => this.setState(s => (s.hIndex < s.history.length - 1 ? { hIndex: s.hIndex + 1, items: s.history[s.hIndex + 1] } : {}));
+  askClear = () => {
+    this.setState({ confirmOpen: true, confirmKind: 'clear', tip: null }, () => {
+      const c = this.confirmRef.current;
+      if (c) c.focus();
+    });
+  };
+  confirmClear = () => {
+    if (this.state.confirmKind === 'close') { this.setState({ confirmOpen: false }); this.closeBoard(); return; }
+    this.setState({ confirmOpen: false, selected: null, bg: autoBg(), color: autoInk() });
+    this.commit([]);
+  };
+  cancelClear = () => this.setState({ confirmOpen: false });
+
+  pickImage = () => { const f = this.fileRef.current; if (f) { f.value = ''; f.click(); } };
+  onPickImage = (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const r = this.surfaceRef.current ? this.surfaceRef.current.getBoundingClientRect() : { width: 600, height: 400 };
+        const max = Math.min(320, r.width * 0.6, r.height * 0.6);
+        const sc = Math.min(max / img.width, max / img.height, 1);
+        const w = Math.round(img.width * sc), h = Math.round(img.height * sc);
+        this.commit([...this.state.items, {
+          kind: 'image', id: 'k' + (++this._id), src: reader.result,
+          x: Math.round(r.width / 2 - w / 2 - this.state.panX), y: Math.round(r.height / 2 - h / 2 - this.state.panY), w, h
+        }]);
+        this.setState({ tool: 'select' });
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  };
+
+  loadImg(src) {
+    this._imgs = this._imgs || {};
+    if (!this._imgs[src]) {
+      this._imgs[src] = new Promise(res => {
+        const i = new Image();
+        i.onload = () => res(i);
+        i.onerror = () => res(null);
+        i.src = src;
+      });
+    }
+    return this._imgs[src];
+  }
+  wrapText(ctx, text, maxW) {
+    const out = [];
+    for (const para of (text || '').split('\n')) {
+      let line = '';
+      for (const word of para.split(' ')) {
+        const t = line ? line + ' ' + word : word;
+        if (ctx.measureText(t).width > maxW && line) { out.push(line); line = word; }
+        else line = t;
+      }
+      out.push(line);
+    }
+    return out;
+  }
+  async exportPNG(scale) {
+    const el = this.surfaceRef.current;
+    const r = el ? el.getBoundingClientRect() : { width: DEF_W, height: DEF_H - 180 };
+    const dpr = scale || Math.min(2, window.devicePixelRatio || 1);
+    const c = document.createElement('canvas');
+    c.width = Math.round(r.width * dpr); c.height = Math.round(r.height * dpr);
+    const ctx = c.getContext('2d');
+    ctx.scale(dpr, dpr);
+    ctx.fillStyle = this.state.bg || '#ffffff';
+    ctx.fillRect(0, 0, r.width, r.height);
+    ctx.save();
+    ctx.translate(this.state.panX, this.state.panY);
+    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
+    const imgs = {};
+    for (const it of this.state.items) {
+      if ((it.kind === 'sticker' || it.kind === 'image') && !imgs[it.src]) imgs[it.src] = await this.loadImg(it.src);
+    }
+    const font = '-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif';
+    for (const it of this.state.items) {
+      if (it.kind === 'sticker' || it.kind === 'image') {
+        const im = imgs[it.src];
+        if (im) ctx.drawImage(im, it.x, it.y, it.kind === 'sticker' ? it.size : it.w, it.kind === 'sticker' ? it.size : it.h);
+        continue;
+      }
+      if (it.kind === 'spray') {
+        ctx.fillStyle = it.color;
+        for (const dt of it.dots) { ctx.beginPath(); ctx.arc(dt.x, dt.y, dt.s * 0.85, 0, Math.PI * 2); ctx.fill(); }
+        continue;
+      }
+      if (it.kind === 'note') {
+        ctx.fillStyle = it.color;
+        ctx.fillRect(it.x, it.y, it.w, it.h);
+        ctx.strokeStyle = 'rgba(0,0,0,0.13)'; ctx.lineWidth = 1;
+        ctx.strokeRect(it.x + 0.5, it.y + 0.5, it.w - 1, it.h - 1);
+        ctx.fillStyle = 'rgba(0,0,0,0.10)';
+        ctx.beginPath();
+        ctx.moveTo(it.x + it.w, it.y + it.h * 0.78);
+        ctx.lineTo(it.x + it.w, it.y + it.h);
+        ctx.lineTo(it.x + it.w * 0.78, it.y + it.h);
+        ctx.closePath(); ctx.fill();
+        ctx.fillStyle = '#4a3f28'; ctx.font = '21px Caveat, cursive'; ctx.textBaseline = 'top';
+        let y = it.y + 16;
+        for (const line of this.wrapText(ctx, it.text, it.w - 34)) {
+          if (y + 26 > it.y + it.h - 8) break;
+          ctx.fillText(line, it.x + 18, y); y += 26;
+        }
+        continue;
+      }
+      if (it.kind === 'text') {
+        ctx.fillStyle = it.color; ctx.font = '600 ' + it.size + 'px ' + font; ctx.textBaseline = 'top';
+        let y = it.y + 2;
+        for (const line of this.wrapText(ctx, it.text, it.w - 8)) { ctx.fillText(line, it.x + 4, y); y += it.size * 1.3; }
+        continue;
+      }
+      ctx.strokeStyle = it.color; ctx.lineWidth = it.width;
+      ctx.globalAlpha = it.opacity == null ? 1 : it.opacity;
+      if (it.kind === 'shape') {
+        const path = new Path2D(shapePath(it.shape, it.x1, it.y1, it.x2, it.y2));
+        if (it.fill) { ctx.fillStyle = it.fill; ctx.fill(path); }
+        ctx.stroke(path); ctx.globalAlpha = 1; continue;
+      }
+      ctx.beginPath();
+      it.pts.forEach((p, i) => (i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y)));
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+    ctx.restore();
+    const typed = this.state.note.trim();
+    if (typed) {
+      ctx.font = '15px ' + font; ctx.textBaseline = 'top';
+      const boxW = r.width - 44;
+      const lines = this.wrapText(ctx, typed, boxW - 32);
+      const boxH = lines.length * 22 + 26;
+      const top = Math.max(8, r.height - 24 - boxH);
+      ctx.fillStyle = 'rgba(255,255,255,0.94)';
+      ctx.fillRect(22, top, boxW, boxH);
+      ctx.fillStyle = '#2563eb';
+      ctx.fillRect(22, top, 3, boxH);
+      ctx.fillStyle = '#1e2230';
+      let y = top + 14;
+      for (const line of lines) { ctx.fillText(line, 38, y); y += 22; }
+    }
+    return c;
+  }
+  goReview = async () => {
+    const hasDrawing = this.state.items.length > 0;
+    const url = hasDrawing ? (await this.exportPNG()).toDataURL('image/png') : '';
+    this.setState({ view: 'review', previewUrl: url, status: null, tip: null, tray: null });
+  };
+  backToDrawing = () => this.setState({ view: 'draw', status: null });
+  downloadCopy = async () => {
+    const c = await this.exportPNG(2);
+    const a = document.createElement('a');
+    a.href = c.toDataURL('image/png');
+    a.download = 'message-for-miguel.png';
+    a.click();
+  };
+
+  async sendDrawingMessage(payload) {
+    if (!this.props.deliveryConnected) return { ok: false, code: 'unavailable' };
+    const form = new FormData();
+    if (payload.drawing) form.append('drawing', payload.drawing, 'drawing.png');
+    form.append('note', payload.note);
+    form.append('name', payload.name);
+    form.append('replyEmail', payload.replyEmail);
+    form.append('pageUrl', payload.pageUrl);
+    form.append('timestamp', payload.timestamp);
+    form.append('confirmEmail', payload.honeypot);
+    const res = await fetch('/api/drawing-message', { method: 'POST', body: form });
+    if (!res.ok) return { ok: false, code: 'failed' };
+    return { ok: true };
+  }
+
+  send = async () => {
+    const email = this.state.email.trim();
+    if (email && !EMAIL_RE.test(email)) {
+      this.setState({ emailError: 'Enter an email like name@example.com, or leave it blank.' });
+      return;
+    }
+    this.setState({ emailError: '', status: 'sending' });
+    let blob = null;
+    if (this.state.items.length > 0) {
+      const canvas = await this.exportPNG(2);
+      blob = await new Promise(res => canvas.toBlob(res, 'image/png'));
+    }
+    let result;
+    try {
+      const wait = new Promise(r => setTimeout(r, 650));
+      const [r] = await Promise.all([this.sendDrawingMessage({
+        drawing: blob, note: this.state.note.trim(), name: this.state.senderName.trim(),
+        replyEmail: email, pageUrl: window.location.href, timestamp: new Date().toISOString(),
+        honeypot: this.state.honeypot
+      }), wait]);
+      result = r;
+    } catch (err) {
+      result = { ok: false, code: 'failed' };
+    }
+    if (result.ok) { try { localStorage.removeItem(DRAFT_KEY); } catch (err) {} }
+    this.setState({ status: result.ok ? 'sent' : (result.code === 'unavailable' ? 'unavailable' : 'failed'), draftRestored: false });
+  };
+
+  renderVals() {
+    const s = this.state;
+    const mobile = s.isMobile;
+    const canUndo = s.hIndex > 0;
+    const canRedo = s.hIndex < s.history.length - 1;
+    const hit = 44;
+    const typed = s.note.trim();
+    const hasDrawing = s.items.length > 0 || (s.bg && s.bg !== '#ffffff');
+    const canSubmit = hasDrawing || typed.length > 0;
+
+    const toolBtn = (id, icon, title, onClick) => {
+      const pressed = s.tool === id;
+      return {
+        title, icon: '/icons/v4/' + icon + '.png', pressed,
+        bg: pressed ? ACTIVE_BG : 'transparent',
+        hoverBg: pressed ? ACTIVE_HOVER : 'var(--dml-surface-2)',
+        ink: pressed ? 'white' : 'var(--dml-ink)',
+        onTip: this.tip(title),
+        onClick: onClick || (() => this.setState({ tool: id, tray: null }))
+      };
+    };
+    const histBtn = (icon, title, disabled, onClick) => ({
+      icon: '/icons/v4/' + icon + '.png', title, disabled,
+      opacity: disabled ? 0.3 : 1, cursor: disabled ? 'default' : 'pointer',
+      onTip: this.tip(title), onClick
+    });
+
+    const frameColor = s.resizing ? BLUE_STRONG : (s.hovered ? BLUE_BRIGHT : BLUE);
+    const emailBad = !!s.emailError;
+    const sending = s.status === 'sending';
+    const statusMap = {
+      sending: { title: 'Sending…', body: 'Packaging your message and sending it to Miguel.', retry: false, bg: 'var(--dml-tint-neutral)', border: 'var(--dml-rule)', ink: 'var(--dml-ink)' },
+      sent: { title: 'Your message is on its way to Miguel.', body: 'Your message is on its way to Miguel. Thanks for taking the time to make something.', retry: false, bg: 'var(--dml-tint-green)', border: 'var(--dml-tint-green-rule)', ink: 'var(--dml-tint-green-ink)' },
+      failed: { title: 'Sending failed', body: 'The server did not confirm delivery. Retry, or download a copy and send it another way.', retry: true, bg: 'var(--dml-tint-red)', border: 'var(--dml-tint-red-rule)', ink: 'var(--dml-tint-red-ink)' },
+      unavailable: { title: 'Delivery is not connected yet', body: 'This is a prototype: no delivery endpoint is wired up, so nothing was sent. Download a copy in the meantime — real sending arrives in Stage 2.', retry: true, bg: 'var(--dml-tint-amber)', border: 'var(--dml-tint-amber-rule)', ink: 'var(--dml-tint-amber-ink)' }
+    };
+    const st = s.status ? statusMap[s.status] : null;
+    const entry = (o) => Object.assign({
+      isIcon: !o.isDot, isDot: false, pressed: false, disabled: false,
+      opacity: o.disabled ? 0.3 : 1, cursor: o.disabled ? 'default' : 'pointer',
+      bg: 'transparent', hoverBg: 'var(--dml-surface-2)', ink: 'var(--dml-ink)',
+      dotColor: 'transparent', ring: 'transparent', icon: ''
+    }, o);
+    const on = (flag) => ({ bg: flag ? ACTIVE_BG : 'transparent', hoverBg: flag ? ACTIVE_HOVER : 'var(--dml-surface-2)', ink: flag ? 'white' : 'var(--dml-ink)', pressed: flag });
+    const toolEntry = (id, icon, title) => entry(Object.assign({
+      title, icon: '/icons/v4/' + icon + '.png', onTip: this.tip(title),
+      onClick: () => this.setState({ tool: id, tray: null })
+    }, on(s.tool === id)));
+
+    const entries = [
+      toolEntry('select', 'select', 'Move an item'),
+      toolEntry('pan', 'pan', 'Pan the canvas'),
+      toolEntry('pen', 'pen', 'Draw'),
+      toolEntry('highlighter', 'highlighter', 'Highlighter'),
+      toolEntry('spray', 'spray', 'Spray can'),
+      toolEntry('eraser', 'eraser', 'Eraser'),
+      toolEntry('fill', 'fill', 'Fill with colour'),
+      entry(Object.assign({ title: 'Stickers', icon: '/icons/v4/stickers.png', onTip: this.tip('Stickers'),
+        onClick: () => this.setState(x => ({ tray: x.tray === 'stickers' ? null : 'stickers', tool: x.tray === 'stickers' ? 'pen' : 'sticker' })) }, on(s.tool === 'sticker'))),
+      toolEntry('arrow', 'arrow', 'Arrow'),
+      toolEntry('text', 'text', 'Text'),
+      entry(Object.assign({ title: 'Sticky note', icon: '/icons/v4/note.png', onTip: this.tip('Sticky note'),
+        onClick: () => this.setState(x => ({ tool: 'note', tray: x.tray === 'notes' ? null : 'notes' })) }, on(s.tool === 'note'))),
+      entry({ title: 'Add image', icon: '/icons/v4/image.png', onTip: this.tip('Add image'), onClick: this.pickImage }),
+      entry(Object.assign({ title: 'Shape', icon: '/icons/v4/shape.png', onTip: this.tip('Shape'),
+        onClick: () => this.setState(x => ({ tray: x.tray === 'shapes' ? null : 'shapes', tool: x.tray === 'shapes' ? 'pen' : 'shape' })) }, on(s.tool === 'shape'))),
+      entry({ title: 'Color and thickness', isIcon: false, isDot: true, dotColor: s.color,
+        ring: s.tray === 'colors' ? 'oklch(1 0 0 / 0.85)' : 'var(--dml-rule)',
+        pressed: s.tray === 'colors',
+        bg: s.tray === 'colors' ? ACTIVE_BG : 'transparent',
+        hoverBg: s.tray === 'colors' ? ACTIVE_HOVER : 'var(--dml-surface-2)',
+        onTip: this.tip('Color and thickness'),
+        onClick: () => this.setState(x => ({ tray: x.tray === 'colors' ? null : 'colors' })) }),
+      entry({ title: 'Clear board', icon: '/icons/v4/clear.png', disabled: !hasDrawing, opacity: hasDrawing ? 1 : 0.3, cursor: hasDrawing ? 'pointer' : 'default', onTip: this.tip('Clear board'), onClick: this.askClear })
+    ];
+    const pinned = [
+      entry({ title: 'Undo', icon: '/icons/v4/undo.png', disabled: !canUndo, opacity: canUndo ? 1 : 0.3, cursor: canUndo ? 'pointer' : 'default', onTip: this.tip('Undo'), onClick: this.undo }),
+      entry({ title: 'Redo', icon: '/icons/v4/redo.png', disabled: !canRedo, opacity: canRedo ? 1 : 0.3, cursor: canRedo ? 'pointer' : 'default', onTip: this.tip('Redo'), onClick: this.redo })
+    ];
+    if (s.selected && s.items.some(it => it.id === s.selected)) {
+      entries.splice(8, 0, entry({ title: 'Delete selection', icon: '/icons/v4/delete.png', onTip: this.tip('Delete selection'), onClick: this.deleteSelected }));
+    }
+    const selItem = s.selected ? s.items.find(it => it.id === s.selected) : null;
+    const selBox = selItem ? this.bbox(selItem) : null;
+    const barW = (mobile ? window.innerWidth : s.winW) - 28;
+    const room = Math.max(2, Math.floor((barW - 14 - 47) / 47) - pinned.length);
+    const hasOverflow = entries.length > room;
+    const visible = pinned.concat(hasOverflow ? entries.slice(0, room) : entries);
+    const overflow = hasOverflow ? entries.slice(room) : [];
+    const cursorMap = { pan: 'grab', select: 'move', sticker: 'copy', note: 'copy', text: 'text', eraser: 'crosshair', fill: 'cell', picker: 'crosshair' };
+    const editing = (kind) => (s.tool === kind ? 'auto' : 'none');
+
+    return {
+      openerRef: this.openerRef, confirmRef: this.confirmRef, surfaceRef: this.surfaceRef,
+      noteInputRef: this.noteInputRef, fileRef: this.fileRef, onPickImage: this.onPickImage,
+      openBoard: this.openBoard, closeBoard: this.closeBoard, requestClose: this.requestClose,
+      toggleMinimize: this.toggleMinimize, resetSize: this.resetSize,
+      isOpen: s.open,
+      bodyVisible: !s.minimized,
+      drawView: !s.minimized && s.view === 'draw',
+      reviewView: !s.minimized && s.view === 'review',
+      minimizeTitle: s.minimized ? 'Expand board' : 'Minimize board',
+      minimizeIcon: { __html: s.minimized
+        ? '<polyline points="1.5,3.5 5.5,7.5 9.5,3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>'
+        : '<line x1="1.5" y1="5.5" x2="9.5" y2="5.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>' },
+      titleCursor: mobile ? 'default' : 'move',
+      showHandles: !mobile,
+      winLeft: mobile ? 0 : s.winX,
+      winTop: mobile ? 0 : s.winY,
+      winW: mobile ? window.innerWidth : s.winW,
+      winH: mobile ? window.innerHeight : (s.minimized ? 48 : s.winH),
+      frameColor, frameWidth: s.resizing ? 3 : 2,
+      onFrameEnter: this.onFrameEnter, onFrameLeave: this.onFrameLeave,
+      onTitleDown: this.onTitleDown, onTitleMove: this.onTitleMove, onTitleUp: this.onTitleUp,
+      onResizeTL: this.resizeDown('tl'), onResizeTR: this.resizeDown('tr'),
+      onResizeBL: this.resizeDown('bl'), onResizeBR: this.resizeDown('br'),
+      onResizeMove: this.onResizeMove, onResizeUp: this.onResizeUp,
+      hideTip: this.hideTip,
+      particles: s.particles.map(p => ({
+        x: Math.round(p.x), y: Math.round(p.y), size: Math.round(p.size),
+        opacity: Math.max(0, Math.min(1, p.life * 2.2)),
+        transform: 'translate(-50%, -50%) rotate(' + Math.round(p.rot) + 'deg)',
+        imgRef: (node) => { if (node && node.getAttribute('src') !== p.src) node.setAttribute('src', p.src); }
+      })),
+      hasTip: !!s.tip,
+      tipText: s.tip ? s.tip.text : '',
+      tipX: s.tip ? s.tip.x : 0,
+      tipY: s.tip ? s.tip.y : 0,
+      tipReset: this.tip('Reset size'),
+      tipMinimize: this.tip(s.minimized ? 'Expand' : 'Minimize'),
+      tipClose: this.tip('Close'),
+      tipColors: this.tip('Color and thickness'),
+      tipShapes: this.tip('Shape'),
+      tipStickers: this.tip('Stickers'),
+      tipCollapse: this.tip(hasOverflow ? 'More tools' : (s.toolbarOpen ? 'Collapse toolbar' : 'Expand toolbar')),
+      hit,
+      toolbarOpen: s.toolbarOpen,
+      trayMore: s.tray === 'more',
+      toggleToolbar: () => this.setState(x => ({ toolbarOpen: !x.toolbarOpen, tray: null, tip: null })),
+      collapseLabel: hasOverflow ? 'More tools' : (s.toolbarOpen ? 'Collapse toolbar' : 'Expand toolbar'),
+      collapseIcon: { __html: (hasOverflow ? s.tray !== 'more' : s.toolbarOpen)
+        ? '<polyline points="3.5,6.5 8,11 12.5,6.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>'
+        : '<polyline points="3.5,9.5 8,5 12.5,9.5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>' },
+      barItems: visible,
+      overflowItems: overflow,
+      onChevron: hasOverflow
+        ? () => this.setState(x => ({ tray: x.tray === 'more' ? null : 'more', tip: null }))
+        : () => this.setState(x => ({ toolbarOpen: !x.toolbarOpen, tray: null, tip: null })),
+      chevronExpanded: hasOverflow ? s.tray === 'more' : s.toolbarOpen,
+      chevronBg: hasOverflow && s.tray === 'more' ? ACTIVE_BG : 'transparent',
+      chevronHover: hasOverflow && s.tray === 'more' ? ACTIVE_HOVER : 'var(--dml-surface-2)',
+      chevronInk: hasOverflow && s.tray === 'more' ? 'white' : 'var(--dml-ink)',
+      currentColor: s.color,
+      pickColour: () => this.setState({ tool: 'picker' }),
+      tipPicker: this.tip('Pick a colour from the canvas'),
+      pickerOn: s.tool === 'picker',
+      pickerBg: s.tool === 'picker' ? ACTIVE_BG : 'transparent',
+      pickerHover: s.tool === 'picker' ? ACTIVE_HOVER : 'var(--dml-surface-2)',
+      pickerInk: s.tool === 'picker' ? 'white' : 'var(--dml-ink)',
+      trayNotes: s.tray === 'notes',
+      noteColors: NOTE_COLORS.map(c => {
+        const sel = s.noteColor === c.value;
+        return {
+          title: c.title + ' note', value: c.value, pressed: sel,
+          size: sel ? 24 : 20,
+          bg: sel ? 'var(--dml-surface-2)' : 'transparent',
+          ring: sel ? '0 0 0 2px white, 0 0 0 3.5px ' + BLUE : '0 0 0 1px oklch(0.84 0.01 260)',
+          onTip: this.tip(c.title),
+          onClick: () => this.setState({ noteColor: c.value, tool: 'note' })
+        };
+      }),
+      colorsRing: s.tray === 'colors' ? 'oklch(1 0 0 / 0.85)' : 'var(--dml-rule)',
+      trayColors: s.tray === 'colors',
+      trayShapes: s.tray === 'shapes',
+      trayStickers: s.tray === 'stickers',
+      toggleColors: () => this.setState(x => ({ tray: x.tray === 'colors' ? null : 'colors' })),
+      toggleShapes: () => this.setState(x => ({ tray: x.tray === 'shapes' ? null : 'shapes', tool: x.tray === 'shapes' ? 'pen' : 'shape' })),
+      toggleStickers: () => this.setState(x => ({ tray: x.tray === 'stickers' ? null : 'stickers', tool: x.tray === 'stickers' ? 'pen' : 'sticker' })),
+      colorsBg: s.tray === 'colors' ? ACTIVE_BG : 'transparent',
+      colorsHover: s.tray === 'colors' ? ACTIVE_HOVER : 'var(--dml-surface-2)',
+      shapesBg: s.tool === 'shape' ? ACTIVE_BG : 'transparent',
+      shapesHover: s.tool === 'shape' ? ACTIVE_HOVER : 'var(--dml-surface-2)',
+      shapesInk: s.tool === 'shape' ? 'white' : 'var(--dml-ink)',
+      stickersBg: s.tool === 'sticker' ? ACTIVE_BG : 'transparent',
+      stickersHover: s.tool === 'sticker' ? ACTIVE_HOVER : 'var(--dml-surface-2)',
+      stickersInk: s.tool === 'sticker' ? 'white' : 'var(--dml-ink)',
+      colors: COLORS.map(c => {
+        const on = s.color === c.value;
+        return {
+          title: c.title, value: c.value, pressed: on, dot: on ? 20 : 15,
+          bg: on ? 'var(--dml-surface-2)' : 'transparent',
+          ring: on ? '0 0 0 1px oklch(0.8 0.01 260), 0 0 0 3px white, 0 0 0 4.5px ' + BLUE : '0 0 0 1px oklch(0.78 0.01 260)',
+          onTip: this.tip(c.title),
+          onClick: () => this.setState(x => ({ color: c.value, tool: (x.tool === 'eraser' || x.tool === 'select' || x.tool === 'pan') ? 'pen' : x.tool }))
+        };
+      }),
+      sizes: SIZES.map(z => {
+        const on = s.size === z.value;
+        return {
+          title: z.title + ' stroke', dot: z.dot, pressed: on,
+          bg: on ? 'var(--dml-surface-2)' : 'transparent',
+          ink: on ? BLUE : 'var(--dml-ink)',
+          onTip: this.tip(z.title),
+          onClick: () => this.setState(x => ({ size: z.value, tool: (x.tool === 'eraser' || x.tool === 'select' || x.tool === 'pan') ? 'pen' : x.tool }))
+        };
+      }),
+      shapeTools: SHAPES.map(sh => {
+        const on = s.tool === 'shape' && s.shape === sh.id;
+        return {
+          title: sh.title, d: shapePath(sh.id, 5, 6, 23, 22), pressed: on,
+          bg: on ? 'var(--dml-surface-2)' : 'transparent',
+          ink: on ? BLUE : 'var(--dml-ink)',
+          onTip: this.tip(sh.title),
+          onClick: () => this.setState({ tool: 'shape', shape: sh.id })
+        };
+      }),
+      stickerTools: STICKERS.map(sk => {
+        const on = s.tool === 'sticker' && s.sticker === sk.src;
+        return {
+          title: sk.name + ' sticker', pressed: on,
+          imgRef: (node) => { if (node && node.getAttribute('src') !== sk.src) node.setAttribute('src', sk.src); },
+          bg: on ? 'var(--dml-surface-2)' : 'transparent',
+          onTip: this.tip(sk.name),
+          onClick: () => this.setState({ tool: 'sticker', sticker: sk.src })
+        };
+      }),
+      surfaceCursor: cursorMap[s.tool] || 'crosshair',
+      canvasBg: s.bg,
+      boardTheme: s.pageTheme === 'dark' ? 'dark' : 'light',
+      panTransform: 'translate(' + s.panX + ' ' + s.panY + ')',
+      panTranslate: 'translate(' + s.panX + 'px, ' + s.panY + 'px)',
+      strokes: s.items.filter(k => k.kind === 'path').map(k => ({
+        d: 'M' + k.pts.map(p => p.x + ' ' + p.y).join(' L '), color: k.color, width: k.width, opacity: k.opacity == null ? 1 : k.opacity
+      })),
+      sprayItems: s.items.filter(k => k.kind === 'spray').map(k => ({
+        color: k.color,
+        d: k.dots.map(dt => 'M' + dt.x + ' ' + dt.y + 'h' + dt.s).join(' '),
+        width: 1.7
+      })),
+      shapeItems: s.items.filter(k => k.kind === 'shape').map(k => ({
+        d: shapePath(k.shape, k.x1, k.y1, k.x2, k.y2), color: k.color, width: k.width, fill: k.fill || 'none'
+      })),
+      stickerItems: s.items.filter(k => k.kind === 'sticker').map(k => ({
+        x: k.x, y: k.y, size: k.size,
+        imgRef: (node) => { if (node && node.getAttribute('href') !== k.src) node.setAttribute('href', k.src); }
+      })),
+      hasSelection: !!selBox,
+      selX: selBox ? selBox.x : 0,
+      selY: selBox ? selBox.y : 0,
+      selW: selBox ? selBox.w : 0,
+      selH: selBox ? selBox.h : 0,
+      imageItems: s.items.filter(k => k.kind === 'image').map(k => ({
+        x: k.x, y: k.y, w: k.w, h: k.h,
+        imgRef: (node) => { if (node && node.getAttribute('href') !== k.src) node.setAttribute('href', k.src); }
+      })),
+      noteItems: s.items.filter(k => k.kind === 'note').map(k => ({
+        x: k.x, y: k.y, w: k.w, h: k.h, color: k.color, text: k.text, pe: editing('note'),
+        rotate: 'rotate(' + (((parseInt(k.id.slice(1), 10) * 37) % 5) - 2) * 0.55 + 'deg)',
+        fold: 'color-mix(in oklab, ' + k.color + ' 72%, black)',
+        ref: (node) => { if (node && this._focusItem === k.id) { this._focusItem = null; node.focus(); } },
+        stop: (e) => e.stopPropagation(),
+        onChange: (e) => { const v = e.target.value; this.setState(x => ({ items: x.items.map(it => (it.id === k.id ? { ...it, text: v } : it)) })); },
+        onBlur: () => this.commit(this.state.items)
+      })),
+      textItems: s.items.filter(k => k.kind === 'text').map(k => ({
+        x: k.x, y: k.y, w: k.w, size: k.size, color: k.color, text: k.text, pe: editing('text'),
+        ref: (node) => { if (node && this._focusItem === k.id) { this._focusItem = null; node.focus(); } },
+        stop: (e) => e.stopPropagation(),
+        onChange: (e) => { const v = e.target.value; this.setState(x => ({ items: x.items.map(it => (it.id === k.id ? { ...it, text: v } : it)) })); },
+        onBlur: () => this.commit(this.state.items)
+      })),
+      samples: this._samples.map(sm => Object.assign({}, sm, {
+        imgRef: sm.isSticker ? (node) => { if (node && node.getAttribute('src') !== sm.src) node.setAttribute('src', sm.src); } : null
+      })),
+      isBlank: !hasDrawing && !typed,
+      blankHint: s.tool === 'fill' ? 'Fill the background' : s.tool === 'picker' ? 'Pick a colour' : s.tool === 'sticker' ? 'Place a sticker' : (s.tool === 'note' ? 'Add a sticky note' : (s.tool === 'text' ? 'Add text on the canvas' : (s.tool === 'shape' || s.tool === 'arrow' ? 'Drag to draw a shape' : 'Draw here, or just type below'))),
+      blankSub: s.tool === 'fill' ? 'Tap the canvas, or a closed shape' : s.tool === 'picker' ? 'Tap anything to copy its colour' : s.tool === 'sticker' ? 'Tap the canvas to drop it' : (s.tool === 'note' || s.tool === 'text' ? 'Tap the canvas, then type' : (s.tool === 'shape' || s.tool === 'arrow' ? 'Drag across the canvas' : 'Drawing is optional')),
+      onDown: this.onDown, onMove: this.onMove, onUp: this.onUp,
+      confirmOpen: s.confirmOpen, confirmClear: this.confirmClear, cancelClear: this.cancelClear,
+      confirmTitle: s.confirmKind === 'close' ? 'Close without sending?' : 'Clear the board?',
+      confirmBody: s.confirmKind === 'close'
+        ? 'Your draft is saved on this device, so you can pick it up where you left off.'
+        : 'This removes everything on the canvas. You can undo it afterwards.',
+      confirmAction: s.confirmKind === 'close' ? 'Close board' : 'Clear board',
+      draftRestored: s.draftRestored,
+      discardDraft: this.discardDraft,
+      dismissDraftNote: this.dismissDraftNote,
+      shortcutHint: 'Shortcuts: V move · H pan · P draw · B highlight · E erase · A arrow · T text · S note · R shape',
+      note: s.note, hasTyped: typed.length > 0, hasDrawing,
+      counter: s.note.length + ' / ' + MAX_NOTE,
+      counterInk: s.note.length > MAX_NOTE - 40 ? 'oklch(0.55 0.18 35)' : 'var(--dml-ink-2)',
+      readyHint: canSubmit ? 'Ready when you are — a drawing, a message, or both.' : 'Draw something or type a message to continue.',
+      senderName: s.senderName, email: s.email, honeypot: s.honeypot,
+      onNote: (e) => { this.onTypeBurst(e); this.setState({ note: e.target.value }); },
+      onName: (e) => { this.onTypeBurst(e); this.setState({ senderName: e.target.value }); },
+      onEmail: (e) => { this.onTypeBurst(e); this.setState({ email: e.target.value, emailError: '' }); },
+      onEmailBlur: (e) => {
+        const v = e.target.value.trim();
+        this.setState({ emailError: v && !EMAIL_RE.test(v) ? 'Enter an email like name@example.com, or leave it blank.' : '' });
+      },
+      onHoneypot: (e) => this.setState({ honeypot: e.target.value }),
+      emailError: s.emailError, emailInvalid: emailBad,
+      emailBorder: emailBad ? 'oklch(0.6 0.18 25)' : 'var(--dml-rule)',
+      goReview: this.goReview,
+      reviewDisabled: !canSubmit,
+      reviewBg: canSubmit ? BLUE : 'oklch(0.84 0.02 255)',
+      reviewCursor: canSubmit ? 'pointer' : 'default',
+      backToDrawing: this.backToDrawing,
+      downloadCopy: this.downloadCopy,
+      previewImgRef: (node) => { if (node && s.previewUrl && node.src !== s.previewUrl) node.src = s.previewUrl; },
+      disclosure: 'When you select Send to Miguel, everything shown above is submitted to Miguel — the drawing if you made one, your message, your name and reply email if you added them, plus this page address and the current time. Nothing is sent until then.',
+      send: this.send,
+      isSending: sending,
+      sendDisabled: sending || s.status === 'sent',
+      sendLabel: s.status === 'sent' ? 'Sent' : (sending ? 'Sending' : 'Send to Miguel'),
+      sendBg: (sending || s.status === 'sent') ? 'oklch(0.72 0.09 255)' : BLUE,
+      sendCursor: (sending || s.status === 'sent') ? 'default' : 'pointer',
+      showForm: s.status !== 'sent',
+      showActions: s.status !== 'sent',
+      isSent: s.status === 'sent',
+      soulful: s.status === 'sent' || s.status === 'failed' || s.status === 'unavailable',
+      soulColor: s.status === 'sent' ? 'oklch(0.5 0.24 265)' : 'oklch(0.55 0.2 25)',
+      soulFace: s.status === 'sent' || s.status === 'failed' || s.status === 'unavailable',
+      soulMouth: s.status === 'sent' ? 'M8 22 C16 36 40 36 48 22' : 'M8 34 C16 20 40 20 48 34',
+      soulLetters: (s.status === 'sent' ? 'Submitted' : (s.status === 'failed' ? 'Not sent' : 'Not yet')).split('').map((ch, i) => ({ ch, delay: (i * 0.075).toFixed(3) })),
+      soulSmileDelay: ((s.status === 'sent' ? 9 : 8) * 0.075 + 0.14).toFixed(3),
+      soulArcDelay: ((s.status === 'sent' ? 9 : 8) * 0.075 + 0.28).toFixed(3),
+      showPlainStatus: s.status === 'sending',
+      hasStatus: !!st,
+      statusTitle: st ? st.title : '',
+      statusBody: st ? st.body : '',
+      showRetry: !!(st && st.retry),
+      statusBg: st ? st.bg : 'transparent',
+      statusBorder: st ? st.border : 'transparent',
+      statusInk: st ? st.ink : 'inherit'
+    };
+  }
+}
+</script>
+</body>
+</html>

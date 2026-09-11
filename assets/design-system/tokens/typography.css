@@ -1,0 +1,29 @@
+:root{
+/* size ramp @kind spacing-exempt */
+--size-display:clamp(38px,5vw,64px);/* @kind font */
+--size-section:clamp(28px,3.4vw,44px);/* @kind font */
+--size-stat:clamp(36px,4vw,56px);/* @kind font */
+--size-title:24px;/* @kind font */
+--size-lede:19px;/* @kind font */
+--size-body:17px;/* @kind font */
+--size-body-sm:15px;/* @kind font */
+--size-caption:13px;/* @kind font */
+--size-eyebrow:12px;/* @kind font */
+/* weights — only three */
+--weight-regular:400;/* @kind font */
+--weight-medium:600;/* @kind font */
+--weight-bold:700;/* @kind font */
+/* line heights */
+--lh-display:1.05;/* @kind font */
+--lh-section:1.1;/* @kind font */
+--lh-title:1.25;/* @kind font */
+--lh-lede:1.55;/* @kind font */
+--lh-body:1.6;/* @kind font */
+--lh-caption:1.45;/* @kind font */
+/* tracking */
+--track-tight:-0.02em;/* @kind font */
+--track-normal:0;/* @kind font */
+--track-eyebrow:.12em;/* @kind font */
+/* measures */
+--measure-lede:720px;/* @kind spacing */
+--measure-body:680px/* @kind spacing */}

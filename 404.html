@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Page not found, Miguel Clavel</title>
+<meta name="description" content="That page does not exist. Head back to Miguel Clavel's portfolio.">
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="/assets/design-system/tokens/fonts.css">
+<style>
+:root{
+--ink:#FFFFFF;--ink-2:rgba(255,255,255,.72);--ink-3:rgba(255,255,255,.5);
+--rule:rgba(255,255,255,.22);--stage:#33333A;
+--ui:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;
+--mono:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace}
+html,body{margin:0;padding:0;background:#33333A}
+a{color:var(--ink-2);text-decoration:none}
+a:hover{color:#FFFFFF}
+@media (max-width:640px){
+[data-num]{font-size:clamp(120px,min(30vh,52vw),200px)!important;letter-spacing:-.09em!important}
+[data-brand]{margin-top:32px!important;transform:scale(.75)!important}
+[data-group]{width:min(100% - 40px,360px)!important;gap:clamp(18px,3.5vh,28px)!important}
+[data-msg]{font-size:clamp(16px,4.5vw,20px)!important;letter-spacing:-1.3px!important}
+}
+@media (prefers-reduced-motion:reduce){[data-wave] path{d:path("M0 150 L1000 150")}}
+</style>
+</helmet>
+
+<main style="position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--stage);color:var(--ink);font-family:var(--ui)">
+
+  <div aria-hidden="true" style="position:absolute;inset:0;z-index:0;overflow:hidden">
+    <x-import component-from-global-scope="PixelRunGame" from="/PixelRunGame.jsx" hint-size="100%,100%" style="position:absolute;inset:0" background="{{ gameBg }}" ink="{{ gameInk }}" start-speed="{{ gameStart }}" max-speed="{{ gameMax }}" gravity="{{ gameGravity }}" jump="{{ gameJump }}" show-hud="{{ gameHud }}" attract="{{ gameAttract }}" far-dash-speed="{{ gameFar }}"></x-import>
+  </div>
+
+  <a data-brand href="/" aria-label="Miguel Clavel, back to the portfolio" style="position:relative;z-index:2;align-self:center;margin:clamp(28px,7vh,80px) 0 0;display:flex;align-items:center;gap:12px;white-space:nowrap">
+    <span style="font-size:19px;line-height:1;letter-spacing:-.035em;font-weight:700;color:var(--ink)">Miguel Clavel</span>
+    <span aria-hidden="true" style="display:block;width:1px;height:15px;background:var(--rule)"></span>
+    <span style="font-size:13px;line-height:1;letter-spacing:-.004em;color:var(--ink-2)">Senior Product Designer</span>
+  </a>
+
+  <div data-group style="position:relative;z-index:2;flex:1;align-self:center;width:483px;max-width:calc(100% - 40px);padding:clamp(24px,4vh,48px) 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:clamp(20px,4vh,44px)">
+    <h1 data-num style="margin:0;padding-bottom:.12em;font-family:var(--mono);font-size:clamp(120px,min(30vh,52vw),296px);font-weight:600;line-height:1.1;letter-spacing:-.083em;height:auto;min-height:0;background:linear-gradient(247.3282658084845deg,rgb(255,255,255) 2.5334%,rgba(255,255,255,.4) 93.612%);-webkit-background-clip:text;background-clip:text;color:transparent">404</h1>
+
+    <div data-wave style="position:relative;height:1px;width:425px;max-width:100%;color:var(--ink)">
+      <svg viewBox="0 0 1000 300" preserveAspectRatio="none" aria-hidden="true" focusable="false" style="position:absolute;left:0;top:-150px;width:100%;height:300px;overflow:visible;pointer-events:none">
+        <path data-wavepath d="M0 150 Q500 150, 1000 150" fill="none" stroke="currentColor" strokeWidth="1" vectorEffect="non-scaling-stroke"></path>
+      </svg>
+    </div>
+
+    <p data-msg style="margin:0;font-family:var(--mono);font-size:24px;font-weight:600;line-height:1.1;letter-spacing:-2px;color:var(--ink);text-wrap:pretty">The path may be broken, but the journey isn't. Let's get you back.</p>
+
+    <nav aria-label="Recovery" style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px 12px;font-family:var(--ui)">
+      <a href="/" style="display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--rule);border-radius:9999px;font-size:13.5px;font-weight:550;color:var(--ink-2)" style-hover="background:rgba(255,255,255,.08);color:#FFFFFF">Portfolio<span style="margin-left:6px">→</span></a>
+      <a href="/#work" style="display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--rule);border-radius:9999px;font-size:13.5px;font-weight:550;color:var(--ink-2)" style-hover="background:rgba(255,255,255,.08);color:#FFFFFF">Selected work</a>
+      <a href="mailto:2miguelclavel@gmail.com?subject=Portfolio%20conversation" style="display:inline-flex;align-items:center;min-height:40px;padding:0 14px;border:1px solid var(--rule);border-radius:9999px;font-size:13.5px;font-weight:550;color:var(--ink-2)" style-hover="background:rgba(255,255,255,.08);color:#FFFFFF">Email</a>
+    </nav>
+  </div>
+
+  <div style="position:relative;z-index:2;padding-bottom:16px;pointer-events:none">
+    <div style="max-width:1240px;margin:0 auto;padding:0 clamp(20px,4vw,56px);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)">Space / click to jump</div>
+  </div>
+
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;stageColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#33333A&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#33333A&quot;,&quot;#04040A&quot;,&quot;#00164C&quot;,&quot;#123F2A&quot;],&quot;section&quot;:&quot;Stage&quot;},&quot;showScore&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Stage&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const w = document.querySelector('[data-wave]');
+    const path = w && w.querySelector('[data-wavepath]');
+    if (!path) return;
+    let ax = 0.5, prog = 0, t = Math.PI / 2, req = null, live = false;
+    const draw = v => path.setAttribute('d', 'M0 150 Q' + (1000 * ax).toFixed(1) + ' ' + (150 + v * 1.15).toFixed(1) + ', 1000 150');
+    const spring = () => {
+      const np = prog * Math.sin(t);
+      prog *= 0.86; t += 0.42; draw(np);
+      if (Math.abs(prog) > 0.4) req = requestAnimationFrame(spring);
+      else { prog = 0; t = Math.PI / 2; req = null; draw(0); }
+    };
+    this.onMove = e => {
+      const b = w.getBoundingClientRect();
+      const dy = e.clientY - b.top;
+      const near = Math.abs(dy) < 110 && e.clientX > b.left - 20 && e.clientX < b.right + 20;
+      if (near) {
+        if (req) { cancelAnimationFrame(req); req = null; }
+        live = true; t = Math.PI / 2;
+        ax = Math.max(0, Math.min(1, (e.clientX - b.left) / b.width));
+        prog = Math.max(-48, Math.min(48, dy));
+        draw(prog);
+      } else if (live) {
+        live = false;
+        if (!req) req = requestAnimationFrame(spring);
+      }
+    };
+    document.addEventListener('mousemove', this.onMove, { passive: true });
+  }
+
+  componentWillUnmount() {
+    if (this.onMove) document.removeEventListener('mousemove', this.onMove);
+  }
+
+  renderVals() {
+    const p = this.props;
+    return {
+      gameBg: p.stageColor ?? '#33333A',
+      gameInk: '#FFFFFF',
+      gameStart: 420,
+      gameMax: 980,
+      gameGravity: 4780,
+      gameJump: 1480,
+      gameHud: p.showScore ?? false,
+      gameAttract: true,
+      gameFar: 100
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miami HEAT Homepage Experience Case Study | Miguel Clavel</title>
+<meta name="description" content="A homepage built to move at game speed: balancing editorial and commerce, gameday states, campaign surfaces, CMS component structure, and responsive fan journeys.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://miguelclavel-portfolio-v2.netlify.app/work/miami-heat-homepage">
+<meta property="og:url" content="https://miguelclavel-portfolio-v2.netlify.app/work/miami-heat-homepage">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A homepage built to move at game speed">
+<meta property="og:description" content="Sports product experience: editorial-commerce balance, gameday states, campaign surfaces, and responsive fan journeys.">
+<meta property="og:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/heat-homepage/heat-homepage-hero-desktop.webp">
+<meta property="og:image:alt" content="The Miami HEAT homepage hero on desktop, with the gameday module above ticket and commerce surfaces.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A homepage built to move at game speed">
+<meta name="twitter:description" content="Sports product experience: editorial-commerce balance, gameday states, campaign surfaces, and responsive fan journeys.">
+<meta name="twitter:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/heat-homepage/heat-homepage-hero-desktop.webp">
+<script src="support.js"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>/* No webfonts. The system ships zero @font-face rules by design: the brand
+   uses the host platform UI face only (San Francisco on Apple platforms,
+   Segoe/Helvetica/Arial elsewhere). No Google Fonts, no serif accents. */
+:root{--font-system:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;--font-core:var(--font-system);--font-display:var(--font-system);--font-body:var(--font-system);--font-mono:ui-monospace,SFMono-Regular,'SF Mono',Menlo,monospace}
+</style>
+<style>:root{
+/* base neutrals */
+--white:#FFFFFF;--wash:#F5F5F7;--ink-1:#1D1D1F;--ink-2:#494949;--ink-3:#6E6E73;
+--dark:#14161D;--dark-alt:#0E1016;
+--hairline-soft:rgba(0,0,0,.06);--hairline:rgba(0,0,0,.08);
+--on-dark:#F5F5F7;--on-dark-muted:rgba(245,245,247,.6);--hairline-on-dark:rgba(255,255,255,.1);--fill-on-dark:rgba(255,255,255,.04);
+/* accent */
+--blue-600:#0071E3;--blue-550:#0077ED;--blue-500:#0A84FF;--indigo-500:#5E5CE6;
+/* semantic hues */
+--green-500:#30D158;--amber-500:#FFBD2E;--amber-550:#FEBC2E;--red-500:#FF3B30;
+/* macOS window chrome dots */
+--dot-red:#FF5F56;--dot-amber:#FFBD2E;--dot-green:#27C93F;
+/* the one permitted gradient: soft hero wash */
+--hero-wash:linear-gradient(90deg,#B1DCFB,#D6EEFD 30%,#EFF8FF 63%,#FFFDEB);/* @kind color */
+
+/* semantic aliases */
+--text-primary:var(--ink-1);--text-secondary:var(--ink-2);--text-tertiary:var(--ink-3);
+--text-inverse:var(--on-dark);--text-inverse-muted:var(--on-dark-muted);
+--text-link:var(--blue-600);--text-link-hover:var(--blue-550);
+--surface-page:var(--white);--surface-wash:var(--wash);--surface-card:var(--white);
+--surface-dark:var(--dark);--surface-card-on-dark:var(--fill-on-dark);
+--surface-glass:rgba(255,255,255,.72);--surface-overlay:rgba(255,255,255,.85);--surface-chip:rgba(255,255,255,.6);
+--surface-secondary-btn:rgba(255,255,255,.7);--surface-hover-subtle:rgba(0,0,0,.04);
+--border-hairline:var(--hairline);--border-hairline-soft:var(--hairline-soft);
+--accent:var(--blue-600);--accent-hover:var(--blue-550);--accent-indicator:var(--blue-500);
+--selection:var(--indigo-500);
+--status-positive:var(--green-500);--status-caution:var(--amber-500);--status-negative:var(--red-500);
+--focus-ring:rgba(10,132,255,.5)}
+</style>
+<style>:root{
+/* size ramp @kind spacing-exempt */
+--size-display:clamp(38px,5vw,64px);/* @kind font */
+--size-section:clamp(28px,3.4vw,44px);/* @kind font */
+--size-stat:clamp(36px,4vw,56px);/* @kind font */
+--size-title:24px;/* @kind font */
+--size-lede:19px;/* @kind font */
+--size-body:17px;/* @kind font */
+--size-body-sm:15px;/* @kind font */
+--size-caption:13px;/* @kind font */
+--size-eyebrow:12px;/* @kind font */
+/* weights — only three */
+--weight-regular:400;/* @kind font */
+--weight-medium:600;/* @kind font */
+--weight-bold:700;/* @kind font */
+/* line heights */
+--lh-display:1.05;/* @kind font */
+--lh-section:1.1;/* @kind font */
+--lh-title:1.25;/* @kind font */
+--lh-lede:1.55;/* @kind font */
+--lh-body:1.6;/* @kind font */
+--lh-caption:1.45;/* @kind font */
+/* tracking */
+--track-tight:-0.02em;/* @kind font */
+--track-normal:0;/* @kind font */
+--track-eyebrow:.12em;/* @kind font */
+/* measures */
+--measure-lede:720px;/* @kind spacing */
+--measure-body:680px/* @kind spacing */}
+</style>
+<style>:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-7:28px;
+--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-26:104px;
+--gap-grid:24px;--gap-grid-tight:20px;
+--section-y:clamp(56px,7vw,104px);/* @kind spacing */
+--gutter:clamp(20px,5vw,48px);/* @kind spacing */
+--content-max:1160px;/* @kind spacing */
+--nav-height:56px;/* @kind spacing */
+--scroll-offset:128px;/* @kind spacing */
+--tap-min:44px/* @kind spacing */}
+</style>
+<style>:root{--radius-tile:12px;--radius-media:16px;--radius-overlay:16px;--radius-card:18px;--radius-pill:9999px}
+</style>
+<style>:root{
+--shadow-card:0 1px 3px rgba(0,0,0,.04);
+--shadow-overlay:0 20px 60px rgba(0,0,0,.15);
+--shadow-window:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06);
+--ring-on-dark:0 0 0 1px rgba(255,255,255,.1);
+--blur-nav:saturate(180%) blur(20px);/* @kind other */
+--blur-overlay:saturate(180%) blur(20px);/* @kind other */
+--blur-chip:blur(10px)/* @kind other */}
+</style>
+<style>:root{--ease:ease-out;/* @kind other */--dur-fast:120ms;/* @kind other */--dur:160ms;/* @kind other */--dur-slow:200ms;/* @kind other */
+--transition-color:color var(--dur) var(--ease),background-color var(--dur) var(--ease),border-color var(--dur) var(--ease);
+--press-scale:.97;/* @kind other */--reveal-shift:16px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+<style>html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;font-family:var(--font-system);font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary);background:var(--surface-page)}
+section{scroll-margin-top:var(--scroll-offset)}
+h1,h2,h3,h4{color:var(--text-primary);font-weight:var(--weight-bold);letter-spacing:var(--track-tight);margin:0}
+p{margin:0;text-wrap:pretty}
+a{color:var(--text-link);text-decoration:none;transition:var(--transition-color)}
+a:hover{color:var(--text-link-hover)}
+::selection{background:var(--selection);color:#fff}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:2px}
+@media (max-width:700px){.shr-hide{display:none!important}}
+</style>
+<style>/* No webfonts. The system ships zero @font-face rules by design: the brand
+   uses the host platform UI face only (San Francisco on Apple platforms,
+   Segoe/Helvetica/Arial elsewhere). No Google Fonts, no serif accents. */
+:root{--font-system:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;--font-core:var(--font-system);--font-display:var(--font-system);--font-body:var(--font-system);--font-mono:ui-monospace,SFMono-Regular,'SF Mono',Menlo,monospace}
+
+:root{
+/* base neutrals */
+--white:#FFFFFF;--wash:#F5F5F7;--ink-1:#1D1D1F;--ink-2:#494949;--ink-3:#6E6E73;
+--dark:#14161D;--dark-alt:#0E1016;
+--hairline-soft:rgba(0,0,0,.06);--hairline:rgba(0,0,0,.08);
+--on-dark:#F5F5F7;--on-dark-muted:rgba(245,245,247,.6);--hairline-on-dark:rgba(255,255,255,.1);--fill-on-dark:rgba(255,255,255,.04);
+/* accent */
+--blue-600:#0071E3;--blue-550:#0077ED;--blue-500:#0A84FF;--indigo-500:#5E5CE6;
+/* semantic hues */
+--green-500:#30D158;--amber-500:#FFBD2E;--amber-550:#FEBC2E;--red-500:#FF3B30;
+/* macOS window chrome dots */
+--dot-red:#FF5F56;--dot-amber:#FFBD2E;--dot-green:#27C93F;
+/* the one permitted gradient: soft hero wash */
+--hero-wash:linear-gradient(90deg,#B1DCFB,#D6EEFD 30%,#EFF8FF 63%,#FFFDEB);/* @kind color */
+
+/* semantic aliases */
+--text-primary:var(--ink-1);--text-secondary:var(--ink-2);--text-tertiary:var(--ink-3);
+--text-inverse:var(--on-dark);--text-inverse-muted:var(--on-dark-muted);
+--text-link:var(--blue-600);--text-link-hover:var(--blue-550);
+--surface-page:var(--white);--surface-wash:var(--wash);--surface-card:var(--white);
+--surface-dark:var(--dark);--surface-card-on-dark:var(--fill-on-dark);
+--surface-glass:rgba(255,255,255,.72);--surface-overlay:rgba(255,255,255,.85);--surface-chip:rgba(255,255,255,.6);
+--surface-secondary-btn:rgba(255,255,255,.7);--surface-hover-subtle:rgba(0,0,0,.04);
+--border-hairline:var(--hairline);--border-hairline-soft:var(--hairline-soft);
+--accent:var(--blue-600);--accent-hover:var(--blue-550);--accent-indicator:var(--blue-500);
+--selection:var(--indigo-500);
+--status-positive:var(--green-500);--status-caution:var(--amber-500);--status-negative:var(--red-500);
+--focus-ring:rgba(10,132,255,.5)}
+
+:root{
+/* size ramp @kind spacing-exempt */
+--size-display:clamp(38px,5vw,64px);/* @kind font */
+--size-section:clamp(28px,3.4vw,44px);/* @kind font */
+--size-stat:clamp(36px,4vw,56px);/* @kind font */
+--size-title:24px;/* @kind font */
+--size-lede:19px;/* @kind font */
+--size-body:17px;/* @kind font */
+--size-body-sm:15px;/* @kind font */
+--size-caption:13px;/* @kind font */
+--size-eyebrow:12px;/* @kind font */
+/* weights — only three */
+--weight-regular:400;/* @kind font */
+--weight-medium:600;/* @kind font */
+--weight-bold:700;/* @kind font */
+/* line heights */
+--lh-display:1.05;/* @kind font */
+--lh-section:1.1;/* @kind font */
+--lh-title:1.25;/* @kind font */
+--lh-lede:1.55;/* @kind font */
+--lh-body:1.6;/* @kind font */
+--lh-caption:1.45;/* @kind font */
+/* tracking */
+--track-tight:-0.02em;/* @kind font */
+--track-normal:0;/* @kind font */
+--track-eyebrow:.12em;/* @kind font */
+/* measures */
+--measure-lede:720px;/* @kind spacing */
+--measure-body:680px/* @kind spacing */}
+
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-7:28px;
+--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-26:104px;
+--gap-grid:24px;--gap-grid-tight:20px;
+--section-y:clamp(56px,7vw,104px);/* @kind spacing */
+--gutter:clamp(20px,5vw,48px);/* @kind spacing */
+--content-max:1160px;/* @kind spacing */
+--nav-height:56px;/* @kind spacing */
+--scroll-offset:128px;/* @kind spacing */
+--tap-min:44px/* @kind spacing */}
+
+:root{--radius-tile:12px;--radius-media:16px;--radius-overlay:16px;--radius-card:18px;--radius-pill:9999px}
+
+:root{
+--shadow-card:0 1px 3px rgba(0,0,0,.04);
+--shadow-overlay:0 20px 60px rgba(0,0,0,.15);
+--shadow-window:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06);
+--ring-on-dark:0 0 0 1px rgba(255,255,255,.1);
+--blur-nav:saturate(180%) blur(20px);/* @kind other */
+--blur-overlay:saturate(180%) blur(20px);/* @kind other */
+--blur-chip:blur(10px)/* @kind other */}
+
+:root{--ease:ease-out;/* @kind other */--dur-fast:120ms;/* @kind other */--dur:160ms;/* @kind other */--dur-slow:200ms;/* @kind other */
+--transition-color:color var(--dur) var(--ease),background-color var(--dur) var(--ease),border-color var(--dur) var(--ease);
+--press-scale:.97;/* @kind other */--reveal-shift:16px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
+
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;font-family:var(--font-system);font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary);background:var(--surface-page)}
+section{scroll-margin-top:var(--scroll-offset)}
+h1,h2,h3,h4{color:var(--text-primary);font-weight:var(--weight-bold);letter-spacing:var(--track-tight);margin:0}
+p{margin:0;text-wrap:pretty}
+a{color:var(--text-link);text-decoration:none;transition:var(--transition-color)}
+a:hover{color:var(--text-link-hover)}
+::selection{background:var(--selection);color:#fff}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:2px}
+@media (max-width:700px){.shr-hide{display:none!important}}
+
+</style>
+<script src="/assets/design-system/_ds_bundle.js"></script>
+<style>
+html { scroll-behavior: smooth; }
+body { margin: 0; background: #F4F1EC; font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; color: #0B0B0D; }
+a { color: #C8102E; text-decoration: none; }
+a:hover { color: #98002E; }
+:focus-visible { outline: 3px solid #F9A01B; outline-offset: 2px; }
+section[id] { scroll-margin-top: 128px; }
+@media (max-width: 900px) {
+  [data-img-split] { grid-template-columns: minmax(0,1fr) !important; }
+}
+@media (max-width: 980px) {
+  [data-anatomy-grid] { grid-template-columns: minmax(0,1fr) !important; }
+  [data-anatomy-sticky] { position: static !important; }
+}
+[data-img-card] { transition: transform 160ms ease-out; }
+[data-img-card]:hover { transform: scale(1.01); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; }
+  [data-img-card]:hover { transform: none; }
+}
+</style>
+</helmet>
+
+<div style="background:#F4F1EC">
+
+<a href="#hero" style="position:absolute;left:-9999px;top:0;z-index:1000;background:#0071E3;color:#fff;font-size:14px;font-weight:600;padding:12px 20px;border-radius:9999px;text-decoration:none" style-focus="left:12px;top:12px">Skip to case study</a>
+<div style="position:fixed;top:0;left:0;right:0;z-index:70;height:52px;display:flex;align-items:center;gap:12px;padding:0 clamp(16px,4vw,40px);background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06);font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif">
+  <a href="/" style="font-size:14px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F;text-decoration:none;white-space:nowrap">Miguel Clavel</a>
+  <span class="shr-hide" aria-hidden="true" style="color:rgba(0,0,0,.2)">/</span>
+  <span class="shr-hide" style="font-size:13px;color:#6E6E73;white-space:nowrap">Senior Product Designer</span>
+  <span id="shr-status" aria-live="polite" class="shr-hide" style="font-size:13px;color:#6E6E73"></span>
+  <nav aria-label="Portfolio" style="margin-left:auto;display:flex;align-items:center;gap:2px">
+    <a href="/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">&#8592; Back to work</a>
+    <a href="mailto:2miguelclavel@gmail.com?subject=Miami%20HEAT%20homepage" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Email</a>
+    <button type="button" onClick="{{ shareProject }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:0;background:none;border-radius:9999px;font:inherit;font-size:13px;font-weight:600;color:#494949;cursor:pointer;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Share</button>
+  </nav>
+</div>
+
+<header style="position:fixed;top:52px;left:0;right:0;height:56px;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,40px);background:transparent;transition:background 160ms ease-out,border-color 160ms ease-out;border-bottom:1px solid transparent" ref="{{ navRef }}">
+  <span style="font-weight:700;font-size:13px;letter-spacing:.02em;color:#F7F7F8">Miami HEAT Homepage</span>
+  <nav aria-label="Case study sections" style="display:flex;gap:clamp(12px,2vw,28px);align-items:center">
+    <a href="#overview" style="font-size:13px;font-weight:600;color:#F7F7F8;min-height:44px;display:flex;align-items:center">Overview</a>
+    <a href="#challenge" style="font-size:13px;font-weight:600;color:#F7F7F8;min-height:44px;display:flex;align-items:center">Challenge</a>
+    <a href="#gameday" style="font-size:13px;font-weight:600;color:#F7F7F8;min-height:44px;display:flex;align-items:center">Game day</a>
+    <a href="#system" style="font-size:13px;font-weight:600;color:#F7F7F8;min-height:44px;display:flex;align-items:center">System</a>
+    <a href="#impact" style="font-size:13px;font-weight:600;color:#F7F7F8;min-height:44px;display:flex;align-items:center">Impact</a>
+  </nav>
+  <div aria-hidden="true" style="position:absolute;left:0;bottom:-2px;height:2px;width:0%;background:linear-gradient(90deg,#98002E,#F9A01B)" ref="{{ barRef }}"></div>
+</header>
+
+<main>
+
+<section id="hero" style="position:relative;overflow:hidden;background:linear-gradient(160deg,#98002E 0%,#3A0512 46%,#050506 100%);padding:clamp(120px,14vw,180px) clamp(20px,5vw,64px) clamp(72px,9vw,120px)">
+  <div aria-hidden="true" style="position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(247,247,248,.07) 0 1px,transparent 1px 96px),repeating-linear-gradient(0deg,rgba(247,247,248,.05) 0 1px,transparent 1px 96px)"></div>
+  <div aria-hidden="true" style="position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:520px;height:520px;border:1px solid rgba(247,247,248,.14);border-radius:50%"></div>
+  <div aria-hidden="true" style="position:absolute;right:-40px;top:50%;transform:translateY(-50%);width:220px;height:220px;border:1px solid rgba(247,247,248,.12);border-radius:50%"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto">
+    <div style="display:flex;align-items:center;gap:24px;margin-bottom:clamp(28px,4vw,44px);flex-wrap:wrap">
+      <div style="background:#FFFFFF;border-radius:16px;padding:clamp(16px,2vw,24px);display:flex;align-items:center;box-shadow:0 18px 48px rgba(0,0,0,.35)">
+        <img src="/assets/heat-homepage/miami-heat-logo.svg" alt="Miami HEAT logo" width="200" height="200" style="width:clamp(140px,16vw,220px);height:auto;display:block">
+      </div>
+      <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F9A01B">Miami HEAT homepage redesign</span>
+    </div>
+    <h1 style="margin:0;max-width:16ch;font-weight:700;font-size:clamp(46px,7vw,92px);line-height:.94;letter-spacing:-.045em;color:#F7F7F8;text-wrap:pretty">A homepage built to move at game speed</h1>
+    <p style="margin:clamp(24px,3vw,36px) 0 0;max-width:760px;font-size:clamp(18px,2vw,22px);line-height:1.5;color:rgba(247,247,248,.82)">I helped redesign the Miami HEAT homepage as a flexible publishing system for game days. The new structure put schedules and tickets first, gave marketing room for memberships and merchandise, and made live updates easier for the content team.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(32px,4vw,44px)">
+      <span style="padding:10px 16px;border:1px solid rgba(247,247,248,.22);border-radius:6px;font-size:13px;font-weight:600;color:#F7F7F8">Role: UX and web design</span>
+      <span style="padding:10px 16px;border:1px solid rgba(247,247,248,.22);border-radius:6px;font-size:13px;font-weight:600;color:#F7F7F8">Focus: Live content and CMS components</span>
+      <span style="padding:10px 16px;border:1px solid rgba(247,247,248,.22);border-radius:6px;font-size:13px;font-weight:600;color:#F7F7F8">Experience: Responsive homepage</span>
+      <span style="padding:10px 16px;border:1px solid rgba(247,247,248,.22);border-radius:6px;font-size:13px;font-weight:600;color:#F7F7F8">Audience: Fans and content teams</span>
+    </div>
+    <div style="margin-top:clamp(48px,6vw,72px);padding-top:20px;border-top:1px solid rgba(247,247,248,.18);display:flex;flex-wrap:wrap;gap:8px 28px;font-size:13px;color:rgba(247,247,248,.6)">
+      <span>Miami HEAT public website homepage</span>
+      <span>·</span>
+      <span>Legacy HEAT.com and FTXArena.com content stack</span>
+      <span>·</span>
+      <span>Approved production screenshots with code-drawn schematics for structure</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(64px,8vw,104px) clamp(20px,5vw,64px);background:#FDFBF7">
+  <figure data-reveal="" style="margin:0 auto;max-width:1200px">
+    <div style="border-radius:20px;overflow:hidden;box-shadow:0 28px 80px rgba(0,0,0,.16)">
+      <img src="/assets/heat-homepage/heat-homepage-hero-desktop.webp" alt="The redesigned Miami HEAT homepage shown on a desktop monitor" width="1400" height="933" style="display:block;width:100%;height:auto">
+    </div>
+    <figcaption style="margin-top:12px;font-size:13px;line-height:1.45;color:#6E6E73">The redesigned homepage put games, ticket actions, and an active campaign into one focused first view.</figcaption>
+  </figure>
+</section>
+
+<section id="overview" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#F4F1EC">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">02 · Overview</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:22ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">One homepage serving fans, marketing, and game day operations</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px;margin-top:clamp(40px,5vw,64px);align-items:start">
+      <div data-reveal="">
+        <p style="margin:0;font-size:18px;line-height:1.65;color:#5C5C62">The homepage had to do more than introduce the brand. It was often the fastest route to a game, ticket, score, schedule, player, or jersey. At the same time, the content team needed to react to a live season without waiting for a custom page build.</p>
+        <p style="margin:22px 0 0;font-size:18px;line-height:1.65;color:#5C5C62">I approached the redesign as a hierarchy and publishing problem. The interface needed stronger priorities for fans and a more flexible structure behind the scenes.</p>
+        <p style="margin:22px 0 0;font-size:18px;line-height:1.65;color:#0B0B0D">The production homepage shows how the strategy became a flexible system for ticketing, campaigns, merchandise, editorial stories, memberships, and arena content.</p>
+      </div>
+      <dl data-reveal="" style="margin:0;border-top:1px solid rgba(11,11,13,.10)">
+        <div style="display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:24px;padding:20px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+          <dt style="margin:0;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0B0B0D">Surface</dt>
+          <dd style="margin:0;font-size:16px;line-height:1.5;color:#5C5C62">Miami HEAT homepage</dd>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:24px;padding:20px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+          <dt style="margin:0;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0B0B0D">Core journeys</dt>
+          <dd style="margin:0;font-size:16px;line-height:1.5;color:#5C5C62">Games, schedule, tickets, players, shop, membership</dd>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:24px;padding:20px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+          <dt style="margin:0;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0B0B0D">Operating rhythm</dt>
+          <dd style="margin:0;font-size:16px;line-height:1.5;color:#5C5C62">Pregame, live game, final, and next game</dd>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(120px,180px) 1fr;gap:24px;padding:20px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+          <dt style="margin:0;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#0B0B0D">System need</dt>
+          <dd style="margin:0;font-size:16px;line-height:1.5;color:#5C5C62">Reusable and reorderable CMS components</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="challenge" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#050506;color:#F7F7F8">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F9A01B">03 · The challenge</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:20ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;color:#F7F7F8;text-wrap:pretty">The page looked static while the season kept changing</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;margin-top:clamp(36px,4vw,56px)">
+      <p data-reveal="" style="margin:0;font-size:18px;line-height:1.65;color:rgba(247,247,248,.78)">Inconsistent templates made the homepage harder to scan and slower to update. High intent actions competed with stories and promotions. During games, even a small content change could become a stressful publishing task.</p>
+      <p data-reveal="" style="margin:0;font-size:18px;line-height:1.65;color:rgba(247,247,248,.78)">The real design question was not simply what belongs on the homepage. It was what belongs first right now.</p>
+    </div>
+    <ol style="list-style:none;margin:clamp(48px,6vw,72px) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+      <li data-reveal="" style="padding:28px;border:1px solid rgba(247,247,248,.14);border-radius:14px;background:rgba(247,247,248,.04)">
+        <span style="display:block;font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;color:#C8102E;margin-bottom:16px">Problem 01</span>
+        <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#F7F7F8">Fans had to work too hard to reach the next game, schedule, or ticket action.</p>
+      </li>
+      <li data-reveal="" style="padding:28px;border:1px solid rgba(247,247,248,.14);border-radius:14px;background:rgba(247,247,248,.04)">
+        <span style="display:block;font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;color:#C8102E;margin-bottom:16px">Problem 02</span>
+        <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#F7F7F8">Marketing had limited ways to introduce jerseys and memberships without crowding the hero.</p>
+      </li>
+      <li data-reveal="" style="padding:28px;border:1px solid rgba(247,247,248,.14);border-radius:14px;background:rgba(247,247,248,.04)">
+        <span style="display:block;font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;color:#C8102E;margin-bottom:16px">Problem 03</span>
+        <p style="margin:0;font-size:18px;line-height:1.5;font-weight:600;color:#F7F7F8">Content teams needed faster patterns for game status, player updates, and postgame changes.</p>
+      </li>
+    </ol>
+    <div style="margin-top:clamp(48px,6vw,72px);padding-top:28px;border-top:1px solid rgba(247,247,248,.14)">
+      <p style="margin:0 0 24px;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,247,248,.6)">Season scale. Public context, not measured project impact.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px">
+        <div>
+          <div style="font-weight:700;font-size:clamp(28px,3.4vw,40px);line-height:1;letter-spacing:-.03em;color:#F7F7F8">53</div>
+          <div style="margin-top:10px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(247,247,248,.6)">Regular season wins</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:clamp(28px,3.4vw,40px);line-height:1;letter-spacing:-.03em;color:#F7F7F8">41 / 41</div>
+          <div style="margin-top:10px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(247,247,248,.6)">Home games and sellouts</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:clamp(28px,3.4vw,40px);line-height:1;letter-spacing:-.03em;color:#F7F7F8">804,761</div>
+          <div style="margin-top:10px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(247,247,248,.6)">Total home attendance</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:clamp(28px,3.4vw,40px);line-height:1;letter-spacing:-.03em;color:#F7F7F8">18</div>
+          <div style="margin-top:10px;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:rgba(247,247,248,.6)">Playoff games to the Eastern Conference Finals</div>
+        </div>
+      </div>
+      <p style="margin:24px 0 0;font-size:13px;line-height:1.45;color:rgba(247,247,248,.6);max-width:720px">These figures describe the scale of the season, not the impact of this project. Public context from the official 2021 to 2022 season review.</p>
+    </div>
+  </div>
+</section>
+
+<section id="strategy" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">04 · Product thinking</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:20ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Let fan intent and game state control the hierarchy</h2>
+    <ol style="list-style:none;margin:clamp(40px,5vw,64px) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:0;border-top:2px solid #0B0B0D">
+      <li data-reveal="" style="padding:28px 24px 28px 0;border-right:1px solid rgba(11,11,13,.10)">
+        <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;color:#5C5C62">01</span>
+        <h3 style="margin:16px 0 12px;font-weight:700;font-size:26px;letter-spacing:-.02em">Now</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Show the current or next game, time, opponent, and most useful action first.</p>
+      </li>
+      <li data-reveal="" style="padding:28px 24px;border-right:1px solid rgba(11,11,13,.10)">
+        <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;color:#5C5C62">02</span>
+        <h3 style="margin:16px 0 12px;font-weight:700;font-size:26px;letter-spacing:-.02em">Act</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Keep Buy Tickets and View Schedule visible before editorial content asks for attention.</p>
+      </li>
+      <li data-reveal="" style="padding:28px 24px;border-right:1px solid rgba(11,11,13,.10)">
+        <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;color:#5C5C62">03</span>
+        <h3 style="margin:16px 0 12px;font-weight:700;font-size:26px;letter-spacing:-.02em">Follow</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Give scores, recaps, player stories, and team updates a dependable home.</p>
+      </li>
+      <li data-reveal="" style="padding:28px 0 28px 24px">
+        <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;color:#5C5C62">04</span>
+        <h3 style="margin:16px 0 12px;font-weight:700;font-size:26px;letter-spacing:-.02em">Belong</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Introduce memberships, jerseys, and HEAT culture after the immediate game need is clear.</p>
+      </li>
+    </ol>
+    <p data-reveal="" style="margin:clamp(36px,4vw,52px) 0 0;max-width:760px;font-size:clamp(18px,2vw,22px);line-height:1.5;color:#0B0B0D">This priority model kept the homepage useful through different moments of the season. The content changed, but the decision order stayed understandable.</p>
+  </div>
+</section>
+
+<section id="anatomy" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#F4F1EC">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">05 · Homepage anatomy</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:22ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Put the most time sensitive information closest to the top</h2>
+    <div style="display:grid;grid-template-columns:minmax(0,460px) minmax(0,1fr);gap:clamp(32px,5vw,72px);margin-top:clamp(40px,5vw,64px);align-items:start" data-anatomy-grid="">
+      <figure data-anatomy-sticky="" style="margin:0;position:sticky;top:96px">
+        <div data-reveal-mask="" style="background:#111214;border-radius:18px;padding:10px;box-shadow:0 24px 70px rgba(0,0,0,.18);width:min(100%,440px)">
+          <div style="border-radius:12px;overflow:hidden;background:#FFFFFF">
+            <div style="height:36px;display:flex;align-items:center;gap:7px;padding:0 14px;background:rgba(246,246,246,.96);border-bottom:1px solid rgba(0,0,0,.06)">
+              <span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:#FF5F56"></span>
+              <span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:#FFBD2E"></span>
+              <span aria-hidden="true" style="width:10px;height:10px;border-radius:50%;background:#27C93F"></span>
+            </div>
+            <div style="height:min(72vh,760px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch">
+              <img src="/assets/heat-homepage/heat-homepage-full.png" alt="The complete production Miami HEAT homepage from the campaign lead through the footer" width="470" height="2048" style="display:block;width:100%;height:auto">
+            </div>
+          </div>
+        </div>
+        <figcaption style="margin-top:12px;font-size:13px;line-height:1.45;color:#6E6E73;max-width:440px">Scroll inside the frame to see the full page. The production homepage balanced conversion, commerce, editorial content, and arena discovery within one modular page.</figcaption>
+      </figure>
+      <ol style="list-style:none;margin:0;padding:0;border-top:2px solid #0B0B0D">
+      <li data-reveal="" style="display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+        <span style="font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.06em;color:#C8102E">01</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-size:20px;font-weight:700;letter-spacing:-.02em">Campaign lead</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#5C5C62">High visibility storytelling with direct actions.</p>
+        </div>
+      </li>
+      <li data-reveal="" style="display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+        <span style="font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.06em;color:#C8102E">02</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-size:20px;font-weight:700;letter-spacing:-.02em">Ticket Central</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#5C5C62">Ticket options grouped into a clear decision area.</p>
+        </div>
+      </li>
+      <li data-reveal="" style="display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+        <span style="font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.06em;color:#C8102E">03</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-size:20px;font-weight:700;letter-spacing:-.02em">Shop Court Culture</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#5C5C62">Products introduced without taking over the opening hero.</p>
+        </div>
+      </li>
+      <li data-reveal="" style="display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+        <span style="font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.06em;color:#C8102E">04</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-size:20px;font-weight:700;letter-spacing:-.02em">Flexible campaign modules</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#5C5C62">Auditions, collections, and limited promotions could change independently.</p>
+        </div>
+      </li>
+      <li data-reveal="" style="display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+        <span style="font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.06em;color:#C8102E">05</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-size:20px;font-weight:700;letter-spacing:-.02em">Editorial and trending content</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#5C5C62">Stories and video kept the homepage connected to the team beyond game results.</p>
+        </div>
+      </li>
+      <li data-reveal="" style="display:grid;grid-template-columns:44px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(11,11,13,.10)">
+        <span style="font:700 13px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.06em;color:#C8102E">06</span>
+        <div>
+          <h3 style="margin:0 0 8px;font-size:20px;font-weight:700;letter-spacing:-.02em">More HEAT</h3>
+          <p style="margin:0;font-size:16px;line-height:1.6;color:#5C5C62">Arena events, premium hospitality, food, and social channels extended the journey.</p>
+        </div>
+      </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="gameday" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px) 0;background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">06 · Live operations</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:22ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Design the homepage to change before, during, and after the game</h2>
+    <p data-reveal="" style="margin:24px 0 0;max-width:760px;font-size:18px;line-height:1.65;color:#5C5C62">The same game module carries three states. Scroll to move it from pregame to live to final. Neutral data is used throughout: MIA and OPP stand in for real teams, and no historical score is shown.</p>
+  </div>
+  <div ref="{{ stateSectionRef }}" style="position:relative;max-width:1280px;margin:clamp(40px,5vw,64px) auto 0">
+    <div style="position:sticky;top:76px;z-index:1;background:#FFFFFF;padding-bottom:24px">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px">
+        <sc-for list="{{ stateTabs }}" as="tab" hint-placeholder-count="3">
+          <button type="button" sc-camel-on-click="{{ tab.select }}" aria-pressed="{{ tab.active }}" style="{{ tab.style }}">{{ tab.label }}</button>
+        </sc-for>
+      </div>
+      <div style="border:1px solid rgba(11,11,13,.10);border-radius:16px;overflow:hidden;background:#050506;color:#F7F7F8">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px;border-bottom:1px solid rgba(247,247,248,.14);flex-wrap:wrap">
+          <span style="display:inline-flex;align-items:center;gap:10px;font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F9A01B">
+            <span aria-hidden="true" style="{{ activeDotStyle }}"></span>{{ activeLabel }}
+          </span>
+          <span style="font-size:13px;color:rgba(247,247,248,.6)">{{ activeMeta }}</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,48px);padding:clamp(28px,4vw,48px) 24px">
+          <div>
+            <div style="display:flex;align-items:flex-end;gap:clamp(16px,3vw,32px)">
+              <div>
+                <div style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;color:rgba(247,247,248,.6);margin-bottom:12px">MIA</div>
+                <div style="font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.04em;color:#F7F7F8">{{ activeHome }}</div>
+              </div>
+              <div style="font-size:20px;font-weight:600;color:rgba(247,247,248,.4);padding-bottom:10px">{{ activeSeparator }}</div>
+              <div>
+                <div style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;color:rgba(247,247,248,.6);margin-bottom:12px">OPP</div>
+                <div style="font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.04em;color:#F7F7F8">{{ activeAway }}</div>
+              </div>
+            </div>
+            <p style="margin:24px 0 0;font-size:15px;line-height:1.6;color:rgba(247,247,248,.7)">{{ activeStatus }}</p>
+          </div>
+          <div>
+            <div style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:rgba(247,247,248,.6);margin-bottom:16px">Module actions</div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <sc-for list="{{ activeActions }}" as="action" hint-placeholder-count="4">
+                <span style="{{ action.style }}">{{ action.label }}</span>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#5C5C62">Game status module schematic, three states, desktop. Neutral team codes and no invented score.</p>
+    </div>
+    <div style="position:relative;z-index:0;display:flex;flex-direction:column;gap:0">
+      <div style="height:55vh"></div>
+      <div style="height:55vh"></div>
+      <div style="height:35vh"></div>
+    </div>
+  </div>
+  <div style="max-width:1280px;margin:0 auto;padding-bottom:clamp(72px,9vw,132px)">
+    <p data-reveal="" style="margin:0;max-width:760px;font-size:clamp(18px,2vw,22px);line-height:1.5;color:#0B0B0D">The component structure reduced the need to redesign the page for every state. Editors could update the content and priority while the underlying pattern stayed familiar to fans.</p>
+  </div>
+</section>
+
+<section id="workflow" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#F4F1EC">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">07 · Content operations</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:20ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Make every game update clear, fast, and reviewable</h2>
+    <ol style="list-style:none;margin:clamp(40px,5vw,64px) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;counter-reset:step">
+      <li data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px"><span style="font-weight:700;font-size:28px;letter-spacing:-.03em;color:#C8102E">1</span><h3 style="margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em">Prepare</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Load game information, artwork, links, and fallback content before tipoff.</p>
+      </li>
+      <li data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px"><span style="font-weight:700;font-size:28px;letter-spacing:-.03em;color:#C8102E">2</span><h3 style="margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em">Verify</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Confirm opponent, date, time, ticket destination, broadcast details, and player references.</p>
+      </li>
+      <li data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px"><span style="font-weight:700;font-size:28px;letter-spacing:-.03em;color:#C8102E">3</span><h3 style="margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em">Publish pregame</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Move the game module into the primary position and confirm mobile behavior.</p>
+      </li>
+      <li data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px"><span style="font-weight:700;font-size:28px;letter-spacing:-.03em;color:#C8102E">4</span><h3 style="margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em">Update live</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Change game status and supporting links without rebuilding the homepage.</p>
+      </li>
+      <li data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px"><span style="font-weight:700;font-size:28px;letter-spacing:-.03em;color:#C8102E">5</span><h3 style="margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em">Close the game</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Publish the final state, recap, highlights, and related player content.</p>
+      </li>
+      <li data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px"><span style="font-weight:700;font-size:28px;letter-spacing:-.03em;color:#C8102E">6</span><h3 style="margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em">Reset</h3></div>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Move the next game into focus and remove expired live messaging.</p>
+      </li>
+    </ol>
+    <p data-reveal="" style="margin:clamp(36px,4vw,52px) 0 0;padding:24px;border-left:4px solid #F9A01B;background:#FFFFFF;font-size:18px;line-height:1.5;font-weight:600;max-width:760px">Every time sensitive module needs an owner, a source, a publish time, and a fallback state.</p>
+  </div>
+</section>
+
+<section id="players" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">08 · Roster and stories</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:24ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Keep players current without making every update a custom design task</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;margin-top:clamp(40px,5vw,64px);align-items:start">
+      <div data-reveal="" style="border:1px solid rgba(11,11,13,.10);border-radius:14px;overflow:hidden;background:#F4F1EC">
+        <div style="position:relative;aspect-ratio:4/3;background:linear-gradient(150deg,#98002E,#050506);display:flex;align-items:flex-end;padding:20px">
+          <div aria-hidden="true" style="position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(247,247,248,.08) 0 1px,transparent 1px 64px)"></div>
+          <span style="position:relative;font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F7F7F8;padding:8px 12px;border:1px solid rgba(247,247,248,.3);border-radius:6px">01 Current player image · approved photography slot</span>
+        </div>
+        <div style="padding:24px">
+          <div style="display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1px solid rgba(11,11,13,.10);padding-bottom:14px">
+            <span style="font-weight:700;font-size:24px;letter-spacing:-.02em">02 Name and number</span>
+            <span style="font-weight:700;font-size:24px;color:#C8102E">00</span>
+          </div>
+          <p style="margin:16px 0 0;font-size:15px;font-weight:600;color:#5C5C62">03 Position or story label</p>
+          <div style="margin-top:18px;display:inline-flex;padding:12px 18px;border-radius:6px;background:#C8102E;color:#F7F7F8;font-size:14px;font-weight:700;min-height:44px;align-items:center">04 Primary story, profile, or shop action</div>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px dashed rgba(11,11,13,.2);display:flex;gap:8px;flex-wrap:wrap">
+            <span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5C5C62;padding:6px 10px;border:1px solid rgba(11,11,13,.10);border-radius:6px">05 Publish control</span>
+            <span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5C5C62;padding:6px 10px;border:1px solid rgba(11,11,13,.10);border-radius:6px">05 Expiration control</span>
+          </div>
+        </div>
+      </div>
+      <div data-reveal="">
+        <p style="margin:0;font-size:18px;line-height:1.65;color:#5C5C62">Player content changes quickly across a season. The system needed dependable fields and review steps so an old image, outdated roster reference, or incorrect jersey link did not remain on the homepage.</p>
+        <h3 style="margin:36px 0 0;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#0B0B0D">Player quality assurance</h3>
+        <ol style="list-style:none;margin:20px 0 0;padding:0;display:flex;flex-direction:column;gap:0;border-top:1px solid rgba(11,11,13,.10)">
+          <li style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5"><span style="font-weight:700;color:#C8102E;min-width:24px">01</span>Confirm roster status and spelling.</li>
+          <li style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5"><span style="font-weight:700;color:#C8102E;min-width:24px">02</span>Use current approved photography.</li>
+          <li style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5"><span style="font-weight:700;color:#C8102E;min-width:24px">03</span>Check number, position, and linked destination.</li>
+          <li style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5"><span style="font-weight:700;color:#C8102E;min-width:24px">04</span>Remove or replace expired player promotions.</li>
+          <li style="display:flex;gap:16px;padding:16px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5"><span style="font-weight:700;color:#C8102E;min-width:24px">05</span>Review crops on desktop and mobile.</li>
+        </ol>
+      </div>
+    </div>
+    <p style="margin:24px 0 0;font-size:13px;line-height:1.45;color:#5C5C62">Player card anatomy schematic. The image area marks where approved team photography is placed; no player photography is shown here.</p>
+  </div>
+</section>
+
+<section id="tickets" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#F4F1EC">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">09 · High intent actions</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:20ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Shorten the path from homepage to seat selection</h2>
+    <div data-reveal="" style="margin-top:clamp(40px,5vw,64px);border:1px solid rgba(11,11,13,.10);border-radius:16px;overflow:hidden;background:#FFFFFF">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 20px;background:#050506;color:#F7F7F8;flex-wrap:wrap">
+        <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F9A01B">Utility bar</span>
+        <span style="font-size:13px;color:rgba(247,247,248,.7)">Next game · MIA vs OPP · 7:30 PM ET</span>
+        <span style="font-size:13px;font-weight:700">Schedule</span>
+      </div>
+      <div style="display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:24px;padding:clamp(24px,3vw,36px)">
+        <div style="border:2px solid #C8102E;border-radius:14px;padding:clamp(24px,3vw,36px);background:#FFFFFF">
+          <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">Game module · primary weight</span>
+          <div style="display:flex;align-items:baseline;gap:16px;margin-top:20px;flex-wrap:wrap">
+            <span style="font-weight:700;font-size:clamp(30px,4vw,52px);letter-spacing:-.04em;line-height:1">MIA vs OPP</span>
+            <span style="font-size:16px;font-weight:600;color:#5C5C62">Tonight · 7:30 PM ET · Kaseya Center</span>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px">
+            <span style="display:inline-flex;align-items:center;min-height:44px;padding:12px 22px;border-radius:6px;background:#C8102E;color:#F7F7F8;font-size:15px;font-weight:700">Buy Tickets</span>
+            <span style="display:inline-flex;align-items:center;min-height:44px;padding:12px 22px;border-radius:6px;border:2px solid #0B0B0D;font-size:15px;font-weight:700">View Schedule</span>
+            <span style="display:inline-flex;align-items:center;min-height:44px;padding:12px 22px;border-radius:6px;border:1px solid rgba(11,11,13,.2);font-size:15px;font-weight:600;color:#5C5C62">Game Details</span>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="flex:1;min-height:72px;border:1px solid rgba(11,11,13,.10);border-radius:12px;padding:16px;font-size:13px;font-weight:600;color:#5C5C62">Story rail · team news</div>
+          <div style="flex:1;min-height:72px;border:1px solid rgba(11,11,13,.10);border-radius:12px;padding:16px;font-size:13px;font-weight:600;color:#5C5C62">Story rail · video</div>
+          <div style="flex:1;min-height:72px;border:1px solid rgba(11,11,13,.10);border-radius:12px;padding:16px;font-size:13px;font-weight:600;color:#5C5C62">Story rail · player spotlight</div>
+        </div>
+      </div>
+    </div>
+    <p style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#5C5C62">Above the fold schematic, desktop. The game module carries more visual weight than the surrounding story rails.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,380px));gap:24px;margin-top:clamp(40px,5vw,64px)">
+      <figure data-reveal="" data-img-card="" style="margin:0;max-width:380px">
+        <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:10px;box-shadow:0 8px 28px rgba(0,0,0,.08)">
+          <img src="/assets/heat-homepage/heat-ticket-central-detail.png" alt="Ticket Central section of the homepage with grouped ticket options" width="404" height="316" style="display:block;width:100%;height:auto;border-radius:8px">
+        </div>
+        <figcaption style="margin-top:12px;font-size:13px;line-height:1.45;color:#6E6E73">Ticket Central gave ticket choices a clear visual destination below the campaign lead.</figcaption>
+      </figure>
+      <figure data-reveal="" data-img-card="" style="margin:0;max-width:380px">
+        <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:10px;box-shadow:0 8px 28px rgba(0,0,0,.08)">
+          <img src="/assets/heat-homepage/heat-schedule-laptop.jpg" alt="The schedule page shown on a laptop" width="404" height="316" style="display:block;width:100%;height:auto;border-radius:8px">
+        </div>
+        <figcaption style="margin-top:12px;font-size:13px;line-height:1.45;color:#6E6E73">Schedule and game rows used a consistent scanning pattern for opponents, dates, and ticket actions.</figcaption>
+      </figure>
+    </div>
+    <p data-reveal="" style="margin:clamp(36px,4vw,52px) 0 0;max-width:760px;font-size:18px;line-height:1.65;color:#5C5C62">Fans arriving with a clear purpose should not have to search through campaign content. A consistent game module and direct actions help them move from interest to the correct destination with less hesitation.</p>
+  </div>
+</section>
+
+<section id="commerce" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">10 · Business modules</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:20ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Add commerce without turning the homepage into a store</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin-top:clamp(40px,5vw,64px)">
+      <article data-reveal="" style="border:1px solid rgba(11,11,13,.10);border-radius:14px;overflow:hidden;background:#F4F1EC">
+        <div style="position:relative;aspect-ratio:16/9;background:linear-gradient(140deg,#050506,#98002E);display:flex;align-items:flex-end;padding:20px">
+          <div aria-hidden="true" style="position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(247,247,248,.07) 0 1px,transparent 1px 48px)"></div>
+          <span style="position:relative;font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F7F7F8;padding:8px 12px;border:1px solid rgba(247,247,248,.3);border-radius:6px">One focused product image slot</span>
+        </div>
+        <div style="padding:clamp(24px,3vw,32px)">
+          <h3 style="margin:0;font-weight:700;font-size:clamp(24px,3vw,34px);letter-spacing:-.03em">Shop Jerseys</h3>
+          <p style="margin:16px 0 24px;font-size:17px;line-height:1.65;color:#5C5C62">Connect player stories and team moments to relevant merchandise using one focused image, a short label, and a clear shop action.</p>
+          <span style="display:inline-flex;align-items:center;min-height:44px;padding:12px 22px;border-radius:6px;background:#C8102E;color:#F7F7F8;font-size:15px;font-weight:700">Shop jerseys</span>
+        </div>
+      </article>
+      <article data-reveal="" style="border:1px solid rgba(11,11,13,.10);border-radius:14px;overflow:hidden;background:#050506;color:#F7F7F8">
+        <div style="position:relative;aspect-ratio:16/9;background:#0B0B0D;display:flex;align-items:center;justify-content:center;border-bottom:1px solid rgba(247,247,248,.14)">
+          <div aria-hidden="true" style="position:absolute;inset:0;background-image:repeating-linear-gradient(90deg,rgba(247,247,248,.06) 0 1px,transparent 1px 48px)"></div>
+          <div style="position:relative;background:#F4F1EC;border-radius:14px;padding:20px 28px;display:flex;align-items:center">
+            <img src="/assets/heat-homepage/miami-heat-logo.svg" alt="" width="96" height="96" style="width:96px;height:auto;display:block">
+          </div>
+        </div>
+        <div style="padding:clamp(24px,3vw,32px)">
+          <h3 style="margin:0;font-weight:700;font-size:clamp(24px,3vw,34px);letter-spacing:-.03em;color:#F7F7F8">HEAT Membership</h3>
+          <p style="margin:16px 0 24px;font-size:17px;line-height:1.65;color:rgba(247,247,248,.75)">Give memberships a consistent place for benefits and sign up actions without competing with urgent game information.</p>
+          <span style="display:inline-flex;align-items:center;min-height:44px;padding:12px 22px;border-radius:6px;border:2px solid #F9A01B;color:#F9A01B;font-size:15px;font-weight:700">See membership benefits</span>
+        </div>
+      </article>
+    </div>
+    <div data-img-split="" style="display:grid;grid-template-columns:minmax(280px,380px) minmax(0,1fr);gap:clamp(28px,4vw,56px);margin-top:clamp(40px,5vw,64px);align-items:center">
+      <figure data-reveal="" data-img-card="" style="margin:0;max-width:380px">
+        <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:10px;box-shadow:0 8px 28px rgba(0,0,0,.08)">
+          <img src="/assets/heat-homepage/heat-commerce-campaign-detail.png" alt="Homepage campaign blocks for auditions, collections, and a limited retail promotion" width="404" height="316" style="display:block;width:100%;height:auto;border-radius:8px">
+        </div>
+        <figcaption style="margin-top:12px;font-size:13px;line-height:1.45;color:#6E6E73">Reusable campaign blocks supported auditions, special collections, and time sensitive retail messages without rebuilding the page.</figcaption>
+      </figure>
+      <p data-reveal="" style="margin:0;font-size:18px;line-height:1.65;color:#5C5C62">Each of these blocks used the same content, media, action, and timing fields. That is what allowed an audition notice, a City Edition collection, and a tax free weekend promotion to occupy the same slot on different days without a new page build.</p>
+    </div>
+    <div data-img-split="" style="display:grid;grid-template-columns:minmax(280px,380px) minmax(0,1fr);gap:clamp(28px,4vw,56px);margin-top:clamp(40px,5vw,64px);align-items:center">
+      <figure data-reveal="" data-img-card="" style="margin:0;max-width:380px">
+        <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:16px;padding:10px;box-shadow:0 8px 28px rgba(0,0,0,.08)">
+          <img src="/assets/heat-homepage/heat-membership-laptop.jpg" alt="The membership page shown on a laptop" width="404" height="316" style="display:block;width:100%;height:auto;border-radius:8px">
+        </div>
+        <figcaption style="margin-top:12px;font-size:13px;line-height:1.45;color:#6E6E73">The same visual system extended into a focused membership page with its own information and conversion needs.</figcaption>
+      </figure>
+      <p data-reveal="" style="margin:0;font-size:18px;line-height:1.65;color:#5C5C62">The homepage did not need to explain every program in full. Its job was to establish priority, create interest, and hand visitors to focused destinations such as membership, tickets, and retail.</p>
+    </div>
+    <p data-reveal="" style="margin:clamp(36px,4vw,52px) 0 0;max-width:760px;font-size:clamp(18px,2vw,22px);line-height:1.5">Commerce appears after the game need is answered. The modules should feel connected to the team story, not inserted as unrelated advertisements.</p>
+  </div>
+</section>
+
+<section id="system" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#050506;color:#F7F7F8">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#F9A01B">11 · CMS structure</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:20ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;color:#F7F7F8;text-wrap:pretty">Build flexible sections with predictable editing rules</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:clamp(40px,5vw,64px)">
+      <article data-reveal="" style="padding:24px;border:1px solid rgba(247,247,248,.14);border-radius:14px;background:rgba(247,247,248,.04)">
+        <h3 style="margin:0 0 20px;font-size:20px;font-weight:700;letter-spacing:-.02em;color:#F7F7F8">Game status card</h3>
+        <dl style="margin:0;display:flex;flex-direction:column;gap:14px">
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Content</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Headline, supporting copy, labels, and metadata</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Media</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Image, video, focal point, and alt text</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Actions</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Primary link, secondary link, and destination validation</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Timing</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Publish date, expiration date, priority, and fallback state</dd></div>
+        </dl>
+      </article>
+      <article data-reveal="" style="padding:24px;border:1px solid rgba(247,247,248,.14);border-radius:14px;background:rgba(247,247,248,.04)">
+        <h3 style="margin:0 0 20px;font-size:20px;font-weight:700;letter-spacing:-.02em;color:#F7F7F8">Editorial hero</h3>
+        <dl style="margin:0;display:flex;flex-direction:column;gap:14px">
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Content</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Headline, supporting copy, labels, and metadata</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Media</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Image, video, focal point, and alt text</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Actions</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Primary link, secondary link, and destination validation</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Timing</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Publish date, expiration date, priority, and fallback state</dd></div>
+        </dl>
+      </article>
+      <article data-reveal="" style="padding:24px;border:1px solid rgba(247,247,248,.14);border-radius:14px;background:rgba(247,247,248,.04)">
+        <h3 style="margin:0 0 20px;font-size:20px;font-weight:700;letter-spacing:-.02em;color:#F7F7F8">Story rail</h3>
+        <dl style="margin:0;display:flex;flex-direction:column;gap:14px">
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Content</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Headline, supporting copy, labels, and metadata</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Media</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Image, video, focal point, and alt text</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Actions</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Primary link, secondary link, and destination validation</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Timing</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Publish date, expiration date, priority, and fallback state</dd></div>
+        </dl>
+      </article>
+      <article data-reveal="" style="padding:24px;border:1px solid rgba(247,247,248,.14);border-radius:14px;background:rgba(247,247,248,.04)">
+        <h3 style="margin:0 0 20px;font-size:20px;font-weight:700;letter-spacing:-.02em;color:#F7F7F8">Player spotlight</h3>
+        <dl style="margin:0;display:flex;flex-direction:column;gap:14px">
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Content</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Headline, supporting copy, labels, and metadata</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Media</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Image, video, focal point, and alt text</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Actions</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Primary link, secondary link, and destination validation</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Timing</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Publish date, expiration date, priority, and fallback state</dd></div>
+        </dl>
+      </article>
+      <article data-reveal="" style="padding:24px;border:1px solid rgba(247,247,248,.14);border-radius:14px;background:rgba(247,247,248,.04)">
+        <h3 style="margin:0 0 20px;font-size:20px;font-weight:700;letter-spacing:-.02em;color:#F7F7F8">Merchandise feature</h3>
+        <dl style="margin:0;display:flex;flex-direction:column;gap:14px">
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Content</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Headline, supporting copy, labels, and metadata</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Media</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Image, video, focal point, and alt text</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Actions</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Primary link, secondary link, and destination validation</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Timing</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Publish date, expiration date, priority, and fallback state</dd></div>
+        </dl>
+      </article>
+      <article data-reveal="" style="padding:24px;border:1px solid rgba(247,247,248,.14);border-radius:14px;background:rgba(247,247,248,.04)">
+        <h3 style="margin:0 0 20px;font-size:20px;font-weight:700;letter-spacing:-.02em;color:#F7F7F8">Membership promotion</h3>
+        <dl style="margin:0;display:flex;flex-direction:column;gap:14px">
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Content</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Headline, supporting copy, labels, and metadata</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Media</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Image, video, focal point, and alt text</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Actions</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Primary link, secondary link, and destination validation</dd></div>
+          <div><dt style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:#F9A01B;margin-bottom:6px">Timing</dt><dd style="margin:0;font-size:14px;line-height:1.5;color:rgba(247,247,248,.7)">Publish date, expiration date, priority, and fallback state</dd></div>
+        </dl>
+      </article>
+    </div>
+    <p data-reveal="" style="margin:clamp(36px,4vw,52px) 0 0;max-width:760px;font-size:clamp(18px,2vw,22px);line-height:1.5;color:#F7F7F8">Consistency did not mean every section looked the same. It meant editors knew where to make changes, what needed review, and how the component would behave across devices.</p>
+  </div>
+</section>
+
+<section id="quality" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#F4F1EC">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">12 · Quality</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:22ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Fast game day content still needs to be inclusive and dependable</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:36px;margin-top:clamp(40px,5vw,64px)">
+      <div data-reveal="">
+        <h3 style="margin:0;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#98002E">Accessibility</h3>
+        <ul style="list-style:none;margin:20px 0 0;padding:0;border-top:1px solid rgba(11,11,13,.10)">
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Semantic heading order</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Keyboard accessible controls</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Visible focus states</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Sufficient color contrast</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Descriptive alt text</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Clear live status language that does not rely on color alone</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Tap targets of at least 44 pixels</li>
+        </ul>
+      </div>
+      <div data-reveal="">
+        <h3 style="margin:0;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#98002E">Performance</h3>
+        <ul style="list-style:none;margin:20px 0 0;padding:0;border-top:1px solid rgba(11,11,13,.10)">
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Responsive image sizes</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Modern image formats</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Lazy loading below the fold</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Reserved image dimensions to reduce layout shift</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Lightweight motion</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Minimal blocking scripts</li>
+          <li style="padding:14px 0;border-bottom:1px solid rgba(11,11,13,.10);font-size:16px;line-height:1.5">Content that remains usable when media is slow</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="responsive" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">13 · Across devices</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:20ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Preserve the decision order on every screen</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:clamp(40px,5vw,64px);align-items:start">
+      <figure data-reveal="" style="margin:0">
+        <div style="border:1px solid rgba(11,11,13,.10);border-radius:16px;overflow:hidden;background:#F4F1EC">
+          <div style="height:10px;background:#050506"></div>
+          <div style="padding:14px;display:flex;flex-direction:column;gap:10px">
+            <div style="height:34px;border-radius:8px;background:#050506"></div>
+            <div style="display:grid;grid-template-columns:2fr 1fr;gap:10px">
+              <div style="height:120px;border-radius:10px;border:2px solid #C8102E;background:#FFFFFF"></div>
+              <div style="display:flex;flex-direction:column;gap:10px"><div style="flex:1;border-radius:10px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10)"></div><div style="flex:1;border-radius:10px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10)"></div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px"><div style="height:56px;border-radius:10px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10)"></div><div style="height:56px;border-radius:10px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10)"></div><div style="height:56px;border-radius:10px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10)"></div></div>
+          </div>
+        </div>
+        <figcaption style="margin-top:14px"><span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0B0B0D">Desktop</span><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#5C5C62">A broad game and hero canvas with supporting rails.</p></figcaption>
+      </figure>
+      <figure data-reveal="" style="margin:0">
+        <div style="border:1px solid rgba(11,11,13,.10);border-radius:16px;overflow:hidden;background:#F4F1EC;max-width:320px">
+          <div style="height:10px;background:#050506"></div>
+          <div style="padding:14px;display:flex;flex-direction:column;gap:10px">
+            <div style="height:30px;border-radius:8px;background:#050506"></div>
+            <div style="height:120px;border-radius:10px;border:2px solid #C8102E;background:#FFFFFF"></div>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px"><div style="height:64px;border-radius:10px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10)"></div><div style="height:64px;border-radius:10px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10)"></div></div>
+          </div>
+        </div>
+        <figcaption style="margin-top:14px"><span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0B0B0D">Tablet</span><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#5C5C62">The game module stays primary and simultaneous content is reduced.</p></figcaption>
+      </figure>
+      <figure data-reveal="" style="margin:0">
+        <div style="border:1px solid rgba(11,11,13,.10);border-radius:16px;overflow:hidden;background:#F4F1EC;max-width:200px">
+          <div style="height:10px;background:#050506"></div>
+          <div style="padding:12px;display:flex;flex-direction:column;gap:8px">
+            <div style="height:26px;border-radius:8px;background:#050506"></div>
+            <div style="height:104px;border-radius:10px;border:2px solid #C8102E;background:#FFFFFF"></div>
+            <div style="height:36px;border-radius:8px;background:#C8102E"></div>
+            <div style="height:48px;border-radius:10px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10)"></div>
+          </div>
+        </div>
+        <figcaption style="margin-top:14px"><span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#0B0B0D">Mobile</span><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#5C5C62">Game information stacks in decision order with a full width primary action.</p></figcaption>
+      </figure>
+    </div>
+    <p style="margin:20px 0 0;font-size:13px;line-height:1.45;color:#5C5C62">Responsive layout schematics drawn in code. Frames show structure and priority, not final pixels.</p>
+    <ol style="list-style:none;margin:clamp(36px,4vw,52px) 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
+      <li data-reveal="" style="padding:20px;border-top:2px solid #0B0B0D;font-size:16px;line-height:1.55;font-weight:600">Reflow components instead of shrinking desktop layouts.</li>
+      <li data-reveal="" style="padding:20px;border-top:2px solid #0B0B0D;font-size:16px;line-height:1.55;font-weight:600">Keep ticket and schedule actions visible.</li>
+      <li data-reveal="" style="padding:20px;border-top:2px solid #0B0B0D;font-size:16px;line-height:1.55;font-weight:600">Crop player photography intentionally.</li>
+      <li data-reveal="" style="padding:20px;border-top:2px solid #0B0B0D;font-size:16px;line-height:1.55;font-weight:600">Avoid tiny carousel cards.</li>
+      <li data-reveal="" style="padding:20px;border-top:2px solid #0B0B0D;font-size:16px;line-height:1.55;font-weight:600">Preserve content priority when the layout changes.</li>
+    </ol>
+  </div>
+</section>
+
+<section style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#050506">
+  <blockquote data-reveal="" style="margin:0 auto;max-width:1000px">
+    <p style="margin:0;font-weight:700;font-size:clamp(26px,3.6vw,46px);line-height:1.14;letter-spacing:-.03em;color:#F7F7F8;text-wrap:pretty">A homepage can feel energetic to fans and still remain practical for the people publishing it.</p>
+  </blockquote>
+</section>
+
+<section id="impact" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#F4F1EC">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">14 · Outcome</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:22ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">A homepage that supports both fan urgency and publishing speed</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:clamp(40px,5vw,64px)">
+      <article data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <h3 style="margin:0 0 14px;font-size:22px;font-weight:700;letter-spacing:-.02em">Clearer fan priorities</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Games, schedules, and ticket actions gained a dependable place near the top of the experience.</p>
+      </article>
+      <article data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <h3 style="margin:0 0 14px;font-size:22px;font-weight:700;letter-spacing:-.02em">Faster content changes</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Reusable states and components gave the content team a more practical way to update the homepage during a live season.</p>
+      </article>
+      <article data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <h3 style="margin:0 0 14px;font-size:22px;font-weight:700;letter-spacing:-.02em">More useful business moments</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Merchandise and memberships could appear in the journey without overwhelming the main game message.</p>
+      </article>
+      <article data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <h3 style="margin:0 0 14px;font-size:22px;font-weight:700;letter-spacing:-.02em">More consistent player content</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Shared fields and review rules created a clearer process for keeping roster related content current.</p>
+      </article>
+      <article data-reveal="" style="padding:28px;background:#FFFFFF;border:1px solid rgba(11,11,13,.10);border-radius:14px">
+        <h3 style="margin:0 0 14px;font-size:22px;font-weight:700;letter-spacing:-.02em">Stronger cross device quality</h3>
+        <p style="margin:0;font-size:16px;line-height:1.65;color:#5C5C62">Responsive, accessibility, and performance rules helped the same hierarchy remain understandable across screen sizes.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="reflection" style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:#FFFFFF">
+  <div style="max-width:1280px;margin:0 auto">
+    <span style="font:700 12px/1 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#98002E">15 · What I learned</span>
+    <h2 data-reveal="" style="margin:18px 0 0;max-width:20ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">The best sports homepage is ready for the next moment</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:36px;margin-top:clamp(36px,4vw,56px)">
+      <p data-reveal="" style="margin:0;font-size:18px;line-height:1.65;color:#5C5C62">This project reinforced that live sports design is partly a content operations problem. A polished screen matters, but the system behind it determines whether the experience stays accurate when the game changes quickly.</p>
+      <p data-reveal="" style="margin:0;font-size:18px;line-height:1.65;color:#5C5C62">The strongest improvement was designing for change from the beginning. A clear priority model, reusable game states, structured player content, and practical review steps gave the homepage a better chance to stay useful throughout the season.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(72px,9vw,132px) clamp(20px,5vw,64px);background:linear-gradient(200deg,#98002E,#050506 70%);color:#F7F7F8">
+  <div style="max-width:1280px;margin:0 auto">
+    <h2 data-reveal="" style="margin:0;max-width:18ch;font-weight:700;font-size:clamp(30px,4.5vw,58px);line-height:1.02;letter-spacing:-.03em;color:#F7F7F8;text-wrap:pretty">Built for tipoff, the final score, and everything between</h2>
+    <p data-reveal="" style="margin:28px 0 0;max-width:760px;font-size:clamp(18px,2vw,22px);line-height:1.5;color:rgba(247,247,248,.85)">The final direction gives fans a faster route to what matters now and gives the content team a more flexible way to keep the Miami HEAT story moving.</p>
+    <div style="margin-top:clamp(56px,7vw,88px);padding-top:28px;border-top:1px solid rgba(247,247,248,.2);display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+      <div style="background:#FFFFFF;border-radius:16px;padding:20px 28px;display:flex;align-items:center">
+        <img src="/assets/heat-homepage/miami-heat-logo.svg" alt="Miami HEAT logo" width="120" height="120" style="width:120px;height:auto;display:block">
+      </div>
+      <span aria-hidden="true" style="width:1px;height:56px;background:rgba(247,247,248,.24)"></span>
+      <img src="/assets/heat-homepage/nba-logo.svg" alt="NBA logo" width="116" height="68" style="width:116px;height:auto;display:block">
+      <span style="font-size:13px;color:rgba(247,247,248,.6);max-width:520px">Team and league marks are shown for identification only. Miguel Clavel contributed UX and web design, homepage content strategy, CMS component structure, live content operations, and quality assurance.</span>
+    </div>
+  </div>
+</section>
+
+</main>
+</div>
+
+
+<nav aria-label="Continue exploring" style="background:#F4F1EC;border-top:1px solid rgba(0,0,0,.08);padding:36px 0;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif">
+  <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Continue exploring</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+      <a href="/work/insurance-landing-page" style="text-decoration:none;background:#FFFFFF;border-radius:18px;padding:22px 24px;display:block" style-hover="background:#FAF8F4">
+        <span style="display:block;font-size:13px;color:#6E6E73">Previous</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Insurance Landing Page</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#494949">Heatmap evidence, conversion IA, and responsive delivery</span>
+      </a>
+      <a href="/work/601-miami-website" style="text-decoration:none;background:#FFFFFF;border-radius:18px;padding:22px 24px;display:block" style-hover="background:#FAF8F4">
+        <span style="display:block;font-size:13px;color:#6E6E73">Next</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">601 Miami Website</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#494949">Hospitality UX, brand storytelling, and local discovery</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<footer style="background:#FFFFFF;border-top:1px solid rgba(0,0,0,.08);padding:28px 0 40px;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif">
+  <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:baseline;justify-content:space-between">
+    <div>
+      <p style="margin:0;font-size:15px;font-weight:700;color:#1D1D1F">Miguel Clavel</p>
+      <p style="margin:4px 0 0;font-size:13px;color:#6E6E73">Senior Product Designer &#183; UX strategy, design systems &amp; AI-enabled workflows</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;font-weight:600">
+      <a href="mailto:2miguelclavel@gmail.com?subject=Portfolio%20conversation" style="color:#0071E3">2miguelclavel@gmail.com</a>
+      <a href="/assets/Miguel-Clavel-Senior-Product-Designer-Resume-2026.pdf" download="Miguel-Clavel-Senior-Product-Designer-Resume.pdf" style="color:#0071E3">Résumé</a>
+      <a href="https://www.linkedin.com/in/miguelclavel/" target="_blank" rel="noopener noreferrer" style="color:#0071E3">LinkedIn</a>
+      <a href="https://www.behance.net/miguelclavel" target="_blank" rel="noopener noreferrer" style="color:#0071E3">Behance</a>
+      <a href="/" style="color:#494949">&#8592; Back to work</a>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CreativeWork","name":"A homepage built to move at game speed","description":"A sports homepage experience balancing editorial and commerce: gameday states, campaign surfaces, CMS component structure, live content operations, and responsive fan journeys.","genre":"Case study","inLanguage":"en","creator":{"@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","url":"https://www.linkedin.com/in/miguelclavel/"},"author":{"@type":"Person","name":"Miguel Clavel"},"keywords":"sports product design, editorial commerce, campaign surfaces, CMS components, responsive UX, fan journeys"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","sameAs":["https://www.linkedin.com/in/miguelclavel/","https://www.behance.net/miguelclavel"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Résumé","item":"https://miguelclavel-portfolio-v2.netlify.app/resume"},{"@type":"ListItem","position":2,"name":"Work","item":"https://miguelclavel-portfolio-v2.netlify.app/work"},{"@type":"ListItem","position":3,"name":"Miami HEAT Homepage","item":"https://miguelclavel-portfolio-v2.netlify.app/work/miami-heat-homepage"}]}
+</script>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{}">
+const STATES = [
+  {
+    key: 'pregame',
+    label: 'Pregame',
+    meta: 'Tonight · 7:30 PM ET · Kaseya Center',
+    home: '—',
+    away: '—',
+    separator: 'vs',
+    status: 'Opponent and game time lead the module. Broadcast information sits with the actions so fans can plan how to watch.',
+    dot: '#F9A01B',
+    actions: [
+      { label: 'Buy Tickets', kind: 'primary' },
+      { label: 'View Matchup', kind: 'secondary' },
+      { label: 'Broadcast · Regional network and radio', kind: 'meta' }
+    ]
+  },
+  {
+    key: 'live',
+    label: 'Live',
+    meta: 'In progress · status text, not color alone',
+    home: '00',
+    away: '00',
+    separator: '–',
+    status: 'A live indicator and the current game status take the top of the module. Scores shown here are neutral placeholders.',
+    dot: '#C8102E',
+    actions: [
+      { label: 'Watch or Listen', kind: 'primary' },
+      { label: 'Game Center', kind: 'secondary' },
+      { label: 'Live indicator carries a text label for screen readers', kind: 'meta' }
+    ]
+  },
+  {
+    key: 'final',
+    label: 'Final',
+    meta: 'Final · recap and next game published together',
+    home: '00',
+    away: '00',
+    separator: '–',
+    status: 'The final score holds position while recap and highlights take the actions. The next game moves into focus underneath.',
+    dot: '#5C5C62',
+    actions: [
+      { label: 'Read Recap', kind: 'primary' },
+      { label: 'Watch Highlights', kind: 'secondary' },
+      { label: 'Next game · MIA vs OPP · Friday', kind: 'meta' }
+    ]
+  }
+];
+
+const ACTION_STYLES = {
+  primary: 'display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 22px;border-radius:6px;background:#C8102E;color:#F7F7F8;font-size:15px;font-weight:700;transition:background 160ms ease-out',
+  secondary: 'display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:12px 22px;border-radius:6px;border:2px solid #F7F7F8;color:#F7F7F8;font-size:15px;font-weight:700',
+  meta: 'display:block;padding:8px 0;font-size:13px;line-height:1.5;color:rgba(247,247,248,.6)'
+};
+
+class Component extends DCLogic {
+  state = { index: 0 };
+
+  constructor(props) {
+    super(props);
+    this.navRef = React.createRef();
+    this.barRef = React.createRef();
+    this.stateSectionRef = React.createRef();
+    this.onScroll = this.onScroll.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+    this.setupReveal();
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.observer) this.observer.disconnect();
+  }
+
+  setupReveal() {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+    if (reduced || !('IntersectionObserver' in window)) return;
+    els.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) return;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(8px)';
+      el.style.transition = 'opacity .32s cubic-bezier(.16,1,.3,1), transform .32s cubic-bezier(.16,1,.3,1)';
+    });
+    const mask = document.querySelector('[data-reveal-mask]');
+    if (mask) {
+      mask.style.clipPath = 'inset(0 0 100% 0)';
+      mask.style.transition = 'clip-path 700ms ease-out';
+      const mo = new IntersectionObserver(es => {
+        es.forEach(e => {
+          if (!e.isIntersecting) return;
+          e.target.style.clipPath = 'inset(0 0 0 0)';
+          mo.unobserve(e.target);
+        });
+      }, { rootMargin: '0px 0px -10% 0px' });
+      mo.observe(mask);
+    }
+    this.observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        this.observer.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    els.forEach(el => this.observer.observe(el));
+  }
+
+  onScroll() {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - window.innerHeight;
+    const y = window.scrollY || doc.scrollTop || 0;
+    if (this.barRef.current) {
+      this.barRef.current.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+    }
+    const nav = this.navRef.current;
+    if (nav) {
+      const scrolled = y > 40;
+      nav.style.background = scrolled ? 'rgba(5,5,6,.82)' : 'transparent';
+      nav.style.backdropFilter = scrolled ? 'saturate(160%) blur(16px)' : 'none';
+      nav.style.borderBottomColor = scrolled ? 'rgba(247,247,248,.14)' : 'transparent';
+    }
+    const sec = this.stateSectionRef.current;
+    if (sec && !this.locked) {
+      const r = sec.getBoundingClientRect();
+      const total = r.height - window.innerHeight;
+      const p = total > 0 ? Math.min(Math.max(-r.top / total, 0), 0.999) : 0;
+      const idx = Math.min(2, Math.floor(p * 3));
+      if (idx !== this.state.index) this.setState({ index: idx });
+    }
+  }
+
+  select(i) {
+    this.locked = true;
+    this.setState({ index: i });
+    clearTimeout(this.unlock);
+    this.unlock = setTimeout(() => { this.locked = false; }, 1200);
+  }
+
+  renderVals() {
+    const shareProject = async () => {
+      const url = window.location.href;
+      const st = document.getElementById('shr-status');
+      const say = (t) => { if (st) st.textContent = t; };
+      try {
+        if (navigator.share) { await navigator.share({ title: 'A homepage built to move at game speed', url: url }); say('Shared.'); return; }
+        await navigator.clipboard.writeText(url);
+        say('Link copied.');
+      } catch (e) { say('Copy the address from your browser bar.'); }
+    };
+    const i = this.state.index;
+    const s = STATES[i];
+    return {
+      shareProject: shareProject,
+      navRef: this.navRef,
+      barRef: this.barRef,
+      stateSectionRef: this.stateSectionRef,
+      stateTabs: STATES.map((st, n) => ({
+        label: st.label,
+        active: n === i ? 'true' : 'false',
+        select: () => this.select(n),
+        style: 'min-height:44px;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:700;cursor:pointer;transition:background 160ms ease-out,color 160ms ease-out;' +
+          (n === i
+            ? 'background:#050506;color:#F7F7F8;border:1px solid #050506'
+            : 'background:transparent;color:#5C5C62;border:1px solid rgba(11,11,13,.2)')
+      })),
+      activeLabel: s.label,
+      activeMeta: s.meta,
+      activeHome: s.home,
+      activeAway: s.away,
+      activeSeparator: s.separator,
+      activeStatus: s.status,
+      activeDotStyle: 'width:10px;height:10px;border-radius:50%;background:' + s.dot,
+      activeActions: s.actions.map(a => ({ label: a.label, style: ACTION_STYLES[a.kind] }))
+    };
+  }
+}
+
+</script>
+
+
+</body></html>

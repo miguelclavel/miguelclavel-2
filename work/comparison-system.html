@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparison Table Product System Case Study | Miguel Clavel</title>
+<meta name="description" content="A responsive product comparison system for U.S. News: mobile interaction patterns for wide tables, accessible semantics, SEO structure, and a remote engineering handoff.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://miguelclavel-portfolio-v2.netlify.app/work/comparison-system">
+<meta property="og:url" content="https://miguelclavel-portfolio-v2.netlify.app/work/comparison-system">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Simple to use. Complex to design well.">
+<meta property="og:description" content="Responsive comparison tables, mobile interaction, accessibility, SEO semantics, and remote engineering handoff.">
+<meta property="og:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/comparison/comparison-desktop-hero.webp">
+<meta property="og:image:alt" content="Redesigned desktop comparison table with brand logos, ratings, best-for labels, pricing columns, and actions.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Simple to use. Complex to design well.">
+<meta name="twitter:description" content="Responsive comparison tables, mobile interaction, accessibility, SEO semantics, and remote engineering handoff.">
+<meta name="twitter:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/comparison/comparison-desktop-hero.webp">
+<script src="/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="/assets/design-system/tokens/fonts.css">
+<link rel="stylesheet" href="/assets/design-system/tokens/colors.css">
+<link rel="stylesheet" href="/assets/design-system/tokens/typography.css">
+<link rel="stylesheet" href="/assets/design-system/tokens/space.css">
+<link rel="stylesheet" href="/assets/design-system/tokens/radii.css">
+<link rel="stylesheet" href="/assets/design-system/tokens/effects.css">
+<link rel="stylesheet" href="/assets/design-system/tokens/motion.css">
+<link rel="stylesheet" href="/assets/design-system/tokens/base.css">
+<link rel="stylesheet" href="/assets/design-system/styles.css">
+<script src="/assets/design-system/_ds_bundle.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0}
+a{color:#0071E3;text-decoration:none}
+a:hover{color:#0077ED}
+:focus-visible{outline:3px solid rgba(10,132,255,.5);outline-offset:2px}
+@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)!important}.g3{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:700px){.g2,.g3,.g4,.g5,.split{grid-template-columns:1fr!important}.navlinks{display:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media (max-width:700px){.shr-hide{display:none!important}}
+</style>
+</helmet>
+<div style="font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;color:#494949;background:#fff;-webkit-font-smoothing:antialiased">
+
+<a href="#top" style="position:absolute;left:-9999px;top:0;z-index:1000;background:#0071E3;color:#fff;font-size:14px;font-weight:600;padding:12px 20px;border-radius:9999px;text-decoration:none" style-focus="left:12px;top:12px">Skip to case study</a>
+<div style="position:fixed;top:0;left:0;right:0;z-index:70;height:52px;display:flex;align-items:center;gap:12px;padding:0 clamp(20px,5vw,48px);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)">
+  <a href="/" style="font-size:14px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F;text-decoration:none;white-space:nowrap">Miguel Clavel</a>
+  <span class="shr-hide" aria-hidden="true" style="color:rgba(0,0,0,.2)">/</span>
+  <span class="shr-hide" style="font-size:13px;color:#6E6E73;white-space:nowrap">Senior Product Designer</span>
+  <span id="shr-status" aria-live="polite" class="shr-hide" style="font-size:13px;color:#6E6E73"></span>
+  <nav aria-label="Portfolio" style="margin-left:auto;display:flex;align-items:center;gap:2px">
+    <a href="/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">&#8592; Back to work</a>
+    <a href="mailto:2miguelclavel@gmail.com?subject=Comparison%20system" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Email</a>
+    <button type="button" onClick="{{ share }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:0;background:none;border-radius:9999px;font:inherit;font-size:13px;font-weight:600;color:#494949;cursor:pointer;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Share</button>
+  </nav>
+</div>
+<header style="position:fixed;top:52px;left:0;right:0;z-index:60;background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)">
+<nav aria-label="Case study sections" style="height:56px;max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:flex;align-items:center;gap:24px">
+<a href="#top" style="font-size:15px;font-weight:600;letter-spacing:-.02em;color:#1D1D1F;min-height:44px;display:flex;align-items:center">Comparison System</a>
+<div class="navlinks" style="display:flex;align-items:center;gap:2px;margin-left:auto">
+<a href="#overview" style="font-size:13px;font-weight:600;color:#494949;padding:12px;border-radius:9999px" style-hover="background:rgba(0,0,0,.04)">Overview</a>
+<a href="#challenge" style="font-size:13px;font-weight:600;color:#494949;padding:12px;border-radius:9999px" style-hover="background:rgba(0,0,0,.04)">Challenge</a>
+<a href="#research" style="font-size:13px;font-weight:600;color:#494949;padding:12px;border-radius:9999px" style-hover="background:rgba(0,0,0,.04)">Research</a>
+<a href="#responsive" style="font-size:13px;font-weight:600;color:#494949;padding:12px;border-radius:9999px" style-hover="background:rgba(0,0,0,.04)">Responsive</a>
+<a href="#system" style="font-size:13px;font-weight:600;color:#494949;padding:12px;border-radius:9999px" style-hover="background:rgba(0,0,0,.04)">System</a>
+<a href="#handoff" style="font-size:13px;font-weight:600;color:#494949;padding:12px;border-radius:9999px" style-hover="background:rgba(0,0,0,.04)">Handoff</a>
+<a href="#outcome" style="font-size:13px;font-weight:600;color:#494949;padding:12px;border-radius:9999px" style-hover="background:rgba(0,0,0,.04)">Outcome</a>
+</div>
+</nav>
+<sc-if value="{{ showReadingProgress }}" hint-placeholder-val="{{ true }}">
+<div role="presentation" style="height:2px;background:rgba(0,0,0,.05)"><div style="height:2px;background:#0A84FF;width:{{ progressPct }}"></div></div>
+</sc-if>
+</header>
+
+<main id="top" style="padding-top:110px">
+
+<section style="background:linear-gradient(90deg,#B1DCFB,#D6EEFD 30%,#EFF8FF 63%,#FFFDEB);padding:clamp(72px,9vw,120px) 0 clamp(56px,7vw,96px)">
+<div class="split" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:center">
+<div data-reveal>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Responsive comparison system</div>
+<h1 style="margin:20px 0 0;font-size:clamp(38px,5vw,64px);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">Simple to use. Complex to design well.</h1>
+<p style="margin:24px 0 0;max-width:720px;font-size:19px;line-height:1.55;color:#494949">I led the redesign of U.S. News comparison tables across desktop and mobile. The goal was to help people evaluate complex options with less friction while creating an accessible, reusable system that product, content, SEO, and engineering teams could support across multiple verticals.</p>
+<div style="margin-top:32px;display:flex;gap:8px;flex-wrap:wrap">
+<span style="background:rgba(255,255,255,.6);backdrop-filter:blur(10px);border:1px solid rgba(0,0,0,.08);border-radius:9999px;font-size:13px;font-weight:600;color:#1D1D1F;padding:9px 15px">Role: UX and Product Designer</span>
+<span style="background:rgba(255,255,255,.6);backdrop-filter:blur(10px);border:1px solid rgba(0,0,0,.08);border-radius:9999px;font-size:13px;font-weight:600;color:#1D1D1F;padding:9px 15px">Focus: Responsive comparison and design systems</span>
+<span style="background:rgba(255,255,255,.6);backdrop-filter:blur(10px);border:1px solid rgba(0,0,0,.08);border-radius:9999px;font-size:13px;font-weight:600;color:#1D1D1F;padding:9px 15px">Platform: Desktop and mobile web</span>
+<span style="background:rgba(255,255,255,.6);backdrop-filter:blur(10px);border:1px solid rgba(0,0,0,.08);border-radius:9999px;font-size:13px;font-weight:600;color:#1D1D1F;padding:9px 15px">Collaboration: Product, SEO, content, and distributed engineering</span>
+</div>
+</div>
+<figure data-reveal style="margin:0;max-width:560px;justify-self:end;width:100%">
+<img src="/assets/comparison/comparison-desktop-hero.webp" decoding="async" alt="Redesigned desktop comparison table shown on a laptop, with brand logos, ratings, best-for labels, pricing columns, and action buttons." width="865" height="648" style="display:block;width:100%;height:auto;aspect-ratio:865/648;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)">
+<figcaption style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#6E6E73">The redesigned desktop experience brought ratings, product details, filters, and actions into one consistent comparison model.</figcaption>
+</figure>
+</div>
+</section>
+
+<section id="overview" style="padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">02 · Overview</div>
+<h2 style="margin:16px 0 0;max-width:900px;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">One component family supporting many kinds of decisions</h2>
+</div>
+<div class="split" data-reveal style="margin-top:40px;display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,56px);align-items:start">
+<div>
+<p style="margin:0;font-size:19px;line-height:1.55;color:#494949">Comparison tables are a high intent part of the U.S. News experience. People arrive with a shortlist, a question, or a decision they need to make. The interface has to make differences visible without asking visitors to decode the table first.</p>
+<p style="margin:20px 0 0;font-size:17px;line-height:1.6;color:#494949">I treated the redesign as a product system rather than a single page. The solution needed to adapt to different data sets and calls to action while keeping the same mental model.</p>
+</div>
+<dl style="margin:0;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:28px;display:grid;gap:20px">
+<div>
+<dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Surfaces</dt>
+<dd style="margin:6px 0 0;font-size:17px;line-height:1.5;color:#1D1D1F">Autos, Health, Money, and Reviews</dd>
+</div>
+<div>
+<dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Core tasks</dt>
+<dd style="margin:6px 0 0;font-size:17px;line-height:1.5;color:#1D1D1F">Scan, compare, filter, understand, and act</dd>
+</div>
+<div>
+<dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Responsive challenge</dt>
+<dd style="margin:6px 0 0;font-size:17px;line-height:1.5;color:#1D1D1F">Dense information across wide and narrow screens</dd>
+</div>
+<div>
+<dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">System need</dt>
+<dd style="margin:6px 0 0;font-size:17px;line-height:1.5;color:#1D1D1F">Configurable Atlas components and shared implementation rules</dd>
+</div>
+</dl>
+</div>
+</div>
+</section>
+
+<section id="challenge" style="background:#14161D;padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF">03 · Challenge</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#F5F5F7;text-wrap:pretty">The data stayed complex even when the screen became small</h2>
+<p style="margin:24px 0 0;font-size:19px;line-height:1.55;color:rgba(245,245,247,.72)">The legacy experience asked users to work around the interface. Dense rows slowed scanning. Layout differences changed from one category to another. On mobile, wide tables became difficult to navigate and important context could move off screen.</p>
+<p style="margin:20px 0 0;font-size:17px;line-height:1.6;color:rgba(245,245,247,.72)">Behind the interface, one off patterns increased maintenance and made handoff harder. Accessibility and semantic structure could not be treated as a final review. They had to be part of the component model.</p>
+</div>
+<div class="g5 g3" data-reveal style="margin-top:48px;display:grid;grid-template-columns:repeat(5,1fr);gap:20px">
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#F5F5F7">Scanability</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Too many values competed without enough visual grouping.</p>
+</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#F5F5F7">Mobile orientation</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">People could lose track of the product or attribute they were viewing.</p>
+</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#F5F5F7">Consistency</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Different verticals used related patterns without one dependable system.</p>
+</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#F5F5F7">Accessibility</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Focus, keyboard navigation, contrast, and header relationships needed stronger rules.</p>
+</div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#F5F5F7">Discoverability</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Comparison content needed clearer semantic structure for search and AI systems.</p>
+</div>
+</div>
+<p data-reveal style="margin:40px 0 0;max-width:820px;font-size:19px;line-height:1.5;letter-spacing:-.01em;color:#F5F5F7">The product question was: how might we help people compare complex choices with confidence, while creating one flexible system that works across devices, content types, and teams?</p>
+</div>
+</section>
+
+<section id="framing" style="padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">04 · Product strategy</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">Define success before choosing a layout</h2>
+<p style="margin:20px 0 0;font-size:17px;line-height:1.6;color:#494949">Four objectives set the direction. Every signal below is something we agreed to watch, not a result we are claiming.</p>
+<p style="margin:20px 0 0;display:inline-block;background:#F5F5F7;border:1px solid rgba(0,0,0,.08);border-radius:9999px;padding:9px 16px;font-size:13px;font-weight:600;color:#1D1D1F">Measurement framework, not claimed numeric results</p>
+</div>
+<div class="g4 g2" data-reveal style="margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Objective one</div>
+<h3 style="margin:10px 0 0;font-size:19px;font-weight:700;line-height:1.25;letter-spacing:-.02em;color:#1D1D1F">Help people reach a confident comparison decision</h3>
+<div style="margin:18px 0 10px;height:1px;background:rgba(0,0,0,.08)"></div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Signals to monitor</div>
+<ul style="margin:12px 0 0;padding-left:18px;font-size:15px;line-height:1.6;color:#494949;display:grid;gap:6px">
+<li>Task completion during usability testing</li>
+<li>Time to identify a preferred option</li>
+<li>Engagement with meaningful comparison rows</li>
+<li>Visits from the comparison experience to product details</li>
+<li>Action follow through after comparing</li>
+</ul>
+</div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Objective two</div>
+<h3 style="margin:10px 0 0;font-size:19px;font-weight:700;line-height:1.25;letter-spacing:-.02em;color:#1D1D1F">Reduce mobile friction</h3>
+<div style="margin:18px 0 10px;height:1px;background:rgba(0,0,0,.08)"></div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Signals to monitor</div>
+<ul style="margin:12px 0 0;padding-left:18px;font-size:15px;line-height:1.6;color:#494949;display:grid;gap:6px">
+<li>Abandonment near the comparison module</li>
+<li>Horizontal scroll discovery and completion</li>
+<li>Expansion of collapsed attributes</li>
+<li>Accidental taps and navigation reversals</li>
+<li>Completion of the same comparison task across screen sizes</li>
+</ul>
+</div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Objective three</div>
+<h3 style="margin:10px 0 0;font-size:19px;font-weight:700;line-height:1.25;letter-spacing:-.02em;color:#1D1D1F">Create a scalable product system</h3>
+<div style="margin:18px 0 10px;height:1px;background:rgba(0,0,0,.08)"></div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Signals to monitor</div>
+<ul style="margin:12px 0 0;padding-left:18px;font-size:15px;line-height:1.6;color:#494949;display:grid;gap:6px">
+<li>Atlas component adoption across verticals</li>
+<li>Visual and interaction differences between implementations</li>
+<li>Design and implementation cycle time</li>
+<li>Clarification requests during handoff</li>
+<li>Reuse of documented variants instead of new one off patterns</li>
+</ul>
+</div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Objective four</div>
+<h3 style="margin:10px 0 0;font-size:19px;font-weight:700;line-height:1.25;letter-spacing:-.02em;color:#1D1D1F">Improve quality and discoverability</h3>
+<div style="margin:18px 0 10px;height:1px;background:rgba(0,0,0,.08)"></div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Signals to monitor</div>
+<ul style="margin:12px 0 0;padding-left:18px;font-size:15px;line-height:1.6;color:#494949;display:grid;gap:6px">
+<li>Accessibility defects found during QA</li>
+<li>Keyboard and screen reader task completion</li>
+<li>Structured data and semantic markup validation</li>
+<li>Crawlable comparison content and index coverage</li>
+<li>Stability of content relationships across responsive views</li>
+</ul>
+</div>
+</div>
+<p data-reveal style="margin:32px 0 0;max-width:820px;font-size:17px;line-height:1.6;color:#494949">The measurement plan connected user behavior, business actions, platform health, and implementation quality. It gave the team a better way to discuss whether the design was working without reducing success to one conversion number.</p>
+</div>
+</section>
+
+<section id="research" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">05 · Discovery</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">Look for where people lost context, not only where they stopped</h2>
+</div>
+<figure data-reveal style="margin:clamp(32px,4vw,48px) auto 0;max-width:820px">
+<img src="/assets/comparison/research-heatmaps-and-interactions.webp" alt="Three stacked analytics views of a comparison page: a scroll heatmap, a click density overlay, and an interaction map with labeled element counts." width="865" height="648" style="display:block;width:100%;height:auto;aspect-ratio:865/648;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)">
+<figcaption style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#6E6E73">Heatmaps and interaction overlays helped reveal where attention concentrated, where rows lost engagement, and where controls created friction.</figcaption>
+</figure>
+<div class="g3" data-reveal style="margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F">Analytics</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Reviewed entry points, device mix, table engagement, filter use, action clicks, and abandonment patterns.</p>
+</div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F">Heatmaps and interaction evidence</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Looked for ignored rows, repeated scanning, missed controls, scroll behavior, and dense areas.</p>
+</div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F">Usability testing</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Observed how participants formed a shortlist, compared attributes, recovered from confusion, and selected a next step.</p>
+</div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F">A/B experiments</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Used controlled changes to test hierarchy, labels, row grouping, filters, and action visibility.</p>
+</div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F">Competitive review</h3>
+<p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Compared patterns from publishers and commerce products to understand common expectations without copying their interfaces.</p>
+</div>
+<div style="background:#14161D;border-radius:18px;padding:26px">
+<h3 style="margin:0;font-size:17px;font-weight:700;letter-spacing:-.01em;color:#F5F5F7">Research questions</h3>
+<ul style="margin:12px 0 0;padding-left:18px;font-size:15px;line-height:1.55;color:rgba(245,245,247,.72);display:grid;gap:8px">
+<li>What information helps someone eliminate an option quickly?</li>
+<li>Which attributes need to remain visible while scrolling?</li>
+<li>When does a user need more detail, and when does detail become clutter?</li>
+<li>Can a mobile visitor maintain orientation without seeing every column at once?</li>
+<li>Which actions belong inside the comparison and which should follow it?</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section id="needs" style="padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:900px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">06 · User needs</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">Help me understand the tradeoffs without making me learn the table</h2>
+</div>
+<div class="g2" data-reveal style="margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+<div style="background:#F5F5F7;border-radius:18px;padding:28px">
+<p style="margin:0;font-size:19px;line-height:1.45;letter-spacing:-.01em;color:#1D1D1F">When I have several options, help me see the important differences so I can build a shortlist.</p>
+<div style="margin:20px 0 12px;height:1px;background:rgba(0,0,0,.08)"></div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Design implication</div>
+<p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Lead with the few attributes that separate products, and group the rest so scanning has a rhythm.</p>
+</div>
+<div style="background:#F5F5F7;border-radius:18px;padding:28px">
+<p style="margin:0;font-size:19px;line-height:1.45;letter-spacing:-.01em;color:#1D1D1F">When an attribute matters to me, help me compare that row without losing the product names.</p>
+<div style="margin:20px 0 12px;height:1px;background:rgba(0,0,0,.08)"></div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Design implication</div>
+<p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Keep product headers and the active row label in view while the rest of the table moves.</p>
+</div>
+<div style="background:#F5F5F7;border-radius:18px;padding:28px">
+<p style="margin:0;font-size:19px;line-height:1.45;letter-spacing:-.01em;color:#1D1D1F">When I am on my phone, help me move through the same information without shrinking everything.</p>
+<div style="margin:20px 0 12px;height:1px;background:rgba(0,0,0,.08)"></div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Design implication</div>
+<p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Design a narrow viewport pattern with its own interaction rules instead of scaling the desktop grid.</p>
+</div>
+<div style="background:#F5F5F7;border-radius:18px;padding:28px">
+<p style="margin:0;font-size:19px;line-height:1.45;letter-spacing:-.01em;color:#1D1D1F">When I am ready to act, give me a clear next step without turning every cell into a competing advertisement.</p>
+<div style="margin:20px 0 12px;height:1px;background:rgba(0,0,0,.08)"></div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Design implication</div>
+<p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">One primary action per product, a consistent secondary path to detail, and no competing emphasis in between.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="principles" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">07 · Decision rules</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">Keep the system understandable when the data changes</h2>
+</div>
+<ol data-reveal style="margin:44px 0 0;padding:0;list-style:none;display:grid;gap:12px;counter-reset:p">
+<li style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:24px 26px;box-shadow:0 1px 3px rgba(0,0,0,.04);display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start">
+<span style="font-size:15px;font-weight:600;color:#0071E3;padding-top:2px">01</span>
+<div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Orientation before density</h3>
+<p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#494949">Always show users what product and attribute they are comparing.</p></div>
+</li>
+<li style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:24px 26px;box-shadow:0 1px 3px rgba(0,0,0,.04);display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start">
+<span style="font-size:15px;font-weight:600;color:#0071E3;padding-top:2px">02</span>
+<div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Progressive detail</h3>
+<p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#494949">Show the most useful information first and let deeper rows expand when needed.</p></div>
+</li>
+<li style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:24px 26px;box-shadow:0 1px 3px rgba(0,0,0,.04);display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start">
+<span style="font-size:15px;font-weight:600;color:#0071E3;padding-top:2px">03</span>
+<div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Consistent actions</h3>
+<p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#494949">Keep labels, placement, and button hierarchy predictable across products.</p></div>
+</li>
+<li style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:24px 26px;box-shadow:0 1px 3px rgba(0,0,0,.04);display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start">
+<span style="font-size:15px;font-weight:600;color:#0071E3;padding-top:2px">04</span>
+<div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">One data model, responsive presentations</h3>
+<p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#494949">Desktop and mobile can use different interaction patterns while preserving the same content relationships.</p></div>
+</li>
+<li style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:24px 26px;box-shadow:0 1px 3px rgba(0,0,0,.04);display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start">
+<span style="font-size:15px;font-weight:600;color:#0071E3;padding-top:2px">05</span>
+<div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Accessible by construction</h3>
+<p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#494949">Semantic structure, keyboard behavior, focus, and contrast belong in the component definition.</p></div>
+</li>
+</ol>
+</div>
+</section>
+
+<section id="responsive" style="background:#14161D;padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF">08 · Responsive strategy</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#F5F5F7;text-wrap:pretty">The mobile design was not a smaller table</h2>
+</div>
+<div data-reveal style="margin-top:clamp(32px,4vw,48px);display:grid;gap:clamp(32px,4vw,56px)">
+<div style="display:grid;gap:24px">
+<figure style="margin:0;max-width:820px">
+<img src="/assets/comparison/comparison-desktop-hero.webp" alt="Desktop comparison table with a pinned overlay showing the full width of columns for brand, rating, best for, base cost, monthly fees, and learn more actions." width="865" height="648" style="display:block;width:100%;height:auto;aspect-ratio:865/648;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.28)">
+<figcaption style="margin:16px 0 0;font-size:13px;line-height:1.45;color:rgba(245,245,247,.6)">Desktop kept side by side scanning with grouped rows and one clear action per product.</figcaption>
+</figure>
+<div style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,245,247,.6)">Desktop decisions</div>
+<ul style="margin:14px 0 0;padding-left:18px;font-size:16px;line-height:1.6;color:rgba(245,245,247,.78);display:grid;gap:8px">
+<li>Preserve side by side scanning.</li>
+<li>Keep product and attribute headers available during longer comparisons.</li>
+<li>Group related rows with clear spacing.</li>
+<li>Keep ratings, labels, prices, and actions visually distinct.</li>
+<li>Allow filters and sorting without shifting the whole layout unexpectedly.</li>
+</ul>
+</div>
+</div>
+<div style="display:grid;gap:24px">
+<figure style="margin:0;max-width:820px">
+<img src="/assets/comparison/comparison-mobile-hero.webp" alt="Mobile comparison concept held in one hand, showing sort chips, sticky brand column, ratings, and horizontally scrolling attribute columns." width="865" height="648" style="display:block;width:100%;height:auto;aspect-ratio:865/648;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.28)">
+<figcaption style="margin:16px 0 0;font-size:13px;line-height:1.45;color:rgba(245,245,247,.6)">The mobile concept preserved product names, ratings, and comparison context inside a much narrower viewport.</figcaption>
+</figure>
+<div style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:rgba(245,245,247,.6)">Mobile decisions</div>
+<ul style="margin:14px 0 0;padding-left:18px;font-size:16px;line-height:1.6;color:rgba(245,245,247,.78);display:grid;gap:8px">
+<li>Use a clear horizontal scroll or swipe affordance when products remain in columns.</li>
+<li>Keep the current product and attribute context visible.</li>
+<li>Collapse secondary rows to reduce a long wall of information.</li>
+<li>Preserve readable type instead of scaling the desktop grid down.</li>
+<li>Keep tap targets large enough and actions separated from scroll gestures.</li>
+<li>Provide an alternate card pattern when the content model makes a wide grid unsuitable.</li>
+</ul>
+</div>
+</div>
+</div>
+<p data-reveal style="margin:clamp(32px,4vw,48px) 0 0;max-width:820px;font-size:19px;line-height:1.5;letter-spacing:-.01em;color:#F5F5F7">The goal was not to make desktop and mobile look identical. The goal was to make the decision process feel consistent. Both views used the same data and hierarchy, but each respected the strengths and limits of its screen.</p>
+</div>
+</section>
+
+<section id="system" style="padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">09 · Component system</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">Break one complicated table into dependable parts</h2>
+</div>
+<figure data-reveal style="margin:40px 0 0">
+<div style="background:#F5F5F7;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:clamp(20px,3vw,32px)">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+<span style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Comparison shell</span>
+<span style="font-size:12px;font-weight:600;color:#6E6E73">Column count · overflow · sticky regions · responsive mode</span>
+</div>
+<div style="margin-top:16px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;overflow:hidden">
+<div style="display:flex;gap:8px;padding:14px 16px;border-bottom:1px solid rgba(0,0,0,.08);flex-wrap:wrap">
+<span style="font-size:13px;font-weight:600;color:#0071E3;background:rgba(0,113,227,.08);border-radius:9999px;padding:7px 14px">Filter and sort controls</span>
+<span style="font-size:13px;font-weight:600;color:#6E6E73;border:1px solid rgba(0,0,0,.08);border-radius:9999px;padding:7px 14px">Best rating</span>
+<span style="font-size:13px;font-weight:600;color:#6E6E73;border:1px solid rgba(0,0,0,.08);border-radius:9999px;padding:7px 14px">Price low to high</span>
+</div>
+<div class="g4" style="display:grid;grid-template-columns:180px repeat(3,1fr)">
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Attribute label</div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:15px;font-weight:600;color:#1D1D1F">Product header</div><div style="margin-top:4px;font-size:13px;color:#6E6E73">Logo, name, badge, rating</div></div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:15px;font-weight:600;color:#1D1D1F">Product header</div><div style="margin-top:4px;font-size:13px;color:#6E6E73">Logo, name, badge, rating</div></div>
+<div style="padding:14px 16px;border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:15px;font-weight:600;color:#1D1D1F">Product header</div><div style="margin-top:4px;font-size:13px;color:#6E6E73">Logo, name, badge, rating</div></div>
+<div style="padding:12px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);background:#F5F5F7;font-size:13px;font-weight:600;color:#1D1D1F">Attribute group</div>
+<div style="padding:12px 16px;border-bottom:1px solid rgba(0,0,0,.08);background:#F5F5F7;font-size:13px;color:#6E6E73;grid-column:span 3">Section heading with optional disclosure</div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);font-size:14px;color:#494949">Rating and evidence</div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);font-size:14px;color:#1D1D1F">4.1 · accessible text</div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);font-size:14px;color:#1D1D1F">4.1 · accessible text</div>
+<div style="padding:14px 16px;border-bottom:1px solid rgba(0,0,0,.08);font-size:14px;color:#6E6E73">Value not available</div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);font-size:14px;color:#494949">Attribute row</div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);font-size:14px;color:#1D1D1F">Comparable value</div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);font-size:14px;color:#1D1D1F">Comparable value</div>
+<div style="padding:14px 16px;border-bottom:1px solid rgba(0,0,0,.08);font-size:14px;color:#1D1D1F">Comparable value</div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08);font-size:14px;color:#494949">Action cell</div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08)"><span style="display:inline-block;font-size:13px;font-weight:600;color:#fff;background:#D71920;border-radius:9999px;padding:8px 16px">Primary action</span></div>
+<div style="padding:14px 16px;border-right:1px solid rgba(0,0,0,.08)"><span style="display:inline-block;font-size:13px;font-weight:600;color:#0071E3;border:1px solid rgba(0,0,0,.12);border-radius:9999px;padding:8px 16px">Secondary</span></div>
+<div style="padding:14px 16px;font-size:13px;color:#6E6E73">Details link</div>
+</div>
+<div style="padding:14px 16px;border-top:1px solid rgba(0,0,0,.08);font-size:13px;color:#6E6E73">Pagination or comparison limit</div>
+</div>
+</div>
+<figcaption style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#6E6E73">Component anatomy, not production screen. Regions are drawn to name the parts and their responsibilities.</figcaption>
+</figure>
+<div class="g4 g2" data-reveal style="margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px">
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="margin:0;font-size:16px;font-weight:700;color:#1D1D1F">Comparison shell</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Owns column count, horizontal overflow, sticky regions, and responsive mode.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="margin:0;font-size:16px;font-weight:700;color:#1D1D1F">Product header</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Supports logo, name, badge, rating, summary, and primary action.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="margin:0;font-size:16px;font-weight:700;color:#1D1D1F">Attribute group</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Creates meaningful sections and optional disclosure.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="margin:0;font-size:16px;font-weight:700;color:#1D1D1F">Attribute row</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Connects one label to comparable values and missing data states.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="margin:0;font-size:16px;font-weight:700;color:#1D1D1F">Rating and evidence</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Separates editorial rating, supporting label, and accessible text.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="margin:0;font-size:16px;font-weight:700;color:#1D1D1F">Filter and sort controls</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Use clear labels, selected states, and announced updates.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="margin:0;font-size:16px;font-weight:700;color:#1D1D1F">Action cell</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Maintains consistent hierarchy for details, quote, visit, or purchase actions.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;padding:22px;box-shadow:0 1px 3px rgba(0,0,0,.04)"><h3 style="margin:0;font-size:16px;font-weight:700;color:#1D1D1F">Pagination or comparison limit</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:#494949">Explains how more products enter the experience without overwhelming the view.</p></div>
+</div>
+<p data-reveal style="margin:28px 0 0;max-width:820px;font-size:17px;line-height:1.6;color:#494949">Every region uses Atlas tokens for type, color, spacing, border, focus, and responsive behavior.</p>
+</div>
+</section>
+
+<section id="states" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">10 · System depth</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">The quality of the system appears at the edges</h2>
+</div>
+<div data-reveal style="margin-top:40px;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.04)">
+<div class="g2" style="display:grid;grid-template-columns:1fr 1fr">
+<div style="padding:22px 26px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Controls</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">Default, hover, focus, selected, and disabled controls</p></div>
+<div style="padding:22px 26px;border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Data</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">Loading, partial data, empty, and error states</p></div>
+<div style="padding:22px 26px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Volume</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">One product, two products, and many products</p></div>
+<div style="padding:22px 26px;border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Length</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">Long product names and long attribute values</p></div>
+<div style="padding:22px 26px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Gaps</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">Missing ratings, unavailable pricing, and unsupported attributes</p></div>
+<div style="padding:22px 26px;border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Cell types</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">Mixed text, numeric, badge, icon, and action cells</p></div>
+<div style="padding:22px 26px;border-right:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Sticky</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">Sticky header entering and leaving the viewport</p></div>
+<div style="padding:22px 26px;border-bottom:1px solid rgba(0,0,0,.08)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Scroll</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">Horizontal scroll start, middle, and end</p></div>
+<div style="padding:22px 26px;border-right:1px solid rgba(0,0,0,.08)"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Disclosure</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">Expanded and collapsed row groups</p></div>
+<div style="padding:22px 26px"><div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Viewport</div><p style="margin:8px 0 0;font-size:16px;line-height:1.6;color:#1D1D1F">Zoomed text and narrow browser windows</p></div>
+</div>
+</div>
+<p data-reveal style="margin:28px 0 0;max-width:820px;font-size:17px;line-height:1.6;color:#494949">Documenting edge cases prevented each vertical from improvising its own answer. It also gave engineers a clear way to test the component before real editorial data exposed the gaps.</p>
+</div>
+</section>
+
+<section id="iteration" style="padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">11 · Exploration</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">Use prototypes to make tradeoffs visible</h2>
+</div>
+<figure data-reveal style="margin:clamp(32px,4vw,48px) auto 0;max-width:820px">
+<img src="/assets/comparison/wireframes-and-table-exploration.webp" alt="Angled board of comparison table wireframes and grid studies, including annotated column structures and card variants." width="865" height="648" style="display:block;width:100%;height:auto;aspect-ratio:865/648;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)">
+<figcaption style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#6E6E73">Wireframes and table studies made spacing, hierarchy, responsive behavior, and handoff decisions visible before implementation.</figcaption>
+</figure>
+<ol data-reveal style="margin:clamp(40px,5vw,56px) 0 0;padding:0;list-style:none;display:grid;gap:0">
+<li style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-top:1px solid rgba(0,0,0,.08)"><span style="font-size:13px;font-weight:600;letter-spacing:.12em;color:#6E6E73">01</span><div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Low fidelity structure</h3><p style="margin:8px 0 0;max-width:640px;font-size:16px;line-height:1.6;color:#494949">Tested what information belonged in the first scan.</p></div></li>
+<li style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-top:1px solid rgba(0,0,0,.08)"><span style="font-size:13px;font-weight:600;letter-spacing:.12em;color:#6E6E73">02</span><div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Responsive patterns</h3><p style="margin:8px 0 0;max-width:640px;font-size:16px;line-height:1.6;color:#494949">Compared horizontal scrolling, fixed context, cards, and progressive disclosure.</p></div></li>
+<li style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-top:1px solid rgba(0,0,0,.08)"><span style="font-size:13px;font-weight:600;letter-spacing:.12em;color:#6E6E73">03</span><div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Interactive prototype</h3><p style="margin:8px 0 0;max-width:640px;font-size:16px;line-height:1.6;color:#494949">Tested sorting, filtering, expanding, swiping, and action placement in Figma.</p></div></li>
+<li style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-top:1px solid rgba(0,0,0,.08)"><span style="font-size:13px;font-weight:600;letter-spacing:.12em;color:#6E6E73">04</span><div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Design system mapping</h3><p style="margin:8px 0 0;max-width:640px;font-size:16px;line-height:1.6;color:#494949">Connected the chosen patterns to Atlas tokens and reusable components.</p></div></li>
+<li style="display:grid;grid-template-columns:56px 1fr;gap:20px;padding:24px 0;border-top:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)"><span style="font-size:13px;font-weight:600;letter-spacing:.12em;color:#6E6E73">05</span><div><h3 style="margin:0;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Engineering review</h3><p style="margin:8px 0 0;max-width:640px;font-size:16px;line-height:1.6;color:#494949">Validated data needs, responsive feasibility, states, and semantic markup before final handoff.</p></div></li>
+</ol>
+</div>
+</section>
+
+<section id="accessibility" style="padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:900px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">12 · Inclusive product quality</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">A comparison is only useful when its relationships are understandable</h2>
+</div>
+<div class="g3" data-reveal style="margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#1D1D1F">Semantic table structure</h3><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Use a descriptive caption, table headers, row and column associations, and appropriate scope values when a true table is present.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#1D1D1F">Keyboard access</h3><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Every sort, filter, disclosure, link, and action must work without a pointer. Focus order must follow the visual and reading order.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#1D1D1F">Screen reader context</h3><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Announce sort state, filter changes, expanded groups, and dynamic result updates without unnecessary repetition.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#1D1D1F">Visual clarity</h3><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Meet WCAG AA contrast, preserve focus visibility, avoid color only meaning, and support text zoom.</p></div>
+<div style="background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:26px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#1D1D1F">Responsive equivalence</h3><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Mobile cards or collapsed views must preserve the same names, values, relationships, and actions as desktop.</p></div>
+<div style="background:#F5F5F7;border-radius:18px;padding:26px"><h3 style="margin:0;font-size:17px;font-weight:700;color:#1D1D1F">One source of content</h3><p style="margin:10px 0 0;font-size:15px;line-height:1.6;color:#494949">Do not keep a duplicate hidden desktop table only for search or screen readers. Use one dependable source of content and ensure only the active presentation is exposed correctly.</p></div>
+</div>
+</div>
+</section>
+
+<section id="seo" style="background:#EEF2F7;padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div class="split" data-reveal style="display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,4vw,56px);align-items:start">
+<div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">13 · Semantic content</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">Make the comparison understandable beyond the visual layout</h2>
+<p style="margin:20px 0 0;font-size:17px;line-height:1.6;color:#494949">SEO was not a layer added after the interface. The same structure that helps a person understand the comparison also gives search and AI systems clearer relationships to interpret.</p>
+</div>
+<ul style="margin:0;padding:0;list-style:none;display:grid;gap:2px">
+<li style="background:#fff;border-radius:12px;padding:16px 20px;font-size:16px;line-height:1.6;color:#1D1D1F">Render important comparison content in crawlable HTML.</li>
+<li style="background:#fff;border-radius:12px;padding:16px 20px;font-size:16px;line-height:1.6;color:#1D1D1F">Use semantic table markup when the content is genuinely tabular.</li>
+<li style="background:#fff;border-radius:12px;padding:16px 20px;font-size:16px;line-height:1.6;color:#1D1D1F">Keep product names, attributes, ratings, and descriptions connected in the document structure.</li>
+<li style="background:#fff;border-radius:12px;padding:16px 20px;font-size:16px;line-height:1.6;color:#1D1D1F">Use descriptive headings, captions, and links.</li>
+<li style="background:#fff;border-radius:12px;padding:16px 20px;font-size:16px;line-height:1.6;color:#1D1D1F">Add structured data only when a valid schema matches the visible content.</li>
+<li style="background:#fff;border-radius:12px;padding:16px 20px;font-size:16px;line-height:1.6;color:#1D1D1F">Avoid duplicate hidden content across responsive modes.</li>
+<li style="background:#fff;border-radius:12px;padding:16px 20px;font-size:16px;line-height:1.6;color:#1D1D1F">Preserve stable URLs and meaningful server rendered content where the platform supports it.</li>
+<li style="background:#fff;border-radius:12px;padding:16px 20px;font-size:16px;line-height:1.6;color:#1D1D1F">Validate markup and structured data as part of release QA.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="handoff" style="background:#14161D;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF">14 · Collaboration</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#F5F5F7;text-wrap:pretty">Make the document answer the question before the next time zone wakes up</h2>
+<p style="margin:24px 0 0;font-size:19px;line-height:1.55;color:rgba(245,245,247,.72)">This project was implemented with developers working overseas. A vague handoff could turn one decision into a full day of waiting. I created a detailed specification that explained what to build, how it should respond, and why each rule existed.</p>
+</div>
+<div class="g2" data-reveal style="margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">Component anatomy</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Named every region, property, dependency, and reusable part.</p></div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">Responsive behavior matrix</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Documented what stays, moves, scrolls, collapses, or changes presentation at each breakpoint.</p></div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">Interaction states</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Covered keyboard, pointer, focus, sorting, filtering, expansion, pagination, and loading.</p></div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">Data and content contract</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Defined required fields, optional fields, missing values, character limits, and content priorities.</p></div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">Accessibility notes</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Specified semantics, labels, announcements, focus order, contrast, and reduced motion behavior.</p></div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">Edge case library</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Showed long names, incomplete data, many products, errors, empty results, and unusual cell content.</p></div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">Acceptance criteria</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Turned design intent into testable statements for implementation and QA.</p></div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">Decision log</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Recorded what was chosen, what was rejected, and the reason so old questions did not reopen.</p></div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">Annotated prototype</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Connected visual examples to the matching state and interaction rule.</p></div>
+<div style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:12px;padding:22px 24px"><h3 style="margin:0;font-size:16px;font-weight:700;color:#F5F5F7">QA checklist</h3><p style="margin:8px 0 0;font-size:15px;line-height:1.6;color:rgba(245,245,247,.66)">Created one shared review list for design, content, SEO, accessibility, and engineering.</p></div>
+</div>
+<p data-reveal style="margin:40px 0 0;max-width:820px;font-size:19px;line-height:1.5;letter-spacing:-.01em;color:#F5F5F7">The handoff became a shared source of truth. It reduced repeated clarification, made asynchronous review easier, and helped the distributed team protect the design reasoning during implementation.</p>
+</div>
+</section>
+
+<section id="outcome" style="padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:820px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">15 · Outcome</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">A clearer comparison experience and a stronger product foundation</h2>
+</div>
+<div class="split" data-reveal style="margin-top:44px;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,56px);align-items:start">
+<div>
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Qualitative outcomes</div>
+<ul style="margin:16px 0 0;padding:0;list-style:none;display:grid;gap:0">
+<li style="padding:16px 0;border-top:1px solid rgba(0,0,0,.08);font-size:17px;line-height:1.6;color:#1D1D1F">Clearer grouping and hierarchy made dense information easier to scan.</li>
+<li style="padding:16px 0;border-top:1px solid rgba(0,0,0,.08);font-size:17px;line-height:1.6;color:#1D1D1F">Mobile became a designed experience with its own interaction rules.</li>
+<li style="padding:16px 0;border-top:1px solid rgba(0,0,0,.08);font-size:17px;line-height:1.6;color:#1D1D1F">Atlas integration created more consistent and reusable comparison components.</li>
+<li style="padding:16px 0;border-top:1px solid rgba(0,0,0,.08);font-size:17px;line-height:1.6;color:#1D1D1F">Accessibility and semantic structure became part of the design definition.</li>
+<li style="padding:16px 0;border-top:1px solid rgba(0,0,0,.08);font-size:17px;line-height:1.6;color:#1D1D1F">The remote handoff reduced ambiguity and gave developers better implementation coverage.</li>
+<li style="padding:16px 0;border-top:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08);font-size:17px;line-height:1.6;color:#1D1D1F">The system created a stronger foundation for testing conversion assistance, mobile completion, accessibility, and search visibility.</li>
+</ul>
+</div>
+<div style="background:#F5F5F7;border-radius:18px;padding:28px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Measurement after launch</div>
+<ul style="margin:16px 0 0;padding-left:18px;font-size:16px;line-height:1.6;color:#494949;display:grid;gap:10px">
+<li>Compare task completion and time to decision across desktop and mobile.</li>
+<li>Monitor table abandonment, row engagement, filters, sorting, and action follow through.</li>
+<li>Track accessibility defects and keyboard or screen reader task completion.</li>
+<li>Review cross vertical component adoption and implementation differences.</li>
+<li>Validate semantic markup, structured data, crawlability, and index coverage.</li>
+</ul>
+<p style="margin:20px 0 0;font-size:13px;line-height:1.45;color:#6E6E73">These are recommended measurement areas. They are not invented project results.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="reflection" style="background:#F5F5F7;padding:clamp(56px,7vw,104px) 0;scroll-margin-top:76px">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+<div data-reveal style="max-width:760px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">16 · What I learned</div>
+<h2 style="margin:16px 0 0;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;color:#1D1D1F;text-wrap:pretty">Responsive design is about preserving understanding, not preserving layout</h2>
+<p style="margin:24px 0 0;font-size:17px;line-height:1.65;color:#494949">This project reinforced that a table is not only rows and columns. It is a decision tool, a content model, an accessible relationship, a search surface, and a reusable platform component.</p>
+<p style="margin:18px 0 0;font-size:17px;line-height:1.65;color:#494949">The mobile challenge forced the clearest product thinking. Once the screen could no longer show everything, the team had to decide what creates orientation, what supports confidence, and what can wait.</p>
+<p style="margin:18px 0 0;font-size:17px;line-height:1.65;color:#494949">The detailed handoff mattered for the same reason. Good documentation is part of the product. It helps a distributed team make consistent decisions even when the designer is not in the room.</p>
+<p style="margin:32px 0 0;font-size:clamp(22px,2.6vw,30px);font-weight:700;line-height:1.25;letter-spacing:-.02em;color:#1D1D1F">The best comparison experience makes complexity feel manageable.</p>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer style="border-top:1px solid rgba(0,0,0,.08);padding:40px 0">
+<div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center">
+<span style="font-size:13px;color:#6E6E73">Miguel Clavel · UX and Product Designer · U.S. News &amp; World Report</span>
+<a href="#top" style="font-size:13px;font-weight:600;color:#0071E3;min-height:44px;display:flex;align-items:center">Back to top</a>
+</div>
+</footer>
+</div>
+
+<nav aria-label="Continue exploring" style="border-top:1px solid rgba(0,0,0,.08);padding:36px 0">
+  <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Continue exploring</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+      <a href="/work/360-homepage-redesign" style="text-decoration:none;background:#F5F5F7;border-radius:18px;padding:22px 24px;display:block" style-hover="background:#EEF2F7">
+        <span style="display:block;font-size:13px;color:#6E6E73">Previous</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">360 Homepage Redesign</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#494949">Homepage product strategy and modular systems</span>
+      </a>
+      <a href="/work/arena-rebrand-cms" style="text-decoration:none;background:#F5F5F7;border-radius:18px;padding:22px 24px;display:block" style-hover="background:#EEF2F7">
+        <span style="display:block;font-size:13px;color:#6E6E73">Next</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Arena Rebrand &amp; CMS</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#494949">Brand transition, content architecture, and CMS scalability</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<footer style="background:#F5F5F7;border-top:1px solid rgba(0,0,0,.08);padding:28px 0 40px">
+  <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:baseline;justify-content:space-between">
+    <div>
+      <p style="margin:0;font-size:15px;font-weight:700;color:#1D1D1F">Miguel Clavel</p>
+      <p style="margin:4px 0 0;font-size:13px;color:#6E6E73">Senior Product Designer &#183; UX strategy, design systems &amp; AI-enabled workflows</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;font-weight:600">
+      <a href="mailto:2miguelclavel@gmail.com?subject=Portfolio%20conversation" style="color:#0071E3;text-decoration:none">2miguelclavel@gmail.com</a>
+      <a href="/assets/Miguel-Clavel-Senior-Product-Designer-Resume-2026.pdf" download="Miguel-Clavel-Senior-Product-Designer-Resume.pdf" style="color:#0071E3;text-decoration:none">Résumé</a>
+      <a href="https://www.linkedin.com/in/miguelclavel/" target="_blank" rel="noopener noreferrer" style="color:#0071E3;text-decoration:none">LinkedIn</a>
+      <a href="https://www.behance.net/miguelclavel" target="_blank" rel="noopener noreferrer" style="color:#0071E3;text-decoration:none">Behance</a>
+      <a href="/" style="color:#494949;text-decoration:none">&#8592; Back to work</a>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CreativeWork","name":"Simple to use. Complex to design well.","description":"A responsive product comparison system: mobile interaction patterns for wide tables, component states, accessible table semantics, SEO structure, and a remote engineering handoff.","genre":"Case study","inLanguage":"en","creator":{"@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","url":"https://www.linkedin.com/in/miguelclavel/"},"author":{"@type":"Person","name":"Miguel Clavel"},"keywords":"responsive comparison table, mobile interaction design, accessibility, SEO semantics, design systems, engineering handoff"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","sameAs":["https://www.linkedin.com/in/miguelclavel/","https://www.behance.net/miguelclavel"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Résumé","item":"https://miguelclavel-portfolio-v2.netlify.app/resume"},{"@type":"ListItem","position":2,"name":"Work","item":"https://miguelclavel-portfolio-v2.netlify.app/work"},{"@type":"ListItem","position":3,"name":"Comparison System","item":"https://miguelclavel-portfolio-v2.netlify.app/work/comparison-system"}]}
+</script>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showReadingProgress&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Chrome&quot;},&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  state = { progressPct: '0%' };
+
+  componentDidMount() {
+    this.onScroll = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+      this.setState({ progressPct: pct.toFixed(1) + '%' });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced || (this.props.revealOnScroll ?? true) === false) return;
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    nodes.forEach(n => {
+      n.style.opacity = '0';
+      n.style.transform = 'translateY(8px)';
+      n.style.transition = 'opacity .32s cubic-bezier(.16,1,.3,1), transform .32s cubic-bezier(.16,1,.3,1)';
+    });
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        this.io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    nodes.forEach(n => this.io.observe(n));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onScroll);
+    if (this.io) this.io.disconnect();
+  }
+
+  renderVals() {
+    return {
+      share: async () => {
+        const url = window.location.href;
+        const st = document.getElementById('shr-status');
+        const say = (t) => { if (st) st.textContent = t; };
+        try {
+          if (navigator.share) { await navigator.share({ title: 'Simple to use. Complex to design well.', url: url }); say('Shared.'); return; }
+          await navigator.clipboard.writeText(url);
+          say('Link copied.');
+        } catch (e) { say('Copy the address from your browser bar.'); }
+      },
+      progressPct: this.state.progressPct,
+      showReadingProgress: this.props.showReadingProgress ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

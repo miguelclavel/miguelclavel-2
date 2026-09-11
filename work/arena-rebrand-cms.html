@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="support.js"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Arena Rebrand and CMS Experience Case Study | Miguel Clavel</title>
+<meta name="description" content="Keeping a live arena website accurate through a full rebrand: brand transition, content architecture, a responsive event experience, and CMS scalability across a cross-functional team.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://miguelclavel-portfolio-v2.netlify.app/work/arena-rebrand-cms">
+<meta property="og:url" content="https://miguelclavel-portfolio-v2.netlify.app/work/arena-rebrand-cms">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Keeping a live arena website accurate through a full rebrand">
+<meta property="og:description" content="Brand transition, content architecture, responsive experience, and CMS scalability for a live arena website.">
+<meta property="og:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/arena/arena-laptop-hero.webp">
+<meta property="og:image:alt" content="The arena homepage shown on a laptop, led by a dated event announcement with ticket actions.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Keeping a live arena website accurate through a full rebrand">
+<meta name="twitter:description" content="Brand transition, content architecture, responsive experience, and CMS scalability for a live arena website.">
+<meta name="twitter:image" content="https://miguelclavel-portfolio-v2.netlify.app/assets/arena/arena-laptop-hero.webp">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#1D1D1F;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:#0071E3;text-decoration:none}
+a:hover{color:#0077ED;text-decoration:none}
+::selection{background:#5E5CE6;color:#fff}
+:focus-visible{outline:3px solid rgba(10,132,255,.5);outline-offset:2px;border-radius:6px}
+section{scroll-margin-top:128px}
+img{max-width:100%}
+@media (max-width:700px){.shr-hide{display:none!important}}
+@media (prefers-reduced-motion: reduce){
+html{scroll-behavior:auto}
+*{transition:none !important;animation:none !important}
+}
+</style>
+</helmet>
+<div style="position:relative;padding-top:52px">
+
+<div style="position:fixed;top:0;left:0;right:0;z-index:90;height:52px;display:flex;align-items:center;gap:12px;padding:0 clamp(20px,5vw,48px);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)">
+  <a href="/" style="font-size:14px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F;text-decoration:none;white-space:nowrap">Miguel Clavel</a>
+  <span class="shr-hide" aria-hidden="true" style="color:rgba(0,0,0,.2)">/</span>
+  <span class="shr-hide" style="font-size:13px;color:#6E6E73;white-space:nowrap">Senior Product Designer</span>
+  <span id="shr-status" aria-live="polite" class="shr-hide" style="font-size:13px;color:#6E6E73"></span>
+  <nav aria-label="Portfolio" style="margin-left:auto;display:flex;align-items:center;gap:2px">
+    <a href="/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">&#8592; Back to work</a>
+    <a href="mailto:2miguelclavel@gmail.com?subject=Arena%20rebrand%20and%20CMS" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Email</a>
+    <button type="button" onClick="{{ share }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:0;background:none;border-radius:9999px;font:inherit;font-size:13px;font-weight:600;color:#494949;cursor:pointer;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Share</button>
+  </nav>
+</div>
+
+<a href="#overview" style="position:absolute;left:16px;top:8px;z-index:120;transform:translateY(-160%);background:#1D1D1F;color:#fff;padding:12px 22px;border-radius:9999px;font-size:13px;font-weight:600;text-decoration:none" style-focus="transform:translateY(0)">Skip to case study</a>
+
+<header ref="{{ navRef }}" style="position:fixed;top:52px;left:0;right:0;z-index:80;background:transparent;transition:background 160ms ease-out">
+  <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);height:56px;display:flex;align-items:center;gap:20px">
+    <span ref="{{ wordmarkRef }}" style="font-size:14px;font-weight:600;letter-spacing:-.01em;white-space:nowrap;color:#F5F5F7">Arena Rebrand &amp; CMS</span>
+    <nav aria-label="Case study sections" style="display:flex;gap:2px;overflow-x:auto;margin-left:auto;-webkit-overflow-scrolling:touch">
+      <a data-nav="overview" href="#overview" style="display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:9999px;font-size:13px;font-weight:500;white-space:nowrap;text-decoration:none;transition:background 160ms ease-out,color 160ms ease-out">Overview</a>
+      <a data-nav="challenge" href="#challenge" style="display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:9999px;font-size:13px;font-weight:500;white-space:nowrap;text-decoration:none;transition:background 160ms ease-out,color 160ms ease-out">Challenge</a>
+      <a data-nav="work" href="#work" style="display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:9999px;font-size:13px;font-weight:500;white-space:nowrap;text-decoration:none;transition:background 160ms ease-out,color 160ms ease-out">Work</a>
+      <a data-nav="system" href="#system" style="display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:9999px;font-size:13px;font-weight:500;white-space:nowrap;text-decoration:none;transition:background 160ms ease-out,color 160ms ease-out">System</a>
+      <a data-nav="impact" href="#impact" style="display:flex;align-items:center;min-height:44px;padding:0 14px;border-radius:9999px;font-size:13px;font-weight:500;white-space:nowrap;text-decoration:none;transition:background 160ms ease-out,color 160ms ease-out">Impact</a>
+    </nav>
+  </div>
+  <div style="height:2px;background:transparent">
+    <div ref="{{ progressRef }}" style="height:2px;width:0%;background:#0A84FF"></div>
+  </div>
+</header>
+
+<main>
+
+<section id="overview" style="background:linear-gradient(90deg,#B1DCFB,#D6EEFD 30%,#EFF8FF 63%,#FFFDEB)">
+  <div style="max-width:1160px;margin:0 auto;padding:clamp(88px,10vw,120px) clamp(20px,5vw,48px) clamp(44px,5.5vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(28px,4vw,56px);align-items:center">
+    <figure style="margin:0;order:2">
+      <img src="/assets/arena/arena-laptop-hero.webp" width="1400" height="1750" alt="The arena website homepage shown on a laptop, with a featured concert, its date, and a Buy Tickets action." style="display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)">
+      <figcaption style="margin:14px 0 0;font-size:13px;line-height:1.45;color:#6E6E73">The homepage during the transition, desktop. It led with the next event, its date, and a single ticket action — the pattern that had to survive the change of name and domain.</figcaption>
+    </figure>
+    <div style="order:1">
+      <p style="margin:0 0 20px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">01 · Arena website rebrand and CMS migration</p>
+      <h1 style="margin:0;max-width:18ch;font-size:clamp(40px,5.4vw,68px);font-weight:700;line-height:1.02;letter-spacing:-.03em;text-wrap:pretty">Keeping a live arena website accurate through a full rebrand</h1>
+      <p style="margin:26px 0 0;max-width:56ch;font-size:19px;line-height:1.55;color:#494949;text-wrap:pretty">I helped move FTXArena.com to KaseyaCenter.com while events, ticket links, premium offerings, and visitor information stayed current. The work combined content migration, quality assurance, reusable CMS components, and clearer fan journeys.</p>
+      <dl style="margin:32px 0 0;display:grid;gap:0;border-top:1px solid rgba(0,0,0,.08)">
+        <div style="display:grid;grid-template-columns:minmax(90px,120px) 1fr;gap:20px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.08)">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Role</dt>
+          <dd style="margin:0;font-size:16px;line-height:1.5">Web and UX designer</dd>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(90px,120px) 1fr;gap:20px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.08)">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Focus</dt>
+          <dd style="margin:0;font-size:16px;line-height:1.5">CMS migration and content operations</dd>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(90px,120px) 1fr;gap:20px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.08)">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Platform</dt>
+          <dd style="margin:0;font-size:16px;line-height:1.5">Responsive web</dd>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(90px,120px) 1fr;gap:20px;padding:12px 0;border-bottom:1px solid rgba(0,0,0,.08)">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Outcome</dt>
+          <dd style="margin:0;font-size:16px;line-height:1.5">Clearer discovery and easier updates</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section style="background:#FFFFFF;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(24px,3vw,48px);align-items:start">
+    <div>
+      <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">02 · Project snapshot</p>
+      <h2 style="margin:0;max-width:16ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">A redesign that had to keep moving</h2>
+    </div>
+    <div style="max-width:720px">
+      <p style="margin:0 0 20px;font-size:19px;line-height:1.55;color:#494949;text-wrap:pretty">The arena was changing its name, domain, brand, and content system. At the same time, the public website still had to support upcoming events, ticket sales, premium hospitality, food, parking, and venue planning.</p>
+      <p style="margin:0 0 32px;font-size:17px;line-height:1.6;color:#494949;text-wrap:pretty">My job was to help move the content safely, make high intent tasks easier to find, and give internal teams components they could update without rebuilding pages from scratch.</p>
+      <dl style="margin:0;display:grid;gap:0;border-top:1px solid rgba(0,0,0,.08)">
+        <div style="display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:20px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.08)">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Migration</dt>
+          <dd style="margin:0;font-size:17px;line-height:1.6">FTXArena.com to KaseyaCenter.com</dd>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:20px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.08)">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Content</dt>
+          <dd style="margin:0;font-size:17px;line-height:1.6">Events, visitor planning, premium hospitality, dining, promotions</dd>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:20px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.08)">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Integrations</dt>
+          <dd style="margin:0;font-size:17px;line-height:1.6">Ticketmaster destinations and event links</dd>
+        </div>
+        <div style="display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:20px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.08)">
+          <dt style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Deliverables</dt>
+          <dd style="margin:0;font-size:17px;line-height:1.6">Migrated pages, reusable modules, popup campaigns, quality assurance</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="challenge" style="background:#14161D;color:#F5F5F7;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF">03 · The challenge</p>
+    <h2 style="margin:0;max-width:20ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">The site could change. The event calendar could not stop.</h2>
+    <div style="margin:40px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,48px);align-items:start">
+      <div style="max-width:720px">
+        <p style="margin:0 0 20px;font-size:19px;line-height:1.55;color:rgba(245,245,247,.6);text-wrap:pretty">A live venue website behaves more like an operating service than a finished brochure. Dates move, ticket links change, event artwork arrives, premium offers evolve, and visitors need accurate answers before they travel.</p>
+        <p style="margin:0 0 20px;font-size:17px;line-height:1.6;color:rgba(245,245,247,.6);text-wrap:pretty">The venue seats 19,600 people and hosts more than 100 events each year, so a broken link or stale event detail can affect many different fan journeys.</p>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:rgba(245,245,247,.6);text-wrap:pretty">The goal was to complete the migration without losing the speed and accuracy that daily publishing required.</p>
+      </div>
+      <ul style="margin:0;padding:0;list-style:none;display:grid;gap:16px">
+        <li style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;font-size:19px;font-weight:600;line-height:1.35">Keep event content current during the migration.</li>
+        <li style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;font-size:19px;font-weight:600;line-height:1.35">Protect ticket and planning paths.</li>
+        <li style="background:rgba(255,255,255,.04);box-shadow:0 0 0 1px rgba(255,255,255,.1);border-radius:18px;padding:24px;font-size:19px;font-weight:600;line-height:1.35">Make future updates easier for internal teams.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="background:#F5F5F7;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">04 · My contribution</p>
+    <h2 style="margin:0 0 clamp(26px,3vw,40px);max-width:22ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">I connected design decisions with daily content work</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+      <article style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <h3 style="margin:0 0 12px;font-size:21px;font-weight:600;line-height:1.25">Migration and quality assurance</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">I moved and reviewed content across the new CMS, checking page structure, links, images, labels, and responsive behavior before launch.</p>
+      </article>
+      <article style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <h3 style="margin:0 0 12px;font-size:21px;font-weight:600;line-height:1.25">Live event publishing</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">I updated concerts and tours as information changed, then verified that every ticket action reached the right Ticketmaster destination.</p>
+      </article>
+      <article style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <h3 style="margin:0 0 12px;font-size:21px;font-weight:600;line-height:1.25">Reusable premium content</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">I built flexible sections for Bacardi Ocho Lounge and Loge Suites so teams could update copy, photography, pricing, and calls to action without a custom rebuild.</p>
+      </article>
+      <article style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <h3 style="margin:0 0 12px;font-size:21px;font-weight:600;line-height:1.25">Promotions and announcements</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">I implemented campaign popups for season tickets and special announcements, with clear messaging and controlled placement.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section style="background:#FFFFFF;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">05 · Experience strategy</p>
+    <h2 style="margin:0 0 20px;max-width:20ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">Organize the site around what fans are trying to do</h2>
+    <p style="margin:0 0 clamp(32px,4vw,52px);max-width:720px;font-size:19px;line-height:1.55;color:#494949;text-wrap:pretty">The navigation and homepage modules were shaped around intent. A fan should not need to understand the arena's internal structure to find the next useful action.</p>
+    <ol style="margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px">
+      <li style="background:#F5F5F7;border-radius:18px;padding:26px 24px">
+        <span style="display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 14px">Step 01</span>
+        <span style="display:block;font-size:21px;font-weight:600;line-height:1.25">Find an event</span>
+      </li>
+      <li style="background:#F5F5F7;border-radius:18px;padding:26px 24px">
+        <span style="display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 14px">Step 02</span>
+        <span style="display:block;font-size:21px;font-weight:600;line-height:1.25">Check the date and details</span>
+      </li>
+      <li style="background:#F5F5F7;border-radius:18px;padding:26px 24px">
+        <span style="display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73;margin:0 0 14px">Step 03</span>
+        <span style="display:block;font-size:21px;font-weight:600;line-height:1.25">Buy tickets or plan the visit</span>
+      </li>
+      <li style="background:#14161D;color:#F5F5F7;border-radius:18px;padding:26px 24px">
+        <span style="display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF;margin:0 0 14px">Step 04</span>
+        <span style="display:block;font-size:21px;font-weight:600;line-height:1.25">Explore food, parking, or premium options</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section style="background:#F5F5F7;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">06 · Events and ticketing</p>
+    <h2 style="margin:0 0 clamp(26px,3vw,40px);max-width:20ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">Make every event easy to scan and act on</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:start">
+      <figure style="margin:0;width:100%;max-width:500px;justify-self:center">
+        <div style="border-radius:16px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06);background:#FFFFFF">
+          <div style="height:40px;background:rgba(246,246,246,.92);display:flex;align-items:center;padding:0 14px;gap:8px;border-bottom:1px solid rgba(0,0,0,.06)">
+            <span aria-hidden="true" style="width:12px;height:12px;border-radius:9999px;background:#FF5F56;flex:none"></span>
+            <span aria-hidden="true" style="width:12px;height:12px;border-radius:9999px;background:#FFBD2E;flex:none"></span>
+            <span aria-hidden="true" style="width:12px;height:12px;border-radius:9999px;background:#27C93F;flex:none"></span>
+            <span style="flex:1;text-align:center;font-size:12px;color:#8E8E93;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">kaseyacenter.com</span>
+            <span aria-hidden="true" style="width:44px;flex:none"></span>
+          </div>
+          <div style="position:relative;padding-top:52px">
+
+<div style="position:fixed;top:0;left:0;right:0;z-index:90;height:52px;display:flex;align-items:center;gap:12px;padding:0 clamp(20px,5vw,48px);background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.06)">
+  <a href="/" style="font-size:14px;font-weight:700;letter-spacing:-.01em;color:#1D1D1F;text-decoration:none;white-space:nowrap">Miguel Clavel</a>
+  <span class="shr-hide" aria-hidden="true" style="color:rgba(0,0,0,.2)">/</span>
+  <span class="shr-hide" style="font-size:13px;color:#6E6E73;white-space:nowrap">Senior Product Designer</span>
+  <span id="shr-status" aria-live="polite" class="shr-hide" style="font-size:13px;color:#6E6E73"></span>
+  <nav aria-label="Portfolio" style="margin-left:auto;display:flex;align-items:center;gap:2px">
+    <a href="/" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">&#8592; Back to work</a>
+    <a href="mailto:2miguelclavel@gmail.com?subject=Arena%20rebrand%20and%20CMS" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:9999px;font-size:13px;font-weight:600;color:#494949;text-decoration:none;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Email</a>
+    <button type="button" onClick="{{ share }}" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:0;background:none;border-radius:9999px;font:inherit;font-size:13px;font-weight:600;color:#494949;cursor:pointer;white-space:nowrap" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">Share</button>
+  </nav>
+</div>
+            <div style="max-height:520px;overflow:hidden">
+              <img src="/assets/arena/arena-homepage-long.png" width="458" height="2048" alt="Full length capture of the arena homepage showing the featured concert, event cards with dates and ticket actions, the Upcoming Events list, visit shortcuts, news, and a mini calendar." style="display:block;width:100%;height:auto">
+            </div>
+            <div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:170px;background:linear-gradient(to bottom,rgba(255,255,255,0),#FFFFFF 76%)"></div>
+            <div style="position:absolute;left:0;right:0;bottom:0;padding:20px;display:flex;justify-content:center">
+              <button type="button" sc-camel-on-click="{{ openLightbox }}" style="background:#0071E3;color:#FFFFFF;border:none;border-radius:9999px;padding:13px 28px;min-height:44px;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;transition:background 160ms ease-out,transform 120ms ease-out" style-hover="background:#0077ED" style-active="transform:scale(.97)">View the full page at native size</button>
+            </div>
+          </div>
+        </div>
+        <figcaption style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#6E6E73">The homepage capture is shown at its native width of 458 pixels. Open it to read the full length without enlarging the file.</figcaption>
+      </figure>
+      <div style="display:grid;gap:20px">
+        <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+          <h3 style="margin:0 0 10px;font-size:23px;font-weight:600;line-height:1.2;letter-spacing:-.01em">Consistent event cards</h3>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#494949;text-wrap:pretty">Dates, titles, artwork, and actions follow the same order so people can compare events quickly.</p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+          <h3 style="margin:0 0 10px;font-size:23px;font-weight:600;line-height:1.2;letter-spacing:-.01em">One clear ticket label</h3>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#494949;text-wrap:pretty">Buy Tickets stays consistent across the experience, reducing hesitation at the most important action.</p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+          <h3 style="margin:0 0 10px;font-size:23px;font-weight:600;line-height:1.2;letter-spacing:-.01em">Useful paths beyond tickets</h3>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#494949;text-wrap:pretty">More Info supports visitors who need event details before they are ready to purchase.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#FFFFFF;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">07 · Wayfinding</p>
+    <h2 style="margin:0 0 clamp(26px,3vw,40px);max-width:22ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">Put common visit questions close to the event journey</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;align-items:stretch">
+      <article style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:23px;font-weight:600;line-height:1.2;letter-spacing:-.01em">All Events</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">A complete view for people who want to browse beyond the featured list.</p>
+      </article>
+      <article style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:23px;font-weight:600;line-height:1.2;letter-spacing:-.01em">Food and Beverage</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">A direct path for visitors planning what to eat and where to meet.</p>
+      </article>
+      <article style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <h3 style="margin:0;font-size:23px;font-weight:600;line-height:1.2;letter-spacing:-.01em">Directions and Parking</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">Practical arrival information that reduces uncertainty before the event.</p>
+      </article>
+      <aside style="background:#14161D;color:#F5F5F7;border-radius:18px;padding:24px">
+        <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0A84FF">Mini calendar</p>
+        <div aria-hidden="true" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-size:11px;text-align:center;color:rgba(245,245,247,.6);margin:0 0 8px">
+          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+        </div>
+        <div aria-hidden="true" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;font-size:12px;text-align:center;color:rgba(245,245,247,.6)">
+          <span style="padding:5px 0">1</span><span style="padding:5px 0">2</span><span style="padding:5px 0">3</span><span style="padding:5px 0;background:#0A84FF;color:#FFFFFF;border-radius:9999px;font-weight:600">4</span><span style="padding:5px 0">5</span><span style="padding:5px 0">6</span><span style="padding:5px 0">7</span>
+          <span style="padding:5px 0">8</span><span style="padding:5px 0">9</span><span style="padding:5px 0">10</span><span style="padding:5px 0">11</span><span style="padding:5px 0;background:#0A84FF;color:#FFFFFF;border-radius:9999px;font-weight:600">12</span><span style="padding:5px 0">13</span><span style="padding:5px 0">14</span>
+          <span style="padding:5px 0">15</span><span style="padding:5px 0">16</span><span style="padding:5px 0;background:#0A84FF;color:#FFFFFF;border-radius:9999px;font-weight:600">17</span><span style="padding:5px 0">18</span><span style="padding:5px 0">19</span><span style="padding:5px 0">20</span><span style="padding:5px 0">21</span>
+        </div>
+        <p style="margin:18px 0 0;font-size:13px;line-height:1.45;color:rgba(245,245,247,.6);text-wrap:pretty">A second scan pattern for people who think in dates rather than event names. The highlighted days show the pattern only.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="system" style="background:#F5F5F7;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">08 · Reusable CMS components</p>
+    <h2 style="margin:0 0 20px;max-width:20ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">Build once, then let the content change safely</h2>
+    <p style="margin:0 0 clamp(32px,4vw,52px);max-width:720px;font-size:19px;line-height:1.55;color:#494949;text-wrap:pretty">Bacardi Ocho Lounge and Loge Suites needed polished presentation, but they also needed to stay easy to maintain. Reusable components created a dependable structure while leaving room for new copy, pricing, and imagery.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;align-items:start">
+      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Premium page component</p>
+        <div style="display:grid;gap:14px">
+          <div style="border:1px dashed rgba(0,0,0,.14);border-radius:12px;padding:18px">
+            <p style="margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Field 01 · Headline and description</p>
+            <p style="margin:0 0 6px;font-size:19px;font-weight:600;line-height:1.25">Bacardi Ocho Lounge</p>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#494949">One short paragraph of editable positioning copy.</p>
+          </div>
+          <div style="border:1px dashed rgba(0,0,0,.14);border-radius:12px;padding:18px">
+            <p style="margin:0 0 12px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Field 02 · Photography</p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+              <div style="aspect-ratio:4/3;border-radius:12px;background:#F5F5F7;border:1px solid rgba(0,0,0,.06)"></div>
+              <div style="aspect-ratio:4/3;border-radius:12px;background:#F5F5F7;border:1px solid rgba(0,0,0,.06)"></div>
+              <div style="aspect-ratio:4/3;border-radius:12px;background:#F5F5F7;border:1px solid rgba(0,0,0,.06)"></div>
+            </div>
+            <p style="margin:10px 0 0;font-size:13px;line-height:1.45;color:#6E6E73">Gallery slot filled by the editor.</p>
+          </div>
+          <div style="border:1px dashed rgba(0,0,0,.14);border-radius:12px;padding:18px">
+            <p style="margin:0 0 10px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Field 03 · Pricing or package details</p>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:#494949">Editable rows for inclusions, capacity, and price or inquiry details.</p>
+          </div>
+          <div style="border:1px dashed rgba(0,0,0,.14);border-radius:12px;padding:18px">
+            <p style="margin:0 0 14px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Field 04 · Primary call to action</p>
+            <span style="display:inline-flex;align-items:center;min-height:44px;padding:13px 28px;background:#0071E3;color:#FFFFFF;border-radius:9999px;font-size:16px;font-weight:600">Request information</span>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;gap:20px">
+        <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+          <h3 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.25">Bacardi Ocho Lounge</h3>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#494949;text-wrap:pretty">Same component, lounge content. Copy, gallery, and price details change without touching the layout.</p>
+        </div>
+        <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+          <h3 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.25">Loge Suites</h3>
+          <p style="margin:0;font-size:17px;line-height:1.6;color:#494949;text-wrap:pretty">Same component, suite content. Availability and package details stay current because they live in fields, not in a one off page build.</p>
+        </div>
+        <div style="background:#14161D;color:#F5F5F7;border-radius:18px;padding:24px">
+          <p style="margin:0;font-size:17px;line-height:1.6;color:rgba(245,245,247,.6);text-wrap:pretty">The point of the structure was practical. When a premium package changed, the team edited fields instead of asking for a new page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#FFFFFF;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">09 · Campaign support</p>
+    <h2 style="margin:0 0 20px;max-width:22ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">Give announcements a clear place without taking over the experience</h2>
+    <p style="margin:0 0 clamp(28px,3vw,44px);max-width:720px;font-size:19px;line-height:1.55;color:#494949;text-wrap:pretty">Promotional components gave the team a faster way to support season tickets and special announcements. The pattern kept the message focused, the action clear, and the rest of the page available when the visitor was not interested.</p>
+    <sc-if value="{{ showAnnouncementBanner }}" hint-placeholder-val="{{ true }}">
+      <div role="status" style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;background:#F5F5F7;border:1px solid rgba(0,0,0,.06);border-radius:18px;padding:18px 24px;margin:0 0 28px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Announcement</span>
+        <span style="font-size:17px;line-height:1.6;color:#1D1D1F">A short banner carries timely venue news without interrupting the page.</span>
+        <a href="#system" style="margin-left:auto;font-size:15px;font-weight:600">Learn more</a>
+      </div>
+    </sc-if>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px">
+      <button type="button" sc-camel-on-click="{{ openPopup }}" style="background:#0071E3;color:#FFFFFF;border:none;border-radius:9999px;padding:13px 28px;min-height:44px;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;transition:background 160ms ease-out,transform 120ms ease-out" style-hover="background:#0077ED" style-active="transform:scale(.97)">Open the season ticket popup</button>
+      <span style="font-size:13px;line-height:1.45;color:#6E6E73">Closes with Escape, the backdrop, or the close control.</span>
+    </div>
+  </div>
+</section>
+
+<section style="background:#F5F5F7;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">10 · Process</p>
+    <h2 style="margin:0 0 clamp(26px,3vw,40px);max-width:20ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">A careful loop for high change content</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,4vw,56px);align-items:start">
+      <ol style="margin:0;padding:0;list-style:none;display:grid;gap:12px">
+        <li style="display:flex;gap:18px;align-items:baseline;background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:20px 24px"><span style="font-size:13px;font-weight:600;color:#0071E3;min-width:26px">01</span><span style="font-size:17px;line-height:1.5;font-weight:600">Inventory existing content</span></li>
+        <li style="display:flex;gap:18px;align-items:baseline;background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:20px 24px"><span style="font-size:13px;font-weight:600;color:#0071E3;min-width:26px">02</span><span style="font-size:17px;line-height:1.5;font-weight:600">Map content to the new CMS</span></li>
+        <li style="display:flex;gap:18px;align-items:baseline;background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:20px 24px"><span style="font-size:13px;font-weight:600;color:#0071E3;min-width:26px">03</span><span style="font-size:17px;line-height:1.5;font-weight:600">Migrate copy and media</span></li>
+        <li style="display:flex;gap:18px;align-items:baseline;background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:20px 24px"><span style="font-size:13px;font-weight:600;color:#0071E3;min-width:26px">04</span><span style="font-size:17px;line-height:1.5;font-weight:600">Connect and verify ticket links</span></li>
+        <li style="display:flex;gap:18px;align-items:baseline;background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;padding:20px 24px"><span style="font-size:13px;font-weight:600;color:#0071E3;min-width:26px">05</span><span style="font-size:17px;line-height:1.5;font-weight:600">Review desktop and mobile</span></li>
+        <li style="display:flex;gap:18px;align-items:baseline;background:#14161D;color:#F5F5F7;border-radius:18px;padding:20px 24px"><span style="font-size:13px;font-weight:600;color:#0A84FF;min-width:26px">06</span><span style="font-size:17px;line-height:1.5;font-weight:600">Publish, monitor, and correct</span></li>
+      </ol>
+      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <h3 style="margin:0 0 6px;font-size:21px;font-weight:600;line-height:1.25">Quality assurance checklist</h3>
+        <p style="margin:0 0 20px;font-size:13px;line-height:1.45;color:#6E6E73">Every item was reviewed in context, not in isolation.</p>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid rgba(0,0,0,.08)">
+          <li style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:17px"><span aria-hidden="true" style="width:8px;height:8px;border-radius:9999px;background:#30D158;flex:none"></span>Event name and date</li>
+          <li style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:17px"><span aria-hidden="true" style="width:8px;height:8px;border-radius:9999px;background:#30D158;flex:none"></span>Venue details</li>
+          <li style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:17px"><span aria-hidden="true" style="width:8px;height:8px;border-radius:9999px;background:#30D158;flex:none"></span>Ticketmaster destination</li>
+          <li style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:17px"><span aria-hidden="true" style="width:8px;height:8px;border-radius:9999px;background:#30D158;flex:none"></span>Image crop and sharpness</li>
+          <li style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:17px"><span aria-hidden="true" style="width:8px;height:8px;border-radius:9999px;background:#30D158;flex:none"></span>Call to action label</li>
+          <li style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:17px"><span aria-hidden="true" style="width:8px;height:8px;border-radius:9999px;background:#30D158;flex:none"></span>Mobile layout</li>
+          <li style="display:flex;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:17px"><span aria-hidden="true" style="width:8px;height:8px;border-radius:9999px;background:#30D158;flex:none"></span>Navigation and internal links</li>
+          <li style="display:flex;gap:14px;align-items:center;padding:14px 0;font-size:17px"><span aria-hidden="true" style="width:8px;height:8px;border-radius:9999px;background:#30D158;flex:none"></span>Expired promotion removal</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#FFFFFF;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">11 · Mobile behavior</p>
+    <h2 style="margin:0 0 clamp(26px,3vw,40px);max-width:20ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">Keep dense event content readable on a smaller screen</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,48px);align-items:center">
+      <figure style="margin:0;justify-self:center;width:100%;max-width:520px">
+        <img src="/assets/arena/arena-mobile-gallery.webp" width="1200" height="1800" alt="The arena website photo galleries page on a phone, showing a grid of event photos with dates, titles, and View Gallery links." style="display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.18),0 0 0 1px rgba(0,0,0,.06)">
+        <figcaption style="margin:16px 0 0;font-size:13px;line-height:1.45;color:#6E6E73">The supplied capture shows the broader mobile visual system rather than a specific moment in the migration.</figcaption>
+      </figure>
+      <div>
+        <p style="margin:0 0 28px;max-width:720px;font-size:19px;line-height:1.55;color:#494949;text-wrap:pretty">On mobile, the priority is clarity. Event artwork, dates, titles, and actions need enough space to remain readable without turning the page into a wall of small cards.</p>
+        <ul style="margin:0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid rgba(0,0,0,.08)">
+          <li style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:21px;font-weight:600;line-height:1.3">Preserve readable type and tap targets.</li>
+          <li style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:21px;font-weight:600;line-height:1.3">Stack information in decision order.</li>
+          <li style="padding:20px 0;border-bottom:1px solid rgba(0,0,0,.08);font-size:21px;font-weight:600;line-height:1.3">Keep images sharp and purposeful.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="impact" style="background:#F5F5F7;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">12 · Outcome</p>
+    <h2 style="margin:0 0 clamp(26px,3vw,40px);max-width:22ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">A clearer public experience and a more manageable content system</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px">
+      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <h3 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.25">The transition stayed active</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">The team could make rapid content changes during the rebrand with minimal downtime.</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <h3 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.25">Fan paths became easier to read</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">Events, tickets, planning information, and premium offerings gained a clearer information scent.</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <h3 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.25">Updates became more repeatable</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">Reusable CMS components reduced one off page work and gave teams a dependable structure for future changes.</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:18px;box-shadow:0 1px 3px rgba(0,0,0,.04);padding:24px">
+        <h3 style="margin:0 0 10px;font-size:21px;font-weight:600;line-height:1.25">Quality checks became part of publishing</h3>
+        <p style="margin:0;font-size:16px;line-height:1.6;color:#494949;text-wrap:pretty">Link, content, image, and responsive reviews helped reduce the risk of stale or mismatched information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#FFFFFF;padding:clamp(44px,5vw,76px) 0">
+  <div data-reveal="" style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(24px,3vw,48px);align-items:start">
+    <div>
+      <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">13 · What I learned</p>
+      <h2 style="margin:0;max-width:18ch;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">For a live venue, content operations are part of the user experience</h2>
+    </div>
+    <div style="max-width:720px">
+      <p style="margin:0 0 20px;font-size:19px;line-height:1.55;color:#494949;text-wrap:pretty">This project reinforced that a redesign is not finished when the interface looks right. For a venue, the experience depends on what happens after launch: how quickly an event can be updated, how confidently a link can be verified, and how easily a visitor can find the next useful step.</p>
+      <p style="margin:0;font-size:17px;line-height:1.6;color:#494949;text-wrap:pretty">The strongest design decision was creating structure for change. Clear event patterns, reusable premium modules, and a practical review process helped the website stay useful while the organization moved through a major transition.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background:#F5F5F7;padding:clamp(44px,5vw,76px) 0;text-align:center">
+  <div data-reveal="" style="max-width:760px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">14 · Closing</p>
+    <h2 style="margin:0 0 24px;font-size:clamp(28px,3.4vw,44px);font-weight:700;line-height:1.1;letter-spacing:-.02em;text-wrap:pretty">Designing for the show and the work behind it</h2>
+    <p style="margin:0 auto 36px;max-width:640px;font-size:19px;line-height:1.55;color:#494949;text-wrap:pretty">The final experience supports two groups at once: fans who need clear answers and internal teams who need to publish accurate information quickly.</p>
+    <a href="#overview" style="display:inline-flex;align-items:center;min-height:44px;padding:13px 28px;background:#0071E3;color:#FFFFFF;border-radius:9999px;font-size:16px;font-weight:600;text-decoration:none;transition:background 160ms ease-out,transform 120ms ease-out" style-hover="background:#0077ED;color:#FFFFFF" style-active="transform:scale(.97)">Back to work</a>
+  </div>
+</section>
+
+</main>
+
+<sc-if value="{{ lightboxOpen }}" hint-placeholder-val="{{ false }}">
+  <div sc-camel-on-click="{{ backdropCloseLightbox }}" sc-camel-on-key-down="{{ onKey }}" style="position:fixed;inset:0;z-index:200;background:rgba(20,22,29,.86);display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:24px 16px">
+    <div ref="{{ lightboxRef }}" role="dialog" aria-modal="true" aria-label="Arena homepage capture at native resolution" tabindex="-1" sc-camel-on-click="{{ stop }}" style="position:relative;width:458px;max-width:100%;background:#FFFFFF;border-radius:16px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.15)">
+      <img src="/assets/arena/arena-homepage-long.png" width="458" height="2048" alt="Full length capture of the arena homepage at native resolution, showing the featured concert, event cards with dates and ticket actions, the Upcoming Events list, visit shortcuts, news, and a mini calendar." style="display:block;width:100%;height:auto">
+    </div>
+    <button type="button" sc-camel-on-click="{{ closeLightbox }}" style="position:fixed;top:16px;right:16px;z-index:210;min-height:44px;padding:12px 22px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);color:#0071E3;border:1px solid rgba(0,0,0,.08);border-radius:9999px;font-family:inherit;font-size:15px;font-weight:600;cursor:pointer;transition:background 160ms ease-out" style-hover="background:#FFFFFF">Close</button>
+  </div>
+</sc-if>
+
+<sc-if value="{{ popupOpen }}" hint-placeholder-val="{{ false }}">
+  <div sc-camel-on-click="{{ backdropClosePopup }}" sc-camel-on-key-down="{{ onKey }}" style="position:fixed;inset:0;z-index:200;background:rgba(20,22,29,.6);display:flex;align-items:center;justify-content:center;padding:20px">
+    <div ref="{{ popupRef }}" role="dialog" aria-modal="true" aria-labelledby="popup-title" tabindex="-1" sc-camel-on-click="{{ stop }}" style="position:relative;width:100%;max-width:460px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.15);padding:clamp(26px,4vw,34px)">
+      <p style="margin:0 0 14px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">Season tickets</p>
+      <h2 id="popup-title" style="margin:0 0 12px;font-size:28px;font-weight:700;line-height:1.1;letter-spacing:-.02em">Season ticket information is open</h2>
+      <p style="margin:0 0 26px;font-size:17px;line-height:1.6;color:#494949;text-wrap:pretty">One message, one action, and an easy way back to whatever you came here to do.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px">
+        <button type="button" sc-camel-on-click="{{ closePopup }}" style="background:#0071E3;color:#FFFFFF;border:none;border-radius:9999px;padding:13px 28px;min-height:44px;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;transition:background 160ms ease-out,transform 120ms ease-out" style-hover="background:#0077ED" style-active="transform:scale(.97)">Request details</button>
+        <button type="button" sc-camel-on-click="{{ closePopup }}" style="background:rgba(255,255,255,.7);color:#0071E3;border:1px solid rgba(0,0,0,.08);border-radius:9999px;padding:13px 24px;min-height:44px;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;transition:background 160ms ease-out,transform 120ms ease-out" style-hover="background:#FFFFFF" style-active="transform:scale(.97)">Not now</button>
+      </div>
+      <button type="button" aria-label="Close the season ticket message" sc-camel-on-click="{{ closePopup }}" style="position:absolute;top:10px;right:10px;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:transparent;border:none;color:#6E6E73;font-family:inherit;font-size:20px;font-weight:600;cursor:pointer;border-radius:9999px;transition:background 160ms ease-out" style-hover="background:rgba(0,0,0,.04);color:#1D1D1F">×</button>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+
+
+<nav aria-label="Continue exploring" style="border-top:1px solid rgba(0,0,0,.08);padding:36px 0">
+  <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
+    <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Continue exploring</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+      <a href="/work/comparison-system" style="text-decoration:none;background:#F5F5F7;border-radius:18px;padding:22px 24px;display:block" style-hover="background:#EEF2F7">
+        <span style="display:block;font-size:13px;color:#6E6E73">Previous</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Comparison System</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#494949">Responsive comparison tables and accessible semantics</span>
+      </a>
+      <a href="/work/mindset-landing-page-strategy" style="text-decoration:none;background:#F5F5F7;border-radius:18px;padding:22px 24px;display:block" style-hover="background:#EEF2F7">
+        <span style="display:block;font-size:13px;color:#6E6E73">Next</span>
+        <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">Mindset-Based Landing Page Strategy</span>
+        <span style="display:block;margin-top:6px;font-size:15px;color:#494949">Audience mindsets, testable directions, and experimentation</span>
+      </a>
+    </div>
+  </div>
+</nav>
+<footer style="background:#F5F5F7;border-top:1px solid rgba(0,0,0,.08);padding:28px 0 40px">
+  <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px);display:flex;flex-wrap:wrap;gap:16px 32px;align-items:baseline;justify-content:space-between">
+    <div>
+      <p style="margin:0;font-size:15px;font-weight:700;color:#1D1D1F">Miguel Clavel</p>
+      <p style="margin:4px 0 0;font-size:13px;color:#6E6E73">Senior Product Designer &#183; UX strategy, design systems &amp; AI-enabled workflows</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 20px;font-size:15px;font-weight:600">
+      <a href="mailto:2miguelclavel@gmail.com?subject=Portfolio%20conversation">2miguelclavel@gmail.com</a>
+      <a href="/assets/Miguel-Clavel-Senior-Product-Designer-Resume-2026.pdf" download="Miguel-Clavel-Senior-Product-Designer-Resume.pdf">Résumé</a>
+      <a href="https://www.linkedin.com/in/miguelclavel/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.behance.net/miguelclavel" target="_blank" rel="noopener noreferrer">Behance</a>
+      <a href="/" style="color:#494949">&#8592; Back to work</a>
+    </div>
+  </div>
+</footer>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CreativeWork","name":"Keeping a live arena website accurate through a full rebrand","description":"A brand transition and CMS programme for a live arena website: content architecture, a responsive event experience, publishing workflows, and cross-functional delivery.","genre":"Case study","inLanguage":"en","creator":{"@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","url":"https://www.linkedin.com/in/miguelclavel/"},"author":{"@type":"Person","name":"Miguel Clavel"},"keywords":"brand transition, content architecture, responsive experience, CMS scalability, cross-functional delivery"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Miguel Clavel","jobTitle":"Senior Product Designer","email":"2miguelclavel@gmail.com","sameAs":["https://www.linkedin.com/in/miguelclavel/","https://www.behance.net/miguelclavel"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Résumé","item":"https://miguelclavel-portfolio-v2.netlify.app/resume"},{"@type":"ListItem","position":2,"name":"Work","item":"https://miguelclavel-portfolio-v2.netlify.app/work"},{"@type":"ListItem","position":3,"name":"Arena Rebrand and CMS","item":"https://miguelclavel-portfolio-v2.netlify.app/work/arena-rebrand-cms"}]}
+</script>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{&quot;revealAnimations&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;showAnnouncementBanner&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+class Component extends DCLogic {
+  state = { popupOpen: false, lightboxOpen: false };
+
+  progressRef = React.createRef();
+  navRef = React.createRef();
+  wordmarkRef = React.createRef();
+  popupRef = React.createRef();
+  lightboxRef = React.createRef();
+
+  componentDidMount() {
+    this.reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    this.onScroll = () => {
+      const doc = document.documentElement;
+      const max = doc.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0;
+      if (this.progressRef.current) this.progressRef.current.style.width = pct + "%";
+
+      const hero = document.getElementById("overview");
+      const overHero = hero ? hero.getBoundingClientRect().bottom > 56 : true;
+      const nav = this.navRef.current;
+      if (nav) {
+        nav.style.background = overHero ? "transparent" : "rgba(255,255,255,.72)";
+        nav.style.backdropFilter = overHero ? "none" : "saturate(180%) blur(20px)";
+        nav.style.webkitBackdropFilter = overHero ? "none" : "saturate(180%) blur(20px)";
+        nav.style.borderBottom = overHero ? "1px solid transparent" : "1px solid rgba(0,0,0,.08)";
+      }
+      if (this.wordmarkRef.current) this.wordmarkRef.current.style.color = "#1D1D1F";
+
+      const ids = ["overview", "challenge", "work", "system", "impact"];
+      let active = ids[0];
+      ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= 140) active = id;
+      });
+      document.querySelectorAll("[data-nav]").forEach(a => {
+        const on = a.getAttribute("data-nav") === active;
+        a.style.color = on ? "#1D1D1F" : "#6E6E73";
+        a.style.background = on ? "rgba(0,0,0,.05)" : "transparent";
+      });
+    };
+    this.sweepReveal = () => {
+      document.querySelectorAll("[data-reveal]").forEach(el => {
+        if (getComputedStyle(el).opacity === "0") {
+          const r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight * 0.95 && r.bottom > 0) {
+            el.style.opacity = "1";
+            el.style.transform = "none";
+          }
+        }
+      });
+    };
+    const baseScroll = this.onScroll;
+    this.onScroll = () => { baseScroll(); this.sweepReveal(); };
+    window.addEventListener("scroll", this.onScroll, { passive: true });
+    window.addEventListener("resize", this.onScroll);
+    this.onScroll();
+    document.addEventListener("keydown", this.onKey, true);
+
+    if (this.props.revealAnimations !== false && !this.reduced && "IntersectionObserver" in window) {
+      const nodes = Array.from(document.querySelectorAll("[data-reveal]"));
+      nodes.forEach(n => {
+        n.style.opacity = "0";
+        n.style.transform = "translateY(16px)";
+        n.style.transition = "opacity 200ms ease-out, transform 200ms ease-out";
+      });
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            en.target.style.opacity = "1";
+            en.target.style.transform = "none";
+            io.unobserve(en.target);
+          }
+        });
+      }, { rootMargin: "0px 0px -10% 0px" });
+      nodes.forEach(n => io.observe(n));
+      this.io = io;
+      this.sweepTimer = setInterval(this.sweepReveal, 400);
+      requestAnimationFrame(this.sweepReveal);
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.onScroll);
+    window.removeEventListener("resize", this.onScroll);
+    document.removeEventListener("keydown", this.onKey, true);
+    document.body.style.overflow = "";
+    if (this.io) this.io.disconnect();
+    if (this.sweepTimer) clearInterval(this.sweepTimer);
+  }
+
+  onKey = e => {
+    if (!this.state.popupOpen && !this.state.lightboxOpen) return;
+    if (e.key === "Escape") {
+      e.preventDefault();
+      this.close(this.state.lightboxOpen ? "lightboxOpen" : "popupOpen");
+      return;
+    }
+    if (e.key !== "Tab") return;
+    const host = this.state.lightboxOpen ? this.lightboxRef.current : this.popupRef.current;
+    if (!host) return;
+    const root = host.parentElement || host;
+    const items = Array.from(root.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])'))
+      .filter(el => el === host || el.offsetParent !== null);
+    if (!items.length) return;
+    const first = items[0], last = items[items.length - 1];
+    if (!root.contains(document.activeElement)) { e.preventDefault(); first.focus(); return; }
+    if (e.shiftKey && (document.activeElement === first || document.activeElement === host)) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  };
+
+  focusDialog = () => {
+    [0, 50, 160].forEach(t => setTimeout(() => {
+      const host = this.state.lightboxOpen ? this.lightboxRef.current : (this.state.popupOpen ? this.popupRef.current : null);
+      if (!host || host.contains(document.activeElement)) return;
+      (host.querySelector('button, a[href]') || host).focus();
+    }, t));
+  };
+
+  open(key) {
+    this.lastFocus = document.activeElement;
+    document.body.style.overflow = "hidden";
+    this.setState({ [key]: true }, this.focusDialog);
+    requestAnimationFrame(this.focusDialog);
+  }
+  close(key) {
+    document.body.style.overflow = "";
+    this.setState({ [key]: false }, () => {
+      if (this.lastFocus && this.lastFocus.focus) this.lastFocus.focus();
+    });
+  }
+
+  renderVals() {
+    return {
+      share: async () => {
+        const url = window.location.href;
+        const st = document.getElementById('shr-status');
+        const say = (t) => { if (st) st.textContent = t; };
+        try {
+          if (navigator.share) { await navigator.share({ title: 'Keeping a live arena website accurate through a full rebrand', url: url }); say('Shared.'); return; }
+          await navigator.clipboard.writeText(url);
+          say('Link copied.');
+        } catch (e) { say('Copy the address from your browser bar.'); }
+      },
+      progressRef: this.progressRef,
+      navRef: this.navRef,
+      wordmarkRef: this.wordmarkRef,
+      popupRef: this.popupRef,
+      lightboxRef: this.lightboxRef,
+      popupOpen: this.state.popupOpen,
+      lightboxOpen: this.state.lightboxOpen,
+      onKey: this.onKey,
+      showAnnouncementBanner: this.props.showAnnouncementBanner ?? true,
+      openPopup: () => this.open("popupOpen"),
+      closePopup: () => this.close("popupOpen"),
+      openLightbox: () => this.open("lightboxOpen"),
+      closeLightbox: () => this.close("lightboxOpen"),
+      backdropClosePopup: () => this.close("popupOpen"),
+      backdropCloseLightbox: () => this.close("lightboxOpen"),
+      stop: e => e.stopPropagation()
+    };
+  }
+}
+</script>
+
+
+</body></html>

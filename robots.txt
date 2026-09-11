@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# This is a draft/testing site (Version B). Every page also ships
+# noindex,follow. Flip this once the site is ready to be discoverable.
