@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Miguel Clavel">
+<style>
+.mc-bg{fill:#0B0B0D}
+.mc-fg{fill:#FAFAFA}
+@media (prefers-color-scheme: dark){
+.mc-bg{fill:#FAFAFA}
+.mc-fg{fill:#0B0B0D}
+}
+</style>
+<rect class="mc-bg" x="1" y="1" width="30" height="30" rx="8"/>
+<text class="mc-fg" x="16" y="21.5" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="14.5" letter-spacing="-0.6">MC</text>
+</svg>

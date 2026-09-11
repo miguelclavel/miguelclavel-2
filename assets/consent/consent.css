@@ -1,0 +1,22 @@
+#mc-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:2147483000;max-width:520px;margin:0 auto;padding:18px 20px;border-radius:16px;background:#FCFCFD;color:#33333A;box-shadow:0 22px 60px rgba(0,0,0,.22);border:1px solid rgba(0,0,0,.08);font:14px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif}
+#mc-consent[hidden]{display:none}
+#mc-consent p{margin:0 0 14px}
+#mc-consent .mc-consent-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end}
+#mc-consent button{appearance:none;-webkit-appearance:none;border:1px solid rgba(0,0,0,.16);background:transparent;color:#33333A;font:inherit;font-weight:600;font-size:13.5px;padding:9px 16px;border-radius:9999px;cursor:pointer}
+#mc-consent button:hover{background:rgba(0,0,0,.05)}
+#mc-consent button:focus-visible{outline:2px solid #155EEF;outline-offset:2px}
+#mc-consent [data-consent-accept]{background:#155EEF;border-color:#155EEF;color:#fff}
+#mc-consent [data-consent-accept]:hover{background:#0d4fd1}
+@media (prefers-color-scheme:dark){
+#mc-consent{background:#141416;color:#F5F5F7;border-color:rgba(255,255,255,.14);box-shadow:0 22px 60px rgba(0,0,0,.75)}
+#mc-consent button{border-color:rgba(255,255,255,.24);color:#F5F5F7}
+#mc-consent button:hover{background:rgba(255,255,255,.08)}
+#mc-consent button:focus-visible{outline-color:#9CC3FF}
+#mc-consent [data-consent-accept]{background:#9CC3FF;border-color:#9CC3FF;color:#0B0B0C}
+#mc-consent [data-consent-accept]:hover{background:#7fb2ff}
+}
+@media (max-width:480px){
+#mc-consent{left:12px;right:12px;bottom:12px;padding:16px;max-width:none}
+#mc-consent .mc-consent-actions{justify-content:stretch}
+#mc-consent button{flex:1}
+}
