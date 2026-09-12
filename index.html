@@ -1393,7 +1393,7 @@ class Component extends DCLogic {
     const emps = DATA.map(e => {
       const open = !!this.state.expanded[e.id];
       return {
-        company: e.company, role: e.role, dates: e.dates, label: e.label,
+        id: e.id, company: e.company, role: e.role, dates: e.dates, label: e.label,
         isUsn: e.id === 'usn', isHeat: e.id === 'heat',
         detail: showMetrics ? e.detail : '',
         projects: e.projects.map((p, i) => this.mapProject(e.id, p, i, 'p')),
