@@ -847,7 +847,7 @@ class Component extends DCLogic {
     if (!hash) return;
     const go = () => {
       const el = document.getElementById(hash);
-      if (el) el.scrollIntoView({ block: 'start' });
+      if (el) el.scrollIntoView({ block: 'start', behavior: 'instant' });
     };
     go();
     window.requestAnimationFrame(go);
