@@ -7,6 +7,16 @@
 <meta name="robots" content="noindex,nofollow">
 </head>
 <body>
+<form name="drawing-message" data-netlify="true" netlify-honeypot="confirmEmail" hidden>
+  <input type="hidden" name="form-name" value="drawing-message">
+  <input type="file" name="drawing">
+  <textarea name="note"></textarea>
+  <input type="text" name="name">
+  <input type="email" name="replyEmail">
+  <input type="text" name="pageUrl">
+  <input type="text" name="timestamp">
+  <input type="text" name="confirmEmail">
+</form>
 <x-dc>
 <helmet>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&display=swap" rel="stylesheet"></link>
@@ -410,7 +420,7 @@
   </sc-if>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;deliveryConnected&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Delivery&quot;},&quot;startOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;explodeEnabled&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Exploding input&quot;},&quot;explodeAmount&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2,&quot;min&quot;:1,&quot;max&quot;:6,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exploding input&quot;},&quot;explodeGravity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.55,&quot;min&quot;:0,&quot;max&quot;:1.2,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exploding input&quot;},&quot;explodeDuration&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.6,&quot;min&quot;:0.6,&quot;max&quot;:4,&quot;step&quot;:0.2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exploding input&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;deliveryConnected&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Delivery&quot;},&quot;startOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;},&quot;explodeEnabled&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Exploding input&quot;},&quot;explodeAmount&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:2,&quot;min&quot;:1,&quot;max&quot;:6,&quot;step&quot;:1,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exploding input&quot;},&quot;explodeGravity&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:0.55,&quot;min&quot;:0,&quot;max&quot;:1.2,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exploding input&quot;},&quot;explodeDuration&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.6,&quot;min&quot;:0.6,&quot;max&quot;:4,&quot;step&quot;:0.2,&quot;unit&quot;:&quot;s&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Exploding input&quot;}}">
 const BLUE = 'oklch(0.52 0.19 255)';
 const BLUE_BRIGHT = 'oklch(0.6 0.22 255)';
 const BLUE_STRONG = 'oklch(0.46 0.22 255)';
@@ -1258,6 +1268,7 @@ class Component extends DCLogic {
   async sendDrawingMessage(payload) {
     if (!this.props.deliveryConnected) return { ok: false, code: 'unavailable' };
     const form = new FormData();
+    form.append('form-name', 'drawing-message');
     if (payload.drawing) form.append('drawing', payload.drawing, 'drawing.png');
     form.append('note', payload.note);
     form.append('name', payload.name);
@@ -1265,7 +1276,7 @@ class Component extends DCLogic {
     form.append('pageUrl', payload.pageUrl);
     form.append('timestamp', payload.timestamp);
     form.append('confirmEmail', payload.honeypot);
-    const res = await fetch('/api/drawing-message', { method: 'POST', body: form });
+    const res = await fetch('/', { method: 'POST', body: form });
     if (!res.ok) return { ok: false, code: 'failed' };
     return { ok: true };
   }
