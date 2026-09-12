@@ -851,8 +851,20 @@ class Component extends DCLogic {
     };
     go();
     window.requestAnimationFrame(go);
-    window.setTimeout(go, 120);
-    window.setTimeout(go, 400);
+    const delays = [80, 160, 320, 600, 1000, 1600, 2400];
+    delays.forEach(d => window.setTimeout(go, d));
+    window.addEventListener('load', go, { once: true });
+    const imgs = Array.from(document.images);
+    let pending = imgs.filter(img => !img.complete).length;
+    if (pending > 0) {
+      const onImgDone = () => { pending -= 1; if (pending <= 0) go(); };
+      imgs.forEach(img => {
+        if (!img.complete) {
+          img.addEventListener('load', onImgDone, { once: true });
+          img.addEventListener('error', onImgDone, { once: true });
+        }
+      });
+    }
   }
 
   markVisited(route) {
