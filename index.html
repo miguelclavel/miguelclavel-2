@@ -186,7 +186,7 @@ a:hover{color:var(--ink)}
                     <div style="padding:14px 16px 16px">
                       <p style="margin:0;font-size:15px;font-weight:600;color:var(--ink)">{{ p.title }}</p>
                       <p style="margin:4px 0 0;font-size:14px;line-height:1.45;color:var(--ink-2)">{{ p.descriptor }}</p>
-                      <a href="{{ p.route }}" style="display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-size:15px;font-weight:600;color:var(--focus)">Open case study →</a>
+                      <a href="{{ p.route }}" onClick="{{ p.onClick }}" style="display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-size:15px;font-weight:600;color:var(--focus)">Open case study →</a>
                     </div>
                   </div>
                 </li>
@@ -212,7 +212,7 @@ a:hover{color:var(--ink)}
                         <div style="padding:14px 16px 16px">
                           <p style="margin:0;font-size:15px;font-weight:600;color:var(--ink)">{{ p.title }}</p>
                           <p style="margin:4px 0 0;font-size:14px;line-height:1.45;color:var(--ink-2)">{{ p.descriptor }}</p>
-                          <a href="{{ p.route }}" style="display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-size:15px;font-weight:600;color:var(--focus)">Open case study →</a>
+                          <a href="{{ p.route }}" onClick="{{ p.onClick }}" style="display:inline-flex;align-items:center;min-height:44px;margin-top:6px;font-size:15px;font-weight:600;color:var(--focus)">Open case study →</a>
                         </div>
                       </div>
                     </li>
