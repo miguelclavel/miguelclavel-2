@@ -85,6 +85,7 @@ a:hover{color:var(--ink)}
 [data-util]{transition:background-color var(--dur) var(--ease),transform var(--dur-fast) var(--ease)}
 [data-util]:active{transform:scale(var(--press-scale))}
 [data-plink]:active{opacity:.72}
+[data-mobile-only]{display:none}
 @media (hover:hover){[data-util]:hover{background:var(--row-hover)}}
 @media (hover:none){[data-row]:hover{background:transparent}}
 @media (max-width:1023px){[data-row]{grid-template-columns:180px minmax(0,1fr) 110px 28px!important}}
@@ -94,6 +95,9 @@ a:hover{color:var(--ink)}
 [data-arrow]{display:none!important}
 [data-shell]{padding-left:20px!important;padding-right:20px!important}
 [data-desk-only]{display:none!important}
+[data-mobile-only]{display:inline-flex!important}
+[data-util-bar]{gap:0!important;padding:4px!important}
+[data-util]{min-width:44px!important;padding:0 10px!important}
 [data-subtitle]{white-space:normal!important;font-size:18px!important}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -288,12 +292,21 @@ a:hover{color:var(--ink)}
 <dc-import name="Draw Miguel a Message" delivery-connected="{{ true }}" hint-size="0px,0px"></dc-import>
 
 <div style="position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;flex-direction:column-reverse;padding:0 clamp(20px,4vw,56px) calc(12px + env(safe-area-inset-bottom));pointer-events:none;{{ utilFade }}">
-  <nav aria-label="Contact and utilities" style="width:100%;max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:6px;border-radius:16px;background:var(--bar);backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);border:1px solid var(--rule);pointer-events:auto">
+  <nav data-util-bar aria-label="Contact and utilities" style="width:100%;max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:4px;padding:6px;border-radius:16px;background:var(--bar);backdrop-filter:saturate(160%) blur(18px);-webkit-backdrop-filter:saturate(160%) blur(18px);border:1px solid var(--rule);pointer-events:auto">
     <a data-util data-desk-only href="mailto:2miguelclavel@gmail.com?subject=Portfolio%20conversation" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border-radius:11px;color:var(--ink);font-family:var(--ui);font-size:15px;font-weight:500;letter-spacing:-.003em;white-space:nowrap;transition:background-color var(--dur) var(--ease)">Email</a>
-    <button data-util type="button" onClick="{{ openDraw }}" aria-haspopup="dialog" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border-radius:11px;color:var(--ink);font-family:var(--ui);font-size:15px;font-weight:500;letter-spacing:-.003em;white-space:nowrap;transition:background-color var(--dur) var(--ease);border:0;background:transparent;cursor:pointer">Draw me a note</button>
-    <a data-util href="{{ resumeHref }}" download="Miguel-Clavel-Senior-Product-Designer-Resume.pdf" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border-radius:11px;color:var(--ink);font-family:var(--ui);font-size:15px;font-weight:500;letter-spacing:-.003em;white-space:nowrap;transition:background-color var(--dur) var(--ease)">Résumé PDF</a>
+    <button data-util type="button" onClick="{{ openDraw }}" aria-haspopup="dialog" aria-label="Draw me a note" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border-radius:11px;color:var(--ink);font-family:var(--ui);font-size:15px;font-weight:500;letter-spacing:-.003em;white-space:nowrap;transition:background-color var(--dur) var(--ease);border:0;background:transparent;cursor:pointer">
+      <span data-mobile-only aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"></path></svg></span>
+      <span data-desk-only>Draw me a note</span>
+    </button>
+    <a data-util href="{{ resumeHref }}" download="Miguel-Clavel-Senior-Product-Designer-Resume.pdf" aria-label="Download résumé PDF" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border-radius:11px;color:var(--ink);font-family:var(--ui);font-size:15px;font-weight:500;letter-spacing:-.003em;white-space:nowrap;transition:background-color var(--dur) var(--ease)">
+      <span data-mobile-only aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="M7 10l5 5 5-5"></path><path d="M5 21h14"></path></svg></span>
+      <span data-desk-only>Résumé PDF</span>
+    </a>
     <div style="margin-left:auto;display:flex;align-items:center;gap:4px">
-      <button data-util type="button" onClick="{{ toggleChat }}" aria-expanded="{{ chatExpanded }}" aria-controls="agent-panel" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border-radius:11px;color:var(--ink);font-family:var(--ui);font-size:15px;font-weight:500;letter-spacing:-.003em;white-space:nowrap;transition:background-color var(--dur) var(--ease);border:0;background:transparent;cursor:pointer">Ask the agent</button>
+      <button data-util type="button" onClick="{{ toggleChat }}" aria-expanded="{{ chatExpanded }}" aria-controls="agent-panel" aria-label="Ask the agent" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 14px;border-radius:11px;color:var(--ink);font-family:var(--ui);font-size:15px;font-weight:500;letter-spacing:-.003em;white-space:nowrap;transition:background-color var(--dur) var(--ease);border:0;background:transparent;cursor:pointer">
+        <span data-mobile-only aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span>
+        <span data-desk-only>Ask the agent</span>
+      </button>
       <button data-util type="button" onClick="{{ toggleTheme }}" aria-label="{{ themeAria }}" aria-pressed="{{ themePressed }}" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;padding:0 8px;border-radius:11px;transition:background-color var(--dur) var(--ease);border:0;background:transparent;cursor:pointer">
         <span style="position:relative;display:block;width:56px;height:32px;border-radius:9999px;background:var(--row-hover);border:1px solid var(--rule);transition:background-color 200ms ease-out">
           <span style="position:absolute;top:2px;left:{{ knobX }};display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:9999px;background:var(--panel);box-shadow:0 2px 6px rgba(0,0,0,.22);transition:left 260ms cubic-bezier(.32,.72,0,1)">
