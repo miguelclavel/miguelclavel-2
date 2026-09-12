@@ -285,7 +285,7 @@ a:hover{color:#0071E3;text-decoration:underline}
       <div role="group" aria-label="Monthly Testing Review pages" tabindex="0" ref="{{galleryRef}}" sc-camel-on-key-down="{{onGalleryKey}}" sc-camel-on-scroll="{{onGalleryScroll}}" sc-camel-on-pointer-down="{{onDragStart}}" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 4px 16px;scrollbar-width:thin;cursor:grab">
         <sc-for list="{{gallery}}" as="g" hint-placeholder-count="6">
           <figure style="flex:0 0 auto;margin:0;width:{{g.w}};max-width:min(88%,calc(100vw - 56px));scroll-snap-align:center">
-            <img src="{{g.src}}" alt="{{g.alt}}" sc-camel-on-error="{{onImgError}}" draggable="false" style="display:block;width:100%;height:auto;border-radius:10px;background:#fff;box-shadow:0 18px 52px rgba(0,0,0,0.10)">
+            <img data-src="{{g.src}}" alt="{{g.alt}}" sc-camel-on-error="{{onImgError}}" draggable="false" style="display:block;width:100%;height:auto;border-radius:10px;background:#fff;box-shadow:0 18px 52px rgba(0,0,0,0.10)">
             <figcaption style="font-size:13px;line-height:1.5;color:#6E6E73;margin-top:14px">{{g.caption}}</figcaption>
           </figure>
         </sc-for>
@@ -529,7 +529,24 @@ const GALLERY = [
 class Component extends DCLogic {
   state = {scrolled:false, progress:0, activeStep:0, filter:null, gi:0, live:'', narrow:false};
 
+  // the browser's preload scanner fetches whatever sits in src in the raw markup, so a
+  // template hole there is requested literally and 404s before the runtime can fill it.
+  // The path rides in data-src and only becomes src once it is a real URL.
+  promoteImages = () => {
+    const imgs = document.querySelectorAll('img[data-src]');
+    for (let i = 0; i < imgs.length; i++) {
+      const img = imgs[i];
+      const src = img.getAttribute('data-src');
+      if (src && src.indexOf('{{') === -1 && img.getAttribute('src') !== src) img.setAttribute('src', src);
+    }
+  };
+
+  componentDidUpdate() {
+    this.promoteImages();
+  }
+
   componentDidMount() {
+    this.promoteImages();
     this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     this.onScroll = () => {
       const d = document.documentElement;

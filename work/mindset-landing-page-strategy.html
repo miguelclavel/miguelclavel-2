@@ -615,9 +615,15 @@ class Component extends DCLogic {
     if (this.navObs) this.navObs.disconnect();
   }
 
-  componentDidUpdate(_p, prev) {
-    if (this.state.lb && !prev.lb && this.lbClose) this.lbClose.focus();
-    if (!this.state.lb && prev.lb && this.returnFocus) { this.returnFocus.focus(); this.returnFocus = null; }
+  // the runtime calls componentDidUpdate with prevProps only, so a second prevState
+  // argument is always undefined. Reading prev.lb off it threw on every update, which
+  // meant the lightbox never moved focus to its close button or handed focus back on
+  // exit. Track the previous value here instead.
+  componentDidUpdate() {
+    const prevLb = this._prevLb;
+    this._prevLb = this.state.lb;
+    if (this.state.lb && !prevLb && this.lbClose) this.lbClose.focus();
+    if (!this.state.lb && prevLb && this.returnFocus) { this.returnFocus.focus(); this.returnFocus = null; }
   }
 
   open(key, ev) {
