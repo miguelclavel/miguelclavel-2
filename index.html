@@ -183,6 +183,7 @@ a:hover{color:var(--ink)}
                 <li>
                   <a data-plink href="{{ p.route }}" onMouseEnter="{{ p.onEnter }}" onMouseLeave="{{ p.onLeave }}" onFocus="{{ p.onEnter }}" onBlur="{{ p.onLeave }}" onClick="{{ p.onClick }}" style="position:relative;display:inline-block;min-height:26px;margin:0 -10px;padding:2px 10px;border:1px solid {{ p.linkBorder }};border-radius:0;background:{{ p.linkBg }};opacity:{{ p.linkOpacity }};transition:background-color var(--dur) var(--ease),border-color var(--dur) var(--ease),color var(--dur) var(--ease),opacity var(--dur) var(--ease);font-size:clamp(16px,1.3vw,18px);line-height:1.45;letter-spacing:-.008em;font-weight:{{ p.seenWeight }};color:{{ p.color }}">{{ p.title }}<span aria-hidden="true" title="Already opened" style="display:{{ p.seenDisplay }};width:6px;height:6px;margin:0 0 3px 8px;border-radius:9999px;background:var(--focus);box-shadow:0 0 0 3px color-mix(in oklab, var(--focus) 22%, transparent);vertical-align:middle"></span><span aria-hidden="true" style="position:absolute;display:{{ p.handleDisplay }};width:5px;height:5px;background:var(--panel);border:1px solid var(--focus);top:-3px;left:-3px"></span><span aria-hidden="true" style="position:absolute;display:{{ p.handleDisplay }};width:5px;height:5px;background:var(--panel);border:1px solid var(--focus);top:-3px;right:-3px"></span><span aria-hidden="true" style="position:absolute;display:{{ p.handleDisplay }};width:5px;height:5px;background:var(--panel);border:1px solid var(--focus);bottom:-3px;left:-3px"></span><span aria-hidden="true" style="position:absolute;display:{{ p.handleDisplay }};width:5px;height:5px;background:var(--panel);border:1px solid var(--focus);bottom:-3px;right:-3px"></span></a>
                   <span style="font-size:15px;line-height:1.45;color:var(--ink-2)"> — {{ p.descriptor }}</span>
+                  <p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:var(--ink);max-width:68ch;text-wrap:pretty">{{ p.outcome }}</p>
                   <div style="display:{{ p.inlineDisplay }};margin-top:12px;max-width:420px;border:1px solid var(--panel-ring);border-radius:12px;background:var(--panel);overflow:hidden">
                     <sc-if value="{{ p.hasImage }}" hint-placeholder-val="{{ no }}">
                       <img src="{{ p.img }}" alt="{{ p.alt }}" loading="lazy" decoding="async" style="display:block;width:100%;aspect-ratio:16 / 10;object-fit:cover;object-position:50% 20%">
@@ -209,6 +210,7 @@ a:hover{color:var(--ink)}
                     <li>
                       <a data-plink href="{{ p.route }}" onMouseEnter="{{ p.onEnter }}" onMouseLeave="{{ p.onLeave }}" onFocus="{{ p.onEnter }}" onBlur="{{ p.onLeave }}" onClick="{{ p.onClick }}" style="position:relative;display:inline-block;min-height:26px;margin:0 -10px;padding:2px 10px;border:1px solid {{ p.linkBorder }};border-radius:0;background:{{ p.linkBg }};opacity:{{ p.linkOpacity }};transition:background-color var(--dur) var(--ease),border-color var(--dur) var(--ease),color var(--dur) var(--ease),opacity var(--dur) var(--ease);font-size:clamp(16px,1.3vw,18px);line-height:1.45;letter-spacing:-.008em;font-weight:{{ p.seenWeight }};color:{{ p.color }}">{{ p.title }}<span aria-hidden="true" title="Already opened" style="display:{{ p.seenDisplay }};width:6px;height:6px;margin:0 0 3px 8px;border-radius:9999px;background:var(--focus);box-shadow:0 0 0 3px color-mix(in oklab, var(--focus) 22%, transparent);vertical-align:middle"></span><span aria-hidden="true" style="position:absolute;display:{{ p.handleDisplay }};width:5px;height:5px;background:var(--panel);border:1px solid var(--focus);top:-3px;left:-3px"></span><span aria-hidden="true" style="position:absolute;display:{{ p.handleDisplay }};width:5px;height:5px;background:var(--panel);border:1px solid var(--focus);top:-3px;right:-3px"></span><span aria-hidden="true" style="position:absolute;display:{{ p.handleDisplay }};width:5px;height:5px;background:var(--panel);border:1px solid var(--focus);bottom:-3px;left:-3px"></span><span aria-hidden="true" style="position:absolute;display:{{ p.handleDisplay }};width:5px;height:5px;background:var(--panel);border:1px solid var(--focus);bottom:-3px;right:-3px"></span></a>
                       <span style="font-size:15px;line-height:1.45;color:var(--ink-2)"> — {{ p.descriptor }}</span>
+                      <p style="margin:4px 0 0;font-size:15px;line-height:1.5;color:var(--ink);max-width:68ch;text-wrap:pretty">{{ p.outcome }}</p>
                       <div style="display:{{ p.inlineDisplay }};margin-top:12px;max-width:420px;border:1px solid var(--panel-ring);border-radius:12px;background:var(--panel);overflow:hidden">
                         <sc-if value="{{ p.hasImage }}" hint-placeholder-val="{{ no }}">
                           <img src="{{ p.img }}" alt="{{ p.alt }}" loading="lazy" decoding="async" style="display:block;width:100%;aspect-ratio:16 / 10;object-fit:cover">
@@ -378,24 +380,24 @@ const DATA = [
     logo: '/assets/logos/us-news.svg',
     detail: 'Product work across insurance and reviews serving 40M+ annual users; AI-assisted research and prototyping cut synthesis time by 40%.',
     projects: [
-      { title: 'Conversational Insurance Flow', descriptor: 'Product UX · Conversation design', route: '/work/auto-insurance-conversational-flow', file: 'Conversational Insurance Flow.dc.html', img: '/assets/previews/01-auto-insurance-conversational-flow.jpg', alt: 'Vehicle step of the conversational auto-insurance quote flow.' },
-      { title: '360 Homepage Redesign', descriptor: 'Product strategy · Research', route: '/work/360-homepage-redesign', file: '360 Homepage Redesign.dc.html', img: '/assets/previews/02-360-homepage-redesign.webp', alt: 'Redesigned 360 Reviews homepage shown on a laptop.' },
-      { title: 'Comparison System', descriptor: 'Responsive UX · Accessibility', route: '/work/comparison-system', file: 'Comparison System.dc.html', img: '/assets/previews/03-comparison-system.webp', alt: 'Responsive comparison table pattern with a detached panel.' },
-      { title: 'Mindset-Based Landing Page Strategy', descriptor: 'Experimentation · Growth UX', route: '/work/mindset-landing-page-strategy', file: 'Mindset Landing Page Strategy.dc.html', img: '/assets/previews/05-mindset-landing-page.webp', alt: 'Mindset-based car insurance landing page across tablet and phone.' }
+      { title: 'Conversational Insurance Flow', outcome: '23 fields became 19 questions across 5 stages, answered by tapping instead of typing.', descriptor: 'Product UX · Conversation design', route: '/work/auto-insurance-conversational-flow', file: 'Conversational Insurance Flow.dc.html', img: '/assets/previews/01-auto-insurance-conversational-flow.jpg', alt: 'Vehicle step of the conversational auto-insurance quote flow.' },
+      { title: '360 Homepage Redesign', outcome: 'A flat list of links became a homepage that helps people choose, in blocks the team can update alone.', descriptor: 'Product strategy · Research', route: '/work/360-homepage-redesign', file: '360 Homepage Redesign.dc.html', img: '/assets/previews/02-360-homepage-redesign.webp', alt: 'Redesigned 360 Reviews homepage shown on a laptop.' },
+      { title: 'Comparison System', outcome: 'One accessible comparison pattern, reused across every vertical instead of a different table per section.', descriptor: 'Responsive UX · Accessibility', route: '/work/comparison-system', file: 'Comparison System.dc.html', img: '/assets/previews/03-comparison-system.webp', alt: 'Responsive comparison table pattern with a detached panel.' },
+      { title: 'Mindset-Based Landing Page Strategy', outcome: 'Three testable directions instead of one guess, each built for a different reason someone starts comparing.', descriptor: 'Experimentation · Growth UX', route: '/work/mindset-landing-page-strategy', file: 'Mindset Landing Page Strategy.dc.html', img: '/assets/previews/05-mindset-landing-page.webp', alt: 'Mindset-based car insurance landing page across tablet and phone.' }
     ],
     more: [
-      { title: 'Monthly Testing Review', descriptor: 'Research operations', route: '/work/monthly-testing-review', file: 'Monthly Testing Review.dc.html', img: '/assets/previews/archive-user-testing.webp', alt: 'Monthly usability-testing review session.' },
-      { title: 'U.S. News Brand Guide', descriptor: 'Design systems', route: '/work/us-news-brand-guide', file: 'U.S. News Brand Guide.dc.html', img: '/assets/previews/07-us-news-brand-guide.png', alt: 'Brand guidelines case study opening, with colour and type tokens.' },
-      { title: 'Insurance Landing Page', descriptor: 'Conversion UX', route: '/work/insurance-landing-page', file: 'Insurance Landing Page.dc.html', img: '/assets/previews/06-insurance-landing-page.png', alt: 'Insurance hub redesign case study opening.' }
+      { title: 'Monthly Testing Review', outcome: 'Isolated experiments became a shared monthly review, so teams stopped testing the same idea twice.', descriptor: 'Research operations', route: '/work/monthly-testing-review', file: 'Monthly Testing Review.dc.html', img: '/assets/previews/archive-user-testing.webp', alt: 'Monthly usability-testing review session.' },
+      { title: 'U.S. News Brand Guide', outcome: '54 pages and 12 chapters, through legal and VP sign-off, then built into a system teams could follow.', descriptor: 'Design systems', route: '/work/us-news-brand-guide', file: 'U.S. News Brand Guide.dc.html', img: '/assets/previews/07-us-news-brand-guide.png', alt: 'Brand guidelines case study opening, with colour and type tokens.' },
+      { title: 'Insurance Landing Page', outcome: '26.6% of mobile clicks were landing on things that were not links. Site audit went from 66 to 88.', descriptor: 'Conversion UX', route: '/work/insurance-landing-page', file: 'Insurance Landing Page.dc.html', img: '/assets/previews/06-insurance-landing-page.png', alt: 'Insurance hub redesign case study opening.' }
     ]
   },
   {
     id: 'heat', label: 'Earlier', company: 'Miami HEAT', role: 'Web Content Editor · Digital Experience Design', dates: '2021—2022',
     logo: '/assets/logos/miami-heat.svg', detail: 'Arena and team platform work through a full rebrand, with live event operations that could not pause.',
     projects: [
-      { title: 'Arena Rebrand & CMS Migration', descriptor: 'Brand systems · Product operations', route: '/work/arena-rebrand-cms', file: 'Arena Rebrand CMS.dc.html', img: '/assets/previews/04-arena-rebrand-cms.webp', alt: 'Rebranded arena event page with ticketing entry points.' },
-      { title: 'Miami HEAT Homepage', descriptor: 'Digital experience · Content UX', route: '/work/miami-heat-homepage', file: 'Miami HEAT Homepage.dc.html', img: '/assets/previews/archive-miami-heat-homepage.webp', alt: 'Miami HEAT homepage after the digital relaunch.' },
-      { title: '601 Miami', descriptor: 'Hospitality UX · Web design', route: '/work/601-miami-website', file: '601 Miami Website.dc.html', img: '/assets/previews/archive-601-miami.webp', alt: '601 Miami restaurant and event website.' }
+      { title: 'Arena Rebrand & CMS Migration', outcome: 'FTXArena.com became KaseyaCenter.com with almost no downtime, while the site kept selling tickets.', descriptor: 'Brand systems · Product operations', route: '/work/arena-rebrand-cms', file: 'Arena Rebrand CMS.dc.html', img: '/assets/previews/04-arena-rebrand-cms.webp', alt: 'Rebranded arena event page with ticketing entry points.' },
+      { title: 'Miami HEAT Homepage', outcome: 'A homepage the team can update during a live game, with schedules and tickets leading.', descriptor: 'Digital experience · Content UX', route: '/work/miami-heat-homepage', file: 'Miami HEAT Homepage.dc.html', img: '/assets/previews/archive-miami-heat-homepage.webp', alt: 'Miami HEAT homepage after the digital relaunch.' },
+      { title: '601 Miami', outcome: 'Three audiences given three clear paths: menu browsers, ticket holders and event planners.', descriptor: 'Hospitality UX · Web design', route: '/work/601-miami-website', file: '601 Miami Website.dc.html', img: '/assets/previews/archive-601-miami.webp', alt: '601 Miami restaurant and event website.' }
     ],
     more: []
   },
@@ -403,7 +405,7 @@ const DATA = [
     id: 'blu', label: 'Earlier', company: 'BLU Products', role: 'Graphic Designer · Product, Retail & Digital Experience', dates: '2014—2019',
     logo: '', detail: 'Launch systems spanning product storytelling, retail adaptation, packaging, and channel campaigns.',
     projects: [
-      { title: 'BLU Product Launch System', descriptor: 'Brand systems · Launch operations', route: '/work/blu-products-launch-system', file: 'BLU Products Launch System.dc.html', img: '/assets/previews/archive-blu-launch-system.webp', alt: 'BLU phone launch system across retail and digital channels.' }
+      { title: 'BLU Product Launch System', outcome: 'More than 20 phone launches from one set of parts, so a late spec change did not mean starting over.', descriptor: 'Brand systems · Launch operations', route: '/work/blu-products-launch-system', file: 'BLU Products Launch System.dc.html', img: '/assets/previews/archive-blu-launch-system.webp', alt: 'BLU phone launch system across retail and digital channels.' }
     ],
     more: []
   },
@@ -411,7 +413,7 @@ const DATA = [
     id: 'empire', label: 'Earlier', company: 'Empire Medical Training', role: 'Senior Designer · Product & Membership Experience', dates: '2019—2021',
     logo: '', detail: 'Membership communication, learning content, and conversion pages for medical training programs.',
     projects: [
-      { title: 'Medical Training Membership Journey', descriptor: 'Membership UX · Education content', route: '/work/medical-training-membership-journey', file: 'Medical Training Membership Journey.dc.html', img: '/assets/previews/archive-empire-medical.jpg', alt: 'Membership journey pages for medical training programs.' }
+      { title: 'Medical Training Membership Journey', outcome: 'One connected path from browsing a topic to signing up, across web, classroom, email and social.', descriptor: 'Membership UX · Education content', route: '/work/medical-training-membership-journey', file: 'Medical Training Membership Journey.dc.html', img: '/assets/previews/archive-empire-medical.jpg', alt: 'Membership journey pages for medical training programs.' }
     ],
     more: []
   }
@@ -662,9 +664,13 @@ class Component extends DCLogic {
       const sc = 1 + Math.min(0.16, sp * 0.006) + L.lit * 0.06;
       L.el.style.transform = 'translate3d(' + L.x.toFixed(2) + 'px,' + L.y.toFixed(2) + 'px,0) perspective(520px) rotateY(' + tilt.toFixed(2) + 'deg) rotateX(' + rise.toFixed(2) + 'deg) scale(' + sc.toFixed(3) + ')';
       L.el.style.filter = sp > 0.6 ? 'blur(' + Math.min(2.6, sp * 0.075).toFixed(2) + 'px)' : 'none';
-      L.el.style.color = L.lit > 0.28 ? accents[L.i % accents.length] : '';
+      // The letters keep their lift, tilt and motion smear, but not the colour.
+      // Leaving color unset lets each one inherit the theme's own ink, so the
+      // name reads white on the dark intro and black on a light background,
+      // and the effect comes across as movement rather than confetti.
+      L.el.style.color = '';
       L.el.style.textShadow = sp > 1.2
-        ? (-L.vx * 0.5).toFixed(1) + 'px ' + (-L.vy * 0.5).toFixed(1) + 'px 0 ' + (accents[(L.i + 1) % accents.length] || '#fff') + '55'
+        ? (-L.vx * 0.5).toFixed(1) + 'px ' + (-L.vy * 0.5).toFixed(1) + 'px 0 color-mix(in srgb, currentColor 35%, transparent)'
         : 'none';
     }
   }
@@ -1391,6 +1397,7 @@ class Component extends DCLogic {
     const key = empId + ':' + group + i;
     return {
       title: p.title, descriptor: p.descriptor, route: p.route, img: p.img, alt: p.alt,
+      outcome: p.outcome || '',
       hasImage: !!p.img,
       noImage: !p.img,
       color: (this.state.hover === key || this.state.inline === key) ? 'var(--focus)' : (this.state.visited.indexOf(p.route) === -1 ? 'var(--ink)' : 'var(--ink-2)'),
