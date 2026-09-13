@@ -77,6 +77,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
    text they decorate, so on a 360px screen the last one spills about 2px past
    the edge and the whole page scrolls sideways. Clip it. overflow-x:clip, not
    hidden: hidden would make body a scroll container and break sticky children. */
+/* The four case studies moved out of the job rows into Selected work, so the
+   per-employer project list is now empty. It still held an 18px top margin on
+   every row. */
+[data-cell-role] ul:not(:has(li)){display:none!important}
 html{overflow-x:clip}
 body{margin:0;max-width:100%;overflow-x:clip;background:var(--page)}
 a{color:var(--ink);text-decoration:none}
@@ -162,6 +166,22 @@ a:hover{color:var(--ink)}
       <a href="mailto:2miguelclavel@gmail.com?subject=Portfolio%20conversation" style="color:var(--focus)">2miguelclavel@gmail.com</a>
     </div>
   </section>
+  <section aria-labelledby="selected-h" style="padding-bottom:clamp(44px,6vh,72px)">
+    <h2 id="selected-h" style="margin:0 0 6px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">Selected work</h2>
+    <p style="margin:0 0 4px;font-size:15px;line-height:1.5;color:var(--ink-2);max-width:60ch">Four projects and what changed. Each links to the full case study.</p>
+    <ul style="list-style:none;margin:0;padding:0">
+      <sc-for list="{{ featured }}" as="f" hint-placeholder-count="4">
+        <li style="padding:clamp(16px,2vw,20px) 16px;border-top:1px solid var(--rule)">
+          <span style="display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)">{{ f.n }} &middot; {{ f.company }}</span>
+          <a data-plink href="{{ f.route }}" onMouseEnter="{{ f.onEnter }}" onMouseLeave="{{ f.onLeave }}" onFocus="{{ f.onEnter }}" onBlur="{{ f.onLeave }}" onClick="{{ f.onClick }}" style="display:inline-block;margin-top:7px;font-size:clamp(19px,1.6vw,22px);line-height:1.25;letter-spacing:-.012em;font-weight:600;color:{{ f.color }};text-decoration:underline;text-underline-offset:3px">{{ f.title }}</a>
+          <span style="font-size:15px;line-height:1.45;color:var(--ink-2)"> &mdash; {{ f.descriptor }}</span>
+          <p style="margin:7px 0 0;font-size:16px;line-height:1.5;color:var(--ink);max-width:70ch;text-wrap:pretty">{{ f.outcome }}</p>
+        </li>
+      </sc-for>
+    </ul>
+    <p style="margin:18px 0 0;padding-left:16px;font-size:16px;line-height:1.5"><a href="/more-work" style="color:var(--focus);font-weight:500">See all 12 case studies</a><span style="color:var(--ink-2)"> &mdash; eight more across U.S. News, Miami HEAT, BLU Products and Empire Medical Training.</span></p>
+  </section>
+
   <sc-for list="{{ sections }}" as="s" hint-placeholder-count="2">
     <section style="padding-bottom:clamp(44px,6vh,72px)">
       <h2 style="margin:0 0 16px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">{{ s.label }}</h2>
@@ -239,22 +259,6 @@ a:hover{color:var(--ink)}
       </sc-for>
     </section>
   </sc-for>
-  <p style="margin:-8px 0 clamp(44px,6vh,72px);padding-left:16px;font-size:16px;line-height:1.5"><a href="/more-work" style="color:var(--focus);font-weight:500">See all 12 case studies</a><span style="color:var(--ink-2)"> &mdash; eight more across U.S. News, Miami HEAT, BLU Products and Empire Medical Training.</span></p>
-
-
-  <section style="padding-bottom:clamp(44px,6vh,72px)">
-    <h2 style="margin:0 0 16px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">Education</h2>
-    <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:0">
-      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:20px 16px;border-top:1px solid var(--rule)">
-        <span style="font-size:clamp(18px,1.4vw,20px);font-weight:600;letter-spacing:-.01em;color:var(--ink)">Florida Atlantic University</span>
-        <span style="font-size:16px;color:var(--ink-2)">BFA, Graphic Design</span>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:20px 16px;border-top:1px solid var(--rule)">
-        <span style="font-size:clamp(18px,1.4vw,20px);font-weight:600;letter-spacing:-.01em;color:var(--ink)">BrainStation</span>
-        <span style="font-size:16px;color:var(--ink-2)">Full Stack Web Development Certificate</span>
-      </div>
-    </div>
-  </section>
 
   <section style="padding-bottom:clamp(44px,6vh,72px)">
     <h2 style="margin:0 0 16px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">Capabilities</h2>
@@ -266,6 +270,20 @@ a:hover{color:var(--ink)}
       <div style="display:grid;grid-template-columns:minmax(120px,180px) minmax(0,1fr);gap:8px 24px;padding:20px 16px;border-top:1px solid var(--rule)">
         <span style="font-size:17px;font-weight:600;color:var(--ink)">Practice</span>
         <span style="font-size:17px;line-height:1.5;color:var(--ink-2);text-wrap:pretty">Figma, AI-assisted workflows, Adobe Creative Suite, HTML/CSS, CMS</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-bottom:clamp(44px,6vh,72px)">
+    <h2 style="margin:0 0 16px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">Education</h2>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:0">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:20px 16px;border-top:1px solid var(--rule)">
+        <span style="font-size:clamp(18px,1.4vw,20px);font-weight:600;letter-spacing:-.01em;color:var(--ink)">Florida Atlantic University</span>
+        <span style="font-size:16px;color:var(--ink-2)">BFA, Graphic Design</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:20px 16px;border-top:1px solid var(--rule)">
+        <span style="font-size:clamp(18px,1.4vw,20px);font-weight:600;letter-spacing:-.01em;color:var(--ink)">BrainStation</span>
+        <span style="font-size:16px;color:var(--ink-2)">Full Stack Web Development Certificate</span>
       </div>
     </div>
   </section>
@@ -1476,21 +1494,29 @@ class Component extends DCLogic {
     // The recruiter page lists four case studies and no more. Same resume rows as
     // /more-work, just filtered: any project not in FEATURED drops out, and the
     // "more work" toggle goes with it, since the rest live on /more-work.
+    // The four now stand in their own Selected work section ahead of the job history,
+    // because a recruiter is looking for the work, not for a list of duties under one
+    // employer. So the experience rows carry role, scope and dates only.
     const keep = {};
     FEATURED.forEach((f, i) => { keep[f.route] = i; });
+    const pool = [];
     emps.forEach(e => {
       // Insurance Landing Page is one of the four and it lives in the overflow list,
-      // so filtering e.projects alone silently dropped it. These are the mapped rows,
-      // so the overflow is moreProjects here, not the raw more array.
-      e.projects = e.projects.concat(e.moreProjects)
-        .filter(p => keep[p.route] !== undefined)
-        .sort((x, y) => keep[x.route] - keep[y.route]);
+      // so reading e.projects alone silently dropped it.
+      e.projects.concat(e.moreProjects).forEach(p => {
+        if (keep[p.route] !== undefined) pool.push(Object.assign({ company: e.company }, p));
+      });
+      e.projects = [];
       e.moreProjects = [];
       e.hasMore = false;
     });
+    const featured = pool
+      .sort((x, y) => keep[x.route] - keep[y.route])
+      .map((p, i) => Object.assign({ n: String(i + 1).padStart(2, '0') }, p));
 
     const a = this.active();
     return {
+      featured: featured,
       no: false,
       iconSize: 18,
       theme: this.state.theme,
@@ -1505,7 +1531,7 @@ class Component extends DCLogic {
       magicRef: this.magicRef,
       words: SENTENCE.split(' ').map((t, i) => ({ t: t, i: i })),
       sections: [
-        { label: 'Latest', employers: emps.slice(0, 1) },
+        { label: 'Experience', employers: emps.slice(0, 1) },
         { label: 'Earlier', employers: emps.slice(1) }
       ],
       resumeHref: (window.__resources && window.__resources.resume) || RESUME,
