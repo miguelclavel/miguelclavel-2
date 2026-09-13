@@ -268,6 +268,36 @@ img{max-width:100%}
 @media (max-width:700px){.shr-hide{display:none!important}}
 button{font:inherit;color:inherit}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+@media (max-width:767px){
+/* Header, nav and footer links render about 18px tall on a phone, well under
+   the 44px touch guidance, and these are the links that actually matter to a
+   visitor on mobile: email, resume, LinkedIn, back to work. An invisible
+   centred ::after gives a thumb-sized hit area without moving the text or its
+   underline. Checked first that none of these links already use ::after. */
+header a,nav a,footer a{position:relative}
+header a::after,nav a::after,footer a::after{content:'';position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:44px;pointer-events:auto}
+}
+@media (max-width:767px){
+/* Two things pushed this page 37px wider than a 390px phone. The sticky TopNav
+   is a flex row: a 76px title plus a 308px nowrap link row. Letting the link
+   row scroll inside its own box keeps all four anchors reachable without
+   widening the document. And the hero chips set white-space:nowrap inline, so
+   the longest ran to 452px, wider than the screen; on a phone they wrap. */
+header nav{gap:8px!important}
+header nav > div:last-child{min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+header nav > div:last-child::-webkit-scrollbar{display:none}
+span[style*="radius-pill"]{white-space:normal!important}
+}
+@media (max-width:400px){
+/* On a 360px phone the breadcrumb bar is a nowrap row: the name, then the
+   back/email/share nav. Together they need more room than the screen has, so
+   the nav shrinks and scrolls inside its own box instead of widening the page.
+   Figures with an intrinsic width get held to the column the same way. */
+nav[aria-label="Portfolio"]{min-width:0;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav[aria-label="Portfolio"]::-webkit-scrollbar{display:none}
+figure{max-width:100%}
+figure img,figure picture,figure svg{max-width:100%;height:auto}
+}
 </style>
 </helmet>
 <a href="#top" style="position:absolute;left:-9999px;top:0;z-index:1000;background:#0071E3;color:#fff;font-size:14px;font-weight:600;padding:12px 20px;border-radius:9999px;text-decoration:none" style-focus="left:12px;top:12px">Skip to case study</a>
@@ -303,7 +333,36 @@ button{font:inherit;color:inherit}
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Chip" hint-size="auto,34px">System: Material UI and CMS-ready components</x-import>
   </div>
 
-  <figure style="margin:0 auto;max-width:1400px">
+  <section id="quick-summary" aria-label="The short version" style="background:var(--surface-wash,#F5F5F7);padding:clamp(28px,3.5vw,48px) clamp(20px,5vw,48px);scroll-margin-top:82px">
+<div style="max-width:1160px;margin:0 auto">
+    <div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">The short version</div>
+    <h2 style="margin:12px 0 0;max-width:30ch;font-size:clamp(24px,3vw,38px);font-weight:700;line-height:1.12;letter-spacing:-.018em;color:#33333A;text-wrap:balance">A page of links became a homepage that helps people choose.</h2>
+    <p style="margin:14px 0 0;font-size:13px;font-weight:600;letter-spacing:.03em;color:#6E6E73">UX/UI and Product Designer · U.S. News &amp; World Report</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:24px">
+      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:20px 22px">
+        <div aria-hidden="true" style="width:24px;height:3px;border-radius:2px;background:#FF3B30"></div>
+        <p style="margin:12px 0 6px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#6E6E73">The problem</p>
+        <p style="margin:0;font-size:16px;line-height:1.45;color:#33333A;text-wrap:pretty">Everything had equal weight, so people stopped scrolling early.</p>
+        <p style="margin:7px 0 0;font-size:14px;line-height:1.5;color:#6E6E73;text-wrap:pretty">Campaign changes needed an engineer every time.</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:20px 22px">
+        <div aria-hidden="true" style="width:24px;height:3px;border-radius:2px;background:#0A84FF"></div>
+        <p style="margin:12px 0 6px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#6E6E73">What I did</p>
+        <p style="margin:0;font-size:16px;line-height:1.45;color:#33333A;text-wrap:pretty">Used heatmaps and user tests to rebuild it in blocks.</p>
+        <p style="margin:7px 0 0;font-size:14px;line-height:1.5;color:#6E6E73;text-wrap:pretty">One product module that reconfigures itself per category.</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:20px 22px">
+        <div aria-hidden="true" style="width:24px;height:3px;border-radius:2px;background:#30D158"></div>
+        <p style="margin:12px 0 6px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#6E6E73">What changed</p>
+        <p style="margin:0;font-size:16px;line-height:1.45;color:#33333A;text-wrap:pretty">More attention on top products, and the team can update it alone.</p>
+        <p style="margin:7px 0 0;font-size:14px;line-height:1.5;color:#6E6E73;text-wrap:pretty">Analytics finally had stable places to measure.</p>
+      </div>
+    </div>
+    <p style="margin:18px 0 0;max-width:72ch;font-size:14px;line-height:1.55;color:#6E6E73;text-wrap:pretty">Exact percentages are left out on purpose. The analytics source behind them was never verified.</p>
+  </div>
+</section>
+
+<figure style="margin:0 auto;max-width:1400px">
     <button type="button" data-lb-src="/assets/360-homepage/approved/01-redesign-desktop-hero-2048.webp" data-lb-alt="The redesigned U.S. News 360 homepage shown on a laptop, with a large featured mattress review, a supporting home security recommendation, and category links along the top." data-lb-caption="The redesigned desktop experience gives priority to recommended products while maintaining clear paths into each vertical." style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:var(--radius-media)" aria-label="Expand the redesigned desktop homepage image">
       <img src="/assets/360-homepage/approved/01-redesign-desktop-hero-2048.webp" alt="The redesigned U.S. News 360 homepage shown on a laptop, with a large featured mattress review, a supporting home security recommendation, and category links along the top." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)">
     </button>
