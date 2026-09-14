@@ -253,20 +253,6 @@ a:hover{color:var(--ink)}
   </sc-for>
 
   <section style="padding-bottom:clamp(44px,6vh,72px)">
-    <h2 style="margin:0 0 16px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">Education</h2>
-    <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:0">
-      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:20px 16px;border-top:1px solid var(--rule)">
-        <span style="font-size:clamp(18px,1.4vw,20px);font-weight:600;letter-spacing:-.01em;color:var(--ink)">Florida Atlantic University</span>
-        <span style="font-size:16px;color:var(--ink-2)">BFA, Graphic Design</span>
-      </div>
-      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:20px 16px;border-top:1px solid var(--rule)">
-        <span style="font-size:clamp(18px,1.4vw,20px);font-weight:600;letter-spacing:-.01em;color:var(--ink)">BrainStation</span>
-        <span style="font-size:16px;color:var(--ink-2)">Full Stack Web Development Certificate</span>
-      </div>
-    </div>
-  </section>
-
-  <section style="padding-bottom:clamp(44px,6vh,72px)">
     <h2 style="margin:0 0 16px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">Capabilities</h2>
     <div style="display:flex;flex-direction:column">
       <div data-cap-row style="display:grid;grid-template-columns:minmax(min(120px,100%),180px) minmax(0,1fr);gap:8px 24px;padding:20px 16px;border-top:1px solid var(--rule)">
@@ -288,6 +274,20 @@ a:hover{color:var(--ink)}
       <div data-cap-row style="display:grid;grid-template-columns:minmax(min(120px,100%),180px) minmax(0,1fr);gap:8px 24px;padding:20px 16px;border-top:1px solid var(--rule)">
         <span style="font-size:17px;font-weight:600;color:var(--ink)">Tools</span>
         <span style="font-size:17px;line-height:1.5;color:var(--ink-2);text-wrap:pretty">Figma and FigJam, Figma Make, Claude and Claude Code, ChatGPT and Gemini, Adobe Creative Cloud</span>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-bottom:clamp(44px,6vh,72px)">
+    <h2 style="margin:0 0 16px;font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)">Education</h2>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr);gap:0">
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:20px 16px;border-top:1px solid var(--rule)">
+        <span style="font-size:clamp(18px,1.4vw,20px);font-weight:600;letter-spacing:-.01em;color:var(--ink)">Florida Atlantic University</span>
+        <span style="font-size:16px;color:var(--ink-2)">BFA, Graphic Design</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;padding:20px 16px;border-top:1px solid var(--rule)">
+        <span style="font-size:clamp(18px,1.4vw,20px);font-weight:600;letter-spacing:-.01em;color:var(--ink)">BrainStation</span>
+        <span style="font-size:16px;color:var(--ink-2)">Full Stack Web Development Certificate</span>
       </div>
     </div>
   </section>
@@ -1509,7 +1509,7 @@ class Component extends DCLogic {
       magicRef: this.magicRef,
       words: SENTENCE.split(' ').map((t, i) => ({ t: t, i: i })),
       sections: [
-        { label: 'Latest', employers: emps.slice(0, 1) },
+        { label: 'Experience', employers: emps.slice(0, 1) },
         { label: 'Earlier', employers: emps.slice(1) }
       ],
       resumeHref: (window.__resources && window.__resources.resume) || RESUME,
