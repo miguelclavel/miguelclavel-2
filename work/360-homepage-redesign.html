@@ -338,7 +338,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
     <div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">The short version</div>
     <h2 style="margin:12px 0 0;max-width:30ch;font-size:clamp(24px,3vw,38px);font-weight:700;line-height:1.12;letter-spacing:-.018em;color:#33333A;text-wrap:balance">A page of links became a homepage that helps people choose.</h2>
     <p style="margin:14px 0 0;font-size:13px;font-weight:600;letter-spacing:.03em;color:#6E6E73">UX/UI and Product Designer · U.S. News &amp; World Report</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:24px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:14px;margin-top:24px">
       <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:20px 22px">
         <div aria-hidden="true" style="width:24px;height:3px;border-radius:2px;background:#FF3B30"></div>
         <p style="margin:12px 0 6px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#6E6E73">The problem</p>
@@ -364,14 +364,14 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 
 <figure style="margin:0 auto;max-width:1400px">
     <button type="button" data-lb-src="/assets/360-homepage/approved/01-redesign-desktop-hero-2048.webp" data-lb-alt="The redesigned U.S. News 360 homepage shown on a laptop, with a large featured mattress review, a supporting home security recommendation, and category links along the top." data-lb-caption="The redesigned desktop experience gives priority to recommended products while maintaining clear paths into each vertical." style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;border-radius:var(--radius-media)" aria-label="Expand the redesigned desktop homepage image">
-      <img src="/assets/360-homepage/approved/01-redesign-desktop-hero-2048.webp" alt="The redesigned U.S. News 360 homepage shown on a laptop, with a large featured mattress review, a supporting home security recommendation, and category links along the top." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)">
+      <img src="/assets/360-homepage/approved/01-redesign-desktop-hero-2048.webp" alt="The redesigned U.S. News 360 homepage shown on a laptop, with a large featured mattress review, a supporting home security recommendation, and category links along the top." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)" loading="lazy" decoding="async">
     </button>
     <figcaption style="margin-top:var(--space-4);font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary);max-width:var(--measure-body)">The redesigned homepage replaced an equal-weight directory with a clear product hierarchy, featured recommendations, and repeatable vertical modules. Select any image to expand it.</figcaption>
   </figure>
 </x-import>
 
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="overview" band="wash" index="02" eyebrow="Overview" title="A homepage serving users, vertical teams, and changing business priorities." hint-size="100%,900px">
-  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start">
+  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));align-items:start">
     <div style="display:grid;gap:var(--space-6)">
       <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary)">360 covered a broad portfolio of high-intent decisions. People could arrive looking for a mattress, home warranty, VPN, cell phone plan, business service, or another product entirely.</p>
       <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary)">The homepage needed to help a visitor orient quickly without hiding the breadth of the platform. At the same time, product owners needed a way to elevate strategic verticals, content teams needed to make updates, and engineering needed repeatable components rather than one-off layouts.</p>
@@ -391,7 +391,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 
   <figure style="margin:var(--space-16) 0 0;max-width:865px">
     <button type="button" data-lb-src="/assets/360-homepage/approved/04-hero-system-high-density.webp" data-lb-alt="A collage of redesigned 360 homepage modules arranged on a neutral surface beside a laptop, showing repeated vertical templates for Sleep, Home Services, Digital Privacy, and Business." data-lb-caption="Repeated vertical templates across the redesigned homepage, shown as a system rather than a single page." style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in" aria-label="Expand the module system collage">
-      <img src="/assets/360-homepage/approved/04-hero-system-high-density.webp" alt="A collage of redesigned 360 homepage modules arranged on a neutral surface beside a laptop, showing repeated vertical templates for Sleep, Home Services, Digital Privacy, and Business." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)">
+      <img src="/assets/360-homepage/approved/04-hero-system-high-density.webp" alt="A collage of redesigned 360 homepage modules arranged on a neutral surface beside a laptop, showing repeated vertical templates for Sleep, Home Services, Digital Privacy, and Business." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)" loading="lazy" decoding="async">
     </button>
     <figcaption style="margin-top:var(--space-4);font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary)">One system, many verticals. The same module template carried different inventories without a custom layout for each section.</figcaption>
   </figure>
@@ -399,7 +399,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
   <sc-if value="{{ showContents }}" hint-placeholder-val="{{ true }}">
   <nav aria-label="Case study contents" style="margin-top:var(--space-16);padding:var(--space-7);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card);box-shadow:var(--shadow-card)">
     <h2 style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Contents</h2>
-    <ul style="list-style:none;margin:var(--space-5) 0 0;padding:0;display:grid;gap:var(--space-3) var(--space-6);grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <ul style="list-style:none;margin:var(--space-5) 0 0;padding:0;display:grid;gap:var(--space-3) var(--space-6);grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr))">
       <li><a href="#before" style="font-size:var(--size-body-sm)">03. The legacy experience</a></li>
       <li><a href="#discovery" style="font-size:var(--size-body-sm)">04. Research evidence</a></li>
       <li><a href="#strategy" style="font-size:var(--size-body-sm)">05. Product framing</a></li>
@@ -427,7 +427,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
     <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary)">The structure also made the page long and repetitive. Lower verticals depended on users continuing through dense content with limited visual change. Editorial methodology was important, but it competed with the primary product-finding task instead of supporting it.</p>
   </div>
 
-  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
+  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))">
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,150px"><h3 style="font-size:19px;line-height:var(--lh-title)">Flat hierarchy</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Categories looked equally important even when user intent and business value differed.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,150px"><h3 style="font-size:19px;line-height:var(--lh-title)">Dense scanning</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Repeated grids created visual fatigue and made category names do most of the work.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,150px"><h3 style="font-size:19px;line-height:var(--lh-title)">Weak CTA emphasis</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Product actions did not stand out clearly from general navigation.</p></x-import>
@@ -436,7 +436,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,150px"><h3 style="font-size:19px;line-height:var(--lh-title)">Inconsistent system</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Verticals lacked one reusable visual and interaction model.</p></x-import>
   </div>
 
-  <div style="margin-top:var(--space-16);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+  <div style="margin-top:var(--space-16);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))">
     <button type="button" data-lb-src="/assets/360-homepage/approved/09-legacy-homepage-top-high-density.webp" data-lb-alt="The top of the legacy 360 Reviews homepage: a title, a short mission paragraph, the 360 badge, and the first rows of a four-column category grid labelled Consumer." data-lb-caption="Legacy homepage, top of page. Category cards carry near-identical visual weight." style="display:block;width:100%;max-width:771px;text-align:left;padding:0;border:0;background:none;cursor:zoom-in" aria-label="Expand the legacy homepage top crop">
       <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.WindowFrame" url="usnews.com/360-reviews" src="/assets/360-homepage/approved/09-legacy-homepage-top-high-density.webp" alt="The top of the legacy 360 Reviews homepage: a title, a short mission paragraph, the 360 badge, and the first rows of a four-column category grid labelled Consumer." caption="Top of the legacy page. Every category card is the same size, so the grid cannot express priority." hint-size="100%,520px"></x-import>
     </button>
@@ -451,7 +451,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="discovery" band="wash" index="04" eyebrow="Discovery" title="Heatmaps showed where the page stopped working as a discovery experience." hint-size="100%,900px">
   <figure style="margin:0;max-width:865px">
     <button type="button" data-lb-src="/assets/360-homepage/approved/07-legacy-heatmap-high-density.webp" data-lb-alt="Heatmap overlays on the legacy homepage, mobile and desktop side by side. Warm red and orange tones cover the top of both pages and cool green tones appear further down the category grid." data-lb-caption="Heatmap evidence on the legacy homepage, mobile and desktop." style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in" aria-label="Expand the heatmap evidence image">
-      <img src="/assets/360-homepage/approved/07-legacy-heatmap-high-density.webp" alt="Heatmap overlays on the legacy homepage, mobile and desktop side by side. Warm red and orange tones cover the top of both pages and cool green tones appear further down the category grid." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)">
+      <img src="/assets/360-homepage/approved/07-legacy-heatmap-high-density.webp" alt="Heatmap overlays on the legacy homepage, mobile and desktop side by side. Warm red and orange tones cover the top of both pages and cool green tones appear further down the category grid." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)" loading="lazy" decoding="async">
     </button>
     <figcaption style="margin-top:var(--space-4);font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary)">Heatmap evidence showed strong attention near the top and rapidly weakening engagement through the dense category grid. Warm areas mark the strongest attention, cool areas the weakest, and the labels below describe the pattern in words as well as color.</figcaption>
   </figure>
@@ -471,22 +471,22 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 
   <h3 style="margin-top:var(--space-16);font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Evidence to decision</h3>
   <div style="margin-top:var(--space-5);display:grid;gap:var(--space-3)">
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Evidence</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Attention concentrated at the top</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Product interpretation</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Priority products needed earlier visibility</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Design response</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Bring recommended products above the fold</p></div>
     </div>
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Evidence</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Weak engagement through repeated grids</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Product interpretation</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">The page lacked hierarchy and visual rhythm</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Design response</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Alternate module layouts and content density</p></div>
     </div>
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Evidence</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Lower verticals received less attention</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Product interpretation</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Page order had product consequences</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Design response</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Make section order configurable in the CMS</p></div>
     </div>
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Evidence</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">CTAs blended with general links</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Product interpretation</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">The next action was unclear</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Design response</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Use one primary action per featured product</p></div>
@@ -495,7 +495,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 </x-import>
 
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="strategy" band="dark" index="05" eyebrow="Product strategy" title="Define the homepage as a discovery product, not a container for every link." hint-size="100%,900px">
-  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start">
+  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));align-items:start">
     <div>
       <p style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-inverse-muted)">Product North Star</p>
       <p style="margin-top:var(--space-4);font-size:var(--size-section);line-height:var(--lh-section);letter-spacing:var(--track-tight);color:var(--text-inverse);font-weight:700">Meaningful product discovery sessions</p>
@@ -508,7 +508,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
   </div>
 
   <h3 style="margin-top:var(--space-16);font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-inverse-muted)">KPI tree</h3>
-  <div style="margin-top:var(--space-5);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+  <div style="margin-top:var(--space-5);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))">
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" on-dark="{{ true }}" hint-size="100%,200px"><h4 style="font-size:19px;color:var(--text-inverse)">Discovery</h4><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-inverse-muted)">Product-card CTR, vertical engagement, homepage search, and distribution of clicks.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" on-dark="{{ true }}" hint-size="100%,200px"><h4 style="font-size:19px;color:var(--text-inverse)">Depth</h4><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-inverse-muted)">Section visibility, scroll completion, engagement after the first viewport, and time to first meaningful action.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" on-dark="{{ true }}" hint-size="100%,200px"><h4 style="font-size:19px;color:var(--text-inverse)">Conversion assistance</h4><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-inverse-muted)">Progression to product detail, comparison, lead, or commerce experiences.</p></x-import>
@@ -519,7 +519,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 </x-import>
 
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="okrs" band="white" index="06" eyebrow="Product management" title="Translate the redesign into outcomes the team could manage." hint-size="100%,900px">
-  <div style="display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(300px,1fr))">
+  <div style="display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))">
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,280px">
       <p style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Objective 1</p>
       <h3 style="margin-top:var(--space-3);font-size:21px;line-height:var(--lh-title)">Turn the homepage into a product-discovery engine</h3>
@@ -549,7 +549,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 </x-import>
 
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="wireframes" band="wash" index="07" eyebrow="Wireframes and iteration" title="Test the content model before polishing the rebrand." hint-size="100%,900px">
-  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start">
+  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));align-items:start">
     <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary)">I used low-fidelity wireframes to separate structural decisions from visual preference. The team compared product-first and editorial-first openings, visible sections and tabs, repeated grids and alternating layouts, and different relationships between navigation, featured products, and supporting content.</p>
     <div>
       <p style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Questions we explored</p>
@@ -566,32 +566,32 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 
   <figure style="margin:var(--space-16) 0 0;max-width:865px">
     <button type="button" data-lb-src="/assets/360-homepage/approved/05-legacy-comparison-high-density.webp" data-lb-alt="Two legacy homepage layouts shown one behind the other on a neutral background, comparing the older dark navigation with a later light version of the same category grid." data-lb-caption="Comparing legacy homepage structures before committing to a new content model." style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in" aria-label="Expand the legacy architecture comparison">
-      <img src="/assets/360-homepage/approved/05-legacy-comparison-high-density.webp" alt="Two legacy homepage layouts shown one behind the other on a neutral background, comparing the older dark navigation with a later light version of the same category grid." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)">
+      <img src="/assets/360-homepage/approved/05-legacy-comparison-high-density.webp" alt="Two legacy homepage layouts shown one behind the other on a neutral background, comparing the older dark navigation with a later light version of the same category grid." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)" loading="lazy" decoding="async">
     </button>
     <figcaption style="margin-top:var(--space-4);font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary)">Comparing existing homepage structures kept the discussion on information models rather than styling.</figcaption>
   </figure>
 
   <h3 style="margin-top:var(--space-16);font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Directions, risks, decisions</h3>
   <div style="margin-top:var(--space-5);display:grid;gap:var(--space-3)">
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(190px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Direction</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Editorial-first</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Strength</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Strong brand storytelling</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Risk</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Delays product discovery</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Decision</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Keep editorial context secondary</p></div>
     </div>
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(190px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Direction</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Equal product grid</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Strength</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Shows breadth</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Risk</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Recreates flat hierarchy</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Decision</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Replace with prioritized modules</p></div>
     </div>
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(190px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Direction</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Tabbed groups</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Strength</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Compact</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Risk</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Can hide important verticals</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Decision</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Use only where discovery remains clear</p></div>
     </div>
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(190px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Direction</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Alternating modules</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Strength</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Creates rhythm and hierarchy</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Risk</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Needs a dependable template</p></div>
@@ -601,7 +601,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 </x-import>
 
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="testing" band="white" index="08" eyebrow="Validation" title="Users wanted clear product choices before more editorial content." hint-size="100%,700px">
-  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(320px,1fr));align-items:start">
+  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));align-items:start">
     <div style="display:grid;gap:var(--space-6)">
       <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary)">Remote sessions on UserTesting.com focused on realistic discovery tasks, not visual preference alone. Participants were asked to find named products, locate a relevant vertical, scan several sections, and explain what they expected to happen after selecting a card or CTA.</p>
       <p style="font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary)">Participant counts, task-success rates, and quotes are not reported here because the supplied material does not include the session records.</p>
@@ -627,12 +627,12 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="module" band="wash" index="09" eyebrow="Top 3 module" title="One reusable module created hierarchy without hiding the catalog." hint-size="100%,900px">
   <figure style="margin:0;max-width:865px">
     <button type="button" data-lb-src="/assets/360-homepage/approved/06-modular-system-high-density.webp" data-lb-alt="Redesigned vertical modules for Home Services, Sleep, Technology, Business, and Digital Privacy laid out in a grid, each with a category link list, one large featured product, and two smaller supporting products." data-lb-caption="Reusable vertical templates combine category navigation, one featured product, two supporting products, and a clear path to more content." style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in" aria-label="Expand the modular system image">
-      <img src="/assets/360-homepage/approved/06-modular-system-high-density.webp" alt="Redesigned vertical modules for Home Services, Sleep, Technology, Business, and Digital Privacy laid out in a grid, each with a category link list, one large featured product, and two smaller supporting products." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)">
+      <img src="/assets/360-homepage/approved/06-modular-system-high-density.webp" alt="Redesigned vertical modules for Home Services, Sleep, Technology, Business, and Digital Privacy laid out in a grid, each with a category link list, one large featured product, and two smaller supporting products." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)" loading="lazy" decoding="async">
     </button>
     <figcaption style="margin-top:var(--space-4);font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary)">Reusable vertical templates combine category navigation, one featured product, two supporting products, and a clear path to more content. The numbered notes below describe each part of the module.</figcaption>
   </figure>
 
-  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
+  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))">
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,150px"><p style="font-size:var(--size-caption);font-weight:600;color:var(--accent)">01</p><h3 style="margin-top:var(--space-2);font-size:17px;line-height:var(--lh-title)">Vertical title and short context</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Names the vertical and sets expectations in one line, so the module works out of page order.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,150px"><p style="font-size:var(--size-caption);font-weight:600;color:var(--accent)">02</p><h3 style="margin-top:var(--space-2);font-size:17px;line-height:var(--lh-title)">Category or subcategory navigation</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Keeps the full catalog reachable while staying visually secondary to the recommendation.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,150px"><p style="font-size:var(--size-caption);font-weight:600;color:var(--accent)">03</p><h3 style="margin-top:var(--space-2);font-size:17px;line-height:var(--lh-title)">One featured product</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">The strongest image, largest type, and the single primary CTA in the module.</p></x-import>
@@ -650,7 +650,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
     <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary)">The goal was not decoration. Each visual decision communicated product importance and made the long page easier to parse.</p>
   </div>
 
-  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">
+  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr))">
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,140px"><h3 style="font-size:17px;line-height:var(--lh-title)">Larger scale for featured products</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Size and image area carry the recommendation before any copy is read.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,140px"><h3 style="font-size:17px;line-height:var(--lh-title)">Consistent card anatomy and CTA placement</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Category label, title, short description, byline, and action always sit in the same order.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,140px"><h3 style="font-size:17px;line-height:var(--lh-title)">Alternating section backgrounds for rhythm</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">A background shift marks each new vertical and resets attention on a long page.</p></x-import>
@@ -659,7 +659,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 
   <div style="margin-top:var(--space-12);padding:var(--space-8);background:var(--surface-wash);border-radius:var(--radius-card)">
     <p style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Module anatomy, drawn as a diagram</p>
-    <div style="margin-top:var(--space-6);display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fit,minmax(220px,1fr));align-items:stretch">
+    <div style="margin-top:var(--space-6);display:grid;gap:var(--space-4);grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));align-items:stretch">
       <div style="background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-tile);padding:var(--space-5);display:grid;gap:var(--space-3);align-content:start">
         <div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--accent)">Featured</div>
         <div style="height:120px;border-radius:var(--radius-tile);background:var(--surface-wash);border:1px solid var(--border-hairline-soft)"></div>
@@ -693,7 +693,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="cms" band="wash" index="11" eyebrow="Platform strategy" title="Design the homepage so priorities can change without redesigning it." hint-size="100%,900px">
   <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary);max-width:var(--measure-body)">The modular system separated the visual template from the content configuration. Product and content teams could reorder verticals, update featured products, rotate supporting cards, add seasonal campaigns, and retire modules without rebuilding the page structure.</p>
 
-  <div style="margin-top:var(--space-12);display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start">
+  <div style="margin-top:var(--space-12);display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));align-items:start">
     <div>
       <p style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Configuration model, one module</p>
       <ul style="margin:var(--space-4) 0 0;padding:0;list-style:none;display:grid;gap:var(--space-2)">
@@ -723,8 +723,8 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
       <div>
         <p style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Page length and module sequence</p>
         <div style="margin-top:var(--space-4);display:flex;gap:var(--space-6);align-items:flex-start">
-          <img src="/assets/360-homepage/reference-only/redesign-desktop-full-241.webp" alt="A small silhouette of the complete redesigned desktop homepage, showing the sequence and length of its stacked vertical modules." style="width:120px;height:auto;border-radius:6px;border:1px solid var(--border-hairline)">
-          <img src="/assets/360-homepage/reference-only/redesign-mobile-full-63.webp" alt="A small silhouette of the complete redesigned mobile homepage, showing its single-column module sequence and total length." style="width:46px;height:auto;border-radius:6px;border:1px solid var(--border-hairline)">
+          <img src="/assets/360-homepage/reference-only/redesign-desktop-full-241.webp" alt="A small silhouette of the complete redesigned desktop homepage, showing the sequence and length of its stacked vertical modules." style="width:120px;height:auto;border-radius:6px;border:1px solid var(--border-hairline)" loading="lazy" decoding="async">
+          <img src="/assets/360-homepage/reference-only/redesign-mobile-full-63.webp" alt="A small silhouette of the complete redesigned mobile homepage, showing its single-column module sequence and total length." style="width:46px;height:auto;border-radius:6px;border:1px solid var(--border-hairline)" loading="lazy" decoding="async">
           <p style="font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary);max-width:260px">Scroll maps shown at silhouette scale only. They indicate overall page length and module sequence, not readable interface detail.</p>
         </div>
       </div>
@@ -736,7 +736,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="desktop" band="white" index="12" eyebrow="Final desktop direction" title="Use width to show relationships, not to add more noise." hint-size="100%,800px">
   <figure style="margin:0">
     <div style="border-radius:var(--radius-media);overflow:hidden;box-shadow:var(--shadow-window);background:var(--surface-wash)">
-      <img src="/assets/360-homepage/approved/01-redesign-desktop-hero-2048.webp" alt="A detail crop of the redesigned desktop homepage screen, showing the featured mattress review beside the smaller home security recommendations and the category link row above them." style="display:block;width:132%;max-width:none;margin-left:-16%;height:auto">
+      <img src="/assets/360-homepage/approved/01-redesign-desktop-hero-2048.webp" alt="A detail crop of the redesigned desktop homepage screen, showing the featured mattress review beside the smaller home security recommendations and the category link row above them." style="display:block;width:132%;max-width:none;margin-left:-16%;height:auto" loading="lazy" decoding="async">
     </div>
     <figcaption style="margin-top:var(--space-4);font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary);max-width:var(--measure-body)">Desktop space was used to create hierarchy between featured, supporting, and navigational content rather than to expose the maximum number of equal cards. Detail crop of the same screen shown in full at the top of this page.</figcaption>
   </figure>
@@ -752,10 +752,10 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 </x-import>
 
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="mobile" band="wash" index="13" eyebrow="Responsive product design" title="Mobile required a deliberate reading order." hint-size="100%,900px">
-  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start">
+  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));align-items:start">
     <figure style="margin:0;max-width:760px">
       <button type="button" data-lb-src="/assets/360-homepage/approved/02-redesign-mobile-editorial-1365.webp" data-lb-alt="The redesigned mobile homepage on a phone standing against a pale wall, showing the search field, a collapsed navigation control, and the featured Best Mattresses card." data-lb-caption="The mobile concept preserves the product-first hierarchy and turns dense desktop groupings into a focused vertical reading sequence." style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in" aria-label="Expand the redesigned mobile homepage image">
-        <img src="/assets/360-homepage/approved/02-redesign-mobile-editorial-1365.webp" alt="The redesigned mobile homepage on a phone standing against a pale wall, showing the search field, a collapsed navigation control, and the featured Best Mattresses card." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)">
+        <img src="/assets/360-homepage/approved/02-redesign-mobile-editorial-1365.webp" alt="The redesigned mobile homepage on a phone standing against a pale wall, showing the search field, a collapsed navigation control, and the featured Best Mattresses card." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)" loading="lazy" decoding="async">
       </button>
       <figcaption style="margin-top:var(--space-4);font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary)">The mobile concept preserves the product-first hierarchy and turns dense desktop groupings into a focused vertical reading sequence.</figcaption>
     </figure>
@@ -772,26 +772,26 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 
   <figure style="margin:var(--space-16) 0 0;max-width:865px">
     <button type="button" data-lb-src="/assets/360-homepage/approved/08-mobile-hand-high-density.webp" data-lb-alt="A hand holding a phone showing the redesigned mobile homepage, with the search field, the Navigation control, and the featured Best Mattresses card in the first viewport." data-lb-caption="In the hand, the first mobile viewport holds search, a collapsed navigation control, and one clear recommendation." style="display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in" aria-label="Expand the mobile in-hand image">
-      <img src="/assets/360-homepage/approved/08-mobile-hand-high-density.webp" alt="A hand holding a phone showing the redesigned mobile homepage, with the search field, the Navigation control, and the featured Best Mattresses card in the first viewport." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)">
+      <img src="/assets/360-homepage/approved/08-mobile-hand-high-density.webp" alt="A hand holding a phone showing the redesigned mobile homepage, with the search field, the Navigation control, and the featured Best Mattresses card in the first viewport." style="display:block;width:100%;height:auto;border-radius:var(--radius-media);box-shadow:var(--shadow-window)" loading="lazy" decoding="async">
     </button>
     <figcaption style="margin-top:var(--space-4);font-size:var(--size-caption);line-height:var(--lh-caption);color:var(--text-tertiary)">The first mobile viewport carries search, a collapsed navigation control, and one clear recommendation.</figcaption>
   </figure>
 
   <h3 style="margin-top:var(--space-16);font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Desktop and mobile, compared</h3>
   <div style="margin-top:var(--space-5);display:grid;gap:var(--space-3)">
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(240px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Desktop</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Side-by-side product relationships</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Mobile</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">One clear vertical sequence</p></div>
     </div>
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(240px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Desktop</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Wider category navigation</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Mobile</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Progressive disclosure where needed</p></div>
     </div>
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(240px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Desktop</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Alternating column composition</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Mobile</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Consistent featured-first stacking</p></div>
     </div>
-    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(240px,1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
+    <div style="display:grid;gap:var(--space-5);grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));padding:var(--space-6);background:var(--surface-card);border:1px solid var(--border-hairline);border-radius:var(--radius-card)">
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Desktop</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-primary)">Large supporting context</p></div>
       <div><div style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Mobile</div><p style="margin-top:6px;font-size:var(--size-body-sm);color:var(--text-secondary)">Shorter copy and focused actions</p></div>
     </div>
@@ -804,7 +804,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
     <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary)">Personalization was a future direction, not a shipped claim. Any implementation would require clear user value, privacy review, measurable hypotheses, transparent defaults, and a manual fallback.</p>
   </div>
 
-  <div style="margin-top:var(--space-12);display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start">
+  <div style="margin-top:var(--space-12);display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));align-items:start">
     <div>
       <p style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Possible future signals, none of them used</p>
       <div style="margin-top:var(--space-4);display:flex;flex-wrap:wrap;gap:var(--space-2)">
@@ -831,7 +831,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="handoff" band="wash" index="15" eyebrow="Collaboration" title="A modular design only works when the rules travel with it." hint-size="100%,700px">
   <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary);max-width:var(--measure-body)">I documented component anatomy, CMS fields, spacing, responsive transitions, image behavior, content limits, CTA rules, analytics events, and edge cases in Figma. I worked with product owners and engineers to keep implementation aligned with the business strategy instead of reducing the redesign to visual styling.</p>
 
-  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
+  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))">
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,100px"><h3 style="font-size:17px;line-height:var(--lh-title)">Component states and variants</h3></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,100px"><h3 style="font-size:17px;line-height:var(--lh-title)">CMS content model and validation</h3></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,100px"><h3 style="font-size:17px;line-height:var(--lh-title)">Desktop, tablet, and mobile behavior</h3></x-import>
@@ -844,7 +844,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 </x-import>
 
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="results" band="white" index="16" eyebrow="Outcome" title="A stronger discovery experience and a more adaptable product surface." hint-size="100%,700px">
-  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:start">
+  <div style="display:grid;gap:var(--space-16);grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));align-items:start">
     <div>
       <p style="font-size:var(--size-eyebrow);font-weight:600;letter-spacing:var(--track-eyebrow);text-transform:uppercase;color:var(--text-tertiary)">Reported directional outcomes</p>
       <ul style="margin:var(--space-4) 0 0;padding-left:20px;display:grid;gap:var(--space-3);font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary)">
@@ -871,7 +871,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 </x-import>
 
 <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Section" id="next" band="wash" index="17" eyebrow="Product learning loop" title="Treat launch as the start of product management, not the end of design." hint-size="100%,700px">
-  <div style="display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(230px,1fr))">
+  <div style="display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr))">
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,180px"><p style="font-size:var(--size-caption);font-weight:600;color:var(--accent)">Step 01</p><h3 style="margin-top:var(--space-2);font-size:19px;line-height:var(--lh-title)">Observe</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Review module impressions, clicks, scroll distribution, and progression into product experiences.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,180px"><p style="font-size:var(--size-caption);font-weight:600;color:var(--accent)">Step 02</p><h3 style="margin-top:var(--space-2);font-size:19px;line-height:var(--lh-title)">Diagnose</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Combine analytics with heatmaps and user tasks to explain weak or unexpected behavior.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,180px"><p style="font-size:var(--size-caption);font-weight:600;color:var(--accent)">Step 03</p><h3 style="margin-top:var(--space-2);font-size:19px;line-height:var(--lh-title)">Experiment</h3><p style="margin-top:var(--space-3);font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-secondary)">Test module order, featured-product selection, CTA language, and layout variants with defined guardrails.</p></x-import>
@@ -897,7 +897,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
     <p style="font-size:var(--size-body);line-height:var(--lh-body);color:var(--text-secondary)">The most important lesson was that a homepage redesign is not only a branding exercise. It is a product decision about what gets seen, what gets measured, who can make changes, and how the system responds when priorities shift.</p>
   </div>
 
-  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
+  <div style="margin-top:var(--space-12);display:grid;gap:var(--gap-grid);grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))">
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,140px"><p style="font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-primary)">Behavioral data and user testing answer different questions and are strongest together.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,140px"><p style="font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-primary)">Product hierarchy is a strategic decision, not just a layout choice.</p></x-import>
     <x-import component-from-global-scope="EditorialClarityDesignSystem_9cb24c.Card" hint-size="100%,140px"><p style="font-size:var(--size-body-sm);line-height:var(--lh-body);color:var(--text-primary)">Reusable modules increase both user consistency and organizational speed.</p></x-import>

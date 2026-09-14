@@ -70,6 +70,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .grid4{grid-template-columns:1fr !important}
       .decgrid{grid-template-columns:1fr !important}
       .stat2{grid-template-columns:repeat(2,1fr) !important}
+      /* Two stat cards plus the gap need about 318px. On a 320px screen the
+         column is only 280px wide, so they ran 16px past the edge. */
+      @media (max-width:340px){.stat2{grid-template-columns:1fr !important}}
       .navlinks{display:none !important}
       .shr-hide{display:none !important}
       .menubtn{display:inline-block !important}
@@ -205,7 +208,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
     <div style="font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#0071E3">The short version</div>
     <h2 style="margin:12px 0 0;max-width:30ch;font-size:clamp(24px,3vw,38px);font-weight:700;line-height:1.12;letter-spacing:-.018em;color:#33333A;text-wrap:balance">A 9,500px list of insurance links became a page that actually starts quotes.</h2>
     <p style="margin:14px 0 0;font-size:13px;font-weight:600;letter-spacing:.03em;color:#6E6E73">Product Design + SEO · U.S. News &amp; World Report</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:24px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:14px;margin-top:24px">
       <div style="background:#FFFFFF;border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:20px 22px">
         <div aria-hidden="true" style="width:24px;height:3px;border-radius:2px;background:#FF3B30"></div>
         <p style="margin:12px 0 6px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:#6E6E73">The problem</p>
@@ -560,7 +563,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
         <div>
           <div style="border-radius:16px;overflow:hidden;background:#E7F0FB;box-shadow:0 16px 48px rgba(0,0,0,.10),0 0 0 1px rgba(0,0,0,.05)">
             <div style="height:28px;background:rgba(246,246,246,.92);display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid rgba(0,0,0,.06)"><span style="width:9px;height:9px;border-radius:50%;background:#FF5F56"></span><span style="width:9px;height:9px;border-radius:50%;background:#FFBD2E"></span><span style="width:9px;height:9px;border-radius:50%;background:#27C93F"></span></div>
-            <img src="/assets/insurance-landing/03-after/redesign-desktop-hero.png" width="1440" height="900" loading="lazy" alt="Redesigned hero: quote comparison form with eight coverage chips, ZIP field, red Compare button and an editorial trust row in a single card" data-cap="The hero: chips, conditional ZIP, and a trust row in one card." style="display:block;width:100%;height:auto">
+            <img src="/assets/insurance-landing/03-after/redesign-desktop-hero.png" width="1440" height="900" alt="Redesigned hero: quote comparison form with eight coverage chips, ZIP field, red Compare button and an editorial trust row in a single card" data-cap="The hero: chips, conditional ZIP, and a trust row in one card." style="display:block;width:100%;height:auto">
           </div>
           <p style="font-size:13px;line-height:1.45;color:#6E6E73;margin:12px 0 0">The hero: chips, conditional ZIP, and a trust row in one card.</p>
         </div>
@@ -774,7 +777,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
       <div data-rv="0" style="flex:3;min-width:0">
         <div style="border-radius:16px;overflow:hidden;background:#E7F0FB;box-shadow:0 16px 48px rgba(0,0,0,.10),0 0 0 1px rgba(0,0,0,.05)">
           <div style="height:24px;background:rgba(246,246,246,.92);display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid rgba(0,0,0,.06)"><span style="width:8px;height:8px;border-radius:50%;background:#FF5F56"></span><span style="width:8px;height:8px;border-radius:50%;background:#FFBD2E"></span><span style="width:8px;height:8px;border-radius:50%;background:#27C93F"></span></div>
-          <img src="/assets/insurance-landing/03-after/redesign-desktop-hero.png" width="1440" height="900" loading="lazy" alt="Redesigned insurance hub at desktop width, 1440 pixels" data-cap="Desktop · 1440" style="display:block;width:100%;height:auto">
+          <img src="/assets/insurance-landing/03-after/redesign-desktop-hero.png" width="1440" height="900" alt="Redesigned insurance hub at desktop width, 1440 pixels" data-cap="Desktop · 1440" style="display:block;width:100%;height:auto">
         </div>
         <p style="font-size:13px;font-weight:600;color:#1D1D1F;margin:12px 0 0;text-align:center">Desktop <span style="font-weight:400;color:#8E8E93">· 1440px</span></p>
       </div>
@@ -880,7 +883,7 @@ figure img,figure picture,figure svg{max-width:100%;height:auto}
 <nav aria-label="Continue exploring" style="border-top:1px solid rgba(0,0,0,.08);padding:36px 0">
   <div style="max-width:1160px;margin:0 auto;padding:0 clamp(20px,5vw,48px)">
     <p style="margin:0 0 18px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#6E6E73">Continue exploring</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:12px">
       <a href="/work/us-news-brand-guide" style="text-decoration:none;background:#F5F5F7;border-radius:18px;padding:22px 24px;display:block" style-hover="background:#EEF2F7">
         <span style="display:block;font-size:13px;color:#6E6E73">Previous</span>
         <span style="display:block;margin-top:6px;font-size:19px;font-weight:700;letter-spacing:-.02em;color:#1D1D1F">U.S. News Brand Guide</span>
