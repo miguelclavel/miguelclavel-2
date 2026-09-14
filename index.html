@@ -113,6 +113,11 @@ a:hover{color:var(--ink)}
    per line and the longest ran past the edge. Stack them instead. */
 [data-cap-row]{grid-template-columns:minmax(0,1fr)!important;gap:2px!important}
 }
+/* The hover preview is 422px wide and sits in the right margin. Under about
+   1100px there is no margin left, so it lands on the outcome text instead.
+   Below that width the link just goes to the case study. */
+@media (max-width:1100px){[data-desk-only]{display:none!important}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 /* blinds reveal: each line sits under a strip that steps away in pixel-sized jumps */
 [data-blind]{position:relative}
@@ -1406,9 +1411,12 @@ class Component extends DCLogic {
     const inset = 16;
     const W = node.offsetWidth || 422;
     const H = node.offsetHeight || 348;
-    let x = r.right + 24;
-    if (x + W > window.innerWidth - inset) x = r.left - W - 24;
-    if (x < inset) x = Math.max(inset, window.innerWidth - W - inset);
+    // Right margin, not beside the link: the project rows carry an outcome line
+    // that runs past the link, so anchoring to r.right put the card on the text.
+    const rightEdge = window.innerWidth - W - inset;
+    let x = Math.max(r.right + 24, rightEdge);
+    if (x + W > window.innerWidth - inset) x = rightEdge;
+    if (x < inset) x = Math.max(inset, rightEdge);
     let y = r.top - 24;
     if (y + H > window.innerHeight - inset) y = window.innerHeight - H - inset;
     if (y < inset) y = inset;
@@ -1422,9 +1430,13 @@ class Component extends DCLogic {
     const r = e.currentTarget.getBoundingClientRect();
     this.anchorRect = { top: r.top, left: r.left, right: r.right, bottom: r.bottom };
     const inset = 16;
-    let x = r.right + 24;
-    if (x + 422 > window.innerWidth - inset) x = r.left - 422 - 24;
-    if (x < inset) x = Math.max(inset, window.innerWidth - 422 - inset);
+    // Sit the card in the right margin rather than right beside the link. The
+    // project rows now carry an outcome line that runs well past the link itself,
+    // so anchoring to link.right dropped the card on top of the text below it.
+    const rightEdge = window.innerWidth - 422 - inset;
+    let x = Math.max(r.right + 24, rightEdge);
+    if (x + 422 > window.innerWidth - inset) x = rightEdge;
+    if (x < inset) x = Math.max(inset, rightEdge);
     this.setState({ hover: key, px: Math.round(x), py: Math.round(Math.max(inset, r.top - 24)) });
   };
 
