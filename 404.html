@@ -59,6 +59,11 @@ a:hover{color:#FFFFFF}
 [data-msg]{font-size:clamp(16px,4.5vw,20px)!important;letter-spacing:-1.3px!important}
 }
 @media (prefers-reduced-motion:reduce){[data-wave] path{d:path("M0 150 L1000 150")}}
+
+/* Text selection uses the pixel palette's yellow with near-black text:
+   the one accent in that set that stays readable on light and dark alike. */
+::selection{background:#FFD84D;color:#101012}
+::-moz-selection{background:#FFD84D;color:#101012}
 </style>
 </helmet>
 
